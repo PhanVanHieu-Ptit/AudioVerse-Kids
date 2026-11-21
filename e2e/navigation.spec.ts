@@ -249,7 +249,9 @@ test.describe('chunk loading', () => {
       await route.continue();
     });
     await page.goto('/stories/chua-co', { waitUntil: 'domcontentloaded' });
-    await expect(page.getByRole('status')).toContainText('Đang mở trang');
+    await expect(page.getByRole('main').getByRole('status')).toContainText(
+      'Đang mở trang',
+    );
     await expect(page.locator('#main-content')).toBeFocused();
     release?.();
     await expect(

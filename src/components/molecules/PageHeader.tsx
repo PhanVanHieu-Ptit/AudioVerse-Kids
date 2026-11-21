@@ -17,8 +17,7 @@ export function PageHeader({
   const { pathname } = useLocation();
   useEffect(() => {
     document.title = `${title} | ${env.appName}`;
-    heading.current?.focus({ preventScroll: true });
-    window.scrollTo({ top: 0 });
+    if (!document.querySelector('dialog[open]')) heading.current?.focus();
   }, [title, pathname]);
   return (
     <header className="page-heading av-page-header">

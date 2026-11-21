@@ -1,5 +1,3 @@
-import type { PreferenceKey } from '@/types/preferences';
-
 export const displayOptions = [
   {
     key: 'largeText',
@@ -17,7 +15,7 @@ export const displayOptions = [
     description: 'Hạn chế hiệu ứng chuyển động khi tương tác.',
   },
 ] as const satisfies ReadonlyArray<{
-  key: Exclude<PreferenceKey, 'theme'>;
+  key: 'largeText' | 'highContrast' | 'reducedMotion';
   title: string;
   description: string;
 }>;

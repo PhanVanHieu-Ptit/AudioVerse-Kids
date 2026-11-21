@@ -2,6 +2,8 @@ import { PageHeading } from '@/components/molecules/PageHeading';
 import { LoadingState } from '@/components/molecules/LoadingState';
 import { displayOptions } from '@/content/settings';
 import { usePreferences } from '@/hooks/usePreferences';
+import { FormField } from '@/components/molecules/FormField';
+import { VoiceSettings } from './VoiceSettings';
 
 export default function SettingsPage() {
   const { preferences, status, saveStatus, updatePreference } =
@@ -18,21 +20,23 @@ export default function SettingsPage() {
         <section className="settings-panel" aria-labelledby="display-title">
           <h2 id="display-title">Hiển thị và chuyển động</h2>
           <p>Các lựa chọn được áp dụng ngay và chỉ lưu trên thiết bị này.</p>
-          <label className="theme-field">
-            Giao diện
-            <select
-              value={preferences.theme}
-              onChange={(event) => {
-                void updatePreference(
-                  'theme',
-                  event.target.value === 'dark' ? 'dark' : 'light',
-                );
-              }}
-            >
-              <option value="light">Sáng</option>
-              <option value="dark">Tối</option>
-            </select>
-          </label>
+          <FormField label="Giao diện">
+            {(control) => (
+              <select
+                {...control}
+                value={preferences.theme}
+                onChange={(event) => {
+                  void updatePreference(
+                    'theme',
+                    event.target.value === 'dark' ? 'dark' : 'light',
+                  );
+                }}
+              >
+                <option value="light">Sáng</option>
+                <option value="dark">Tối</option>
+              </select>
+            )}
+          </FormField>
           <div className="settings-options">
             {displayOptions.map((option) => (
               <label className="setting-option" key={option.key}>
@@ -66,6 +70,7 @@ export default function SettingsPage() {
           </p>
         </section>
       )}
+      {status !== 'loading' && <VoiceSettings />}
       <aside className="privacy-panel">
         <h2>Không gian riêng của em</h2>
         <p>

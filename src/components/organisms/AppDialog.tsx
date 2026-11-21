@@ -2,6 +2,8 @@ import { useEffect, useId, useRef, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { AccessibleButton } from '@/components/atoms/AccessibleButton';
 import { Icon } from '@/components/atoms/Icon';
+import { voiceGuidance } from '@/engines/audio/VoiceGuidance';
+import { stopAudio } from '@/engines/audio/audioFocus';
 
 export function AppDialog({
   open,
@@ -21,6 +23,8 @@ export function AppDialog({
   useEffect(() => {
     const element = dialog.current;
     if (!open || !element) return;
+    voiceGuidance.stop();
+    stopAudio();
     const previousFocus = document.activeElement;
     const previousOverflow = document.body.style.overflow;
     // Native modality makes the rest of the page inert. Explicit boundary
