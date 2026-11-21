@@ -54,9 +54,9 @@ src/
   app/                 # AppProviders, AppRouter, routes, lỗi routing và 404
   assets/              # Tài nguyên được import qua bundler
   components/
-    atoms/             # Thành phần nhỏ, ví dụ Icon
-    molecules/         # PageHeading, LoadingState
-    organisms/         # ErrorBoundary, thông báo PWA
+    atoms/             # Icon, AccessibleButton, AudioButton
+    molecules/         # Cards, PageHeader, loading/empty/error states
+    organisms/         # AppDialog, ErrorBoundary, thông báo PWA
     templates/         # AppLayout và bố cục trang nội dung
   features/
     home/              # Trang khám phá
@@ -66,8 +66,10 @@ src/
     learning/          # Học tập
     settings/          # Cài đặt hiển thị
     teacher/           # Góc giáo viên
+    design-system/     # Showcase chia theo từng nhóm component
+  design-system/       # Public exports để tái sử dụng component
   engines/
-    audio/             # Contract audio; triển khai player ở giai đoạn tiếp theo
+    audio/             # Contract player và Web Audio tone preview riêng biệt
     game/              # Vị trí dành cho engine trò chơi
     story/             # Vị trí dành cho engine truyện
   hooks/               # React adapters cho trạng thái dùng chung
@@ -91,16 +93,17 @@ Luồng phụ thuộc: **UI → hook/store → repository → IndexedDB**. Store
 
 ## Routing
 
-| URL            | Trang                              |
-| -------------- | ---------------------------------- |
-| `/`            | Khám phá                           |
-| `/truyen`      | Kho truyện                         |
-| `/tro-choi`    | Trò chơi                           |
-| `/am-nhac`     | Âm nhạc                            |
-| `/hoc-tap`     | Học tập                            |
-| `/cai-dat`     | Cài đặt                            |
-| `/giao-vien`   | Góc giáo viên                      |
-| Đường dẫn khác | Trang 404 và liên kết về trang chủ |
+| URL              | Trang                              |
+| ---------------- | ---------------------------------- |
+| `/`              | Khám phá                           |
+| `/truyen`        | Kho truyện                         |
+| `/tro-choi`      | Trò chơi                           |
+| `/am-nhac`       | Âm nhạc                            |
+| `/hoc-tap`       | Học tập                            |
+| `/cai-dat`       | Cài đặt                            |
+| `/giao-vien`     | Góc giáo viên                      |
+| `/design-system` | Design System Showcase             |
+| Đường dẫn khác   | Trang 404 và liên kết về trang chủ |
 
 Khi deploy static, máy chủ phải rewrite URL ứng dụng (ví dụ `/truyen`) về `index.html`; các file tĩnh vẫn được phục vụ trực tiếp. Cấu hình hiện tại chạy tại root domain, chưa hỗ trợ triển khai dưới subpath. Production cần HTTPS; localhost được trình duyệt cho phép dùng service worker.
 
@@ -110,7 +113,7 @@ Khi deploy static, máy chủ phải rewrite URL ứng dụng (ví dụ `/truyen
 - Skip link, focus nhìn thấy được, `aria-current` trên điều hướng. Khi chuyển trang, cập nhật document title và focus `h1` để trình đọc màn hình nhận biết ngữ cảnh mới.
 - Nút và mục tương tác cao tối thiểu 48 CSS px; hỗ trợ zoom, chữ lớn, tương phản cao, giảm chuyển động và `prefers-reduced-motion` của thiết bị.
 - Không tự phát âm thanh, không yêu cầu micro và không dùng phím tắt một ký tự. Dùng `Tab`/`Shift+Tab`, `Enter`; `Space` để thay đổi switch.
-- Chỉ lưu ba lựa chọn hiển thị trong IndexedDB `audioverse-kids`, store `preferences`, khóa `display-v1`. Dữ liệu được kiểm tra kiểu khi đọc. Các lượt ghi được xếp hàng để tránh lưu sai thứ tự khi thao tác nhanh.
+- Chỉ lưu theme sáng/tối và ba lựa chọn hiển thị trong IndexedDB `audioverse-kids`, store `preferences`, khóa `display-v1`. Dữ liệu được kiểm tra kiểu khi đọc. Các lượt ghi được xếp hàng để tránh lưu sai thứ tự khi thao tác nhanh.
 - Nếu IndexedDB bị chặn hoặc hết dung lượng, cài đặt vẫn hoạt động trong bộ nhớ và thông báo rõ việc không lưu được. Không gửi thông tin lỗi hoặc dữ liệu cài đặt lên máy chủ.
 - Xóa dữ liệu trang web trong trình duyệt để xóa cài đặt và cache. Mỗi tab đọc cài đặt khi khởi động; đồng bộ trực tiếp giữa các tab chưa được triển khai.
 
@@ -135,6 +138,67 @@ Kiểm tra tại local ngày 21/11/2026: typecheck, ESLint, Prettier và build p
 
 Đã triển khai nền tảng, routing, UI responsive, cài đặt thực lưu IndexedDB và vỏ PWA. Các trang truyện, trò chơi, âm nhạc, học tập và giáo viên đang có trạng thái trống rõ ràng; không có audio giả hoặc nội dung chưa được duyệt.
 
-Web Audio API và `HTMLAudioElement` là API có sẵn của trình duyệt, không cần npm package. Thư mục `engines/audio` hiện chỉ định nghĩa contract; **chưa triển khai audio engine**, điều khiển phát, tải nội dung offline hay nghiệp vụ game/truyện. Khi có tài nguyên thật, engine sẽ quản lý media playback qua `HTMLAudioElement` và graph/mixing qua Web Audio API, chỉ khởi tạo sau tương tác người dùng; UI truy cập engine thông qua adapter. Các yêu cầu đó cần được triển khai và kiểm thử trong nhiệm vụ riêng.
+Web Audio API và `HTMLAudioElement` là API có sẵn của trình duyệt, không cần npm package. Thư mục `engines/audio` có contract player và `TonePreview` tạo âm thử cho Design System bằng Web Audio. **Chưa triển khai player nội dung qua HTMLAudioElement**, tải nội dung offline hay nghiệp vụ game/truyện. Khi có tài nguyên thật, engine sẽ quản lý media playback qua `HTMLAudioElement` và graph/mixing qua Web Audio API, chỉ khởi tạo sau tương tác người dùng; UI truy cập engine thông qua adapter. Các yêu cầu đó cần được triển khai và kiểm thử trong nhiệm vụ riêng.
 
 Tham khảo cấu hình: [Vite](https://vite.dev/guide/), [Vite PWA](https://vite-pwa-org.netlify.app/guide/service-worker-strategies-and-behaviors), [Playwright accessibility testing](https://playwright.dev/docs/accessibility-testing).
+
+## Design System
+
+Mở `/design-system` từ điều hướng chính. Showcase đặt trong `AppLayout` thật, có thể đổi sáng/tối/tương phản cao, tăng chữ, giảm chuyển động, mở dialog, thử âm tổng hợp và xem trạng thái loading/empty/error. Các mẫu tĩnh được ghi chú rõ. Không có tài nguyên ghi âm giả hay tự phát âm thanh.
+
+| Nhóm file                                                                                | Trách nhiệm                                                                                 |
+| ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `src/styles/tokens.css`                                                                  | Semantic colors cho ba theme; typography, spacing, radii, touch target và motion tokens     |
+| `src/styles/global.css`                                                                  | Reset, layout ứng dụng, focus, responsive, reduced motion và forced colors                  |
+| `src/styles/components.css`                                                              | Các component và Showcase; import sau global để các variant có hiệu lực                     |
+| `src/components/atoms/AccessibleButton.tsx`                                              | Native button, primary/secondary/quiet/danger, hai kích thước, disabled/busy, hỗ trợ ref    |
+| `src/components/atoms/AudioButton.tsx`                                                   | Transport có nhãn chữ, nhận state và callback từ adapter                                    |
+| `src/components/molecules/AppCard.tsx`, `AudioCard.tsx`                                  | Article có tên truy cập, action riêng, audio status và nội dung chữ tùy chọn                |
+| `src/components/organisms/AppDialog.tsx`                                                 | Controlled native modal, inert background, vòng Tab, Escape, khôi phục focus và scroll      |
+| `src/components/molecules/LoadingState.tsx`, `EmptyState.tsx`, `ErrorState.tsx`          | Thông báo bằng chữ, live status/alert và hành động tiếp theo                                |
+| `src/components/molecules/PageHeader.tsx`                                                | Tiêu đề, mô tả, eyebrow, action, document title và focus khi đổi route                      |
+| `src/components/templates/AppLayout.tsx`                                                 | Sidebar responsive, skip link, main landmark, footer và Suspense                            |
+| `src/design-system/index.ts`                                                             | Public exports; component tiếp tục nằm đúng lớp atoms/molecules/organisms/templates         |
+| `src/features/design-system/`                                                            | Các phần Showcase, mỗi phần là một component nhỏ                                            |
+| `src/content/designSystem.ts`, `audioControls.ts`                                        | Dữ liệu token mẫu, nhãn trạng thái, thông số và mô tả âm thử                                |
+| `src/hooks/useTonePreview.ts`, `src/engines/audio/TonePreview.ts`                        | React adapter và audio lifecycle; xử lý unavailable/error, dừng và giải phóng khi rời trang |
+| `src/types/preferences.ts`, `src/stores/preferencesStore.ts`, `src/app/AppProviders.tsx` | Theme type-safe, đọc dữ liệu cũ, lưu qua IndexedDB hiện có và áp dụng lên html              |
+| `src/features/settings/SettingsPage.tsx`, `src/content/settings.ts`                      | Chọn theme trong trang cài đặt; tùy chọn boolean tách khỏi theme                            |
+| `src/app/routes.tsx`, `src/main.tsx`                                                     | Lazy route Showcase và thứ tự import styles                                                 |
+
+Sử dụng component qua public entry point:
+
+```tsx
+import { AccessibleButton, AppDialog, AudioCard } from '@/design-system';
+
+<AccessibleButton variant="secondary" onClick={openHelp}>
+  Xem hướng dẫn
+</AccessibleButton>;
+
+<AudioCard
+  title={resource.title}
+  description={resource.description}
+  state={playback.state}
+  onActivate={playback.toggle}
+  transcript={resource.transcript}
+/>;
+
+<AppDialog
+  open={helpOpen}
+  onClose={closeHelp}
+  title="Hướng dẫn"
+  description="Dùng Tab để đến điều khiển tiếp theo."
+/>;
+```
+
+`AccessibleButton` mặc định `type="button"`; dùng `type="submit"` tường minh trong form. Luôn cung cấp nhãn chữ nhìn thấy; icon trang trí ẩn khỏi screen reader. `loading` giữ focus bằng `aria-disabled` và chặn click/Enter/Space; truyền nhãn bận mô tả tác vụ. `disabled` dùng thuộc tính native và ra khỏi thứ tự Tab.
+
+`AudioButton`/`AudioCard` là controlled UI, không tự tạo player: `ready`, `playing`, `paused`, `loading`, `error`, `unavailable`. `onActivate` do adapter cung cấp; retry ở trạng thái error chỉ bật khi có callback. Không có callback hoặc tài nguyên thì hiển thị điều khiển vô hiệu hóa. Luôn cung cấp feedback giải thích lỗi hoặc thiếu tài nguyên; transcript dùng `<details>` không cần nghe để đọc. Âm thử 440 Hz là tổng hợp thật trong engine, tự kết thúc sau hai giây; nghe tiếp sau tạm dừng phát nốt từ đầu và được giải thích ngay trên thẻ.
+
+Theme mặc định sáng; `data-theme="dark"` bật tối và `data-high-contrast="true"` luôn ưu tiên hơn theme. Dữ liệu cũ không có `theme` được đọc thành sáng, không đổi schema hay xóa cài đặt. `data-large-text="true"` dùng 125%; CSS dùng rem và xuống dòng khi tăng chữ. Breakpoints mobile-first 40rem, 68rem, 86rem được ghi rõ trong tokens và Showcase; media queries dùng literal vì CSS custom properties chưa dùng được trong điều kiện media query native. Navigation tự điều chỉnh số cột theo không gian. Font hệ thống hoạt động offline và tôn trọng font mặc định của trình duyệt.
+
+Focus dùng viền 3px, offset 4px và lớp đệm tương phản. Vùng chạm nút ít nhất 3rem; nội dung không có chiều cao cố định. `prefers-reduced-motion`, lựa chọn giảm chuyển động trong app và Windows forced colors đều có fallback riêng. Dialog dùng `<dialog>.showModal()` trên trình duyệt hiện đại, có tên/mô tả, nút đóng bằng chữ và không đóng khi vô tình chạm nền; component quản lý trạng thái qua `open`/`onClose`. `PageHeading` giữ alias tương thích cho các trang hiện tại.
+
+Kiểm thử bổ sung: `AccessibleButton.test.tsx`, `AudioCard.test.tsx`, `TonePreview.test.ts`, các test migration/theme trong `preferencesStore.test.ts`, các snapshot mới trong `preferencesRepository.test.ts`, route Showcase trong `e2e/app.spec.ts` và các luồng Design System trong `e2e/design-system.spec.ts`. Bộ E2E chạy bản production có service worker để kiểm tra route offline thực tế, ba theme với axe-core, dialog, âm thật và fallback, cài đặt sau reload, 320px với chữ 200%, reduced motion và forced colors. Kiểm tra âm trong trình duyệt xác nhận lifecycle phát; chất lượng nghe và mức âm lượng trên thiết bị vật lý vẫn cần kiểm tra thủ công.
+
+Kiểm tra Design System tại local ngày 21/11/2026: typecheck, ESLint, Prettier, build production và 22 unit/integration test đạt; 63 E2E test đạt trên Chromium desktop/mobile/tablet. Axe-core không phát hiện vi phạm trong các phạm vi quét. Chưa xác minh thủ công bằng NVDA, VoiceOver, TalkBack hoặc trên thiết bị vật lý; đây chưa phải chứng nhận tuân thủ WCAG.

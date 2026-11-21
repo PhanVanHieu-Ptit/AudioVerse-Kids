@@ -1,45 +1,161 @@
+/* Semantic colors are overridden per theme; layout values remain stable.
+   Breakpoints: compact 40rem, sidebar 68rem, wide 86rem.
+   CSS custom properties cannot be used in native media query conditions. */
 :root {
+  color-scheme: light;
   font-family:
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
     'Segoe UI',
     sans-serif;
-  color: #25243c;
-  background: #f7f8fc;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   --color-bg: #f7f8fc;
-  --color-surface: #fff;
+  --color-surface: #ffffff;
+  --color-surface-soft: #eeedf5;
   --color-text: #25243c;
   --color-muted: #5e6075;
   --color-primary: #5840a0;
+  --color-on-primary: #ffffff;
+  --color-primary-hover: #44307f;
   --color-border: #dcdfe9;
+  --color-control-border: #79758d;
   --color-sidebar: #302658;
   --color-focus: #126c70;
+  --color-focus-halo: #ffffff;
   --color-hero: #eae5fa;
-  --radius-sm: 0.75rem;
-  --radius-md: 1.25rem;
-  --radius-lg: 1.75rem;
+  --color-hero-text: #302658;
+  --color-hero-muted: #514a6a;
+  --color-accent: #d5f7bd;
+  --color-on-accent: #292047;
+  --color-success: #22654e;
+  --color-success-soft: #dcf3eb;
+  --color-warning: #85410f;
+  --color-warning-soft: #ffecdb;
+  --color-danger: #a02d42;
+  --color-danger-soft: #fff0f2;
+  --color-info: #2d64ab;
+  --color-info-soft: #e2edfd;
+  --color-purple-soft: #eee7fa;
+  --color-disabled: #666779;
+  --color-disabled-bg: #e9e9f0;
+  --font-xs: 0.875rem;
+  --font-sm: 1rem;
+  --font-md: 1.125rem;
+  --font-lg: 1.25rem;
+  --font-xl: 1.5rem;
+  --font-2xl: 2rem;
+  --font-3xl: 2.5rem;
+  --line-body: 1.65;
+  --line-heading: 1.35;
+  /* Keep existing spacing names compatible. Base unit: 4px at default size. */
+  --space-0: 0.25rem;
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
   --space-4: 2rem;
   --space-5: 3rem;
+  --space-6: 4rem;
+  --radius-sm: 0.75rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 1.75rem;
+  --target-size: 3rem;
+  --shadow-dialog: 0 1.5rem 5rem #17102533;
+  --motion-fast: 160ms;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-bg: #171622;
+  --color-surface: #222132;
+  --color-surface-soft: #2e2b42;
+  --color-text: #f4f1fc;
+  --color-muted: #c1bdd2;
+  --color-primary: #c5b2ff;
+  --color-on-primary: #241744;
+  --color-primary-hover: #d6c8ff;
+  --color-border: #514d65;
+  --color-control-border: #a6a0b8;
+  --color-sidebar: #12101e;
+  --color-focus: #dcfda9;
+  --color-focus-halo: #171622;
+  --color-hero: #332a4d;
+  --color-hero-text: #f0e9ff;
+  --color-hero-muted: #d2c8e5;
+  --color-success: #9fe2c2;
+  --color-success-soft: #1a3a30;
+  --color-warning: #ffd1a1;
+  --color-warning-soft: #44301f;
+  --color-danger: #ffafbd;
+  --color-danger-soft: #442330;
+  --color-info: #afcfff;
+  --color-info-soft: #20334d;
+  --color-purple-soft: #352b4d;
+  --color-disabled: #c1bdd2;
+  --color-disabled-bg: #363246;
+}
+
+/* High contrast takes priority over light and dark. */
+:root[data-high-contrast='true'] {
+  color-scheme: light;
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f0f0f0;
+  --color-text: #000000;
+  --color-muted: #222222;
+  --color-primary: #35206d;
+  --color-on-primary: #ffffff;
+  --color-primary-hover: #171025;
+  --color-border: #343434;
+  --color-control-border: #000000;
+  --color-sidebar: #171025;
+  --color-focus: #000000;
+  --color-focus-halo: #ffffff;
+  --color-hero: #eee8ff;
+  --color-hero-text: #171025;
+  --color-hero-muted: #252525;
+  --color-success: #124c36;
+  --color-success-soft: #ebfff1;
+  --color-warning: #673000;
+  --color-warning-soft: #fff3df;
+  --color-danger: #800020;
+  --color-danger-soft: #fff0f2;
+  --color-info: #153c74;
+  --color-info-soft: #edf4ff;
+  --color-purple-soft: #eee7fa;
+  --color-disabled: #343434;
+  --color-disabled-bg: #eeeeee;
 }
 
 :root[data-large-text='true'] {
   font-size: 125%;
 }
 
-:root[data-high-contrast='true'] {
-  --color-bg: #fff;
-  --color-surface: #fff;
-  --color-text: #111;
-  --color-muted: #252525;
-  --color-primary: #35206d;
-  --color-border: #343434;
-  --color-sidebar: #171025;
-  --color-hero: #eee8ff;
+@media (forced-colors: active) {
+  :root,
+  :root[data-theme],
+  :root[data-high-contrast] {
+    --color-bg: Canvas;
+    --color-surface: Canvas;
+    --color-surface-soft: Canvas;
+    --color-text: CanvasText;
+    --color-muted: CanvasText;
+    --color-primary: LinkText;
+    --color-on-primary: Canvas;
+    --color-primary-hover: LinkText;
+    --color-border: CanvasText;
+    --color-control-border: ButtonText;
+    --color-focus: Highlight;
+    --color-focus-halo: Canvas;
+    --color-hero: Canvas;
+    --color-hero-text: CanvasText;
+    --color-hero-muted: CanvasText;
+    --color-purple-soft: Canvas;
+    --color-danger: CanvasText;
+    --color-danger-soft: Canvas;
+    --color-disabled: GrayText;
+    --color-disabled-bg: Canvas;
+  }
 }

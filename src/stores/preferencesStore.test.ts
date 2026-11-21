@@ -19,6 +19,7 @@ describe('preferences store', () => {
     expect(parsePreferences(null)).toEqual(defaultPreferences);
     expect(
       parsePreferences({
+        theme: 'light',
         largeText: 'true',
         highContrast: true,
         reducedMotion: 1,
@@ -41,6 +42,7 @@ describe('preferences store', () => {
     const storage = repository();
     vi.mocked(storage.load).mockResolvedValue({
       ...defaultPreferences,
+      theme: 'light',
       largeText: true,
     });
     const store = createPreferencesStore(storage);
@@ -48,6 +50,7 @@ describe('preferences store', () => {
     expect(store.getState().preferences.largeText).toBe(true);
     await store.getState().updatePreference('highContrast', true);
     expect(storage.save).toHaveBeenLastCalledWith({
+      theme: 'light',
       largeText: true,
       highContrast: true,
       reducedMotion: false,
@@ -92,10 +95,34 @@ describe('preferences store', () => {
     resolvers[1]?.();
     await second;
     expect(snapshots[1]).toEqual({
+      theme: 'light',
       largeText: true,
       highContrast: true,
       reducedMotion: false,
     });
     expect(store.getState().saveStatus).toBe('saved');
+  });
+});
+
+describe('theme preferences and migration', () => {
+  it('migrates old snapshots and rejects invalid themes', () => {
+    expect(parsePreferences({ largeText: true }).theme).toBe('light');
+    expect(parsePreferences({ theme: 'unknown' }).theme).toBe('light');
+    expect(parsePreferences({ theme: 'dark' }).theme).toBe('dark');
+  });
+
+  it('persists dark theme alongside a rapid contrast change', async () => {
+    const storage = repository();
+    const store = createPreferencesStore(storage);
+    await store.getState().initialize();
+    await Promise.all([
+      store.getState().updatePreference('theme', 'dark'),
+      store.getState().updatePreference('highContrast', true),
+    ]);
+    expect(storage.save).toHaveBeenLastCalledWith({
+      ...defaultPreferences,
+      theme: 'dark',
+      highContrast: true,
+    });
   });
 });

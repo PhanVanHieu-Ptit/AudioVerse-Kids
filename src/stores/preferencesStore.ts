@@ -6,6 +6,7 @@ import {
 import type { Preferences, PreferenceKey } from '@/types/preferences';
 
 export const defaultPreferences: Preferences = {
+  theme: 'light',
   largeText: false,
   highContrast: false,
   reducedMotion: false,
@@ -15,6 +16,7 @@ export function parsePreferences(value: unknown): Preferences {
   if (typeof value !== 'object' || value === null)
     return { ...defaultPreferences };
   return {
+    theme: 'theme' in value && value.theme === 'dark' ? 'dark' : 'light',
     largeText: 'largeText' in value && value.largeText === true,
     highContrast: 'highContrast' in value && value.highContrast === true,
     reducedMotion: 'reducedMotion' in value && value.reducedMotion === true,
@@ -26,7 +28,10 @@ interface PreferencesState {
   status: 'loading' | 'ready' | 'memory';
   saveStatus: 'idle' | 'saving' | 'saved' | 'error';
   initialize: () => Promise<void>;
-  updatePreference: (key: PreferenceKey, value: boolean) => Promise<void>;
+  updatePreference: <K extends PreferenceKey>(
+    key: K,
+    value: Preferences[K],
+  ) => Promise<void>;
 }
 
 export function createPreferencesStore(repository: PreferencesRepository) {
