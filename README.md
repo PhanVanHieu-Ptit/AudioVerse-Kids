@@ -71,11 +71,11 @@ src/
     design-system/     # Showcase chia theo từng nhóm component
   design-system/       # Public exports để tái sử dụng component
   engines/
-    audio/             # Contract player và Web Audio tone preview riêng biệt
+    audio/             # AudioEngine, AudioManager, channels, mixer và audio focus
     game/              # Quy tắc trò chơi, không phụ thuộc UI
     story/             # Vị trí dành cho engine truyện
   hooks/               # React adapters cho trạng thái dùng chung
-  stores/              # Zustand; cài đặt và tiến độ, không phụ thuộc React
+  stores/              # Zustand; cài đặt, tiến độ và audio, không phụ thuộc React
   content/             # Metadata, mô tả và nội dung các lựa chọn
   lib/                 # Env, IndexedDB và repository
   styles/              # CSS thuần, tokens và responsive
@@ -154,7 +154,7 @@ Kiểm tra tại local ngày 21/11/2026: typecheck, ESLint, Prettier và build p
 
 Đã triển khai nền tảng, routing, UI responsive, cài đặt thực lưu IndexedDB và vỏ PWA. Các trang truyện, âm nhạc, học tập và giáo viên đang có trạng thái trống rõ ràng. Trang trò chơi có hoạt động âm cao–trầm tổng hợp thật; chưa có bản thu âm hoặc thư viện nội dung đã biên tập cho trẻ.
 
-Web Audio API và `HTMLAudioElement` là API có sẵn của trình duyệt, không cần npm package. Thư mục `engines/audio` có contract player và `TonePreview` tạo âm thử cho Design System bằng Web Audio. **Chưa triển khai player nội dung qua HTMLAudioElement**, tải bản thu âm offline hay nghiệp vụ nghe truyện. Trò chơi âm cao–trầm sử dụng Web Audio và lưu tiến độ thực. Khi có tài nguyên thật, engine sẽ quản lý media playback qua `HTMLAudioElement` và graph/mixing qua Web Audio API, chỉ khởi tạo sau tương tác người dùng; UI truy cập engine thông qua adapter. Các yêu cầu đó cần được triển khai và kiểm thử trong nhiệm vụ riêng.
+Audio engine dùng `HTMLAudioElement` cho playback, Web Audio gain graph khi khả dụng và IndexedDB cho tài nguyên tải ngoại tuyến. `AudioManager` dùng chung cho Story/Game/Learning, với ba kênh narration, nhạc nền và hiệu ứng; narration có queue, interruption và ducking nhạc nền. UI truy cập qua `useAudioPlayer` và `AudioPlayer`. Không khởi tạo media hoặc AudioContext lúc import/render; browser autoplay denial có trạng thái và nút tiếp tục rõ ràng. Xem [API và tài liệu bàn giao Audio Engine](docs/audio-engine.md). Chưa có bản thu nội dung được duyệt hoặc nghiệp vụ nghe truyện hoàn chỉnh; Design System hiển thị player trống trung thực.
 
 Tham khảo cấu hình: [Vite](https://vite.dev/guide/), [Vite PWA](https://vite-pwa-org.netlify.app/guide/service-worker-strategies-and-behaviors), [Playwright accessibility testing](https://playwright.dev/docs/accessibility-testing).
 
@@ -236,4 +236,4 @@ Các ca mới kiểm tra URL chuẩn, ID không tồn tại, redirect URL cũ, t
 | `src/app/routes.test.tsx`, `navigation.test.tsx`; `src/stores/activityStore.test.ts`; `src/lib/storage/activityRepository.test.ts`; `src/engines/game/toneGame.test.ts` | Unit/integration test                                                     |
 | `e2e/app.spec.ts`, `design-system.spec.ts`, `navigation.spec.ts`; `README.md`                                                                                           | Kiểm thử trình duyệt, accessibility và tài liệu bàn giao                  |
 
-Các route truyện, âm nhạc, học tập và giáo viên hiện là màn hình nền tảng với trạng thái trống trung thực. Cần bổ sung nội dung được biên tập, bản thu âm thật và player `HTMLAudioElement` ở nhiệm vụ tiếp theo; kết quả trên không xác nhận các tính năng nội dung đó đã hoàn thành.
+Các route truyện, âm nhạc, học tập và giáo viên hiện là màn hình nền tảng với trạng thái trống trung thực. Audio engine và player dùng chung đã được bổ sung sau nhiệm vụ routing (xem tài liệu audio); các route này vẫn cần nội dung được biên tập, bản thu âm thật và tích hợp nghiệp vụ riêng.
