@@ -8,6 +8,7 @@ const pages = [
   ['/am-nhac', 'Âm nhạc'],
   ['/hoc-tap', 'Học tập'],
   ['/giao-vien', 'Góc giáo viên'],
+  ['/design-system', 'Design System'],
   ['/cai-dat', 'Cài đặt cho em'],
   ['/khong-ton-tai', 'Không tìm thấy trang'],
 ] as const;

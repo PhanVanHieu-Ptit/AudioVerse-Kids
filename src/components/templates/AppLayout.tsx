@@ -41,6 +41,10 @@ export function AppLayout() {
             <Icon name="settings" />
             Cài đặt
           </NavLink>
+          <NavLink to="/design-system">
+            <Icon name="palette" />
+            Design System
+          </NavLink>
         </nav>
         <div className="sidebar-note">
           <Icon name="sound" />

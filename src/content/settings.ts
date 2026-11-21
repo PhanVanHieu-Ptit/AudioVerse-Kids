@@ -17,7 +17,7 @@ export const displayOptions = [
     description: 'Hạn chế hiệu ứng chuyển động khi tương tác.',
   },
 ] as const satisfies ReadonlyArray<{
-  key: PreferenceKey;
+  key: Exclude<PreferenceKey, 'theme'>;
   title: string;
   description: string;
 }>;

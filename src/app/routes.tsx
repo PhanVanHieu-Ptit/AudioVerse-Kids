@@ -10,6 +10,9 @@ const MusicPage = lazy(() => import('@/features/music/MusicPage'));
 const LearningPage = lazy(() => import('@/features/learning/LearningPage'));
 const TeacherPage = lazy(() => import('@/features/teacher/TeacherPage'));
 const SettingsPage = lazy(() => import('@/features/settings/SettingsPage'));
+const DesignSystemPage = lazy(
+  () => import('@/features/design-system/DesignSystemPage'),
+);
 const NotFoundPage = lazy(() => import('@/app/NotFoundPage'));
 
 export const routes: RouteObject[] = [
@@ -25,6 +28,7 @@ export const routes: RouteObject[] = [
       { path: 'hoc-tap', element: <LearningPage /> },
       { path: 'giao-vien', element: <TeacherPage /> },
       { path: 'cai-dat', element: <SettingsPage /> },
+      { path: 'design-system', element: <DesignSystemPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },

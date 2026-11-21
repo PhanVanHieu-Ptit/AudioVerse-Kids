@@ -18,6 +18,21 @@ export default function SettingsPage() {
         <section className="settings-panel" aria-labelledby="display-title">
           <h2 id="display-title">Hiển thị và chuyển động</h2>
           <p>Các lựa chọn được áp dụng ngay và chỉ lưu trên thiết bị này.</p>
+          <label className="theme-field">
+            Giao diện
+            <select
+              value={preferences.theme}
+              onChange={(event) => {
+                void updatePreference(
+                  'theme',
+                  event.target.value === 'dark' ? 'dark' : 'light',
+                );
+              }}
+            >
+              <option value="light">Sáng</option>
+              <option value="dark">Tối</option>
+            </select>
+          </label>
           <div className="settings-options">
             {displayOptions.map((option) => (
               <label className="setting-option" key={option.key}>

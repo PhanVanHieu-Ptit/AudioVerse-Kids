@@ -15,16 +15,19 @@ describe('IndexedDB preferences repository', () => {
 
   it('round-trips and replaces preferences through IndexedDB', async () => {
     await preferencesRepository.save({
+      theme: 'light',
       largeText: true,
       highContrast: false,
       reducedMotion: false,
     });
     await preferencesRepository.save({
+      theme: 'light',
       largeText: false,
       highContrast: true,
       reducedMotion: true,
     });
     expect(await preferencesRepository.load()).toEqual({
+      theme: 'light',
       largeText: false,
       highContrast: true,
       reducedMotion: true,

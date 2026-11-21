@@ -1,4 +1,10 @@
 export type IconName =
+  | 'play'
+  | 'pause'
+  | 'refresh'
+  | 'alert'
+  | 'palette'
+  | 'check'
   | 'home'
   | 'stories'
   | 'games'
@@ -11,6 +17,13 @@ export type IconName =
   | 'keyboard';
 
 const paths: Record<IconName, string> = {
+  play: 'm8 4 13 8-13 8z',
+  pause: 'M7 4h3v16H7zm7 0h3v16h-3z',
+  refresh: 'M20 7v5h-5M4 17v-5h5m11 0a8 8 0 0 0-14-6m-2 6a8 8 0 0 0 14 6',
+  alert: 'm12 3 10 18H2zm0 6v5m0 3v.1',
+  palette:
+    'M12 3a9 9 0 1 0 0 18h1a2 2 0 0 0 1-4c-1-1 0-3 2-3h2c5 0 3-11-6-11zM7 9h.1M11 6h.1M16 7h.1M5 13h.1',
+  check: 'm5 12 4 4 10-10',
   home: 'm3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z',
   stories:
     'M12 6c-3-2-6-2-10-1v15c4-1 7-1 10 1 3-2 6-2 10-1V5c-4-1-7-1-10 1zm0 0v15',

@@ -9,6 +9,7 @@ export function AppProviders({ children }: PropsWithChildren) {
     void initialize();
   }, [initialize]);
   useEffect(() => {
+    document.documentElement.dataset.theme = preferences.theme;
     document.documentElement.dataset.largeText = String(preferences.largeText);
     document.documentElement.dataset.highContrast = String(
       preferences.highContrast,
