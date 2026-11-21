@@ -50,6 +50,7 @@ describe('preferences store', () => {
     expect(store.getState().preferences.largeText).toBe(true);
     await store.getState().updatePreference('highContrast', true);
     expect(storage.save).toHaveBeenLastCalledWith({
+      ...defaultPreferences,
       theme: 'light',
       largeText: true,
       highContrast: true,
@@ -95,6 +96,7 @@ describe('preferences store', () => {
     resolvers[1]?.();
     await second;
     expect(snapshots[1]).toEqual({
+      ...defaultPreferences,
       theme: 'light',
       largeText: true,
       highContrast: true,
@@ -105,6 +107,22 @@ describe('preferences store', () => {
 });
 
 describe('theme preferences and migration', () => {
+  it('migrates old accessibility preferences and rejects invalid voice settings', () => {
+    expect(parsePreferences({ largeText: true })).toEqual({
+      ...defaultPreferences,
+      largeText: true,
+    });
+    expect(
+      parsePreferences({ voiceGuidance: 'true', guidanceRate: 9 }),
+    ).toEqual(defaultPreferences);
+    expect(
+      parsePreferences({ voiceGuidance: true, guidanceRate: 0.8 }),
+    ).toEqual({
+      ...defaultPreferences,
+      voiceGuidance: true,
+      guidanceRate: 0.8,
+    });
+  });
   it('migrates old snapshots and rejects invalid themes', () => {
     expect(parsePreferences({ largeText: true }).theme).toBe('light');
     expect(parsePreferences({ theme: 'unknown' }).theme).toBe('light');

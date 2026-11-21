@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import { openDatabase } from '@/lib/storage/database';
 import { preferencesRepository } from '@/lib/storage/preferencesRepository';
+import { defaultPreferences } from '@/stores/preferencesStore';
 
 describe('IndexedDB preferences repository', () => {
   beforeEach(async () => {
@@ -15,18 +16,21 @@ describe('IndexedDB preferences repository', () => {
 
   it('round-trips and replaces preferences through IndexedDB', async () => {
     await preferencesRepository.save({
+      ...defaultPreferences,
       theme: 'light',
       largeText: true,
       highContrast: false,
       reducedMotion: false,
     });
     await preferencesRepository.save({
+      ...defaultPreferences,
       theme: 'light',
       largeText: false,
       highContrast: true,
       reducedMotion: true,
     });
     expect(await preferencesRepository.load()).toEqual({
+      ...defaultPreferences,
       theme: 'light',
       largeText: false,
       highContrast: true,

@@ -13,6 +13,7 @@ const pages = [
   ['/teacher', 'Chế độ giáo viên'],
   ['/design-system', 'Design System'],
   ['/settings', 'Cài đặt cho em'],
+  ['/help', 'Trợ giúp bàn phím'],
   ['/khong-ton-tai', 'Không tìm thấy trang'],
 ] as const;
 

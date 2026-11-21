@@ -12,6 +12,10 @@ import { useTonePreview } from '@/hooks/useTonePreview';
 import { activityStore } from '@/stores/activityStore';
 import { activityKey } from '@/types/activity';
 import { ProgressNotice } from './ProgressNotice';
+import { announce, clearAnnouncement } from '@/accessibility/announcements';
+import { VoiceGuidanceButton } from '@/accessibility/VoiceGuidanceButton';
+import { gameFeedback } from '@/content/accessibility';
+import { voiceGuidance } from '@/engines/audio/VoiceGuidance';
 
 export function ToneGame({ game }: { game: ToneGameDefinition }) {
   const { pathname } = useLocation();
@@ -35,6 +39,7 @@ export function ToneGame({ game }: { game: ToneGameDefinition }) {
     durationSeconds: game.durationSeconds,
     gain: game.gain,
   });
+  useEffect(() => clearAnnouncement, []);
 
   useEffect(() => {
     if (active || wasActive.current) question.current?.focus();
@@ -54,25 +59,27 @@ export function ToneGame({ game }: { game: ToneGameDefinition }) {
   }
 
   function start() {
+    voiceGuidance.stop();
     activityStore.getState().activate(pathname);
     setFeedback('');
     void save(position);
   }
 
   function answer(value: Pitch) {
+    voiceGuidance.stop();
     const result = answerToneRound(game, position, value);
     if (!result.correct) {
-      setFeedback(
-        'Chưa đúng rồi. Em hãy nghe lại hoặc đọc mô tả và thử tiếp nhé.',
-      );
+      setFeedback(gameFeedback.incorrect);
+      announce(gameFeedback.incorrect);
       return;
     }
     audio.stop();
-    setFeedback(
+    const message =
       result.position === game.rounds.length
-        ? 'Em đã nhận biết đủ ba nốt nhạc!'
-        : 'Đúng rồi! Cùng khám phá nốt tiếp theo.',
-    );
+        ? gameFeedback.completed
+        : gameFeedback.correct;
+    setFeedback(message);
+    announce(message);
     void save(result.position).then(() => {
       if (result.position === game.rounds.length)
         activityStore.getState().deactivate();
@@ -82,6 +89,7 @@ export function ToneGame({ game }: { game: ToneGameDefinition }) {
   return (
     <div className="activity-panel">
       <p>{game.instructions}</p>
+      <VoiceGuidanceButton text={game.instructions} />
       <ProgressNotice />
       {completed ? (
         <>
@@ -156,9 +164,7 @@ export function ToneGame({ game }: { game: ToneGameDefinition }) {
           description="Em hãy quay về danh sách và chọn trò chơi khác."
         />
       )}
-      <p role="status" aria-atomic="true">
-        {feedback}
-      </p>
+      <p>{feedback}</p>
       <Link className="text-link" to="/games">
         Về danh sách trò chơi
       </Link>

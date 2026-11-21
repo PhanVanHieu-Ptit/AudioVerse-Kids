@@ -461,6 +461,7 @@ kbd {
 }
 .setting-option {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
@@ -469,7 +470,8 @@ kbd {
   cursor: pointer;
 }
 .setting-option > span {
-  flex: 1;
+  flex: 1 1 12rem;
+  min-width: 0;
 }
 .setting-option strong {
   display: block;
@@ -536,17 +538,13 @@ kbd {
   margin-left: 1rem;
 }
 .pwa-notice {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  left: 1rem;
+  margin: 1rem;
   max-width: 30rem;
   padding: 1.25rem;
   background: var(--color-surface);
   border: 2px solid var(--color-primary);
   border-radius: var(--radius-md);
   box-shadow: 0 10px 40px #30265820;
-  z-index: 20;
 }
 .pwa-notice p {
   margin-bottom: 0.75rem;
@@ -571,9 +569,6 @@ kbd {
   }
   .footer {
     margin-inline: 2rem;
-  }
-  .pwa-notice {
-    left: auto;
   }
 }
 

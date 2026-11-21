@@ -2,6 +2,8 @@
 
 Ứng dụng tiếng Việt dành cho trẻ em khiếm thị và trẻ có các mức thị lực khác nhau. Nền tảng ưu tiên khả năng tiếp cận, bàn phím, cảm ứng và trình đọc màn hình. Không yêu cầu tài khoản; không có analytics, quảng cáo hay dịch vụ thu thập dữ liệu cá nhân.
 
+Accessibility Foundation: xem [checklist, kiến trúc và kết quả kiểm thử](docs/accessibility.md). Trang `/help` hướng dẫn bàn phím; `/settings` có hiển thị và hướng dẫn giọng nói theo yêu cầu. NVDA, VoiceOver và TalkBack **chưa được kiểm thử thực tế**.
+
 ## Cài đặt
 
 Cần **Node.js 22.12+** và **npm 10+**. Có thể dùng `nvm use` để chọn Node 22.

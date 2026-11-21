@@ -7,6 +7,8 @@ import { ActivityNavigationGuard } from '@/components/organisms/ActivityNavigati
 import { activityStore } from '@/stores/activityStore';
 import { RouteContentBoundary } from '@/app/RouteContentBoundary';
 import { discoverySections, sections } from '@/content/sections';
+import { LiveAnnouncer } from '@/accessibility/LiveAnnouncer';
+import { GuidanceStatus } from '@/accessibility/GuidanceStatus';
 
 export function AppLayout() {
   useEffect(() => {
@@ -47,6 +49,7 @@ export function AppLayout() {
             <Icon name="settings" />
             Cài đặt
           </NavLink>
+          <NavLink to="/help">Trợ giúp bàn phím</NavLink>
           <NavLink to="/design-system">
             <Icon name="palette" />
             Design System
@@ -72,13 +75,15 @@ export function AppLayout() {
         <main id="main-content" tabIndex={-1}>
           <RouteContent />
         </main>
+        <PwaStatus />
         <footer className="footer">
           <span>AudioVerse Kids · Dành cho mọi cách khám phá</span>
           <Link to="/settings">Tùy chỉnh khả năng tiếp cận</Link>
         </footer>
       </div>
-      <PwaStatus />
       <ActivityNavigationGuard />
+      <LiveAnnouncer />
+      <GuidanceStatus />
     </div>
   );
 }

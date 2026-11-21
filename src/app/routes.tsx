@@ -12,6 +12,7 @@ const MusicPage = lazy(() => import('@/features/music/MusicPage'));
 const LearningPage = lazy(() => import('@/features/learning/LearningPage'));
 const TeacherPage = lazy(() => import('@/features/teacher/TeacherPage'));
 const SettingsPage = lazy(() => import('@/features/settings/SettingsPage'));
+const KeyboardHelpPage = lazy(() => import('@/features/help/KeyboardHelpPage'));
 const DesignSystemPage = lazy(
   () => import('@/features/design-system/DesignSystemPage'),
 );
@@ -32,6 +33,7 @@ export const routes: RouteObject[] = [
       { path: 'learning', element: <LearningPage /> },
       { path: 'teacher', element: <TeacherPage /> },
       { path: 'settings', element: <SettingsPage /> },
+      { path: 'help', element: <KeyboardHelpPage /> },
       { path: 'truyen', element: <Navigate to="/stories" replace /> },
       { path: 'tro-choi', element: <Navigate to="/games" replace /> },
       { path: 'am-nhac', element: <Navigate to="/music" replace /> },

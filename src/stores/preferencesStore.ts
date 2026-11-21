@@ -10,6 +10,8 @@ export const defaultPreferences: Preferences = {
   largeText: false,
   highContrast: false,
   reducedMotion: false,
+  voiceGuidance: false,
+  guidanceRate: 1,
 };
 
 export function parsePreferences(value: unknown): Preferences {
@@ -20,6 +22,12 @@ export function parsePreferences(value: unknown): Preferences {
     largeText: 'largeText' in value && value.largeText === true,
     highContrast: 'highContrast' in value && value.highContrast === true,
     reducedMotion: 'reducedMotion' in value && value.reducedMotion === true,
+    voiceGuidance: 'voiceGuidance' in value && value.voiceGuidance === true,
+    guidanceRate:
+      'guidanceRate' in value &&
+      (value.guidanceRate === 0.8 || value.guidanceRate === 1.2)
+        ? value.guidanceRate
+        : 1,
   };
 }
 

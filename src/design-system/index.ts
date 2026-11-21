@@ -7,6 +7,7 @@ export { AppCard } from '@/components/molecules/AppCard';
 export type { AppCardProps } from '@/components/molecules/AppCard';
 export { AudioCard } from '@/components/molecules/AudioCard';
 export { AppDialog } from '@/components/organisms/AppDialog';
+export { FormField } from '@/components/molecules/FormField';
 export { LoadingState } from '@/components/molecules/LoadingState';
 export { EmptyState } from '@/components/molecules/EmptyState';
 export { ErrorState } from '@/components/molecules/ErrorState';
