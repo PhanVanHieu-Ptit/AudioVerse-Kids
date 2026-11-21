@@ -14,8 +14,8 @@ export interface Section {
 export const sections = {
   stories: {
     id: 'stories',
-    path: '/truyen',
-    title: 'Kho truyện',
+    path: '/stories',
+    title: 'Thư viện truyện',
     description: 'Mở một câu chuyện, chạm đến một thế giới.',
     emptyMessage:
       'Chưa có truyện để nghe. Những câu chuyện sẽ xuất hiện ở đây khi có nội dung phù hợp.',
@@ -24,7 +24,7 @@ export const sections = {
   },
   games: {
     id: 'games',
-    path: '/tro-choi',
+    path: '/games',
     title: 'Trò chơi',
     description: 'Lắng nghe, suy nghĩ và thử sức cùng nhau.',
     emptyMessage:
@@ -34,8 +34,8 @@ export const sections = {
   },
   music: {
     id: 'music',
-    path: '/am-nhac',
-    title: 'Âm nhạc',
+    path: '/music',
+    title: 'Khu vườn âm nhạc',
     description: 'Cảm nhận giai điệu theo cách của riêng em.',
     emptyMessage:
       'Chưa có bản nhạc để nghe. Chỉ những tài nguyên âm thanh đã được chuẩn bị mới được hiển thị tại đây.',
@@ -44,8 +44,8 @@ export const sections = {
   },
   learning: {
     id: 'learning',
-    path: '/hoc-tap',
-    title: 'Học tập',
+    path: '/learning',
+    title: 'Học điều hay',
     description: 'Mỗi âm thanh, một điều mới để học.',
     emptyMessage:
       'Chưa có bài học. Nội dung học tập sẽ được bổ sung sau khi được kiểm tra về chất lượng và khả năng tiếp cận.',
@@ -54,8 +54,8 @@ export const sections = {
   },
   teacher: {
     id: 'teacher',
-    path: '/giao-vien',
-    title: 'Góc giáo viên',
+    path: '/teacher',
+    title: 'Chế độ giáo viên',
     description: 'Đồng hành cùng từng bước khám phá của em.',
     emptyMessage:
       'Chưa có tài liệu dành cho giáo viên. Khu vực này sẽ dành cho hướng dẫn và hoạt động học tập cùng trẻ.',

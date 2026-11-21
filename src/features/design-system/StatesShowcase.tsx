@@ -19,7 +19,7 @@ export function StatesShowcase() {
           title="Chưa có nội dung đã lưu"
           description="Khi có nội dung tải về, em sẽ tìm thấy ở đây."
           action={
-            <Link className="text-link" to="/truyen">
+            <Link className="text-link" to="/stories">
               Khám phá kho truyện
             </Link>
           }

@@ -1,11 +1,17 @@
-import { Suspense } from 'react';
-import { Link, NavLink, Outlet } from 'react-router-dom';
+import { Suspense, useEffect } from 'react';
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { Icon } from '@/components/atoms/Icon';
-import { LoadingState } from '@/components/molecules/LoadingState';
+import { RouteLoadingState } from '@/app/RouteLoadingState';
 import { PwaStatus } from '@/components/organisms/PwaStatus';
+import { ActivityNavigationGuard } from '@/components/organisms/ActivityNavigationGuard';
+import { activityStore } from '@/stores/activityStore';
+import { RouteContentBoundary } from '@/app/RouteContentBoundary';
 import { discoverySections, sections } from '@/content/sections';
 
 export function AppLayout() {
+  useEffect(() => {
+    void activityStore.getState().initialize();
+  }, []);
   return (
     <div className="app-layout">
       <a className="skip-link" href="#main-content">
@@ -37,7 +43,7 @@ export function AppLayout() {
             <Icon name="teacher" />
             {sections.teacher.title}
           </NavLink>
-          <NavLink to="/cai-dat">
+          <NavLink to="/settings">
             <Icon name="settings" />
             Cài đặt
           </NavLink>
@@ -64,16 +70,27 @@ export function AppLayout() {
           </span>
         </header>
         <main id="main-content" tabIndex={-1}>
-          <Suspense fallback={<LoadingState />}>
-            <Outlet />
-          </Suspense>
+          <RouteContent />
         </main>
         <footer className="footer">
           <span>AudioVerse Kids · Dành cho mọi cách khám phá</span>
-          <Link to="/cai-dat">Tùy chỉnh khả năng tiếp cận</Link>
+          <Link to="/settings">Tùy chỉnh khả năng tiếp cận</Link>
         </footer>
       </div>
       <PwaStatus />
+      <ActivityNavigationGuard />
     </div>
+  );
+}
+
+function RouteContent() {
+  const { pathname } = useLocation();
+  // Remount the boundary when navigating away from a failed lazy chunk.
+  return (
+    <RouteContentBoundary key={pathname}>
+      <Suspense fallback={<RouteLoadingState />}>
+        <Outlet />
+      </Suspense>
+    </RouteContentBoundary>
   );
 }

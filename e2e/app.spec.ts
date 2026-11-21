@@ -3,13 +3,16 @@ import { expect, test } from '@playwright/test';
 
 const pages = [
   ['/', 'Chào em, cùng khám phá nhé!'],
-  ['/truyen', 'Kho truyện'],
-  ['/tro-choi', 'Trò chơi'],
-  ['/am-nhac', 'Âm nhạc'],
-  ['/hoc-tap', 'Học tập'],
-  ['/giao-vien', 'Góc giáo viên'],
+  ['/stories', 'Thư viện truyện'],
+  ['/stories/chua-co', 'Nghe truyện'],
+  ['/games', 'Trò chơi'],
+  ['/games/chua-co', 'Chơi trò chơi'],
+  ['/games/am-cao-am-tram', 'Âm cao hay âm trầm?'],
+  ['/music', 'Khu vườn âm nhạc'],
+  ['/learning', 'Học điều hay'],
+  ['/teacher', 'Chế độ giáo viên'],
   ['/design-system', 'Design System'],
-  ['/cai-dat', 'Cài đặt cho em'],
+  ['/settings', 'Cài đặt cho em'],
   ['/khong-ton-tai', 'Không tìm thấy trang'],
 ] as const;
 
@@ -21,6 +24,7 @@ for (const [path, title] of pages) {
     await expect(
       page.getByRole('heading', { level: 1, name: title }),
     ).toBeVisible();
+    await expect(page).toHaveTitle(new RegExp(title.replace(/[?]/g, '\\?')));
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'])
       .analyze();
@@ -54,11 +58,11 @@ test('skip link and navigation work with a keyboard', async ({ page }) => {
   ).toBeFocused();
   await page.keyboard.press('Tab');
   await expect(
-    page.getByRole('link', { name: 'Khám phá kho truyện' }),
+    page.getByRole('link', { name: 'Khám phá thư viện truyện' }),
   ).toBeFocused();
   await page.keyboard.press('Enter');
   await expect(
-    page.getByRole('heading', { level: 1, name: 'Kho truyện' }),
+    page.getByRole('heading', { level: 1, name: 'Thư viện truyện' }),
   ).toBeFocused();
   // Verify skip-link activation separately from route focus management.
   await page
@@ -71,7 +75,7 @@ test('skip link and navigation work with a keyboard', async ({ page }) => {
 test('display settings persist after reload and remain accessible', async ({
   page,
 }) => {
-  await page.goto('/cai-dat');
+  await page.goto('/settings');
   const largeText = page.getByRole('switch', {
     name: 'Chữ lớn hơn',
     exact: true,
@@ -127,12 +131,12 @@ test('app shell and unvisited routes open offline after precaching', async ({
       name: 'Chào em, cùng khám phá nhé!',
     }),
   ).toBeVisible();
-  await page.getByRole('link', { name: 'Khám phá kho truyện' }).click();
+  await page.getByRole('link', { name: 'Khám phá thư viện truyện' }).click();
   await expect(
-    page.getByRole('heading', { level: 1, name: 'Kho truyện' }),
+    page.getByRole('heading', { level: 1, name: 'Thư viện truyện' }),
   ).toBeVisible();
   await page.reload();
   await expect(
-    page.getByRole('heading', { level: 1, name: 'Kho truyện' }),
+    page.getByRole('heading', { level: 1, name: 'Thư viện truyện' }),
   ).toBeVisible();
 });

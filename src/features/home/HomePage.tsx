@@ -23,7 +23,7 @@ export default function HomePage() {
             <br />
             Mọi hành trình đều bắt đầu từ sự tò mò.
           </p>
-          <Link className="button" to="/cai-dat">
+          <Link className="button" to="/settings">
             <Icon name="settings" />
             Tùy chỉnh cho em
           </Link>
@@ -78,7 +78,7 @@ export default function HomePage() {
             cũng có thể chạm vào màn hình hoặc sử dụng trình đọc màn hình.
           </p>
         </div>
-        <Link className="text-link" to="/cai-dat">
+        <Link className="text-link" to="/settings">
           Cài đặt hiển thị
         </Link>
       </section>
