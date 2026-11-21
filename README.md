@@ -70,10 +70,10 @@ src/
   design-system/       # Public exports để tái sử dụng component
   engines/
     audio/             # Contract player và Web Audio tone preview riêng biệt
-    game/              # Vị trí dành cho engine trò chơi
+    game/              # Quy tắc trò chơi, không phụ thuộc UI
     story/             # Vị trí dành cho engine truyện
   hooks/               # React adapters cho trạng thái dùng chung
-  stores/              # Zustand; nghiệp vụ cài đặt không phụ thuộc React
+  stores/              # Zustand; cài đặt và tiến độ, không phụ thuộc React
   content/             # Metadata, mô tả và nội dung các lựa chọn
   lib/                 # Env, IndexedDB và repository
   styles/              # CSS thuần, tokens và responsive
@@ -93,19 +93,33 @@ Luồng phụ thuộc: **UI → hook/store → repository → IndexedDB**. Store
 
 ## Routing
 
-| URL              | Trang                              |
-| ---------------- | ---------------------------------- |
-| `/`              | Khám phá                           |
-| `/truyen`        | Kho truyện                         |
-| `/tro-choi`      | Trò chơi                           |
-| `/am-nhac`       | Âm nhạc                            |
-| `/hoc-tap`       | Học tập                            |
-| `/cai-dat`       | Cài đặt                            |
-| `/giao-vien`     | Góc giáo viên                      |
-| `/design-system` | Design System Showcase             |
-| Đường dẫn khác   | Trang 404 và liên kết về trang chủ |
+| URL                 | Trang                                                          |
+| ------------------- | -------------------------------------------------------------- |
+| `/`                 | Trang chủ / Khám phá                                           |
+| `/stories`          | Thư viện truyện                                                |
+| `/stories/:storyId` | Nghe truyện; trạng thái chưa có truyện cho ID chưa có nội dung |
+| `/games`            | Danh sách trò chơi                                             |
+| `/games/:gameId`    | Chơi trò chơi; fallback cho ID không tồn tại                   |
+| `/music`            | Khu vườn âm nhạc                                               |
+| `/learning`         | Học điều hay                                                   |
+| `/settings`         | Cài đặt                                                        |
+| `/teacher`          | Chế độ giáo viên                                               |
+| `/design-system`    | Design System Showcase hiện có                                 |
+| `*`                 | Không tìm thấy trang                                           |
 
-Khi deploy static, máy chủ phải rewrite URL ứng dụng (ví dụ `/truyen`) về `index.html`; các file tĩnh vẫn được phục vụ trực tiếp. Cấu hình hiện tại chạy tại root domain, chưa hỗ trợ triển khai dưới subpath. Production cần HTTPS; localhost được trình duyệt cho phép dùng service worker.
+Các URL cũ `/truyen`, `/tro-choi`, `/am-nhac`, `/hoc-tap`, `/cai-dat`, `/giao-vien` chuyển hướng với `replace` đến URL mới, không thêm vòng lặp vào lịch sử. Tất cả màn hình được lazy-load, giữ `AppLayout` chung. `PageHeader` cập nhật document title, focus tiêu đề và đưa trang về đầu khi đổi pathname. Query/hash không làm mất focus hay reset hoạt động. `RouteLoadingState` thông báo đang tải và đặt focus vào main khi chờ chunk; `RouteContentBoundary` giữ điều hướng khi màn hình lỗi và reset khi chuyển sang pathname khác.
+
+### Bảo vệ tiến độ hoạt động
+
+Có một hoạt động thật tại `/games/am-cao-am-tram`: ba nốt nhạc tổng hợp trên thiết bị bằng Web Audio, phát sau thao tác người dùng, có mô tả chữ và thao tác bằng bàn phím/cảm ứng. Đáp án và thông số âm nằm trong `content/games.ts`; quy tắc tiến bước nằm trong `engines/game/toneGame.ts`. Các thư viện chưa có tài nguyên giữ trạng thái trống; không có bản thu âm giả.
+
+`activityStore` (Zustand) lưu tiến độ qua `activityRepository` vào IndexedDB `audioverse-kids` phiên bản 2, store `activityProgress`. Migration giữ nguyên cài đặt v1. Bản ghi chỉ có loại hoạt động, ID, vị trí, trạng thái hoàn thành và thời điểm cập nhật; không lưu danh tính hoặc bản ghi âm. Ghi được xếp hàng, dữ liệu đọc vào được kiểm tra kiểu, ghi lỗi vẫn giữ bản mới nhất trong bộ nhớ và có nút thử lại.
+
+`ActivityNavigationGuard` đặt một lần trong layout. Sau khi bắt đầu/tiếp tục trò chơi, chuyển sang pathname khác bằng liên kết, Back hoặc Forward cần xác nhận. Đóng dialog, Escape hoặc “Ở lại hoạt động” hủy điều hướng và trả focus về điều khiển mở. “Lưu và tạm rời” chờ hàng đợi ghi; lỗi lưu chuyển sang cảnh báo rõ ràng và cần chọn “Rời đi, giữ trong phiên”. Hoạt động đã hoàn thành hoặc chưa bắt đầu không bị chặn. Quay lại hoạt động chỉ khôi phục tiến độ; không tự phát âm thanh.
+
+Reload, đóng tab hoặc điều hướng ra ngoài dùng `beforeunload` của trình duyệt qua `useBeforeUnload`; nội dung/khả năng hiện hộp thoại do trình duyệt quyết định. Mobile có thể đóng tiến trình mà không phát sự kiện; ứng dụng ghi ngay mỗi bước thay vì chờ rời trang. Không thể bảo đảm phục hồi sau reload nếu lưu trữ bị chặn, bị thu hồi hoặc thao tác ghi chưa hoàn tất. Tiến độ độc lập theo tab, chưa đồng bộ nhiều tab. API chặn điều hướng được dùng theo [React Router useBlocker](https://api.reactrouter.com/v7/functions/react-router.useBlocker.html).
+
+Khi deploy static, máy chủ phải rewrite URL ứng dụng (ví dụ `/stories`) về `index.html`; các file tĩnh vẫn được phục vụ trực tiếp. Cấu hình hiện tại chạy tại root domain, chưa hỗ trợ triển khai dưới subpath. Production cần HTTPS; localhost được trình duyệt cho phép dùng service worker.
 
 ## Accessibility và quyền riêng tư
 
@@ -113,7 +127,7 @@ Khi deploy static, máy chủ phải rewrite URL ứng dụng (ví dụ `/truyen
 - Skip link, focus nhìn thấy được, `aria-current` trên điều hướng. Khi chuyển trang, cập nhật document title và focus `h1` để trình đọc màn hình nhận biết ngữ cảnh mới.
 - Nút và mục tương tác cao tối thiểu 48 CSS px; hỗ trợ zoom, chữ lớn, tương phản cao, giảm chuyển động và `prefers-reduced-motion` của thiết bị.
 - Không tự phát âm thanh, không yêu cầu micro và không dùng phím tắt một ký tự. Dùng `Tab`/`Shift+Tab`, `Enter`; `Space` để thay đổi switch.
-- Chỉ lưu theme sáng/tối và ba lựa chọn hiển thị trong IndexedDB `audioverse-kids`, store `preferences`, khóa `display-v1`. Dữ liệu được kiểm tra kiểu khi đọc. Các lượt ghi được xếp hàng để tránh lưu sai thứ tự khi thao tác nhanh.
+- Lưu theme sáng/tối và ba lựa chọn hiển thị trong IndexedDB `audioverse-kids`, store `preferences`, khóa `display-v1`. Dữ liệu được kiểm tra kiểu khi đọc. Các lượt ghi được xếp hàng để tránh lưu sai thứ tự khi thao tác nhanh.
 - Nếu IndexedDB bị chặn hoặc hết dung lượng, cài đặt vẫn hoạt động trong bộ nhớ và thông báo rõ việc không lưu được. Không gửi thông tin lỗi hoặc dữ liệu cài đặt lên máy chủ.
 - Xóa dữ liệu trang web trong trình duyệt để xóa cài đặt và cache. Mỗi tab đọc cài đặt khi khởi động; đồng bộ trực tiếp giữa các tab chưa được triển khai.
 
@@ -136,9 +150,9 @@ Mở trang online, chờ thông báo sẵn sàng, sau đó chuyển trình duy�
 
 Kiểm tra tại local ngày 21/11/2026: typecheck, ESLint, Prettier và build production đạt; 10 unit/integration test và 33 E2E test đạt trên Chromium với viewport desktop, điện thoại và máy tính bảng. Các bài axe-core không phát hiện vi phạm trong phạm vi quét. Coverage cho store và lớp lưu trữ: 95% dòng. `npm audit` báo 0 lỗ hổng tại thời điểm cài đặt. CI đã được cấu hình nhưng chưa chạy trên GitHub trong phiên này.
 
-Đã triển khai nền tảng, routing, UI responsive, cài đặt thực lưu IndexedDB và vỏ PWA. Các trang truyện, trò chơi, âm nhạc, học tập và giáo viên đang có trạng thái trống rõ ràng; không có audio giả hoặc nội dung chưa được duyệt.
+Đã triển khai nền tảng, routing, UI responsive, cài đặt thực lưu IndexedDB và vỏ PWA. Các trang truyện, âm nhạc, học tập và giáo viên đang có trạng thái trống rõ ràng. Trang trò chơi có hoạt động âm cao–trầm tổng hợp thật; chưa có bản thu âm hoặc thư viện nội dung đã biên tập cho trẻ.
 
-Web Audio API và `HTMLAudioElement` là API có sẵn của trình duyệt, không cần npm package. Thư mục `engines/audio` có contract player và `TonePreview` tạo âm thử cho Design System bằng Web Audio. **Chưa triển khai player nội dung qua HTMLAudioElement**, tải nội dung offline hay nghiệp vụ game/truyện. Khi có tài nguyên thật, engine sẽ quản lý media playback qua `HTMLAudioElement` và graph/mixing qua Web Audio API, chỉ khởi tạo sau tương tác người dùng; UI truy cập engine thông qua adapter. Các yêu cầu đó cần được triển khai và kiểm thử trong nhiệm vụ riêng.
+Web Audio API và `HTMLAudioElement` là API có sẵn của trình duyệt, không cần npm package. Thư mục `engines/audio` có contract player và `TonePreview` tạo âm thử cho Design System bằng Web Audio. **Chưa triển khai player nội dung qua HTMLAudioElement**, tải bản thu âm offline hay nghiệp vụ nghe truyện. Trò chơi âm cao–trầm sử dụng Web Audio và lưu tiến độ thực. Khi có tài nguyên thật, engine sẽ quản lý media playback qua `HTMLAudioElement` và graph/mixing qua Web Audio API, chỉ khởi tạo sau tương tác người dùng; UI truy cập engine thông qua adapter. Các yêu cầu đó cần được triển khai và kiểm thử trong nhiệm vụ riêng.
 
 Tham khảo cấu hình: [Vite](https://vite.dev/guide/), [Vite PWA](https://vite-pwa-org.netlify.app/guide/service-worker-strategies-and-behaviors), [Playwright accessibility testing](https://playwright.dev/docs/accessibility-testing).
 
@@ -202,3 +216,22 @@ Focus dùng viền 3px, offset 4px và lớp đệm tương phản. Vùng chạm
 Kiểm thử bổ sung: `AccessibleButton.test.tsx`, `AudioCard.test.tsx`, `TonePreview.test.ts`, các test migration/theme trong `preferencesStore.test.ts`, các snapshot mới trong `preferencesRepository.test.ts`, route Showcase trong `e2e/app.spec.ts` và các luồng Design System trong `e2e/design-system.spec.ts`. Bộ E2E chạy bản production có service worker để kiểm tra route offline thực tế, ba theme với axe-core, dialog, âm thật và fallback, cài đặt sau reload, 320px với chữ 200%, reduced motion và forced colors. Kiểm tra âm trong trình duyệt xác nhận lifecycle phát; chất lượng nghe và mức âm lượng trên thiết bị vật lý vẫn cần kiểm tra thủ công.
 
 Kiểm tra Design System tại local ngày 21/11/2026: typecheck, ESLint, Prettier, build production và 22 unit/integration test đạt; 63 E2E test đạt trên Chromium desktop/mobile/tablet. Axe-core không phát hiện vi phạm trong các phạm vi quét. Chưa xác minh thủ công bằng NVDA, VoiceOver, TalkBack hoặc trên thiết bị vật lý; đây chưa phải chứng nhận tuân thủ WCAG.
+
+## Kết quả nhiệm vụ routing và màn hình cơ bản
+
+Kiểm tra bản cập nhật ngày 21/11/2026: TypeScript strict, ESLint, Prettier và build production đạt; **44 unit/integration test và 99 E2E test đạt**. E2E chạy trên Chromium desktop, Pixel 7 giả lập và viewport tablet cảm ứng. Axe-core không phát hiện vi phạm trong phạm vi quét; chưa kiểm tra Firefox, Safari, thiết bị vật lý hoặc trình đọc màn hình thủ công.
+
+Các ca mới kiểm tra URL chuẩn, ID không tồn tại, redirect URL cũ, title/focus, lazy loading và chunk lỗi, layout còn dùng được sau lỗi, dialog/Tab/Escape, Back/Forward, reload, tiến độ sau khi đổi route, hoạt động offline, lưu trữ bị chặn, lỗi ghi trong lúc xác nhận rời trang, migration v1 → v2, dữ liệu lưu hỏng và audio không được hỗ trợ. Ảnh QA và báo cáo được tạo trong `test-results/` và `playwright-report/` (không đưa vào Git).
+
+| Nhóm file tạo/chỉnh sửa                                                                                                                                                 | Nội dung                                                                  |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `src/app/routes.tsx`, `RouteErrorPage.tsx`, `RouteContentBoundary.tsx`, `RouteLoadingState.tsx`                                                                         | URL chuẩn, hai route chi tiết, redirect, fallback và phục hồi lỗi         |
+| `src/components/templates/AppLayout.tsx`, `SectionPage.tsx`; `src/components/molecules/PageHeader.tsx`, `EmptyState.tsx`; `src/styles/components.css`                   | Layout, focus theo pathname, component trống dùng lại và bố cục hoạt động |
+| `src/content/sections.ts`; `src/features/home/HomePage.tsx`; `src/features/design-system/CardsShowcase.tsx`, `StatesShowcase.tsx`                                       | Nhãn tiếng Việt và liên kết đến URL mới                                   |
+| `src/features/stories/StoryPage.tsx`; `src/features/games/GamesPage.tsx`, `GamePage.tsx`, `ToneGame.tsx`, `ProgressNotice.tsx`                                          | Màn hình chi tiết, game thật và thông báo lưu tiến độ                     |
+| `src/content/games.ts`; `src/engines/game/toneGame.ts`; `src/hooks/useTonePreview.ts`                                                                                   | Nội dung game, quy tắc độc lập UI và adapter âm tổng hợp                  |
+| `src/types/activity.ts`; `src/stores/activityStore.ts`; `src/lib/storage/activityRepository.ts`, `database.ts`; `src/components/organisms/ActivityNavigationGuard.tsx`  | Tiến độ, IndexedDB, migration và xác nhận rời hoạt động                   |
+| `src/app/routes.test.tsx`, `navigation.test.tsx`; `src/stores/activityStore.test.ts`; `src/lib/storage/activityRepository.test.ts`; `src/engines/game/toneGame.test.ts` | Unit/integration test                                                     |
+| `e2e/app.spec.ts`, `design-system.spec.ts`, `navigation.spec.ts`; `README.md`                                                                                           | Kiểm thử trình duyệt, accessibility và tài liệu bàn giao                  |
+
+Các route truyện, âm nhạc, học tập và giáo viên hiện là màn hình nền tảng với trạng thái trống trung thực. Cần bổ sung nội dung được biên tập, bản thu âm thật và player `HTMLAudioElement` ở nhiệm vụ tiếp theo; kết quả trên không xác nhận các tính năng nội dung đó đã hoàn thành.

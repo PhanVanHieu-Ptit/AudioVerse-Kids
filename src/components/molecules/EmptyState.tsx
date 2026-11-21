@@ -6,19 +6,22 @@ export function EmptyState({
   description,
   action,
   icon = 'stories',
+  headingLevel = 3,
 }: {
   title: string;
   description: string;
   action?: ReactNode;
   icon?: IconName;
+  headingLevel?: 2 | 3;
 }) {
   const id = useId();
+  const Heading = headingLevel === 2 ? 'h2' : 'h3';
   return (
     <section className="state-panel av-state" aria-labelledby={id}>
       <span className="state-symbol" aria-hidden="true">
         <Icon name={icon} />
       </span>
-      <h3 id={id}>{title}</h3>
+      <Heading id={id}>{title}</Heading>
       <p>{description}</p>
       {action}
     </section>

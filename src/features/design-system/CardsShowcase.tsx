@@ -20,7 +20,7 @@ export function CardsShowcase() {
           description="Không gian dành cho những câu chuyện được lắng nghe, tưởng tượng và khám phá."
           icon="stories"
         >
-          <Link className="text-link" to="/truyen">
+          <Link className="text-link" to="/stories">
             Mở kho truyện
           </Link>
         </AppCard>

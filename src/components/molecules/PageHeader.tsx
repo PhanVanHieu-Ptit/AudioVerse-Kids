@@ -1,4 +1,5 @@
 import { useEffect, useRef, type ReactNode } from 'react';
+import { useLocation } from 'react-router-dom';
 import { env } from '@/lib/env';
 
 export function PageHeader({
@@ -13,11 +14,12 @@ export function PageHeader({
   action?: ReactNode;
 }) {
   const heading = useRef<HTMLHeadingElement>(null);
+  const { pathname } = useLocation();
   useEffect(() => {
     document.title = `${title} | ${env.appName}`;
     heading.current?.focus({ preventScroll: true });
     window.scrollTo({ top: 0 });
-  }, [title]);
+  }, [title, pathname]);
   return (
     <header className="page-heading av-page-header">
       <div>

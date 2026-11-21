@@ -128,7 +128,7 @@ test('theme persists and applies to existing feature pages', async ({
   await expect(
     page.getByRole('radio', { name: 'Tối', exact: true }),
   ).toBeChecked();
-  for (const path of ['/', '/cai-dat']) {
+  for (const path of ['/', '/settings']) {
     await page.goto(path);
     await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
     expect(

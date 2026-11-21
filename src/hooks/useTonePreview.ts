@@ -3,7 +3,9 @@ import { TonePreview } from '@/engines/audio/TonePreview';
 import { tonePreview } from '@/content/designSystem';
 import type { AudioControlState } from '@/content/audioControls';
 
-export function useTonePreview() {
+export function useTonePreview(
+  configuration: Parameters<TonePreview['play']>[0] = tonePreview,
+) {
   const engine = useRef<TonePreview | null>(null);
   const [state, setState] = useState<AudioControlState>('ready');
   useEffect(() => {
@@ -27,11 +29,15 @@ export function useTonePreview() {
     }
     setState('loading');
     try {
-      await preview.play(tonePreview);
+      await preview.play(configuration);
       if (engine.current === preview) setState('playing');
     } catch {
       if (engine.current === preview) setState('error');
     }
   }
-  return { state, activate };
+  function stop() {
+    engine.current?.stop();
+    setState('ready');
+  }
+  return { state, activate, stop };
 }

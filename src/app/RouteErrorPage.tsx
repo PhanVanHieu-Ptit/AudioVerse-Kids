@@ -1,19 +1,28 @@
 import { Link } from 'react-router-dom';
 import { PageHeading } from '@/components/molecules/PageHeading';
+import { AccessibleButton } from '@/components/atoms/AccessibleButton';
 
 export function RouteErrorPage() {
   return (
     <main className="fatal-error" id="main-content">
+      <RouteErrorContent />
+    </main>
+  );
+}
+
+export function RouteErrorContent() {
+  return (
+    <>
       <PageHeading
         title="Chưa thể mở trang"
-        description="Trang có thể chưa được lưu ngoại tuyến hoặc đang gặp sự cố. Em hãy kết nối mạng rồi thử lại."
+        description="Trang đang gặp sự cố hoặc chưa có sẵn ngoại tuyến. Em có thể mở trang khác hoặc kết nối mạng rồi tải lại. Tiến độ chưa lưu có thể mất khi tải lại."
       />
-      <button className="button" onClick={() => window.location.reload()}>
+      <AccessibleButton onClick={() => window.location.reload()}>
         Tải lại trang
-      </button>
+      </AccessibleButton>
       <Link className="text-link" to="/">
         Về trang chủ
       </Link>
-    </main>
+    </>
   );
 }

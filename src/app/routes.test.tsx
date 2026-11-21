@@ -22,10 +22,12 @@ describe('application routing', () => {
         name: 'Chào em, cùng khám phá nhé!',
       }),
     ).toBeVisible();
-    await user.click(screen.getByRole('link', { name: 'Khám phá kho truyện' }));
+    await user.click(
+      screen.getByRole('link', { name: 'Khám phá thư viện truyện' }),
+    );
     const heading = await screen.findByRole('heading', {
       level: 1,
-      name: 'Kho truyện',
+      name: 'Thư viện truyện',
     });
     expect(heading).toHaveFocus();
     expect(screen.getByText(/Chưa có truyện để nghe/)).toBeVisible();
