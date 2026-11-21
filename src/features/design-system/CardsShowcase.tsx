@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { AppCard } from '@/components/molecules/AppCard';
 import { AudioCard } from '@/components/molecules/AudioCard';
 import { AudioButton } from '@/components/atoms/AudioButton';
+import { AudioPlayer } from '@/components/organisms/AudioPlayer';
 import { tonePreview } from '@/content/designSystem';
 import { useTonePreview } from '@/hooks/useTonePreview';
 import { ShowcaseSection } from './ShowcaseSection';
@@ -50,6 +51,7 @@ export function CardsShowcase() {
           state="unavailable"
         />
       </div>
+      <AudioPlayer />
       <div className="showcase-panel audio-state-samples">
         <h3>Các trạng thái bổ sung của AudioButton</h3>
         <div className="button-samples">

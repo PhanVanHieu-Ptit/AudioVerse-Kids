@@ -1,9 +1,12 @@
 import { useEffect, type PropsWithChildren } from 'react';
 import { ErrorBoundary } from '@/components/organisms/ErrorBoundary';
 import { usePreferences } from '@/hooks/usePreferences';
+import { audioManager } from '@/engines/audio/AudioManager';
 
 export function AppProviders({ children }: PropsWithChildren) {
   const { preferences, initialize } = usePreferences();
+
+  useEffect(() => audioManager.attach(), []);
 
   useEffect(() => {
     void initialize();
