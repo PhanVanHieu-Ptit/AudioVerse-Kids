@@ -88,7 +88,30 @@ import { AudioPlayer } from '@/design-system';
 <AudioPlayer resource={reviewedResource} />;
 ```
 
-Nút native có nhãn chữ; slider seek/volume có label và aria-valuetext; select tốc độ có label. Tab/Shift+Tab, Enter/Space và phím mũi tên dùng hành vi native, không có phím tắt toàn cục. Loading dùng aria-busy và giữ focus tại nút chính; nút Dừng vẫn hủy được tải. Status live chỉ đọc thay đổi trạng thái/lỗi, không thông báo thời gian mỗi nhịp. Transcript luôn truy cập được bằng details. CSS thuần, control tối thiểu 48px, nhóm nút tự xuống dòng.
+`AudioPlayer` dùng `AudioControlBar → useAudioControls → useAudioPlayer` cho các lệnh; player giữ phần seek và thông tin queue. Không tạo engine/store phát lại trong component. Các feature có thể dùng bar độc lập:
+
+```tsx
+import { AudioControlBar } from '@/design-system';
+
+<AudioControlBar
+  playlist={approvedResources}
+  instructions={activityInstructions}
+  onBack={() => navigate('/stories')}
+  onExit={() => navigate('/')}
+/>;
+```
+
+`AudioControlBarProps` và `AudioControlsOptions` nhận `resource`, `playlist`, `channel` (mặc định narration), `engine` (mặc định singleton), `instructions` (mặc định bản hướng dẫn ứng dụng có MP3 thật), `onBack`, `onExit`. Hook cũng dùng độc lập cho UI của feature.
+
+- Không có playlist: `resource` cố định nếu được truyền; nếu không, theo dõi resource hiện tại của channel. Có playlist: theo entry đang chọn trong engine nếu entry thuộc danh sách; nếu không, dùng resource thuộc playlist hoặc entry đầu. Đối chiếu cả ID và URL. Danh sách do feature cung cấp, không tạo nội dung giả.
+- Trước/tiếp theo phát entry liền kề sau thao tác rõ ràng, không vòng lại hoặc tự phát lúc mount/thay props. Playlist của bar là danh sách điều hướng; queue của engine vẫn có API riêng. Retry dùng resume để giữ queue. Chuyển nội dung mới chủ động thay queue như API play hiện có.
+- Thiếu nội dung liền kề hoặc callback điều hướng: nút tương ứng bị vô hiệu hóa kèm giải thích bằng chữ. Feature chịu trách nhiệm chọn URL, lưu tiến độ và tích hợp navigation guard. Bar dừng mọi kênh, queue, âm báo và hướng dẫn trước khi gọi callback; không gọi history.back hay tự đoán route.
+- Nghe hướng dẫn tuân theo cài đặt giọng nói có sẵn; mặc định tắt. Nút luôn hiện và giải thích cách bật khi chưa khả dụng. Khi bật, có thể hủy tải/dừng hướng dẫn. Lỗi/mất giọng có thông báo và hướng dẫn bằng chữ. Dùng bộ điều phối audio focus hiện có: singleton có thể bị dừng/reset vị trí khi mở hướng dẫn hoặc hộp thoại; không tự phát tiếp khi đóng. Không thay đổi chính sách audio focus của ứng dụng.
+- Phím tắt mặc định tắt, chỉ có hiệu lực tại các nút của bar sau khi bật: P phát/tạm dừng, R nghe lại, [ trước, ] tiếp, H hướng dẫn, ? trợ giúp. Không có listener toàn cục, role application, chiếm Enter/Space/Tab/mũi tên hay lệnh điều hướng phá hủy. Bỏ qua modifier Ctrl/Alt/Meta, key repeat, IME, ô nhập, slider, select, vùng editable và portal hộp thoại. Danh sách phím và handler dùng chung `src/content/audioControls.ts`.
+- Điều khiển tuần tự luôn có sẵn: Tab/Shift+Tab và Enter/Space. Trên màn hình cảm ứng dùng nút native, không cần hover, kéo thả, micrô hoặc gesture riêng. Vùng nút tối thiểu 56px ở cỡ chữ mặc định; viền focus 3px, responsive một/hai/ba cột, theo theme và high contrast hiện có.
+- Âm báo thao tác là tùy chọn tắt mặc định, dùng `TonePreview` tổng hợp nốt ngắn/nhẹ 160ms, không tải file. Gain theo âm lượng channel; volume 0 giữ im lặng. Âm báo xác nhận nhận lệnh, không thay cho trạng thái phát thành công. Tắt/ngắt/rời hoạt động giải phóng âm báo; lỗi Web Audio có fallback chữ. Lựa chọn phím tắt/âm báo chỉ tồn tại trong phiên mount của bar, không thêm dữ liệu cá nhân hay schema lưu trữ.
+
+Nút native có nhãn chữ; slider seek/volume có label và aria-valuetext; select tốc độ có label. Loading dùng aria-busy và giữ focus tại nút chính; nút Dừng vẫn hủy được tải. Status live chỉ đọc thay đổi trạng thái/lỗi và tên nội dung khi chuyển playlist, không thông báo thời gian mỗi nhịp. Transcript luôn truy cập được bằng details. `KeyboardHelpDialog` tái sử dụng `AppDialog` native: modal, focus trap, Escape, trả focus về trigger và khóa cuộn nền. Không tự đọc giọng nói khi mở trợ giúp.
 
 ## Kiểm thử và giới hạn xác nhận
 
@@ -121,3 +144,16 @@ Kết quả local ngày 21/11/2026: `npm run check` kết thúc với exit code 
 | Unit/integration tests     | `src/engines/audio/AudioEngine.test.ts`, `AudioManager.test.ts`, `AudioMixer.test.ts`, `src/components/organisms/AudioPlayer.test.tsx`, `src/lib/storage/audioRepository.test.ts`, `src/test/audioTestUtils.ts` |
 | Browser tests và cấu hình  | `e2e/audio-engine.spec.ts`, `e2e/fixtures/audio.html`, `audioHarness.tsx`, `playwright.audio.config.ts`, `playwright.config.ts`, `tsconfig.node.json`, `package.json`                                           |
 | Tài liệu                   | `README.md`, `docs/audio-engine.md`                                                                                                                                                                             |
+
+### Bổ sung bộ điều khiển thống nhất
+
+| Nhóm                     | File tạo hoặc chỉnh sửa trong nhiệm vụ bộ điều khiển                                                                                                                                                           |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hook và logic điều khiển | `src/hooks/useAudioControls.ts`, `src/hooks/useAudioControls.test.tsx`                                                                                                                                         |
+| Giao diện                | `src/components/organisms/AudioControlBar.tsx`, `AudioControlBar.css`, `AudioControlBar.test.tsx`, `KeyboardHelpDialog.tsx`; `src/components/molecules/AudioControlSettings.tsx`                               |
+| Tích hợp player          | `src/components/organisms/AudioPlayer.tsx`, `AudioPlayer.css`, `AudioPlayer.test.tsx`; `src/design-system/index.ts`                                                                                            |
+| Nội dung và trợ giúp     | `src/content/audioControls.ts`, `src/content/accessibility.ts`, `src/features/help/KeyboardHelpPage.tsx`                                                                                                       |
+| Browser tests            | `e2e/audio-controls.spec.ts`, `e2e/audio-engine.spec.ts`, `e2e/fixtures/audioRoute.ts`, `e2e/fixtures/controls.html`, `e2e/fixtures/controlsHarness.tsx`, `playwright.config.ts`, `playwright.audio.config.ts` |
+| Tài liệu                 | `README.md`, `docs/audio-engine.md`, `docs/accessibility.md`                                                                                                                                                   |
+
+Kết quả bổ sung ngày 21/11/2026: `PLAYWRIGHT_BROWSERS_PATH=/private/tmp/audioverse-playwright npm run check` đạt, exit code 0. Typecheck strict, ESLint, Prettier, build/PWA, **145 unit/integration tests**, **129 E2E production/PWA** và **30 E2E audio** đều đạt. Trong đó bộ điều khiển bổ sung 21 unit/integration tests và 12 lượt E2E trên ba cấu hình desktop/mobile/tablet. Các lượt axe-core không phát hiện vi phạm trong phạm vi kiểm thử. Reflow kiểm tra cả tràn ngang và từ tiếng Việt bị bẻ đôi trong nút tại 320px/chữ 200%; ảnh đã được xem lại. Chưa kiểm thử thủ công VoiceOver/NVDA, Safari/iOS hoặc nghiệm thu với trẻ em trên thiết bị thật.

@@ -1,7 +1,7 @@
 .audio-player {
   display: grid;
   gap: 0.75rem;
-  padding: 1.25rem;
+  padding: min(1.25rem, 3vw);
   border: 2px solid currentColor;
   border-radius: 1rem;
   min-width: 0;
@@ -11,13 +11,7 @@
 .audio-player p {
   margin: 0;
 }
-.audio-player-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-.audio-player input,
-.audio-player select {
+.audio-player > input {
   width: 100%;
   min-width: 0;
   min-height: 3rem;

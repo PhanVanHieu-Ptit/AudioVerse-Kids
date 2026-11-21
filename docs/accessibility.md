@@ -4,6 +4,8 @@ Ngày kiểm tra: 21/11/2026. Phạm vi: giao diện hiện có và trò chơi �
 
 Phần hướng dẫn giọng nói đã được mở rộng với service, catalog, bản thu và TTS tùy chọn, đọc lại, âm lượng, trạng thái và kiểm thử riêng. Xem [kiến trúc và kết quả cập nhật](voice-guidance.md). Các số liệu trong bảng nền tảng bên dưới là kết quả lịch sử trước lần mở rộng này.
 
+Bộ điều khiển âm thanh dùng chung có điều khiển tuần tự, phím tắt cục bộ tùy chọn và âm báo tắt mặc định. Xem [hợp đồng tích hợp và khả năng tiếp cận](audio-engine.md#ui-và-accessibility). Phím ký tự chỉ được xử lý tại các nút của bộ điều khiển sau khi người dùng bật, không áp dụng cho trang hoặc trường nhập liệu.
+
 ## Checklist triển khai và bằng chứng
 
 Dấu `[x]` xác nhận triển khai và kiểm thử tự động tương ứng, không xác nhận kiểm thử người dùng thực tế.
