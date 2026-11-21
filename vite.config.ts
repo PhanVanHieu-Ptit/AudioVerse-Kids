@@ -39,7 +39,7 @@ export default defineConfig({
       },
       workbox: {
         clientsClaim: true,
-        globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
+        globPatterns: ['**/*.{js,css,html,svg,png,woff2,mp3,ogg,wav,m4a}'],
         navigateFallback: '/index.html',
         cleanupOutdatedCaches: true,
       },

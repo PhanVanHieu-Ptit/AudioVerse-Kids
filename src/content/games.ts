@@ -11,6 +11,7 @@ export interface ToneGameDefinition {
   title: string;
   description: string;
   instructions: string;
+  guidanceAudioSrc?: string;
   durationSeconds: number;
   gain: number;
   rounds: readonly ToneRound[];
@@ -20,6 +21,7 @@ export interface ToneGameDefinition {
 export const games: readonly ToneGameDefinition[] = [
   {
     id: 'am-cao-am-tram',
+    guidanceAudioSrc: `${import.meta.env?.BASE_URL ?? '/'}audio/guidance/am-cao-am-tram.v1.mp3`,
     title: 'Âm cao hay âm trầm?',
     description:
       'Lắng nghe và nhận biết ba nốt nhạc bằng âm thanh hoặc mô tả bằng chữ.',

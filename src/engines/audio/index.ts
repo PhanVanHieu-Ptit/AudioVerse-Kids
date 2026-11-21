@@ -11,3 +11,15 @@ export type {
   PlayOptions,
 } from './types';
 export { audioRepository } from '@/lib/storage/audioRepository';
+export { VoiceGuidanceService } from './VoiceGuidanceService';
+export { RecordedVoiceAdapter, browserVietnameseTts } from './voiceAdapters';
+export { voiceGuidance } from './VoiceGuidance';
+export { VoiceUnavailableError } from './voiceTypes';
+export type {
+  VoiceMessage,
+  VoiceAdapter,
+  VoicePlayback,
+  VoiceOptions,
+  GuidanceSnapshot,
+  GuidanceStatus,
+} from './voiceTypes';

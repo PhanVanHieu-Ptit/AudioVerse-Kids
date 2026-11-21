@@ -1,24 +1,32 @@
-import { useSyncExternalStore } from 'react';
 import { AccessibleButton } from '@/components/atoms/AccessibleButton';
-import { voiceGuidance } from '@/engines/audio/VoiceGuidance';
-import { usePreferences } from '@/hooks/usePreferences';
+import type { VoiceMessage } from '@/engines/audio/voiceTypes';
+import { useVoiceGuidance } from '@/hooks/useVoiceGuidance';
+import { voiceUi } from '@/content/voiceMessages';
 
-export function VoiceGuidanceButton({ text }: { text: string }) {
-  const { preferences } = usePreferences();
-  const status = useSyncExternalStore(
-    voiceGuidance.subscribe,
-    voiceGuidance.getSnapshot,
-  );
-  if (!preferences.voiceGuidance) return null;
+export function VoiceGuidanceButton({
+  message,
+  label = voiceUi.listen,
+}: {
+  message: VoiceMessage;
+  label?: string;
+}) {
+  const guidance = useVoiceGuidance();
+  const active = guidance.busy && guidance.message?.id === message.id;
+  if (!guidance.enabled) return null;
   return (
     <AccessibleButton
       variant="secondary"
+      aria-busy={active && guidance.status === 'loading' ? true : undefined}
       onClick={() => {
-        if (status === 'speaking') voiceGuidance.stop();
-        else voiceGuidance.speak(text, preferences.guidanceRate);
+        if (active) guidance.stop();
+        else guidance.speak(message);
       }}
     >
-      {status === 'speaking' ? 'Dừng hướng dẫn' : 'Nghe hướng dẫn'}
+      {active
+        ? guidance.status === 'loading'
+          ? voiceUi.cancel
+          : voiceUi.stop
+        : label}
     </AccessibleButton>
   );
 }
