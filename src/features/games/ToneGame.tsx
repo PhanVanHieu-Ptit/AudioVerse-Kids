@@ -16,6 +16,7 @@ import { announce, clearAnnouncement } from '@/accessibility/announcements';
 import { VoiceGuidanceButton } from '@/accessibility/VoiceGuidanceButton';
 import { gameFeedback } from '@/content/accessibility';
 import { voiceGuidance } from '@/engines/audio/VoiceGuidance';
+import { activityVoiceMessage, voiceMessages } from '@/content/voiceMessages';
 
 export function ToneGame({ game }: { game: ToneGameDefinition }) {
   const { pathname } = useLocation();
@@ -28,7 +29,9 @@ export function ToneGame({ game }: { game: ToneGameDefinition }) {
     activityStore,
     (state) => state.activePath === pathname,
   );
-  const [feedback, setFeedback] = useState('');
+  const [feedback, setFeedback] = useState<
+    '' | 'incorrect' | 'correct' | 'completed'
+  >('');
   const question = useRef<HTMLHeadingElement>(null);
   const wasActive = useRef(false);
   const position = Math.min(progress?.position ?? 0, game.rounds.length);
@@ -69,17 +72,15 @@ export function ToneGame({ game }: { game: ToneGameDefinition }) {
     voiceGuidance.stop();
     const result = answerToneRound(game, position, value);
     if (!result.correct) {
-      setFeedback(gameFeedback.incorrect);
+      setFeedback('incorrect');
       announce(gameFeedback.incorrect);
       return;
     }
     audio.stop();
-    const message =
-      result.position === game.rounds.length
-        ? gameFeedback.completed
-        : gameFeedback.correct;
-    setFeedback(message);
-    announce(message);
+    const resultKey =
+      result.position === game.rounds.length ? 'completed' : 'correct';
+    setFeedback(resultKey);
+    announce(gameFeedback[resultKey]);
     void save(result.position).then(() => {
       if (result.position === game.rounds.length)
         activityStore.getState().deactivate();
@@ -89,7 +90,7 @@ export function ToneGame({ game }: { game: ToneGameDefinition }) {
   return (
     <div className="activity-panel">
       <p>{game.instructions}</p>
-      <VoiceGuidanceButton text={game.instructions} />
+      <VoiceGuidanceButton message={activityVoiceMessage(game)} />
       <ProgressNotice />
       {completed ? (
         <>
@@ -134,10 +135,13 @@ export function ToneGame({ game }: { game: ToneGameDefinition }) {
             {audio.state === 'playing' ? 'Dừng nốt nhạc' : 'Nghe nốt nhạc'}
           </AccessibleButton>
           {audio.state === 'error' && (
-            <p role="alert">
-              Chưa phát được âm thanh. Em có thể thử nghe lại hoặc dùng mô tả
-              bằng chữ bên dưới.
-            </p>
+            <div>
+              <p role="alert">{voiceMessages.audioError.text}</p>
+              <VoiceGuidanceButton
+                message={voiceMessages.audioError}
+                label="Nghe thông báo lỗi"
+              />
+            </div>
           )}
           <details key={position}>
             <summary>Mô tả nốt nhạc bằng chữ</summary>
@@ -164,7 +168,13 @@ export function ToneGame({ game }: { game: ToneGameDefinition }) {
           description="Em hãy quay về danh sách và chọn trò chơi khác."
         />
       )}
-      <p>{feedback}</p>
+      <p>{feedback ? gameFeedback[feedback] : ''}</p>
+      {feedback && (
+        <VoiceGuidanceButton
+          message={voiceMessages[feedback]}
+          label="Nghe kết quả"
+        />
+      )}
       <Link className="text-link" to="/games">
         Về danh sách trò chơi
       </Link>

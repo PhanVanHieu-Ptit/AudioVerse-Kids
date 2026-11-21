@@ -107,6 +107,34 @@ describe('preferences store', () => {
 });
 
 describe('theme preferences and migration', () => {
+  it('migrates and validates voice volume and optional TTS', () => {
+    expect(
+      parsePreferences({ guidanceVolume: 0, guidanceTts: false }),
+    ).toMatchObject({ guidanceVolume: 0, guidanceTts: false });
+    expect(
+      parsePreferences({ guidanceVolume: 1, guidanceTts: true }),
+    ).toMatchObject({ guidanceVolume: 1, guidanceTts: true });
+    for (const volume of [-1, 2, '0.5', Number.NaN, Number.POSITIVE_INFINITY]) {
+      expect(
+        parsePreferences({ guidanceVolume: volume, guidanceTts: 'false' }),
+      ).toEqual(defaultPreferences);
+    }
+  });
+
+  it('persists voice volume and TTS alongside existing settings', async () => {
+    const storage = repository();
+    const store = createPreferencesStore(storage);
+    await store.getState().initialize();
+    await Promise.all([
+      store.getState().updatePreference('guidanceVolume', 0.4),
+      store.getState().updatePreference('guidanceTts', false),
+    ]);
+    expect(storage.save).toHaveBeenLastCalledWith({
+      ...defaultPreferences,
+      guidanceVolume: 0.4,
+      guidanceTts: false,
+    });
+  });
   it('migrates old accessibility preferences and rejects invalid voice settings', () => {
     expect(parsePreferences({ largeText: true })).toEqual({
       ...defaultPreferences,

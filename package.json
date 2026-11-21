@@ -17,6 +17,7 @@
     "format:check": "prettier --check .",
     "test": "vitest run",
     "test:watch": "vitest",
+    "voice:generate": "node --experimental-strip-types scripts/generate-voice-guidance.mjs",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
     "test:e2e:audio": "playwright test --config playwright.audio.config.ts",

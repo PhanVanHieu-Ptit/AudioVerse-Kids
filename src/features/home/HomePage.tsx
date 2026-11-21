@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Icon } from '@/components/atoms/Icon';
 import { PageHeading } from '@/components/molecules/PageHeading';
 import { discoverySections } from '@/content/sections';
+import { VoiceGuidanceButton } from '@/accessibility/VoiceGuidanceButton';
+import { voiceMessages } from '@/content/voiceMessages';
 
 export default function HomePage() {
   return (
@@ -18,11 +20,11 @@ export default function HomePage() {
             <br />
             Khám phá thế giới lớn.
           </h2>
-          <p>
-            Học và chơi theo nhịp của riêng em.
-            <br />
-            Mọi hành trình đều bắt đầu từ sự tò mò.
-          </p>
+          <p>{voiceMessages.welcome.text}</p>
+          <VoiceGuidanceButton
+            message={voiceMessages.welcome}
+            label="Nghe lời chào mừng"
+          />
           <Link className="button" to="/settings">
             <Icon name="settings" />
             Tùy chỉnh cho em

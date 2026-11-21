@@ -2,6 +2,8 @@
 
 Ngày kiểm tra: 21/11/2026. Phạm vi: giao diện hiện có và trò chơi Âm cao hay âm trầm. Đây là nền tảng đã kiểm thử tự động; chưa phải chứng nhận WCAG hoặc nghiệm thu trải nghiệm với trẻ em và trình đọc màn hình thực tế.
 
+Phần hướng dẫn giọng nói đã được mở rộng với service, catalog, bản thu và TTS tùy chọn, đọc lại, âm lượng, trạng thái và kiểm thử riêng. Xem [kiến trúc và kết quả cập nhật](voice-guidance.md). Các số liệu trong bảng nền tảng bên dưới là kết quả lịch sử trước lần mở rộng này.
+
 ## Checklist triển khai và bằng chứng
 
 Dấu `[x]` xác nhận triển khai và kiểm thử tự động tương ứng, không xác nhận kiểm thử người dùng thực tế.
@@ -24,7 +26,7 @@ Dấu `[x]` xác nhận triển khai và kiểm thử tự động tương ứng
 - [x] Chỉ dùng giọng Việt `localService` từ Speech Synthesis; không tự chọn giọng trực tuyến. Thiếu API/giọng hoặc đọc lỗi có thông báo và hướng dẫn chữ; có thể thử lại khi giọng thiết bị sẵn sàng.
 - [x] Cài đặt giọng đọc lưu cùng preferences hiện có; snapshot cũ được bổ sung mặc định an toàn. Lỗi IndexedDB giữ ứng dụng hoạt động trong phiên và thông báo không lưu được.
 
-## Kết quả chạy trong phiên này
+## Kết quả kiểm thử nền tảng ban đầu
 
 | Kiểm tra                       | Kết quả                                            | Giới hạn                                                                                               |
 | ------------------------------ | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |

@@ -75,6 +75,7 @@ export function AppLayout() {
         <main id="main-content" tabIndex={-1}>
           <RouteContent />
         </main>
+        <GuidanceStatus />
         <PwaStatus />
         <footer className="footer">
           <span>AudioVerse Kids · Dành cho mọi cách khám phá</span>
@@ -83,7 +84,6 @@ export function AppLayout() {
       </div>
       <ActivityNavigationGuard />
       <LiveAnnouncer />
-      <GuidanceStatus />
     </div>
   );
 }

@@ -1,0 +1,89 @@
+{
+  "language": "vi-VN",
+  "kind": "pre-generated-synthetic-speech",
+  "voice": "macOS Linh",
+  "wordsPerMinute": 155,
+  "normalization": "FFmpeg loudnorm I=-20:TP=-3:LRA=7",
+  "assets": [
+    {
+      "id": "welcome",
+      "file": "welcome.v1.mp3",
+      "transcript": "Chào mừng em đến với AudioVerse Kids, Thế Giới Âm Thanh! Em có thể nghe truyện, chơi trò chơi, khám phá âm nhạc và học điều mới. Hãy chọn một hoạt động theo nhịp của riêng em.",
+      "transcriptSha256": "5d486ab5fa4e5cf1743b774c4da19479488501ea60bf9dbb89a6206d90dc4b7e",
+      "audioSha256": "bdbab4d49539af779494599dab8a67634de4f1a68e26d3842a305e86b7a22990",
+      "bytes": 112892,
+      "durationSeconds": 14.013878,
+      "rms": 0.09491869737673124
+    },
+    {
+      "id": "app-help",
+      "file": "app-help.v1.mp3",
+      "transcript": "Dùng Tab để đến điều khiển tiếp theo, Shift và Tab để quay lại. Dùng Enter để mở liên kết, Enter hoặc Space để bấm nút. Dùng Escape để đóng hộp thoại. Trên màn hình cảm ứng, em chạm vào nút; với trình đọc màn hình, dùng cử chỉ quen thuộc của thiết bị. Trò chơi không giới hạn thời gian. Mỗi âm thanh đều có mô tả bằng chữ.",
+      "transcriptSha256": "63574332ba9f5148eff85ae8bf2d72c8fa9c0245fbff6f58d5ab5d5bba0cb89d",
+      "audioSha256": "571f3ab10c236af31d486487042078ad63dd19149ce2f2797ddb1b22c4db440b",
+      "bytes": 208813,
+      "durationSeconds": 25.99873,
+      "rms": 0.09824042891706303
+    },
+    {
+      "id": "settings",
+      "file": "settings.v1.mp3",
+      "transcript": "Em có thể đổi giao diện, bật chữ lớn, tương phản cao hoặc giảm chuyển động. Dùng Tab để đến từng lựa chọn và Space để bật hoặc tắt. Hướng dẫn giọng nói chỉ đọc khi em bấm nút nghe. Em có thể đổi tốc độ, âm lượng hoặc tắt hướng dẫn bất cứ lúc nào.",
+      "transcriptSha256": "ac655072d06dd39bb9b996eae08eae247bb0f9ed39a71cbe59bb529d6ac9f176",
+      "audioSha256": "5c4c59fe9bcfe6855bb2a33f684bc2ee8e470e8db67493145e0d554112f0fd55",
+      "bytes": 150926,
+      "durationSeconds": 18.75805,
+      "rms": 0.0984462801811423
+    },
+    {
+      "id": "result-incorrect",
+      "file": "result-incorrect.v1.mp3",
+      "transcript": "Chưa đúng rồi. Em hãy nghe lại hoặc đọc mô tả và thử tiếp nhé.",
+      "transcriptSha256": "c0d9b39e6642487260aad66b67806340fc3307208f694f73e23d249674fd7a94",
+      "audioSha256": "3b65a00ba5851ee5b17d4bbf2f3bd85184b638067f3832d89135499df210c3a3",
+      "bytes": 41212,
+      "durationSeconds": 5.044671,
+      "rms": 0.09768212756553707
+    },
+    {
+      "id": "result-correct",
+      "file": "result-correct.v1.mp3",
+      "transcript": "Đúng rồi! Cùng khám phá nốt tiếp theo.",
+      "transcriptSha256": "47778d9a5d23d407280cac81f809b6164b6e61df1ed3850a15c0ab15078c1cb1",
+      "audioSha256": "9ed5d5ae30a62ca1041b836379239ae5f6eb067a91ee4d17db2c035a5c873e9e",
+      "bytes": 25956,
+      "durationSeconds": 3.136825,
+      "rms": 0.09746282943728941
+    },
+    {
+      "id": "result-completed",
+      "file": "result-completed.v1.mp3",
+      "transcript": "Em đã nhận biết đủ các nốt nhạc!",
+      "transcriptSha256": "126d18057a2a204d416b91e7f56021eacb903bde142d78620ea189343ad819dc",
+      "audioSha256": "85e2d197d5e88eb21f0ccaca172b0b2ad5ffdf8295ec172c9ad39e498100d43e",
+      "bytes": 19687,
+      "durationSeconds": 2.353152,
+      "rms": 0.0973731313457667
+    },
+    {
+      "id": "audio-error",
+      "file": "audio-error.v1.mp3",
+      "transcript": "Chưa phát được âm thanh. Em có thể thử nghe lại hoặc dùng mô tả bằng chữ bên dưới.",
+      "transcriptSha256": "c3a2258e968b5bdeaea6f29a90e72db5aa4ef9888999f03254a330e9dd05e88d",
+      "audioSha256": "460e8161d8a4fb34f5aa992a560143047f21b63ec77f3797f8523f4464d1ecf3",
+      "bytes": 50825,
+      "durationSeconds": 6.263719,
+      "rms": 0.10387606754432938
+    },
+    {
+      "id": "activity:am-cao-am-tram:instructions",
+      "file": "am-cao-am-tram.v1.mp3",
+      "transcript": "Âm cao hay âm trầm?. Bấm Nghe nốt nhạc, rồi chọn âm cao hoặc âm trầm. Em có thể nghe lại hoặc mở mô tả bằng chữ. Không giới hạn thời gian và không cần micrô. Hãy bắt đầu với âm lượng thiết bị nhỏ.",
+      "transcriptSha256": "6ca3e59b385f5b4dea58e31c7bac87ab6348a1d9f21323f3a5dba7de3e126ec1",
+      "audioSha256": "fc8da0d21ee375159965a45c30737e23274c1000883409173b60b52c991440de",
+      "bytes": 126893,
+      "durationSeconds": 15.777778,
+      "rms": 0.09717941104839124
+    }
+  ]
+}

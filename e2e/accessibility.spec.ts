@@ -107,7 +107,7 @@ test('keyboard only: game feedback, replayable descriptions and modal return foc
   await expect(leave).toBeFocused();
 });
 
-test('voice settings persist, never autoplay and offer an unsupported fallback', async ({
+test('voice settings persist and bundled speech plays without browser TTS or autoplay', async ({
   page,
 }) => {
   await page.addInitScript(() => {
@@ -123,6 +123,12 @@ test('voice settings persist, never autoplay and offer an unsupported fallback',
   await page
     .getByRole('combobox', { name: 'Tốc độ hướng dẫn' })
     .selectOption('0.8');
+  const volume = page.getByRole('slider', { name: 'Âm lượng hướng dẫn' });
+  await volume.focus();
+  await page.keyboard.press('Home');
+  for (let index = 0; index < 8; index++)
+    await page.keyboard.press('ArrowRight');
+  await page.getByRole('radio', { name: 'Chỉ dùng bản thu' }).check();
   await expect(page.locator('.save-status')).toHaveText(
     'Đã lưu cài đặt trên thiết bị.',
   );
@@ -131,12 +137,19 @@ test('voice settings persist, never autoplay and offer an unsupported fallback',
   await expect(
     page.getByRole('combobox', { name: 'Tốc độ hướng dẫn' }),
   ).toHaveValue('0.8');
+  await expect(volume).toHaveValue('40');
+  await expect(
+    page.getByRole('radio', { name: 'Chỉ dùng bản thu' }),
+  ).toBeChecked();
   const status = page.getByRole('status', {
     name: 'Trạng thái hướng dẫn giọng nói',
   });
   await expect(status).toBeEmpty();
   await page.getByRole('button', { name: 'Nghe hướng dẫn' }).click();
-  await expect(status).toContainText('Chưa có giọng tiếng Việt cục bộ');
+  await expect(
+    page.getByRole('button', { name: 'Dừng hướng dẫn', exact: true }),
+  ).toBeVisible();
+  await expect(status).toBeEmpty();
   await scan(page);
 });
 

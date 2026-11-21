@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { PageHeader } from '@/components/molecules/PageHeader';
 import { VoiceGuidanceButton } from '@/accessibility/VoiceGuidanceButton';
-import { guidanceCopy, keyboardHelp } from '@/content/accessibility';
+import { keyboardHelp } from '@/content/accessibility';
+import { voiceMessages } from '@/content/voiceMessages';
 
 export default function KeyboardHelpPage() {
   return (
@@ -26,7 +27,8 @@ export default function KeyboardHelpPage() {
             </div>
           ))}
         </dl>
-        <VoiceGuidanceButton text={guidanceCopy.help} />
+        <p>{voiceMessages.appHelp.text}</p>
+        <VoiceGuidanceButton message={voiceMessages.appHelp} />
       </section>
       <section className="settings-panel" aria-labelledby="explore-title">
         <h2 id="explore-title">Khám phá theo cách của em</h2>

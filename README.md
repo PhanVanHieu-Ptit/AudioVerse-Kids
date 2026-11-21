@@ -4,6 +4,8 @@
 
 Accessibility Foundation: xem [checklist, kiến trúc và kết quả kiểm thử](docs/accessibility.md). Trang `/help` hướng dẫn bàn phím; `/settings` có hiển thị và hướng dẫn giọng nói theo yêu cầu. NVDA, VoiceOver và TalkBack **chưa được kiểm thử thực tế**.
 
+Hướng dẫn giọng nói: xem [service, catalog, adapter, cài đặt và bộ file tiếng Việt](docs/voice-guidance.md). Đã kèm 8 file giọng tổng hợp tiếng Việt để phát trực tiếp và dùng offline sau precache; không cần giọng Việt trong trình duyệt. Có TTS cục bộ tùy chọn, đọc lại, tốc độ và âm lượng riêng. Vào Cài đặt, bật hướng dẫn rồi bấm nút nghe.
+
 ## Cài đặt
 
 Cần **Node.js 22.12+** và **npm 10+**. Có thể dùng `nvm use` để chọn Node 22.
@@ -152,7 +154,7 @@ Mở trang online, chờ thông báo sẵn sàng, sau đó chuyển trình duy�
 
 Kiểm tra tại local ngày 21/11/2026: typecheck, ESLint, Prettier và build production đạt; 10 unit/integration test và 33 E2E test đạt trên Chromium với viewport desktop, điện thoại và máy tính bảng. Các bài axe-core không phát hiện vi phạm trong phạm vi quét. Coverage cho store và lớp lưu trữ: 95% dòng. `npm audit` báo 0 lỗ hổng tại thời điểm cài đặt. CI đã được cấu hình nhưng chưa chạy trên GitHub trong phiên này.
 
-Đã triển khai nền tảng, routing, UI responsive, cài đặt thực lưu IndexedDB và vỏ PWA. Các trang truyện, âm nhạc, học tập và giáo viên đang có trạng thái trống rõ ràng. Trang trò chơi có hoạt động âm cao–trầm tổng hợp thật; chưa có bản thu âm hoặc thư viện nội dung đã biên tập cho trẻ.
+Đã triển khai nền tảng, routing, UI responsive, cài đặt thực lưu IndexedDB và vỏ PWA. Các trang truyện, âm nhạc, học tập và giáo viên đang có trạng thái trống rõ ràng. Trang trò chơi có hoạt động âm cao–trầm tổng hợp thật; có 8 file hướng dẫn giọng tổng hợp tiếng Việt. Chưa có thư viện truyện/nhạc thu âm hoặc thư viện nội dung đã biên tập cho trẻ.
 
 Audio engine dùng `HTMLAudioElement` cho playback, Web Audio gain graph khi khả dụng và IndexedDB cho tài nguyên tải ngoại tuyến. `AudioManager` dùng chung cho Story/Game/Learning, với ba kênh narration, nhạc nền và hiệu ứng; narration có queue, interruption và ducking nhạc nền. UI truy cập qua `useAudioPlayer` và `AudioPlayer`. Không khởi tạo media hoặc AudioContext lúc import/render; browser autoplay denial có trạng thái và nút tiếp tục rõ ràng. Xem [API và tài liệu bàn giao Audio Engine](docs/audio-engine.md). Chưa có bản thu nội dung được duyệt hoặc nghiệp vụ nghe truyện hoàn chỉnh; Design System hiển thị player trống trung thực.
 

@@ -12,6 +12,8 @@ export const defaultPreferences: Preferences = {
   reducedMotion: false,
   voiceGuidance: false,
   guidanceRate: 1,
+  guidanceVolume: 0.7,
+  guidanceTts: true,
 };
 
 export function parsePreferences(value: unknown): Preferences {
@@ -28,6 +30,15 @@ export function parsePreferences(value: unknown): Preferences {
       (value.guidanceRate === 0.8 || value.guidanceRate === 1.2)
         ? value.guidanceRate
         : 1,
+    guidanceVolume:
+      'guidanceVolume' in value &&
+      typeof value.guidanceVolume === 'number' &&
+      Number.isFinite(value.guidanceVolume) &&
+      value.guidanceVolume >= 0 &&
+      value.guidanceVolume <= 1
+        ? value.guidanceVolume
+        : defaultPreferences.guidanceVolume,
+    guidanceTts: !('guidanceTts' in value) || value.guidanceTts !== false,
   };
 }
 

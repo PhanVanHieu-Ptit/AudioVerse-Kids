@@ -1,45 +1,65 @@
-import { useEffect, useSyncExternalStore } from 'react';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { voiceGuidance } from '@/engines/audio/VoiceGuidance';
-import { guidanceCopy } from '@/content/accessibility';
+import { voiceUi } from '@/content/voiceMessages';
 import { preferencesStore } from '@/stores/preferencesStore';
+import {
+  configureVoiceGuidance,
+  useVoiceGuidance,
+} from '@/hooks/useVoiceGuidance';
+import { AccessibleButton } from '@/components/atoms/AccessibleButton';
 
 export function GuidanceStatus() {
-  const { pathname } = useLocation();
-  const status = useSyncExternalStore(
-    voiceGuidance.subscribe,
-    voiceGuidance.getSnapshot,
-  );
+  const { key } = useLocation();
+  const guidance = useVoiceGuidance();
+  const { status } = guidance;
   useEffect(() => {
     const stopWhenHidden = () => {
       if (document.hidden) voiceGuidance.stop();
     };
     document.addEventListener('visibilitychange', stopWhenHidden);
-    const unsubscribe = preferencesStore.subscribe((state) => {
-      if (!state.preferences.voiceGuidance) voiceGuidance.stop();
-    });
+    window.addEventListener('pagehide', voiceGuidance.stop);
+    configureVoiceGuidance();
+    const unsubscribe = preferencesStore.subscribe(configureVoiceGuidance);
     return () => {
       document.removeEventListener('visibilitychange', stopWhenHidden);
+      window.removeEventListener('pagehide', voiceGuidance.stop);
       unsubscribe();
-      voiceGuidance.stop();
+      voiceGuidance.reset();
     };
-  }, [pathname]);
+  }, [key]);
   return (
-    <div
-      className={
-        status === 'error' || status === 'unavailable'
-          ? 'guidance-status'
-          : 'sr-only'
-      }
-      role="status"
-      aria-label="Trạng thái hướng dẫn giọng nói"
-      aria-atomic="true"
-    >
-      {status === 'unavailable'
-        ? guidanceCopy.unavailable
-        : status === 'error'
-          ? guidanceCopy.error
-          : ''}
-    </div>
+    <>
+      <div
+        className={
+          status === 'error' || status === 'unavailable'
+            ? 'guidance-status'
+            : 'sr-only'
+        }
+        role="status"
+        aria-label="Trạng thái hướng dẫn giọng nói"
+        aria-atomic="true"
+      >
+        {status === 'unavailable'
+          ? voiceUi.unavailable
+          : status === 'error'
+            ? voiceUi.error
+            : ''}
+      </div>
+      {guidance.enabled && guidance.message && (
+        <section className="guidance-status" aria-label="Hướng dẫn vừa yêu cầu">
+          <p>{guidance.message.text}</p>
+          <p aria-hidden="true">
+            {status === 'loading' ? voiceUi.loading : ''}
+          </p>
+          <AccessibleButton
+            variant="secondary"
+            onClick={guidance.busy ? guidance.stop : guidance.repeat}
+          >
+            {guidance.busy ? voiceUi.stopCurrent : voiceUi.repeat}
+          </AccessibleButton>
+        </section>
+      )}
+    </>
   );
 }
