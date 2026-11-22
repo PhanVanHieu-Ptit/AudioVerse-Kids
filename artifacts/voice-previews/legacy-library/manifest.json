@@ -1,0 +1,489 @@
+{
+  "language": "vi-VN",
+  "kind": "pre-generated-synthetic-speech",
+  "voice": "macOS Linh",
+  "wordsPerMinute": 155,
+  "normalization": "FFmpeg loudnorm I=-20:TP=-3:LRA=7",
+  "assets": [
+    {
+      "id": "khu-vuon-am-thanh:cong-vuon",
+      "file": "vuon-cong.v1.mp3",
+      "transcript": "Sáng nay, An cùng bà tới khu vườn quen thuộc. Lá cây xào xạc, chim sẻ ríu rít. Bà hỏi: Cháu muốn cùng bà nghe chim hót, hay chăm sóc luống hoa? Em hãy chọn giúp An nhé.",
+      "transcriptSha256": "44715481acf5eb7aba9e41579fdd786df20e3ab1758b6bd487fbae1b471efab1",
+      "audioSha256": "0315fea9059ebf43e9edf049432ea5f2bbb05b78cef92420781082a1d27904bb",
+      "bytes": 113936,
+      "durationSeconds": 14.143129,
+      "rms": 0.09442201852054971
+    },
+    {
+      "id": "khu-vuon-am-thanh:chim-se",
+      "file": "vuon-chim.v1.mp3",
+      "transcript": "An ngồi cạnh bà trên ghế, lắng nghe tiếng chim ríu rít. Bà bảo: Mình giữ yên lặng để chim được thoải mái nhé. An mỉm cười. Chỉ cần lắng nghe, An đã nhận ra một người bạn nhỏ trong vườn.",
+      "transcriptSha256": "e5c794ee86b480bd755bc615888707358c2fa8530b2c72a93790dd667b4d92d8",
+      "audioSha256": "94e74a62f71a713ace929cca29bbb15f3b605b8875cd9392a41912418978f086",
+      "bytes": 117071,
+      "durationSeconds": 14.544626,
+      "rms": 0.09850976947067065
+    },
+    {
+      "id": "khu-vuon-am-thanh:luong-hoa",
+      "file": "vuon-hoa.v1.mp3",
+      "transcript": "Bà giúp An cầm chiếc bình nhỏ. Nước chảy róc rách xuống đất. Hai bà cháu tưới vừa đủ rồi khóa vòi. An nói: Hoa được uống nước, còn mình học cách tiết kiệm nước bà nhỉ!",
+      "transcriptSha256": "daaf0f0e9e1015b27d3ff1c9a0cecade5d530d5851eae129ad1154383ecce4d0",
+      "audioSha256": "ccb491bf1be9a6e44971b16cbde44fb15fefd7ce7053c1b677b1995b6c7ae4dd",
+      "bytes": 104950,
+      "durationSeconds": 13.030794,
+      "rms": 0.09859853687409977
+    },
+    {
+      "id": "khu-vuon-am-thanh:loi-chao",
+      "file": "vuon-ket.v1.mp3",
+      "transcript": "Trước khi về, An cùng bà gửi lời chào khu vườn. Hôm nay, An đã biết lắng nghe và quan tâm tới thiên nhiên. Câu chuyện Khu vườn âm thanh đã kết thúc. Cảm ơn em đã đồng hành cùng An!",
+      "transcriptSha256": "aeb0c01ed39a8b060453287dcd5eb03c37c5577db673ddb4284b7be1840c8a4a",
+      "audioSha256": "3281a5f344582939bc68c46ce3200a792b3f28cf3e251ef0be75feae45b50fac",
+      "bytes": 112683,
+      "durationSeconds": 13.979048,
+      "rms": 0.09688223528736072
+    },
+    {
+      "id": "ban-hoa-tau-nho:chuan-bi",
+      "file": "nhac-dau.v1.mp3",
+      "transcript": "Lớp của Mai chuẩn bị một bản hòa tấu nhỏ. Nam muốn gõ trống, còn Mai thích hát. Bạn Bình chưa biết chọn việc gì. Mai muốn rủ Bình cùng tham gia. Em chọn cách nào cho Mai?",
+      "transcriptSha256": "6833306d705e41ccc3612e1cb7675209d5e8e587f2ada7daac8280fbd70d7866",
+      "audioSha256": "b70774b3946564f2547c2a03352a8e7c478c1ccf43e909ad4a6b48db8c8ae61d",
+      "bytes": 108503,
+      "durationSeconds": 13.465488,
+      "rms": 0.09679356214089835
+    },
+    {
+      "id": "ban-hoa-tau-nho:lang-nghe",
+      "file": "nhac-ban.v1.mp3",
+      "transcript": "Mai hỏi: Bình thích làm gì nhất? Bình đáp: Mình muốn giới thiệu tiết mục. Các bạn đồng ý ngay. Mai nhận ra, hỏi ý kiến bạn giúp cả nhóm tìm được việc mà mỗi người yêu thích.",
+      "transcriptSha256": "ad6fbc657b05434b3098c90bb979305fd42a79f459d8efcb34054e22fec4036a",
+      "audioSha256": "12d104e75514af9c3181ff598e9c3726ba452f4772342ab9ff85c75cf6b5a52e",
+      "bytes": 108085,
+      "durationSeconds": 13.402948,
+      "rms": 0.10044672912233403
+    },
+    {
+      "id": "ban-hoa-tau-nho:thu-suc",
+      "file": "nhac-thu.v1.mp3",
+      "transcript": "Cô giáo giúp Bình thử chiếc lục lạc ở âm lượng nhẹ. Bình lắc theo nhịp và cười vui. Mai hỏi: Bạn có muốn chơi cùng nhóm không? Bình gật đầu. Ai cũng có thời gian để thử và tự chọn.",
+      "transcriptSha256": "4d4cc5016c7cb4d4bc55c50d67880d52fa53e8d4a92bf4c0e0aad1410311eb6d",
+      "audioSha256": "a0d48c99a6acf6fd56a7448d7a96f6a4ee2147034aa41581140331ac4c828e45",
+      "bytes": 114145,
+      "durationSeconds": 14.178005,
+      "rms": 0.10000674330258842
+    },
+    {
+      "id": "ban-hoa-tau-nho:hoa-tau",
+      "file": "nhac-ket.v1.mp3",
+      "transcript": "Buổi tập bắt đầu. Các bạn chờ đến lượt và lắng nghe nhau. Tiết mục chưa thật đều, nhưng ai cũng vui vì được góp sức. Câu chuyện Bản hòa tấu nhỏ đã kết thúc. Em cũng có một vai trò đáng quý trong nhóm của mình!",
+      "transcriptSha256": "11ef0d5537a5492cca3cf2e28453470ba8fedef2e3139b6b9e6f3eb16837f86d",
+      "audioSha256": "6e89596da1c33a67492b96ec834aeeb614b9d48dd92fa78f20c07b2cd957697c",
+      "bytes": 127311,
+      "durationSeconds": 15.828662,
+      "rms": 0.09897227363822468
+    },
+    {
+      "id": "rua-va-tho:cuoc-dua",
+      "file": "rua-tho-dau.v1.mp3",
+      "transcript": "Thỏ chạy rất nhanh, còn Rùa bước chậm rãi. Thỏ cứ trêu bạn, nên Rùa đề nghị một cuộc đua tới gốc cây cuối đường. Các bạn trong rừng cùng cổ vũ. Em muốn nghe lời động viên của các bạn, hay theo nhịp bước của Rùa?",
+      "transcriptSha256": "0cea59ee6fd895bf033a6eeccd41810e3b2b6b14144a80c349762d584c32c43c",
+      "audioSha256": "15907d465bb01c05acbf81235f9c3c47ceeb6e0a30c90d00fb060278b4138e31",
+      "bytes": 127729,
+      "durationSeconds": 15.871973,
+      "rms": 0.10035675802997895
+    },
+    {
+      "id": "rua-va-tho:dong-vien",
+      "file": "rua-tho-co-vu.v1.mp3",
+      "transcript": "Các bạn gọi: Rùa ơi, cứ đi theo nhịp của mình nhé! Rùa cảm ơn rồi tiếp tục. Phía trước, Thỏ tin rằng mình sẽ thắng nên nằm ngủ dưới bóng cây. Tiếng cổ vũ không làm Rùa vội vàng; bạn vẫn tiến từng bước đều đặn.",
+      "transcriptSha256": "4ca84b6604b0b33ab9d17556056d5ef8828f9dcf0ff1b61914eae1f3edee053c",
+      "audioSha256": "bf11c4949fc5a6b4d3491fe2c29d3e78f1ca3d0ce483bb496c621ed0f35f7443",
+      "bytes": 131282,
+      "durationSeconds": 16.3161,
+      "rms": 0.1010016850359963
+    },
+    {
+      "id": "rua-va-tho:buoc-deu",
+      "file": "rua-tho-buoc.v1.mp3",
+      "transcript": "Rùa nhẩm: Một bước, rồi một bước nữa. Bạn không cố chạy theo Thỏ mà giữ nhịp vừa sức. Thỏ đã chạy xa, nhưng lại dừng ngủ vì quá tự tin. Rùa đi ngang qua gốc cây, vẫn kiên trì hướng tới đích.",
+      "transcriptSha256": "f1d93a413d4e1e4c4c2310adf66110db4691c555fab0da299e7a08f9a0d02bcf",
+      "audioSha256": "e6ae7a8e5410940227c73b7491af6d96606d6581540cd07d4fcf437ad6a4a05e",
+      "bytes": 121878,
+      "durationSeconds": 15.132018,
+      "rms": 0.09931455208831813
+    },
+    {
+      "id": "rua-va-tho:ve-dich",
+      "file": "rua-tho-ket.v1.mp3",
+      "transcript": "Khi Thỏ tỉnh dậy, Rùa đã tới đích. Thỏ chúc mừng và xin lỗi vì đã trêu bạn. Rùa nói: Mỗi người có nhịp riêng, mình hãy tôn trọng nhau. Câu chuyện Rùa và Thỏ kết thúc. Sự kiên trì giúp ta tiến lên từng chút một.",
+      "transcriptSha256": "6ef7e601a6a12a1843d0c5b8fe91338395bd0e8872f7ea140eacc86989557ec4",
+      "audioSha256": "aa0c900a41f859e58f2467d077e3c6c428f60ac5e28c5063db9460835d98c45b",
+      "bytes": 132118,
+      "durationSeconds": 16.423356,
+      "rms": 0.0989107260888357
+    },
+    {
+      "id": "su-tu-va-chuot-nhat:gap-go",
+      "file": "su-tu-chuot-dau.v1.mp3",
+      "transcript": "Chuột nhắt vô tình làm Sư tử thức giấc. Chuột xin lỗi, Sư tử để bạn đi. Ít hôm sau, Sư tử mắc vào một tấm lưới bỏ lại trong rừng. Chuột nghe tiếng gọi. Em muốn cùng Chuột tìm nút dây, hay gọi lời trấn an Sư tử?",
+      "transcriptSha256": "4deb93894c4fd51e9d5d7401bf27c1edf9a3ac2d7cb1047879ab1bbb14538983",
+      "audioSha256": "07bcbb302cf429cc56e9f24cb16dcc59bde62ae9db7155f5054a873a2d2bbcb8",
+      "bytes": 141313,
+      "durationSeconds": 17.566531,
+      "rms": 0.10100077460797637
+    },
+    {
+      "id": "su-tu-va-chuot-nhat:nut-day",
+      "file": "su-tu-chuot-day.v1.mp3",
+      "transcript": "Chuột tìm thấy một nút dây ở mép lưới. Nhờ hàm răng nhỏ, bạn gặm từng sợi một. Sư tử nằm yên để bạn giúp. Nút đầu tiên bung ra, rồi thêm một nút nữa. Cả hai phối hợp thật cẩn thận.",
+      "transcriptSha256": "81e7297bd745013c26df5b2abdd63fff4de522aa0bf9d8238d145636ba9c638d",
+      "audioSha256": "481e6668fb681188a644f9c29aaf736c78592d0de9be9fd0cc962b4766ff61be",
+      "bytes": 119579,
+      "durationSeconds": 14.861406,
+      "rms": 0.09854849942224515
+    },
+    {
+      "id": "su-tu-va-chuot-nhat:binh-tinh",
+      "file": "su-tu-chuot-ban.v1.mp3",
+      "transcript": "Chuột nói: Mình ở đây rồi, bạn đừng giãy mạnh nhé. Sư tử nghe lời và bình tĩnh lại. Chuột lần tới mép lưới, gặm những sợi dây đang giữ chặt. Lời trấn an giúp hai bạn cùng nghĩ cách tháo gỡ.",
+      "transcriptSha256": "18f5ef89c15e0eee1bf2b14413056bb7347912f24c6d78ad61a627a5598988c5",
+      "audioSha256": "071a6f67efe5e95e69a623ac530618eb9f96c81ecd2a4f00c5ca9d2184387f32",
+      "bytes": 122505,
+      "durationSeconds": 15.209705,
+      "rms": 0.09801541167430587
+    },
+    {
+      "id": "su-tu-va-chuot-nhat:ban-be",
+      "file": "su-tu-chuot-ket.v1.mp3",
+      "transcript": "Tấm lưới nới ra, Sư tử được tự do. Bạn cúi đầu cảm ơn Chuột nhắt. Từ đó, hai bạn luôn chào nhau khi gặp trong rừng. Câu chuyện đã kết thúc. Dù lớn hay nhỏ, mỗi người đều có thể giúp đỡ theo cách của mình.",
+      "transcriptSha256": "2575b964a43d811dbcc92dd9d5167ec0738ba918e2cbee2d6e9f745baae57893",
+      "audioSha256": "0a15acf03166e200231571cc2ce1e04410bcc715d8d15fd9fc9e470a6d09b5c5",
+      "bytes": 135252,
+      "durationSeconds": 16.810204,
+      "rms": 0.09697465154098274
+    },
+    {
+      "id": "qua-va-chiec-binh:chiec-binh",
+      "file": "qua-binh-dau.v1.mp3",
+      "transcript": "Một ngày nắng, Quạ tìm được chiếc bình có ít nước. Mỏ bạn không chạm tới mặt nước vì cổ bình dài. Gần đó có những viên sỏi. Em muốn Quạ quan sát chiếc bình trước, hay thử thả một viên sỏi?",
+      "transcriptSha256": "91cfd92789131db7392caf029fa2a98ec3e05b27ebe4edc2d70587f850b28c42",
+      "audioSha256": "06a769f6c6e07f5d3b51c371f16a9304257419c205af2aba8d6a47c4056843bf",
+      "bytes": 119370,
+      "durationSeconds": 14.817959,
+      "rms": 0.09889198285738336
+    },
+    {
+      "id": "qua-va-chiec-binh:suy-nghi",
+      "file": "qua-binh-nghi.v1.mp3",
+      "transcript": "Quạ đi quanh bình và nhận ra bình quá nặng để nghiêng. Bạn nghĩ một lúc, rồi nhặt viên sỏi nhỏ thả vào. Mặt nước nhích lên một chút. Quạ dừng lại quan sát, vui vì đã tìm được một cách mới.",
+      "transcriptSha256": "3db6d814a0ff976d3deb96b0e0475f84077be8efc8ad2554e8e13cacdf31b7ac",
+      "audioSha256": "e82ae41dd182e8520d06ac7cac31e34b393eeb58e24feb7b722197b8cb30da67",
+      "bytes": 116235,
+      "durationSeconds": 14.422948,
+      "rms": 0.0954435725841362
+    },
+    {
+      "id": "qua-va-chiec-binh:vien-soi",
+      "file": "qua-binh-soi.v1.mp3",
+      "transcript": "Quạ thả một viên sỏi vào bình. Tõm! Mặt nước cao hơn lúc trước một chút. Bạn không vội thả tất cả cùng lúc, mà thử từng viên và chú ý sự thay đổi. Việc nhỏ đã gợi cho Quạ một ý tưởng hay.",
+      "transcriptSha256": "115c0970fe65a9e1fb3087f7fa1ffd588c39aea7492fc809f21a17719385e04d",
+      "audioSha256": "7664e76da3c33675ba914c3b61f83fb066d270020f4c248dbe6e3339e243fa83",
+      "bytes": 121669,
+      "durationSeconds": 15.119546,
+      "rms": 0.09975204670241083
+    },
+    {
+      "id": "qua-va-chiec-binh:nuoc-dang",
+      "file": "qua-binh-ket.v1.mp3",
+      "transcript": "Thêm vài viên sỏi, nước dâng tới chỗ Quạ có thể uống. Bạn vui vẻ nghỉ dưới bóng cây. Câu chuyện Quạ và chiếc bình đã kết thúc. Khi gặp khó khăn, ta có thể bình tĩnh quan sát, thử từng bước và nhờ người khác cùng suy nghĩ.",
+      "transcriptSha256": "f2f4c0ceff6648bb0d194e9c46fc9bfa38e26d7cecd83f878ee4c30dfc4feee7",
+      "audioSha256": "7b5b4e805b863855b51b44a584a88f889e1942270109d7bedabfaf2da491f66b",
+      "bytes": 137133,
+      "durationSeconds": 17.05619,
+      "rms": 0.09809510432252383
+    },
+    {
+      "id": "gio-bac-va-mat-troi:thu-thach",
+      "file": "gio-nang-dau.v1.mp3",
+      "transcript": "Gió Bắc và Mặt Trời cùng thấy một người khách khoác áo đi đường. Cả hai bàn xem ai khiến người khách cởi áo khoác. Em muốn nghe Gió Bắc thử sức, hay nghe Mặt Trời giải thích cách của mình trước?",
+      "transcriptSha256": "fcc73936a5d1aa728933c218b8d8fc7378e0db0a074b7e2b964bb44354457261",
+      "audioSha256": "b4fb8a212570493f86c7d85ff9bf2eb333c39903800f8cd492b96f9824ed0c33",
+      "bytes": 112265,
+      "durationSeconds": 13.9478,
+      "rms": 0.09548062483921281
+    },
+    {
+      "id": "gio-bac-va-mat-troi:gio-thoi",
+      "file": "gio-nang-gio.v1.mp3",
+      "transcript": "Gió Bắc thổi ù ù. Người khách thấy lạnh nên kéo áo sát hơn. Gió càng thổi mạnh, chiếc áo càng được giữ chặt. Mặt Trời nhẹ nhàng nói: Bạn nghỉ một chút nhé, mình sẽ thử một cách khác.",
+      "transcriptSha256": "d2899345d158a79a2b898253f55575d8e148a0e1bdbc3e196b7e8c202d1f8b6b",
+      "audioSha256": "742dfb9dd02591f1b4bdb81170fc2a3e6f69ca31a326c7a7a755c560b358964b",
+      "bytes": 116444,
+      "durationSeconds": 14.447846,
+      "rms": 0.09597177821682272
+    },
+    {
+      "id": "gio-bac-va-mat-troi:nang-am",
+      "file": "gio-nang-nang.v1.mp3",
+      "transcript": "Mặt Trời nói: Mình sẽ làm không khí ấm dần, để người khách tự thấy thoải mái. Trước đó, Gió Bắc thử thổi nhưng chỉ khiến khách giữ áo chặt hơn. Gió lắng xuống, nhường chỗ cho ánh nắng dịu.",
+      "transcriptSha256": "246a82a28699cbda061f54216f0f5707781fc81ed1ded9fb02fda8a02b9047d9",
+      "audioSha256": "5bc1e13a331f19972da55d0376a337c14b3696dd794a56a98183fc7c8ac8ee76",
+      "bytes": 118743,
+      "durationSeconds": 14.7478,
+      "rms": 0.09967227525790151
+    },
+    {
+      "id": "gio-bac-va-mat-troi:diu-dang",
+      "file": "gio-nang-ket.v1.mp3",
+      "transcript": "Không khí ấm lên vừa đủ. Người khách tự cởi áo khoác và dừng nghỉ. Gió Bắc hiểu ra rằng ép buộc không phải lúc nào cũng hiệu quả. Câu chuyện đã kết thúc. Lời nói dịu dàng và sự tôn trọng có thể giúp mọi người thoải mái hơn.",
+      "transcriptSha256": "2198e491d77cbcd58170edecee819b3dd9f44471cc204b768001e49777a1e0de",
+      "audioSha256": "e0f433eec1d113ae2c95e11fcf5a6db6f91bbd7b6348f316d4c9ab949c7b93ed",
+      "bytes": 137133,
+      "durationSeconds": 17.040408,
+      "rms": 0.09948311047621532
+    },
+    {
+      "id": "cao-va-co:bua-an",
+      "file": "cao-co-dau.v1.mp3",
+      "transcript": "Cáo mời Cò ăn súp trong chiếc đĩa nông. Cáo ăn được, còn chiếc mỏ dài của Cò chẳng múc nổi. Cò vẫn đói. Em muốn nghe Cò nói điều mình cần, hay theo Cáo tới bữa ăn sau để hiểu cảm giác của bạn?",
+      "transcriptSha256": "03cdbd570a7d65697729f55064e88270a09ae13f0ebe472937adc552c209b20a",
+      "audioSha256": "1418dc5084399be5422c8bb9bc144607a4ffcc45ae9edea7bc4a6d96c44e2fb7",
+      "bytes": 122087,
+      "durationSeconds": 15.166712,
+      "rms": 0.10021243663797655
+    },
+    {
+      "id": "cao-va-co:noi-ra",
+      "file": "cao-co-noi.v1.mp3",
+      "transcript": "Cò nói: Mình cần chiếc bình cao hơn để ăn được súp. Cáo ngạc nhiên vì chưa từng nghĩ tới điều đó. Khi tới nhà Cò, Cáo gặp chiếc bình cổ hẹp và cũng không ăn được. Lúc này, Cáo hiểu lời bạn nói.",
+      "transcriptSha256": "bdbc228d145c1f41b26b902a2842dc91b77945fe7f061f0c6821b1478a1eade4",
+      "audioSha256": "69f10fbd114e6e565fc1b1bc49c0db4cc664557f89ea10fe566e7d70d416e070",
+      "bytes": 125639,
+      "durationSeconds": 15.605896,
+      "rms": 0.09802161774903782
+    },
+    {
+      "id": "cao-va-co:binh-cao",
+      "file": "cao-co-binh.v1.mp3",
+      "transcript": "Cò mời Cáo dùng món ăn trong bình cao. Mỏ Cò vừa cổ bình, nhưng mõm Cáo thì không. Cáo buồn vì không ăn được và chợt nhớ bữa trước. Bạn nói: Giờ mình hiểu rồi, mình xin lỗi vì đã không quan tâm tới bạn.",
+      "transcriptSha256": "854d3602bdcc4a1d42214a7dd02c11ac0e504a62475ed49702427c4786fb7c69",
+      "audioSha256": "43115ed5becb2fbcabb014006b3dd8983a9e25adc96045ad10b2f97c4dff6f99",
+      "bytes": 130028,
+      "durationSeconds": 16.163175,
+      "rms": 0.0974231833088388
+    },
+    {
+      "id": "cao-va-co:cung-ban",
+      "file": "cao-co-ket.v1.mp3",
+      "transcript": "Trong bản kể này, Cáo và Cò không trêu nhau nữa. Hai bạn chuẩn bị cả đĩa nông lẫn bình cao để ai cũng dùng được. Câu chuyện kết thúc bằng bữa ăn vui vẻ. Quan tâm tới nhu cầu khác nhau giúp mọi người cùng tham gia.",
+      "transcriptSha256": "d1be85c33bd624b49ce69dcd42938eb04cff733f4034cb9f1cdfda159e16ee8f",
+      "audioSha256": "db7278a48a57d45f4cb07d04353e0ded80f745a55f4a14f5fa620cb9a68bd855",
+      "bytes": 128983,
+      "durationSeconds": 16.018322,
+      "rms": 0.09750905314458595
+    },
+    {
+      "id": "bo-dua-doan-ket:bo-que",
+      "file": "bo-dua-dau.v1.mp3",
+      "transcript": "Có những người con thường tranh cãi khi làm việc chung. Người cha buộc các que gỗ thành một bó rồi mời các con quan sát. Một bó que chắc hơn từng que rời. Em muốn nghe lời giải thích của cha, hay nghe các con cùng bàn cách hợp tác?",
+      "transcriptSha256": "6c1a1f25a40bfd20523a912c796b55fc2877d38b4edd64024c631ce0827304a3",
+      "audioSha256": "2da6e309b5a96671c91ce7349d79152fc6a19a44bf459de329d680f1d91b1357",
+      "bytes": 135252,
+      "durationSeconds": 16.813333,
+      "rms": 0.09748698960172883
+    },
+    {
+      "id": "bo-dua-doan-ket:giai-thich",
+      "file": "bo-dua-cha.v1.mp3",
+      "transcript": "Cha tháo sợi dây và đặt từng que cạnh nhau. Cha nói: Khi đứng riêng, mỗi que dễ cong hơn. Khi được buộc cùng, các que nâng đỡ nhau. Các con hiểu đây là lời nhắc về việc giúp nhau, chứ không phải thi ai khỏe hơn.",
+      "transcriptSha256": "43a25eac5dec0062152f5f3892885b310beef7b65f3d77b3fa7aed5cbc08913a",
+      "audioSha256": "540623bcd1d7dc39e88e461a608c635b5c87e51c99169b17b325f92e0ef2a391",
+      "bytes": 136506,
+      "durationSeconds": 16.956508,
+      "rms": 0.09590915034714817
+    },
+    {
+      "id": "bo-dua-doan-ket:hop-suc",
+      "file": "bo-dua-con.v1.mp3",
+      "transcript": "Các con nhận ra mỗi người có một điều làm tốt. Người đề xuất cách sắp xếp, người chuẩn bị đồ, người nhắc cả nhóm nghỉ ngơi. Cha lắng nghe rồi nói: Cùng bàn bạc và tôn trọng nhau, các con sẽ làm được nhiều việc hơn.",
+      "transcriptSha256": "0e066eab0af5f6cb94213ea610c1cef412703e0f70f4846f35e7918230a2b0d7",
+      "audioSha256": "4493d07b3b5ca26d4cefafb14a04852a46b33bbb6f4ec80112302b2e71da706d",
+      "bytes": 132327,
+      "durationSeconds": 16.45542,
+      "rms": 0.09707733316899778
+    },
+    {
+      "id": "bo-dua-doan-ket:doan-ket",
+      "file": "bo-dua-ket.v1.mp3",
+      "transcript": "Từ đó, các con tập lắng nghe và chia nhau công việc. Có lúc chưa đồng ý, họ dừng lại để nói chuyện. Câu chuyện Bó đũa đoàn kết đã kết thúc. Hợp tác không có nghĩa ai cũng giống nhau; mỗi người đều có phần đóng góp đáng quý.",
+      "transcriptSha256": "e82dd1881bc781b0e6c56e21f32d43dd534c90c9bf7e3c6fee97591b316a84d1",
+      "audioSha256": "3ebdf0bb0089022525edb360253d5e13fb0676c769908ec9ee33404e7f75bc0d",
+      "bytes": 137133,
+      "durationSeconds": 17.045578,
+      "rms": 0.097722758521164
+    },
+    {
+      "id": "chu-vit-con:khac-biet",
+      "file": "vit-con-dau.v1.mp3",
+      "transcript": "Trong đàn vịt mới nở có một bạn lớn hơn các bạn còn lại. Vì khác biệt, bạn bị trêu và thấy buồn. Một người bạn tốt nói: Bạn không có lỗi vì khác mọi người. Em muốn cùng bạn tìm nơi yên tĩnh, hay nghe lời động viên trước?",
+      "transcriptSha256": "00a7a1e548cf40a03b7f1c3d9d36ea4cf2a8020d89066a46d3b00630637446cf",
+      "audioSha256": "0330e65e29aa8d49f48192b0eea08ee07e9e0408bd61ceef11794684d3a0f7d4",
+      "bytes": 139850,
+      "durationSeconds": 17.376689,
+      "rms": 0.09762260797460245
+    },
+    {
+      "id": "chu-vit-con:mua-dong",
+      "file": "vit-con-nghi.v1.mp3",
+      "transcript": "Chú vịt tìm được nơi trú ấm bên hồ. Bạn nghỉ ngơi, ăn đủ và chờ mùa lạnh đi qua. Trong bản kể nhẹ nhàng này, những người bạn hiền giúp bạn vượt qua ngày buồn. Bạn dần có thêm sức để khám phá thế giới.",
+      "transcriptSha256": "d126668c0eb05ae9155c854e97276ee287fe7abd859f284232618578ffc1de17",
+      "audioSha256": "9c5544b2f53d4cb95e256cba76d2bc1fb25a21435c04c51a89248e62922d3556",
+      "bytes": 127311,
+      "durationSeconds": 15.81873,
+      "rms": 0.09940363191596999
+    },
+    {
+      "id": "chu-vit-con:loi-tot",
+      "file": "vit-con-ban.v1.mp3",
+      "transcript": "Người bạn tốt bảo: Không ai đáng bị trêu vì hình dáng hay cách mình lớn lên. Chú vịt thấy nhẹ lòng hơn. Bạn tìm nơi trú qua mùa lạnh, tự nhắc mình rằng có thể buồn, có thể nghỉ và có thể tìm người giúp đỡ.",
+      "transcriptSha256": "007422c99baab457db0cbbb185200f1ce91416627d642ea970a78813f7182c16",
+      "audioSha256": "4410cff6a39ac5cca3e20ec3ef27e15004aa9806ce390e3ef54213db9e7cd181",
+      "bytes": 129610,
+      "durationSeconds": 16.096825,
+      "rms": 0.0995136330646187
+    },
+    {
+      "id": "chu-vit-con:thien-nga",
+      "file": "vit-con-ket.v1.mp3",
+      "transcript": "Mùa xuân đến, chú vịt lớn thành một chú thiên nga và được đàn thiên nga đón chào. Nhưng giá trị của bạn đã có từ trước, không phải nhờ vẻ ngoài thay đổi. Câu chuyện kết thúc. Mỗi người đều xứng đáng được đối xử tử tế ngay từ hôm nay.",
+      "transcriptSha256": "aeb25d136d9277ce2a2e118254f254b0aade600dced51d3b0c346bc059ed0515",
+      "audioSha256": "2f0d53917e1baf28ba48696eb4259e94655c71a694eeff6d43d32677d75155e1",
+      "bytes": 143194,
+      "durationSeconds": 17.791519,
+      "rms": 0.0988845014612146
+    },
+    {
+      "id": "chim-hoa-mi:tieng-hat",
+      "file": "hoa-mi-dau.v1.mp3",
+      "transcript": "Nhà vua nghe kể về chim họa mi có giọng hát ấm áp trong khu vườn. Một người làm vườn dẫn mọi người tới gặp chim. Em muốn lắng nghe câu chuyện về tiếng hót tự nhiên, hay tìm hiểu món quà chim máy trong cung điện?",
+      "transcriptSha256": "7301da90d5ee50b15acad231cef383bb540bcd63475ff67d45481f74c9e3d002",
+      "audioSha256": "223f687cb5c138077db2c4ffea321a79d087a6a7453dc8067baa348050a74ae2",
+      "bytes": 124385,
+      "durationSeconds": 15.455011,
+      "rms": 0.0987072183986305
+    },
+    {
+      "id": "chim-hoa-mi:khu-vuon",
+      "file": "hoa-mi-vuon.v1.mp3",
+      "transcript": "Chim họa mi nhỏ bé cất tiếng hót. Nhà vua xúc động dù chim không mang trang sức quý. Sau đó, một chú chim máy được đưa vào cung, lặp lại bản nhạc quen thuộc. Chim họa mi trở về khu vườn và tiếp tục sống tự do.",
+      "transcriptSha256": "bc9966d498172d64fb0a047cc6b8086c5eaccb66f00e19d1d326c95f85f0b394",
+      "audioSha256": "2964f2138a72f2f57e5efa0c009b07b3b18c993dbf370b0044ddf29259fdd62b",
+      "bytes": 131073,
+      "durationSeconds": 16.277823,
+      "rms": 0.09598257887756843
+    },
+    {
+      "id": "chim-hoa-mi:mon-qua",
+      "file": "hoa-mi-may.v1.mp3",
+      "transcript": "Chim máy được trang trí lấp lánh và luôn chơi cùng một giai điệu. Mọi người thích món quà mới nên quên tiếng hót ngoài vườn. Một ngày máy cần sửa, cung điện yên lặng. Nhà vua nhớ giọng chim thật cùng những bài hát luôn thay đổi.",
+      "transcriptSha256": "e442cbcb1f7087aaa920c8bb1664a0e7c98fc6714fb8b119fa6721f739ad39f8",
+      "audioSha256": "f6be97f9a66137c0b6825b58d57090a20eb8c5ed5f7726cc8ac6f187a35fcb44",
+      "bytes": 129401,
+      "durationSeconds": 16.068844,
+      "rms": 0.09891676547625516
+    },
+    {
+      "id": "chim-hoa-mi:tro-ve",
+      "file": "hoa-mi-ket.v1.mp3",
+      "transcript": "Chim họa mi trở lại bên cửa sổ và hát cho nhà vua đang buồn. Vua cảm ơn, hứa để chim tự do bay về vườn. Câu chuyện kết thúc. Một tiếng hát chân thành có thể mang niềm vui; trân trọng người bạn cũng là tôn trọng cuộc sống tự do của bạn.",
+      "transcriptSha256": "8f00bf60a808f332e744f69265e4c88ff49777b5900ad8ad0061d3862d81b87f",
+      "audioSha256": "81c4b4f0bb517e5f4cf3398898e1ca4c9fd2fb94746ea1270a612171d3b7f9a8",
+      "bytes": 145492,
+      "durationSeconds": 18.10059,
+      "rms": 0.09661235317710679
+    },
+    {
+      "id": "nam-hat-dau:tach-vo",
+      "file": "hat-dau-dau.v1.mp3",
+      "transcript": "Năm hạt đậu nằm trong cùng một vỏ, mỗi hạt tưởng tượng về một hành trình. Khi vỏ mở, một hạt rơi vào chút đất bên cửa sổ nhà có em bé đang nghỉ dưỡng. Em muốn theo hạt đậu nảy mầm, hay cùng em bé chăm chút góc cửa sổ?",
+      "transcriptSha256": "9e2070c57a4641ab12280bd193c65d905fbaf15228fd54a9910fe2439daf8052",
+      "audioSha256": "4e1bce4ec32da372c7ff0a21b62fbf5d260d20b1c333d9aaaa279911a4bc0cba",
+      "bytes": 140895,
+      "durationSeconds": 17.519501,
+      "rms": 0.09884130795371852
+    },
+    {
+      "id": "nam-hat-dau:nay-mam",
+      "file": "hat-dau-mam.v1.mp3",
+      "transcript": "Nhờ đất ẩm và ánh nắng vừa đủ, hạt đậu mọc một chiếc rễ rồi nhú mầm. Em bé nhờ mẹ kể lại từng thay đổi nhỏ. Hai mẹ con vui khi biết bên cửa sổ có thêm một sự sống đang lớn lên từng ngày.",
+      "transcriptSha256": "40c8e4d823ed0078fabeac1444bf4df31a223c34fa88a9fbbfe9afaa837acf2c",
+      "audioSha256": "3b20b67af0d18634756a298e33d45b7f8219160ed75cb2e87ee12ce3be20713b",
+      "bytes": 121460,
+      "durationSeconds": 15.074785,
+      "rms": 0.10008185460828332
+    },
+    {
+      "id": "nam-hat-dau:cua-so",
+      "file": "hat-dau-cua.v1.mp3",
+      "transcript": "Mẹ đặt một chiếc que nhỏ làm chỗ tựa cho cây và kể cho em nghe về thân cây đang vươn lên. Em bé chọn tên cho mầm đậu. Việc chờ một chiếc lá mới giúp hai mẹ con có thêm điều vui để trò chuyện mỗi ngày.",
+      "transcriptSha256": "7a6d040b8a8b2188b956bc4853d6201b5c513c183761312d75c624db6b4496e5",
+      "audioSha256": "aa3a655d89a3e767f221236e3cc04da80ec756ace3a3fd35ed7381af58b356b4",
+      "bytes": 123549,
+      "durationSeconds": 15.339909,
+      "rms": 0.0986906039424076
+    },
+    {
+      "id": "nam-hat-dau:no-hoa",
+      "file": "hat-dau-ket.v1.mp3",
+      "transcript": "Cây đậu nở hoa bên cửa sổ. Mẹ kể về bông hoa, còn em bé kể lại hành trình của người bạn nhỏ bằng lời của mình. Câu chuyện Năm hạt đậu kết thúc. Một điều nhỏ bé cũng có thể mang đến niềm vui và giúp ta học cách quan tâm.",
+      "transcriptSha256": "2d4ef28a2b294dc36ecfdb9907dd4fc40f26ae3f0e02970359fd27cc1d296948",
+      "audioSha256": "a83c8e39ad005dcb681ea186562e6135792992e2bc8a66f9c69e49d419d6824e",
+      "bytes": 137760,
+      "durationSeconds": 17.128798,
+      "rms": 0.09867981191846037
+    },
+    {
+      "id": "bo-quan-ao-moi-cua-hoang-de:loi-khoe",
+      "file": "ao-vua-dau.v1.mp3",
+      "transcript": "Hai người thợ khoe rằng họ dệt được loại vải chỉ người giỏi mới nhận ra. Thật ra, khung cửi của họ trống không. Vì sợ bị chê, mọi người đều giả vờ khen. Em muốn nghe một câu hỏi thẳng thắn, hay nghe suy nghĩ của người thợ trong cung?",
+      "transcriptSha256": "9e9e4eef9d55b56342fe94c2be494cc6792c7a93e5c8479b14487bcb49372026",
+      "audioSha256": "22ea2a29ae1e6f09fc33877272c0d3e3b79ee78c0e0a36812bcf1c6c077e96f0",
+      "bytes": 143612,
+      "durationSeconds": 17.849977,
+      "rms": 0.09719011861626614
+    },
+    {
+      "id": "bo-quan-ao-moi-cua-hoang-de:cau-hoi",
+      "file": "ao-vua-hoi.v1.mp3",
+      "transcript": "Một em nhỏ hỏi: Nếu chưa có vải, sao mọi người lại khen? Câu hỏi làm cả nhóm dừng lại. Không ai cần giả vờ hiểu chỉ để giống người khác. Trong bản kể này, mọi người kiểm tra món đồ ngay tại cung, trước buổi lễ.",
+      "transcriptSha256": "08760af3c480c14468719f6cd02e6d93df98ab199fc2ad37da50504233da50c9",
+      "audioSha256": "dc8d46e26a2d8af4d10d60895386c75e1af6aa904a903f5b9358cd18daf45bd1",
+      "bytes": 138178,
+      "durationSeconds": 17.186395,
+      "rms": 0.09656893899812911
+    },
+    {
+      "id": "bo-quan-ao-moi-cua-hoang-de:phan-van",
+      "file": "ao-vua-nghi.v1.mp3",
+      "transcript": "Một người trong cung rất phân vân. Cuối cùng, người ấy nói: Tôi chưa thấy tấm vải nào, chúng ta nên kiểm tra lại. Em nhỏ đứng gần cũng đồng ý. Cả nhóm nhận ra nỗi sợ bị chê đã khiến mình tin một lời khoe thiếu căn cứ.",
+      "transcriptSha256": "9c9801ac0193bf3962462c301a4afe35bc0ba9183836c4c75d7321a206e8a393",
+      "audioSha256": "c21cefb90ec8d1907fc4f7c5e964bf1fe38c0306aa4ed95896ab84f5414e161f",
+      "bytes": 137760,
+      "durationSeconds": 17.128345,
+      "rms": 0.10152008395172696
+    },
+    {
+      "id": "bo-quan-ao-moi-cua-hoang-de:trung-thuc",
+      "file": "ao-vua-ket.v1.mp3",
+      "transcript": "Nhà vua cảm ơn những người nói thật và chọn mặc bộ quần áo thường ngày. Nhà vua hiểu rằng nhận mình chưa biết không có gì đáng xấu hổ. Câu chuyện kết thúc. Em có thể hỏi, kiểm tra và nhờ người tin cậy giúp đỡ khi gặp điều khó hiểu.",
+      "transcriptSha256": "a0d34ee458090a28e8bcccaa19bd3b1bb73b32cc29cde8817816e7d26c17de6f",
+      "audioSha256": "8670c5a7186cffaaf875c8b8dd7b2aaa621bdc514e79ba71d7c93af38edf7df4",
+      "bytes": 141104,
+      "durationSeconds": 17.533197,
+      "rms": 0.09739131396403893
+    }
+  ]
+}
