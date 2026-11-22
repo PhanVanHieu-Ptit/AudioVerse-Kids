@@ -28,6 +28,12 @@ export default function KeyboardHelpPage() {
           ))}
         </dl>
         <p>{voiceMessages.appHelp.text}</p>
+        <p>
+          Bộ điều khiển âm thanh có nút “Trợ giúp điều khiển”. Em có thể bật
+          phím tắt riêng và xem danh sách phím trong hộp thoại này. Phím tắt mặc
+          định tắt và chỉ hoạt động khi focus ở các nút của bộ điều khiển. Dùng
+          Tab và Enter hoặc Space luôn được, không cần bật phím tắt.
+        </p>
         <VoiceGuidanceButton message={voiceMessages.appHelp} />
       </section>
       <section className="settings-panel" aria-labelledby="explore-title">

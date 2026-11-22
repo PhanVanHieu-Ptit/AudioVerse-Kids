@@ -20,9 +20,9 @@ function setup(play?: () => Promise<void>) {
 
 it('exposes an honest empty state and labelled native controls', () => {
   render(<AudioPlayer engine={setup()} />);
-  expect(screen.getByRole('status')).toHaveTextContent(
-    'Chưa có bản thu âm được chọn.',
-  );
+  expect(
+    screen.getByRole('status', { name: 'Trạng thái âm thanh' }),
+  ).toHaveTextContent('Chưa có bản thu âm được chọn.');
   expect(screen.getByRole('button', { name: 'Phát' })).toBeDisabled();
   expect(screen.getByRole('slider', { name: /Vị trí phát/ })).toBeDisabled();
   expect(screen.getByRole('slider', { name: /Âm lượng/ })).toBeEnabled();
@@ -42,7 +42,9 @@ it('plays and pauses from keyboard, shows transcript and stops from the UI', asy
   await user.click(screen.getByText('Nội dung bằng chữ'));
   expect(screen.getByText('Nội dung story')).toBeVisible();
   await user.click(screen.getByRole('button', { name: 'Dừng' }));
-  expect(screen.getByRole('status')).toHaveTextContent('Đã dừng.');
+  expect(
+    screen.getByRole('status', { name: 'Trạng thái âm thanh' }),
+  ).toHaveTextContent('Đã dừng.');
 });
 
 it('offers an explicit resume when browser autoplay is blocked', async () => {
@@ -56,7 +58,9 @@ it('offers an explicit resume when browser autoplay is blocked', async () => {
   );
   await user.click(screen.getByRole('button', { name: 'Phát' }));
   const resume = await screen.findByRole('button', { name: 'Nghe tiếp' });
-  expect(screen.getByRole('status')).toHaveTextContent('trình duyệt');
+  expect(
+    screen.getByRole('status', { name: 'Trạng thái âm thanh' }),
+  ).toHaveTextContent('trình duyệt');
   await user.click(resume);
   expect(await screen.findByRole('button', { name: 'Tạm dừng' })).toBeEnabled();
 });
@@ -72,7 +76,9 @@ it('preserves keyboard focus during loading and lets Stop cancel a pending sourc
   expect(loading).toHaveFocus();
   expect(loading).toHaveAttribute('aria-busy', 'true');
   await user.click(screen.getByRole('button', { name: 'Dừng' }));
-  expect(screen.getByRole('status')).toHaveTextContent('Đã dừng.');
+  expect(
+    screen.getByRole('status', { name: 'Trạng thái âm thanh' }),
+  ).toHaveTextContent('Đã dừng.');
   source.resolve('/cancelled.wav');
 });
 

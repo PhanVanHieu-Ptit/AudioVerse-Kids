@@ -6,7 +6,7 @@ export const keyboardHelp = [
   {
     keys: 'Các phím mũi tên',
     action:
-      'Đổi lựa chọn trong danh sách chọn hoặc nhóm nút radio theo cách của trình duyệt.',
+      'Điều chỉnh thanh trượt âm lượng, đổi lựa chọn trong danh sách chọn hoặc nhóm nút radio theo cách của trình duyệt.',
   },
   { keys: 'Escape', action: 'Đóng hộp thoại và quay về nút đã mở hộp thoại.' },
 ] as const;

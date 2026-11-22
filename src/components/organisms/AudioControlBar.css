@@ -1,0 +1,76 @@
+.audio-control-bar {
+  display: grid;
+  gap: 1rem;
+  padding: min(1rem, 3vw);
+  min-width: 0;
+  border: 2px solid var(--color-control-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text);
+  overflow-wrap: anywhere;
+}
+.audio-control-bar h2,
+.audio-control-bar p {
+  margin: 0;
+}
+.audio-control-title {
+  font-weight: 700;
+}
+.audio-control-bar summary {
+  min-height: 3rem;
+  padding-block: 0.75rem;
+  cursor: pointer;
+}
+.audio-control-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+}
+.audio-control-bar button,
+.audio-control-bar input,
+.audio-control-bar select {
+  min-height: 3.5rem;
+  touch-action: manipulation;
+}
+.audio-control-bar button {
+  white-space: normal;
+  padding-inline: 0.5rem;
+  overflow-wrap: anywhere;
+}
+.audio-control-settings {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+}
+.audio-control-settings > input,
+.audio-control-settings > select {
+  width: 100%;
+  min-width: 0;
+}
+.audio-control-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 3.5rem;
+  cursor: pointer;
+}
+.audio-control-option input {
+  width: 1.5rem;
+  flex: 0 0 1.5rem;
+  margin: 0;
+}
+.audio-control-bar :focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--color-focus-halo);
+}
+@media (min-width: 40rem) {
+  .audio-control-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 68rem) {
+  .audio-control-actions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
