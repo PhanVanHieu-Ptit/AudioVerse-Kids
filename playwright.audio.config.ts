@@ -4,6 +4,11 @@ import base from './playwright.config';
 // Test-only Vite entry exercises real media without shipping fixture audio or UI.
 export default defineConfig({
   ...base,
+  outputDir: 'test-results-audio',
+  reporter: [
+    ['list'],
+    ['html', { open: 'never', outputFolder: 'playwright-audio-report' }],
+  ],
   testMatch: [
     'audio-engine.spec.ts',
     'audio-controls.spec.ts',

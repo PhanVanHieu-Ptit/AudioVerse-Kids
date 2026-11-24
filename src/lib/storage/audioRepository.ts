@@ -14,11 +14,27 @@ export const audioRepository = {
       db.close();
     }
   },
-  async download(resource: AudioResource, signal?: AbortSignal): Promise<void> {
+  async download(
+    resource: AudioResource,
+    signal?: AbortSignal,
+    integrity?: { bytes: number; sha256: string },
+  ): Promise<void> {
     const response = await fetch(resource.src, signal ? { signal } : {});
     if (!response.ok) throw new Error('Audio download failed');
     const blob = await response.blob();
     if (!blob.size) throw new Error('Empty audio download');
+    if (integrity) {
+      if (blob.size !== integrity.bytes) throw new Error('Audio size mismatch');
+      const digest = await crypto.subtle.digest(
+        'SHA-256',
+        await blob.arrayBuffer(),
+      );
+      const actual = Array.from(new Uint8Array(digest), (byte) =>
+        byte.toString(16).padStart(2, '0'),
+      ).join('');
+      if (actual !== integrity.sha256)
+        throw new Error('Audio checksum mismatch');
+    }
     signal?.throwIfAborted();
     const db = await openDatabase();
     try {

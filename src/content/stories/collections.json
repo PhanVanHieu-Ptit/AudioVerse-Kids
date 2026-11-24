@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "collections": [
+    {
+      "id": "original-v1",
+      "title": "Truyện gốc AudioVerse Kids",
+      "kind": "original",
+      "storyIds": [
+        "chiec-ghe-trong-vong-ban",
+        "chuyen-tau-go-nhip",
+        "hat-mua-xin-nghi",
+        "loi-nhan-trong-tui-vai",
+        "soc-bong-va-hop-hat",
+        "ban-do-mui-huong",
+        "buoi-hop-duoi-goc-me",
+        "cau-lac-bo-bong-bong-khong-xa-phong",
+        "nhom-ban-sua-tieng-lach-cach",
+        "xuong-may-am-thanh",
+        "bao-tang-nhung-dieu-chua-xong",
+        "buu-cuc-hanh-tinh-nghi",
+        "hoi-dong-ben-dong-suoi",
+        "thu-vien-tieng-dong-khong-ten",
+        "tram-du-bao-san-truong"
+      ]
+    },
+    {
+      "id": "classics-v1",
+      "title": "Truyện dân gian và kinh điển kể lại",
+      "kind": "retelling",
+      "storyIds": [
+        "ba-chu-heo-con",
+        "rua-va-tho",
+        "co-be-quang-khan-do",
+        "su-tu-va-chuot",
+        "trang-quynh-mam-da",
+        "cau-be-chan-cuu"
+      ]
+    }
+  ],
+  "deferred": [
+    {
+      "id": "hoang-tu-be",
+      "title": "Hoàng tử bé",
+      "status": "rights-review-required",
+      "reviewedOn": "2026-11-23",
+      "reason": "Không có kết luận được dùng tự do cho mọi lãnh thổ. Nguồn SNE nêu tác phẩm tại Pháp vào công chúng từ 01/01/2033. Bản dịch, tranh và bản thu có quyền riêng; chưa có phạm vi phát hành và giấy phép cho các phần cần thiết.",
+      "references": [
+        "https://www.sne.fr/editeur-et-auteur/duree-des-droits-dauteurs/"
+      ]
+    }
+  ]
+}

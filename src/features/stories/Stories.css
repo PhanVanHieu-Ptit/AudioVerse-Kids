@@ -1,0 +1,130 @@
+.story-library .story-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+.story-notice {
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-soft);
+  margin-block: 1rem;
+}
+.story-filters {
+  display: grid;
+  gap: 1rem;
+  margin-block: 1.5rem;
+}
+.story-filters label {
+  display: grid;
+  gap: 0.5rem;
+  min-width: 0;
+  font-weight: 650;
+}
+.story-filters input,
+.story-filters select {
+  width: 100%;
+  min-width: 0;
+  min-height: 3rem;
+  padding: 0.75rem;
+  font: inherit;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 2px solid var(--color-control-border);
+  border-radius: var(--radius-sm);
+}
+.story-result-count {
+  margin-block: 1rem;
+}
+.story-metadata {
+  font-size: 0.875rem;
+}
+.story-detail {
+  max-width: 52rem;
+}
+.story-credit,
+.story-characters {
+  margin-block: 1rem;
+}
+.story-characters ul {
+  padding-inline-start: 1.5rem;
+}
+.story-characters li + li {
+  margin-top: 0.5rem;
+}
+.story-scene {
+  margin-top: 2rem;
+}
+.story-audio {
+  margin-block: 1rem 1.5rem;
+}
+.story-download {
+  margin-block: 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+.story-download p {
+  margin-block: 0.75rem;
+}
+.story-clip {
+  margin-block: 0.75rem;
+}
+.story-clip [role='status']:empty {
+  display: none;
+}
+.story-scene h2 {
+  margin-bottom: 1rem;
+}
+.story-transcript {
+  max-width: 65ch;
+}
+.story-transcript p + p {
+  margin-top: 1rem;
+}
+.story-ending {
+  margin-block: 1.5rem;
+  padding: 1rem;
+  border-left: 4px solid var(--color-primary);
+  background: var(--color-surface-soft);
+}
+.story-ending p {
+  margin-top: 0.75rem;
+}
+.story-question {
+  min-width: 0;
+  margin-block: 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+.story-question legend {
+  font-weight: 650;
+  padding-inline: 0.25rem;
+}
+.story-question-options,
+.story-choices {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-block: 1rem;
+}
+.story-question [role='status']:not(:empty) {
+  margin-top: 1rem;
+}
+.story-choices .button {
+  text-align: start;
+  max-width: 100%;
+}
+@media (min-width: 40rem) {
+  .story-library .story-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .story-filters {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 86rem) {
+  .story-library .story-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

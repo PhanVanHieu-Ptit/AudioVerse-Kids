@@ -1,0 +1,76 @@
+{
+  "contentRevision": "d005bec5da5a0fecf2b7252c72e87f324eae9a894dbcf9830bbc3115ea4c4ca0",
+  "stories": [
+    {
+      "id": "chiec-ghe-trong-vong-ban",
+      "scenes": 5,
+      "files": 11,
+      "bytes": 2132548
+    },
+    { "id": "chuyen-tau-go-nhip", "scenes": 5, "files": 11, "bytes": 1976164 },
+    { "id": "hat-mua-xin-nghi", "scenes": 5, "files": 11, "bytes": 2003236 },
+    {
+      "id": "loi-nhan-trong-tui-vai",
+      "scenes": 5,
+      "files": 11,
+      "bytes": 2164804
+    },
+    { "id": "soc-bong-va-hop-hat", "scenes": 5, "files": 11, "bytes": 1974148 },
+    { "id": "ban-do-mui-huong", "scenes": 6, "files": 15, "bytes": 3127476 },
+    {
+      "id": "buoi-hop-duoi-goc-me",
+      "scenes": 6,
+      "files": 15,
+      "bytes": 2894772
+    },
+    {
+      "id": "cau-lac-bo-bong-bong-khong-xa-phong",
+      "scenes": 6,
+      "files": 15,
+      "bytes": 3034452
+    },
+    {
+      "id": "nhom-ban-sua-tieng-lach-cach",
+      "scenes": 6,
+      "files": 15,
+      "bytes": 2970516
+    },
+    { "id": "xuong-may-am-thanh", "scenes": 6, "files": 15, "bytes": 3033876 },
+    {
+      "id": "bao-tang-nhung-dieu-chua-xong",
+      "scenes": 8,
+      "files": 17,
+      "bytes": 4324204
+    },
+    {
+      "id": "buu-cuc-hanh-tinh-nghi",
+      "scenes": 8,
+      "files": 17,
+      "bytes": 4120876
+    },
+    {
+      "id": "hoi-dong-ben-dong-suoi",
+      "scenes": 8,
+      "files": 17,
+      "bytes": 4109932
+    },
+    {
+      "id": "thu-vien-tieng-dong-khong-ten",
+      "scenes": 8,
+      "files": 17,
+      "bytes": 4212172
+    },
+    {
+      "id": "tram-du-bao-san-truong",
+      "scenes": 8,
+      "files": 17,
+      "bytes": 4219660
+    },
+    { "id": "ba-chu-heo-con", "scenes": 5, "files": 11, "bytes": 2547556 },
+    { "id": "rua-va-tho", "scenes": 5, "files": 11, "bytes": 2379076 },
+    { "id": "co-be-quang-khan-do", "scenes": 6, "files": 15, "bytes": 3456948 },
+    { "id": "su-tu-va-chuot", "scenes": 6, "files": 15, "bytes": 3310068 },
+    { "id": "trang-quynh-mam-da", "scenes": 8, "files": 17, "bytes": 4559212 },
+    { "id": "cau-be-chan-cuu", "scenes": 8, "files": 17, "bytes": 4713004 }
+  ]
+}

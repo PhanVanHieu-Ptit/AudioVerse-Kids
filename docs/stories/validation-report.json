@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "contentRevision": "d005bec5da5a0fecf2b7252c72e87f324eae9a894dbcf9830bbc3115ea4c4ca0",
+  "collectionsRevision": "ed32cc3ea5f57a3a740376e9aba7e253ec059f7e3383f9dafdc8bcb96bd1c466",
+  "stories": [
+    {
+      "id": "chiec-ghe-trong-vong-ban",
+      "level": 1,
+      "sceneCount": 5,
+      "endingCount": 2,
+      "paths": [
+        ["gap-ban", "ke-tro", "ket-nhip"],
+        ["gap-ban", "hoi-ban", "ket-mon"]
+      ]
+    },
+    {
+      "id": "chuyen-tau-go-nhip",
+      "level": 1,
+      "sceneCount": 5,
+      "endingCount": 2,
+      "paths": [
+        ["len-tau", "ga-banh", "ket-banh"],
+        ["len-tau", "ga-goi", "ket-nghi"]
+      ]
+    },
+    {
+      "id": "hat-mua-xin-nghi",
+      "level": 1,
+      "sceneCount": 5,
+      "endingCount": 2,
+      "paths": [
+        ["hien-mua", "hoi-dat", "ket-cham"],
+        ["hien-mua", "ke-mua", "ket-ke"]
+      ]
+    },
+    {
+      "id": "loi-nhan-trong-tui-vai",
+      "level": 1,
+      "sceneCount": 5,
+      "endingCount": 2,
+      "paths": [
+        ["nham-tui", "hoi-ngay", "ket-tra"],
+        ["nham-tui", "giu-tui", "ket-giu"]
+      ]
+    },
+    {
+      "id": "soc-bong-va-hop-hat",
+      "level": 1,
+      "sceneCount": 5,
+      "endingCount": 2,
+      "paths": [
+        ["hop-hat", "hoi-tho", "ket-an"],
+        ["hop-hat", "moi-choi", "ket-choi"]
+      ]
+    },
+    {
+      "id": "ban-do-mui-huong",
+      "level": 2,
+      "sceneCount": 6,
+      "endingCount": 2,
+      "paths": [
+        ["loi-moi", "moc-duong", "ban-thu", "ket-loi"],
+        ["loi-moi", "moc-duong", "ban-thu", "ket-chon"],
+        ["loi-moi", "mui-huong", "ban-thu", "ket-loi"],
+        ["loi-moi", "mui-huong", "ban-thu", "ket-chon"]
+      ]
+    },
+    {
+      "id": "buoi-hop-duoi-goc-me",
+      "level": 2,
+      "sceneCount": 6,
+      "endingCount": 2,
+      "paths": [
+        ["loi-phan-nan", "nghe-de", "thoa-thuan", "ket-gio"],
+        ["loi-phan-nan", "nghe-de", "thoa-thuan", "ket-cho"],
+        ["loi-phan-nan", "nghe-nhim", "thoa-thuan", "ket-gio"],
+        ["loi-phan-nan", "nghe-nhim", "thoa-thuan", "ket-cho"]
+      ]
+    },
+    {
+      "id": "cau-lac-bo-bong-bong-khong-xa-phong",
+      "level": 2,
+      "sceneCount": 6,
+      "endingCount": 2,
+      "paths": [
+        ["coc-rong", "du-doan", "nghieng-coc", "ket-thu"],
+        ["coc-rong", "du-doan", "nghieng-coc", "ket-ke"],
+        ["coc-rong", "nghe-thu", "nghieng-coc", "ket-thu"],
+        ["coc-rong", "nghe-thu", "nghieng-coc", "ket-ke"]
+      ]
+    },
+    {
+      "id": "nhom-ban-sua-tieng-lach-cach",
+      "level": 2,
+      "sceneCount": 6,
+      "endingCount": 2,
+      "paths": [
+        ["tieng-dong", "ghi-luc", "kiem-tra", "ket-ban"],
+        ["tieng-dong", "ghi-luc", "kiem-tra", "ket-noi"],
+        ["tieng-dong", "hoi-chu", "kiem-tra", "ket-ban"],
+        ["tieng-dong", "hoi-chu", "kiem-tra", "ket-noi"]
+      ]
+    },
+    {
+      "id": "xuong-may-am-thanh",
+      "level": 2,
+      "sceneCount": 6,
+      "endingCount": 2,
+      "paths": [
+        ["mo-xuong", "hoi-bat-dau", "ban-thiet-ke", "ket-bien"],
+        ["mo-xuong", "hoi-bat-dau", "ban-thiet-ke", "ket-thu"],
+        ["mo-xuong", "hoi-dung", "ban-thiet-ke", "ket-bien"],
+        ["mo-xuong", "hoi-dung", "ban-thiet-ke", "ket-thu"]
+      ]
+    },
+    {
+      "id": "bao-tang-nhung-dieu-chua-xong",
+      "level": 3,
+      "sceneCount": 8,
+      "endingCount": 2,
+      "paths": [
+        ["loi-moi", "quyen-chon", "thiet-ke", "buoi-nho", "ket-nho"],
+        ["loi-moi", "quyen-chon", "thiet-ke", "thu-them", "ket-thu"],
+        ["loi-moi", "loi-moi-moi", "thiet-ke", "buoi-nho", "ket-nho"],
+        ["loi-moi", "loi-moi-moi", "thiet-ke", "thu-them", "ket-thu"]
+      ]
+    },
+    {
+      "id": "buu-cuc-hanh-tinh-nghi",
+      "level": 3,
+      "sceneCount": 8,
+      "endingCount": 2,
+      "paths": [
+        ["lich-giao", "nguon-luc", "dieu-phoi", "giao-gap", "ket-giao"],
+        ["lich-giao", "nguon-luc", "dieu-phoi", "cho-nap", "ket-nghi"],
+        ["lich-giao", "nguoi-nhan", "dieu-phoi", "giao-gap", "ket-giao"],
+        ["lich-giao", "nguoi-nhan", "dieu-phoi", "cho-nap", "ket-nghi"]
+      ]
+    },
+    {
+      "id": "hoi-dong-ben-dong-suoi",
+      "level": 3,
+      "sceneCount": 8,
+      "endingCount": 2,
+      "paths": [
+        ["de-xuat", "muc-dich", "ban-nhu-cau", "thu-san", "ket-thu"],
+        ["de-xuat", "muc-dich", "ban-nhu-cau", "hoi-them", "ket-hoi"],
+        ["de-xuat", "loi-chung", "ban-nhu-cau", "thu-san", "ket-thu"],
+        ["de-xuat", "loi-chung", "ban-nhu-cau", "hoi-them", "ket-hoi"]
+      ]
+    },
+    {
+      "id": "thu-vien-tieng-dong-khong-ten",
+      "level": 3,
+      "sceneCount": 8,
+      "endingCount": 2,
+      "paths": [
+        ["ban-ghi", "muc-tieu", "quyet-dinh", "thu-moi", "ket-am"],
+        ["ban-ghi", "muc-tieu", "quyet-dinh", "chu-truoc", "ket-chu"],
+        ["ban-ghi", "tao-am", "quyet-dinh", "thu-moi", "ket-am"],
+        ["ban-ghi", "tao-am", "quyet-dinh", "chu-truoc", "ket-chu"]
+      ]
+    },
+    {
+      "id": "tram-du-bao-san-truong",
+      "level": 3,
+      "sceneCount": 8,
+      "endingCount": 2,
+      "paths": [
+        ["ban-tin", "so-ghi", "hop-nhom", "chuan-bi-phong", "ket-phong"],
+        ["ban-tin", "so-ghi", "hop-nhom", "chuan-bi-doi", "ket-doi"],
+        ["ban-tin", "du-bao", "hop-nhom", "chuan-bi-phong", "ket-phong"],
+        ["ban-tin", "du-bao", "hop-nhom", "chuan-bi-doi", "ket-doi"]
+      ]
+    },
+    {
+      "id": "ba-chu-heo-con",
+      "level": 1,
+      "sceneCount": 5,
+      "endingCount": 2,
+      "paths": [
+        ["ba-ngoi-nha", "noi-qua-cua", "ket-sua"],
+        ["ba-ngoi-nha", "cho-yen", "ket-chung"]
+      ]
+    },
+    {
+      "id": "rua-va-tho",
+      "level": 1,
+      "sceneCount": 5,
+      "endingCount": 2,
+      "paths": [
+        ["cuoc-hen", "xin-loi", "ket-ban"],
+        ["cuoc-hen", "ke-cach", "ket-choi"]
+      ]
+    },
+    {
+      "id": "co-be-quang-khan-do",
+      "level": 2,
+      "sceneCount": 6,
+      "endingCount": 2,
+      "paths": [
+        ["gio-qua", "giu-kin", "truoc-cua", "ket-hang-xom"],
+        ["gio-qua", "giu-kin", "truoc-cua", "ket-diem-hen"],
+        ["gio-qua", "nho-me", "truoc-cua", "ket-hang-xom"],
+        ["gio-qua", "nho-me", "truoc-cua", "ket-diem-hen"]
+      ]
+    },
+    {
+      "id": "su-tu-va-chuot",
+      "level": 2,
+      "sceneCount": 6,
+      "endingCount": 2,
+      "paths": [
+        ["gap-nhau", "chuot-nghi", "go-luoi", "ket-cam-on"],
+        ["gap-nhau", "chuot-nghi", "go-luoi", "ket-hen"],
+        ["gap-nhau", "su-tu-nghi", "go-luoi", "ket-cam-on"],
+        ["gap-nhau", "su-tu-nghi", "go-luoi", "ket-hen"]
+      ]
+    },
+    {
+      "id": "trang-quynh-mam-da",
+      "level": 3,
+      "sceneCount": 8,
+      "endingCount": 2,
+      "paths": [
+        ["mon-la", "ten-goi", "bua-com", "loi-cam-on", "ket-cam-on"],
+        ["mon-la", "ten-goi", "bua-com", "doi-yeu-cau", "ket-thay-doi"],
+        ["mon-la", "cong-suc", "bua-com", "loi-cam-on", "ket-cam-on"],
+        ["mon-la", "cong-suc", "bua-com", "doi-yeu-cau", "ket-thay-doi"]
+      ]
+    },
+    {
+      "id": "cau-be-chan-cuu",
+      "level": 3,
+      "sceneCount": 8,
+      "endingCount": 2,
+      "paths": [
+        ["loi-bao-sai", "nghe-cau-be", "thong-nhat", "bao-ro", "ket-thong-tin"],
+        ["loi-bao-sai", "nghe-cau-be", "thong-nhat", "goi-giup", "ket-sua-loi"],
+        ["loi-bao-sai", "nghe-lang", "thong-nhat", "bao-ro", "ket-thong-tin"],
+        ["loi-bao-sai", "nghe-lang", "thong-nhat", "goi-giup", "ket-sua-loi"]
+      ]
+    }
+  ]
+}

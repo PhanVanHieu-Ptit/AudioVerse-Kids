@@ -22,9 +22,15 @@
     "test:e2e": "playwright test",
     "test:e2e:audio": "playwright test --config playwright.audio.config.ts",
     "test:e2e:ui": "playwright test --ui",
-    "check": "npm run typecheck && npm run lint && npm run format:check && npm test && npm run build && npm run test:e2e && npm run test:e2e:audio"
+    "check": "npm run content:validate && npm run typecheck && npm run lint && npm run format:check && npm test && npm run build && npm run test:e2e && npm run test:e2e:audio",
+    "content:build": "node --experimental-strip-types scripts/story-content.ts --write",
+    "content:validate": "node --experimental-strip-types scripts/story-content.ts --check",
+    "stories:audio:generate": "node --experimental-strip-types scripts/generate-story-audio.ts",
+    "stories:voice:preview": "node --experimental-strip-types scripts/local-tts/preview-plan.ts && .cache/local-tts/venv/bin/python scripts/local-tts/render-preview.py",
+    "stories:voice:check": "node --experimental-strip-types scripts/local-tts/check-preview.ts"
   },
   "dependencies": {
+    "ajv": "8.20.0",
     "idb": "^8.0.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

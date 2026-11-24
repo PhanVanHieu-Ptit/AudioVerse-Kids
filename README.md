@@ -1,5 +1,9 @@
 # AudioVerse Kids – Thế Giới Âm Thanh
 
+Bộ nội dung truyện: [21 truyện tiếng Việt gồm 15 truyện gốc và 6 bản kể lại dân gian/kinh điển](docs/stories/README.md). `/stories` có tìm kiếm/lọc và [nghe/đọc từng cảnh](docs/stories/listening.md) bằng 301 MP3, người kể chính là giọng nam tổng hợp **Thanh Bình**, có phân giọng nhân vật. Có phát/tạm dừng, nghe lại, tua, tốc độ/âm lượng và tải riêng truyện vào IndexedDB để nghe offline. Bản chữ được precache; âm thanh được tải theo lựa chọn của người dùng. Hoàng tử bé vẫn chờ rà soát quyền, không thuộc kho truyện đang hiển thị.
+
+Kiểm tra nghe truyện ngày 24/11/2026: typecheck, lint, format, content validation và build đạt; **297 tests Vitest, 171 E2E giao diện và 30 E2E audio đạt**, gồm thay giọng trong bản tải ngoại tuyến. Chi tiết nguồn giọng, tái tạo và giới hạn kiểm chứng ở [hồ sơ bàn giao nghe truyện](docs/stories/listening.md).
+
 Ứng dụng tiếng Việt dành cho trẻ em khiếm thị và trẻ có các mức thị lực khác nhau. Nền tảng ưu tiên khả năng tiếp cận, bàn phím, cảm ứng và trình đọc màn hình. Không yêu cầu tài khoản; không có analytics, quảng cáo hay dịch vụ thu thập dữ liệu cá nhân.
 
 Accessibility Foundation: xem [checklist, kiến trúc và kết quả kiểm thử](docs/accessibility.md). Trang `/help` hướng dẫn bàn phím; `/settings` có hiển thị và hướng dẫn giọng nói theo yêu cầu. NVDA, VoiceOver và TalkBack **chưa được kiểm thử thực tế**.
@@ -97,19 +101,19 @@ Luồng phụ thuộc: **UI → hook/store → repository → IndexedDB**. Store
 
 ## Routing
 
-| URL                 | Trang                                                          |
-| ------------------- | -------------------------------------------------------------- |
-| `/`                 | Trang chủ / Khám phá                                           |
-| `/stories`          | Thư viện truyện                                                |
-| `/stories/:storyId` | Nghe truyện; trạng thái chưa có truyện cho ID chưa có nội dung |
-| `/games`            | Danh sách trò chơi                                             |
-| `/games/:gameId`    | Chơi trò chơi; fallback cho ID không tồn tại                   |
-| `/music`            | Khu vườn âm nhạc                                               |
-| `/learning`         | Học điều hay                                                   |
-| `/settings`         | Cài đặt                                                        |
-| `/teacher`          | Chế độ giáo viên                                               |
-| `/design-system`    | Design System Showcase hiện có                                 |
-| `*`                 | Không tìm thấy trang                                           |
+| URL                 | Trang                                                               |
+| ------------------- | ------------------------------------------------------------------- |
+| `/`                 | Trang chủ / Khám phá                                                |
+| `/stories`          | Thư viện truyện                                                     |
+| `/stories/:storyId` | Đọc truyện theo cảnh, chọn nhánh; fallback cho ID không có nội dung |
+| `/games`            | Danh sách trò chơi                                                  |
+| `/games/:gameId`    | Chơi trò chơi; fallback cho ID không tồn tại                        |
+| `/music`            | Khu vườn âm nhạc                                                    |
+| `/learning`         | Học điều hay                                                        |
+| `/settings`         | Cài đặt                                                             |
+| `/teacher`          | Chế độ giáo viên                                                    |
+| `/design-system`    | Design System Showcase hiện có                                      |
+| `*`                 | Không tìm thấy trang                                                |
 
 Các URL cũ `/truyen`, `/tro-choi`, `/am-nhac`, `/hoc-tap`, `/cai-dat`, `/giao-vien` chuyển hướng với `replace` đến URL mới, không thêm vòng lặp vào lịch sử. Tất cả màn hình được lazy-load, giữ `AppLayout` chung. `PageHeader` cập nhật document title, focus tiêu đề và đưa trang về đầu khi đổi pathname. Query/hash không làm mất focus hay reset hoạt động. `RouteLoadingState` thông báo đang tải và đặt focus vào main khi chờ chunk; `RouteContentBoundary` giữ điều hướng khi màn hình lỗi và reset khi chuyển sang pathname khác.
 
@@ -148,15 +152,15 @@ npm run build
 npm run preview
 ```
 
-Mở trang online, chờ thông báo sẵn sàng, sau đó chuyển trình duyệt sang offline và tải lại. E2E cũng kiểm tra tải lại và mở route chưa truy cập khi offline. Trình duyệt có thể thu hồi cache/lưu trữ; không cam kết dữ liệu tồn tại vĩnh viễn.
+Mở trang online, chờ thông báo sẵn sàng để giao diện/bản chữ dùng được offline. Với audio truyện, vào trang truyện, chọn **Tải truyện để nghe ngoại tuyến** và chờ thông báo đã lưu đủ trước khi tắt mạng. E2E kiểm tra nghe cảnh chưa mở từ IndexedDB sau reload. Trình duyệt có thể thu hồi cache/lưu trữ; không cam kết dữ liệu tồn tại vĩnh viễn.
 
 ## Phạm vi của bản khởi tạo
 
 Kiểm tra tại local ngày 21/11/2026: typecheck, ESLint, Prettier và build production đạt; 10 unit/integration test và 33 E2E test đạt trên Chromium với viewport desktop, điện thoại và máy tính bảng. Các bài axe-core không phát hiện vi phạm trong phạm vi quét. Coverage cho store và lớp lưu trữ: 95% dòng. `npm audit` báo 0 lỗ hổng tại thời điểm cài đặt. CI đã được cấu hình nhưng chưa chạy trên GitHub trong phiên này.
 
-Đã triển khai nền tảng, routing, UI responsive, cài đặt thực lưu IndexedDB và vỏ PWA. Các trang truyện, âm nhạc, học tập và giáo viên đang có trạng thái trống rõ ràng. Trang trò chơi có hoạt động âm cao–trầm tổng hợp thật; có 8 file hướng dẫn giọng tổng hợp tiếng Việt. Chưa có thư viện truyện/nhạc thu âm hoặc thư viện nội dung đã biên tập cho trẻ.
+Đã triển khai nền tảng, routing, UI responsive, cài đặt thực lưu IndexedDB và vỏ PWA. Thư viện có 21 truyện với bản chữ và 301 MP3 giọng tổng hợp, đọc/nghe từng cảnh và chọn nhánh; audio offline cần tải riêng từng truyện. Các trang âm nhạc, học tập và giáo viên còn ở trạng thái trống. Trang trò chơi có hoạt động âm cao–trầm tổng hợp thật; có 8 file hướng dẫn giọng tổng hợp tiếng Việt. Nội dung/giọng truyện chưa được thử với trẻ hoặc nghe duyệt toàn bộ bởi chuyên gia; chưa có thư viện nhạc.
 
-Audio engine dùng `HTMLAudioElement` cho playback, Web Audio gain graph khi khả dụng và IndexedDB cho tài nguyên tải ngoại tuyến. `AudioManager` dùng chung cho Story/Game/Learning, với ba kênh narration, nhạc nền và hiệu ứng; narration có queue, interruption và ducking nhạc nền. UI truy cập qua `useAudioPlayer` và `AudioPlayer`; player tái sử dụng bộ điều khiển thống nhất `AudioControlBar`, `useAudioControls` và `KeyboardHelpDialog`. Bộ điều khiển có phát/tạm dừng, nghe lại, volume/rate, trước/tiếp theo, hướng dẫn, callback quay lại/thoát, điều khiển tuần tự và phím tắt cục bộ/âm báo tùy chọn. Không khởi tạo media hoặc AudioContext lúc import/render; browser autoplay denial có trạng thái và nút tiếp tục rõ ràng. Xem [API, hợp đồng tích hợp và tài liệu bàn giao Audio Engine](docs/audio-engine.md#ui-và-accessibility). Chưa có bản thu nội dung được duyệt hoặc nghiệp vụ nghe truyện hoàn chỉnh; Design System hiển thị player trống trung thực.
+Audio engine dùng `HTMLAudioElement` cho playback, Web Audio gain graph khi khả dụng và IndexedDB cho tài nguyên tải ngoại tuyến. `AudioManager` dùng chung cho Story/Game/Learning, với ba kênh narration, nhạc nền và hiệu ứng; narration có queue, interruption và ducking nhạc nền. UI truy cập qua `useAudioPlayer` và `AudioPlayer`; player tái sử dụng bộ điều khiển thống nhất `AudioControlBar`, `useAudioControls` và `KeyboardHelpDialog`. Bộ điều khiển có phát/tạm dừng, nghe lại, volume/rate, trước/tiếp theo, hướng dẫn, callback quay lại/thoát, điều khiển tuần tự và phím tắt cục bộ/âm báo tùy chọn. Không khởi tạo media hoặc AudioContext lúc import/render; browser autoplay denial có trạng thái và nút tiếp tục rõ ràng. Xem [API, hợp đồng tích hợp và tài liệu bàn giao Audio Engine](docs/audio-engine.md#ui-và-accessibility). Truyện đã dùng player này với MP3 tổng hợp và download từng truyện; Design System vẫn có trạng thái trống để minh họa fallback.
 
 Tham khảo cấu hình: [Vite](https://vite.dev/guide/), [Vite PWA](https://vite-pwa-org.netlify.app/guide/service-worker-strategies-and-behaviors), [Playwright accessibility testing](https://playwright.dev/docs/accessibility-testing).
 
@@ -238,4 +242,4 @@ Các ca mới kiểm tra URL chuẩn, ID không tồn tại, redirect URL cũ, t
 | `src/app/routes.test.tsx`, `navigation.test.tsx`; `src/stores/activityStore.test.ts`; `src/lib/storage/activityRepository.test.ts`; `src/engines/game/toneGame.test.ts` | Unit/integration test                                                     |
 | `e2e/app.spec.ts`, `design-system.spec.ts`, `navigation.spec.ts`; `README.md`                                                                                           | Kiểm thử trình duyệt, accessibility và tài liệu bàn giao                  |
 
-Các route truyện, âm nhạc, học tập và giáo viên hiện là màn hình nền tảng với trạng thái trống trung thực. Audio engine và player dùng chung đã được bổ sung sau nhiệm vụ routing (xem tài liệu audio); các route này vẫn cần nội dung được biên tập, bản thu âm thật và tích hợp nghiệp vụ riêng.
+Sau nhiệm vụ routing, thư viện đã có catalog, trang nghe/đọc theo cảnh, MP3 thật và tải audio ngoại tuyến qua audio engine dùng chung. Các route âm nhạc, học tập và giáo viên vẫn là màn hình nền tảng có trạng thái trống.

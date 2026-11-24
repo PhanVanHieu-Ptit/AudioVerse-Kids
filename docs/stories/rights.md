@@ -1,0 +1,34 @@
+# Hồ sơ nguồn cho bộ truyện kể lại
+
+Rà soát ngày 23/11/2026. Phạm vi nhận định là việc dùng **cốt truyện để viết lời kể tiếng Việt mới cho bộ nội dung**, chủ yếu đối chiếu quy định Việt Nam. Không kết luận mọi tài nguyên mang cùng tên truyện đều miễn phí hoặc mọi lãnh thổ đều có cùng tình trạng quyền. Bản kể mới không được tự gắn giấy phép public domain chỉ vì nguồn cổ đã hết quyền tài sản.
+
+## Căn cứ và giới hạn
+
+[Luật Sở hữu trí tuệ, bản hợp nhất 160/2026/VBHN-LQ-VPQH trên Công báo](https://congbaocdn.chinhphu.vn/180507251028987904/2026/10/6/470657-1791273236_v1_1791273883_signed.pdf) phân biệt việc dùng văn học dân gian có dẫn xuất xứ và giữ giá trị (Điều 23), thời hạn bảo hộ (Điều 27), việc dùng tác phẩm thuộc công chúng vẫn tôn trọng quyền nhân thân (Điều 43). Vì vậy, hồ sơ giữ xuất xứ và ghi rõ các thay đổi trong mỗi bản kể.
+
+Các kết luận lựa chọn dưới đây là suy luận biên tập từ nguồn và cốt truyện lịch sử, không phải giấy phép do nhà xuất bản hiện đại cấp. Không dùng ngoại lệ hỗ trợ người khuyết tật làm lý do mặc nhiên sao chép tác phẩm còn được bảo hộ. Không sao chép bản dịch tiếng Việt, trang truyện tranh, thiết kế nhân vật phim, nhạc hoặc giọng đọc hiện đại.
+
+## Các truyện đã chọn
+
+| Truyện               | Nguồn và cách dùng                                                                                                                                                                                                                                                               | Quyết định                                                                                                                                                                                             |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Ba chú heo con       | Truyện dân gian Anh, tham khảo mục The Story of the Three Little Pigs trong [English Fairy Tales do Joseph Jacobs sưu tầm](https://www.gutenberg.org/ebooks/7439). Tuyển tập có bản in 1890; Jacobs mất năm 1916. Gutenberg ghi văn bản thuộc công chúng tại Hoa Kỳ.             | Viết bản kể mới từ cốt truyện. Suy luận nguồn đã hết thời hạn quyền tài sản tại Việt Nam; không lấy hình minh họa hoặc bản phim.                                                                       |
+| Cô bé quàng khăn đỏ  | Truyền thống truyện cổ do Jacob và Wilhelm Grimm sưu tầm, đối chiếu mục Little Red-Cap trong [Grimm's Fairy Stories](https://www.gutenberg.org/cache/epub/11027/pg11027-images.html). Jacob mất năm 1863, Wilhelm mất năm 1859.                                                  | Viết lời kể mới từ cốt truyện cổ, không dịch lại từng câu của một bản dịch hiện đại. Suy luận nguồn cổ đã hết thời hạn quyền tài sản tại Việt Nam.                                                     |
+| Rùa và Thỏ           | Truyền thống ngụ ngôn Aesop; đối chiếu The Hare and the Tortoise trong [tuyển bản George Fyler Townsend tại Fordham](https://sourcebooks.fordham.edu/ancient/aesop-fables.asp).                                                                                                  | Dùng mô-típ ngụ ngôn cổ, thêm lời thoại và nhánh mới.                                                                                                                                                  |
+| Sư tử và Chuột       | Cùng tuyển nguồn Aesop ở trên, mục The Lion and the Mouse.                                                                                                                                                                                                                       | Dùng mô-típ ngụ ngôn cổ, bổ sung quyền lựa chọn khi giúp bạn.                                                                                                                                          |
+| Cậu bé chăn cừu      | Cùng tuyển nguồn Aesop ở trên, mục The Shepherd's Boy and the Wolf.                                                                                                                                                                                                              | Dùng tình huống báo giả/mất tin cậy; công khai phần kết mới giữ an toàn cho trẻ và đàn cừu.                                                                                                            |
+| Trạng Quỳnh – Mầm đá | Mô-típ dân gian Việt Nam, không gán Trạng Quỳnh là tác giả của một văn bản cố định. [Bài tường thuật hoạt động văn hóa tại Hoằng Lộc](https://thethaovanhoa.vn/khi-chuyen-trang-quynh-len-song-livestream-20261122210111328.htm) nhận diện Món ăn mầm đá trong chuỗi giai thoại. | Kể lại mô-típ truyền thống có dẫn xuất xứ, giữ tiếng cười phê phán thói xa hoa. Bài báo là nguồn đối chiếu xuất xứ, không phải văn bản được chuyển thể hoặc giấy phép cho truyện tranh/sách giáo khoa. |
+
+Không lấy file nào từ các nguồn trên vào public của ứng dụng. Metadata chứa liên kết để người biên tập kiểm tra; nội dung dùng trong bộ truyện là lời kể mới. Tình trạng nguồn không được suy rộng sang minh họa hay phiên bản khác trên cùng website.
+
+## Hoàng tử bé: chưa chọn
+
+[Syndicat national de l'édition, mục Durée des droits d'auteur](https://www.sne.fr/editeur-et-auteur/duree-des-droits-dauteurs/) giải thích trường hợp đặc biệt của Antoine de Saint-Exupéry và nêu Le Petit Prince vào công chúng tại Pháp từ **01/01/2033**. Do đó, tính đến ngày rà soát, không gắn nhãn tác phẩm được dùng tự do trên toàn cầu. Tình trạng của bản gốc tại một số nước không cấp quyền đối với bản dịch tiếng Việt, bản thu hoặc minh họa mới.
+
+Mục `hoang-tu-be` ở `collections.json` có trạng thái `rights-review-required`. Không có Story, transcript, lời kể chuyển thể hoặc cue audio của tác phẩm trong bộ này. Khi xác định được lãnh thổ phát hành và quyền của phiên bản cụ thể, có thể rà soát lại; không tự động mở khóa theo một ngày duy nhất cho mọi quốc gia.
+
+## Ghi nguồn khi sản xuất
+
+Mỗi Story kể lại có `source.attribution`; transcript hiển thị trường này, còn manifest có cue `source-credit`. Giữ phần ghi nguồn khi tích hợp UI, xuất bản và thu âm. Các trường `rightsNote`, `rightsReferences`, `adaptationNotes`, `reviewedOn` phục vụ biên tập; không tự đọc chúng như lời thoại của nhân vật.
+
+Đã tạo 301 MP3 bằng giọng hệ thống Linh từ chính lời kể mới; không lấy bản đọc từ nguồn truyện, phim hoặc truyện tranh. Hiệu ứng vẫn chờ sản xuất. Việc cốt truyện được dùng không cấp quyền sử dụng một bản thu có sẵn; xem [hồ sơ nghe truyện](listening.md) để biết profile và nguồn tệp.

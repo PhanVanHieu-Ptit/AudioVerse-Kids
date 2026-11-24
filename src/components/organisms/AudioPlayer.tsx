@@ -10,6 +10,7 @@ interface AudioPlayerProps {
   resource?: AudioResource;
   channel?: AudioChannelName;
   engine?: AudioEngine;
+  headingLevel?: 2 | 3;
 }
 
 function timeLabel(seconds: number) {
@@ -22,7 +23,9 @@ export function AudioPlayer({
   resource,
   channel = 'narration',
   engine,
+  headingLevel = 2,
 }: AudioPlayerProps) {
+  const Heading = `h${headingLevel}` as const;
   const player = useAudioPlayer(channel, engine);
   const id = useId();
   const selected = resource ?? player.resource;
@@ -35,8 +38,13 @@ export function AudioPlayer({
 
   return (
     <section className="audio-player" aria-labelledby={`${id}-title`}>
-      <h2 id={`${id}-title`}>{selected?.title ?? labels.title}</h2>
-      <AudioControlBar resource={resource} channel={channel} engine={engine} />
+      <Heading id={`${id}-title`}>{selected?.title ?? labels.title}</Heading>
+      <AudioControlBar
+        resource={resource}
+        channel={channel}
+        engine={engine}
+        headingLevel={headingLevel === 3 ? 4 : 2}
+      />
       <label htmlFor={`${id}-seek`}>
         {labels.seek} ({timeLabel(active ? player.currentTime : 0)} /{' '}
         {timeLabel(active ? player.duration : 0)})
