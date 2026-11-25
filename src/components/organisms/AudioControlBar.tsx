@@ -15,15 +15,21 @@ import { voiceUi } from '@/content/voiceMessages';
 import { KeyboardHelpDialog } from './KeyboardHelpDialog';
 import './AudioControlBar.css';
 
-export type AudioControlBarProps = AudioControlsOptions;
+export type AudioControlBarProps = AudioControlsOptions & {
+  headingLevel?: 2 | 3 | 4;
+};
 
-export function AudioControlBar(props: AudioControlBarProps) {
+export function AudioControlBar({
+  headingLevel = 2,
+  ...props
+}: AudioControlBarProps) {
+  const Heading = `h${headingLevel}` as const;
   const controls = useAudioControls(props);
   const id = useId();
   const { selected, status, loading, error } = controls;
   return (
     <section className="audio-control-bar" aria-labelledby={`${id}-title`}>
-      <h2 id={`${id}-title`}>{labels.title}</h2>
+      <Heading id={`${id}-title`}>{labels.title}</Heading>
       <p className="audio-control-title">
         {selected?.title ?? playerLabels.empty}
       </p>

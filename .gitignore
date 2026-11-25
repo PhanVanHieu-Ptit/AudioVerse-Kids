@@ -3,8 +3,12 @@ dist/
 coverage/
 playwright-report/
 test-results/
+test-results-audio/
+playwright-audio-report/
 *.tsbuildinfo
 .env.local
 .env.*.local
 .DS_Store
 *.log
+
+.cache/

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Làm quen",
+    "suggestedAges": "4–6 tuổi",
+    "description": "Câu ngắn, sự việc gần gũi, một quyết định với hai lựa chọn. Người lớn có thể đọc cùng.",
+    "guidance": "Chọn theo sở thích và mức thoải mái với ngôn ngữ; không suy ra khả năng từ tuổi hoặc thị lực."
+  },
+  {
+    "id": 2,
+    "name": "Khám phá",
+    "suggestedAges": "7–9 tuổi",
+    "description": "Theo dõi nguyên nhân, thử một cách giải quyết và giải thích kết quả. Hai thời điểm lựa chọn, có nhánh gặp lại nhau.",
+    "guidance": "Có thể nghe hoặc đọc lại từng cảnh; không yêu cầu ghi nhớ nhanh, nói hay vận động để tiếp tục."
+  },
+  {
+    "id": 3,
+    "name": "Suy luận",
+    "suggestedAges": "10–12 tuổi trở lên",
+    "description": "Cân nhắc bằng chứng, giới hạn và nhu cầu của nhiều người. Hai quyết định tạo bốn đường đi tới các kết thúc khác nhau.",
+    "guidance": "Đây là độ phức tạp của nội dung, không phải bài kiểm tra năng lực. Có thể chọn bất kỳ cấp nào."
+  }
+]

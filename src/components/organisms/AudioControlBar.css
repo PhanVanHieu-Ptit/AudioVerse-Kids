@@ -10,6 +10,8 @@
   overflow-wrap: anywhere;
 }
 .audio-control-bar h2,
+.audio-control-bar h3,
+.audio-control-bar h4,
 .audio-control-bar p {
   margin: 0;
 }

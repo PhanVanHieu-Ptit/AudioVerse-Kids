@@ -1,0 +1,189 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "urn:audioverse:story-assets:v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "contentRevision",
+    "status",
+    "assets",
+    "playbackManifest"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "contentRevision": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "status": {
+      "enum": ["awaiting-production", "speech-recordings-available"]
+    },
+    "assets": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10000,
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "storyId",
+              "sceneId",
+              "locale",
+              "status",
+              "targetFile",
+              "kind",
+              "role",
+              "speakerId",
+              "text"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9-]+(?:\\.[a-z0-9-]+)+$"
+              },
+              "storyId": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                "maxLength": 100
+              },
+              "sceneId": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                    "maxLength": 100
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "locale": {
+                "const": "vi-VN"
+              },
+              "status": {
+                "const": "planned"
+              },
+              "targetFile": {
+                "type": "string",
+                "pattern": "^audio/stories/[a-z0-9-]+/[a-z0-9.-]+\\.v1\\.(mp3|wav)$"
+              },
+              "kind": {
+                "const": "speech"
+              },
+              "role": {
+                "enum": [
+                  "title",
+                  "introduction",
+                  "character",
+                  "scene-title",
+                  "narration",
+                  "dialogue",
+                  "interaction",
+                  "question",
+                  "feedback",
+                  "ending",
+                  "message",
+                  "source-credit"
+                ]
+              },
+              "speakerId": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                "maxLength": 100
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 12000,
+                "pattern": "\\S"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "storyId",
+              "sceneId",
+              "locale",
+              "status",
+              "targetFile",
+              "kind",
+              "description",
+              "anchorSegmentId",
+              "placement",
+              "productionNotes"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9-]+(?:\\.[a-z0-9-]+)+$"
+              },
+              "storyId": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                "maxLength": 100
+              },
+              "sceneId": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                    "maxLength": 100
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "locale": {
+                "const": "vi-VN"
+              },
+              "status": {
+                "const": "planned"
+              },
+              "targetFile": {
+                "type": "string",
+                "pattern": "^audio/stories/[a-z0-9-]+/[a-z0-9.-]+\\.v1\\.(mp3|wav)$"
+              },
+              "kind": {
+                "const": "sound-effect"
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 12000,
+                "pattern": "\\S"
+              },
+              "anchorSegmentId": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                "maxLength": 100
+              },
+              "placement": {
+                "enum": ["before", "after"]
+              },
+              "productionNotes": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 12000,
+                "pattern": "\\S"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "playbackManifest": {
+      "enum": [null, "public/audio/stories/manifest.json"]
+    }
+  }
+}

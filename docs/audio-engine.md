@@ -1,5 +1,7 @@
 # Audio Engine — AudioVerse Kids
 
+Truyện đã tích hợp player này với 301 MP3 tiếng Việt và tải từng truyện vào IndexedDB. Xem [luồng nghe, nguồn giọng và kiểm thử](stories/listening.md). Tùy chọn `headingLevel` của `AudioPlayer`/`AudioControlBar` giữ cấu trúc heading khi lồng player trong cảnh.
+
 ## Phân lớp và vòng đời
 
 `AudioPlayer → useAudioPlayer → AudioManager/AudioEngine → AudioChannel → HTMLAudioElement + AudioMixer`. Engine ghi snapshot vào vanilla Zustand store; React chỉ subscribe. `offlineAudioSource → audioRepository → IndexedDB` giải quyết nguồn tải cục bộ trước URL. Nội dung tiếng Việt của player nằm trong `src/content/audioPlayer.ts`; metadata và transcript được caller cung cấp qua `AudioResource`.
@@ -74,7 +76,7 @@ Ducking chỉ áp dụng khi narration thực sự ở trạng thái playing; pa
 
 Database `audioverse-kids` nâng từ v2 lên v3, thêm store `audioAssets`, giữ nguyên `preferences` và `activityProgress`. Lưu `{ src, blob }` theo resource ID; thay URL cùng ID sẽ không dùng bản tải cũ. Blob URL được tạo cho thời gian sử dụng và revoke khi thay nguồn/stop/dispose. `download` từ chối HTTP lỗi, file rỗng, lỗi quota/lưu trữ và cancellation; không báo “đã tải” khi lưu thất bại. `remove(id)` xóa bản tải khi không còn cần.
 
-Chỉ tải khi có lệnh rõ ràng; phát bình thường không tự ghi file vào IndexedDB. Storage bị chặn vẫn cho thử nguồn URL/bundled; khi offline mà chưa tải thì hiển thị lỗi, giữ transcript. Không có telemetry, tài khoản, ghi âm, nội dung cá nhân hoặc service TTS online. PWA hiện có giữ shell offline; repository giữ media offline. Trình duyệt có thể thu hồi dung lượng, nên không cam kết lưu vĩnh viễn. Hiện chưa có giao diện quản lý tải/xóa hay giới hạn dung lượng tự động; API có sẵn cho feature triển khai.
+Chỉ tải khi có lệnh rõ ràng; phát bình thường không tự ghi file vào IndexedDB. Storage bị chặn vẫn cho thử nguồn URL/bundled; khi offline mà chưa tải thì hiển thị lỗi, giữ transcript. Không có telemetry, tài khoản, ghi âm, nội dung cá nhân hoặc service TTS online. PWA hiện có giữ shell offline; repository giữ media offline. Trình duyệt có thể thu hồi dung lượng, nên không cam kết lưu vĩnh viễn. Trang truyện đã có tải/hủy tải/kiểm tra bản lưu theo truyện; download kèm bytes/SHA-256 được kiểm chứng trước khi ghi. Chưa có màn hình quản lý/xóa toàn bộ thư viện hoặc giới hạn dung lượng tự động.
 
 ## UI và accessibility
 

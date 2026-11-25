@@ -30,7 +30,12 @@ describe('application routing', () => {
       name: 'Thư viện truyện',
     });
     expect(heading).toHaveFocus();
-    expect(screen.getByText(/Chưa có truyện để nghe/)).toBeVisible();
+    expect(
+      screen.getByRole('link', { name: 'Nghe hoặc đọc: Ba chú heo con' }),
+    ).toHaveAttribute('href', '/stories/ba-chu-heo-con');
+    expect(
+      screen.getByRole('status', { name: 'Kết quả tìm truyện' }),
+    ).toHaveTextContent('Hiển thị 21 trên 21 truyện.');
   });
 
   it('provides a way home for unknown URLs', async () => {

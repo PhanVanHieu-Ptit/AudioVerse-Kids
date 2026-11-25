@@ -8,7 +8,9 @@
     "types": ["node", "vite/client"],
     "jsx": "react-jsx",
     "baseUrl": ".",
-    "paths": { "@/*": ["./src/*"] },
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "skipLibCheck": true,
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
@@ -18,7 +20,8 @@
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "resolveJsonModule": true
   },
   "include": [
     "vite.config.ts",
@@ -26,6 +29,9 @@
     "playwright.config.ts",
     "playwright.audio.config.ts",
     "e2e",
-    "tests"
+    "tests",
+    "scripts/story-content.ts",
+    "scripts/generate-story-audio.ts",
+    "scripts/local-tts/*.ts"
   ]
 }

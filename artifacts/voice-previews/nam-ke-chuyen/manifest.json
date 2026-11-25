@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "status": "generated-awaiting-listening-review",
+  "kind": "pre-generated-synthetic-speech",
+  "storyId": "rua-va-tho",
+  "contentRevision": "d005bec5da5a0fecf2b7252c72e87f324eae9a894dbcf9830bbc3115ea4c4ca0",
+  "sourceAttribution": "Kể lại từ ngụ ngôn Rùa và Thỏ, thuộc truyền thống truyện Aesop.",
+  "profile": {
+    "sdkVersion": "3.8.5",
+    "modelRevisions": {
+      "pnnbao-ump/VieNeu-TTS-v3-Turbo": "61b85e3d937fbbacb387714180e8182823512523",
+      "OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano-ONNX": "ceff0d0749bfb3fa2d61149794ec6feef0d1e1ae"
+    },
+    "backend": "onnx",
+    "precision": "fp32",
+    "temperature": 0.8,
+    "seed": 20261123,
+    "sampleRate": 48000,
+    "applyWatermark": true,
+    "styleInstructionsSupported": false,
+    "normalization": "loudnorm=I=-20:TP=-3:LRA=7",
+    "revision": 1
+  },
+  "networkConnectionsBlocked": true,
+  "generationSeconds": 3.1,
+  "candidates": [
+    {
+      "id": "nam-thanh-binh",
+      "narrator": "Thanh Bình",
+      "file": "nam-thanh-binh.mp3",
+      "bytes": 714668,
+      "audioSha256": "d79968a94407d6dd9cca47550e8992451d09d325553a86c75fb90e1e6b05ef3f",
+      "durationSeconds": 44.5990625,
+      "rms": 0.0887291431427002,
+      "peak": 0.6731661558151245,
+      "turns": [
+        {
+          "cueId": "rua-va-tho.scene.cuoc-hen.title",
+          "speaker": "Người kể",
+          "text": "Cuộc đua đã thống nhất",
+          "voice": "Thanh Bình",
+          "tempo": 1,
+          "pauseMs": 800,
+          "startSeconds": 0.0,
+          "durationSeconds": 0.9538541666666667,
+          "cacheSha256": "d9c4f820a3d537f9e7dc2e7b73b23c725f0912dbcae4c6cb28e10ee7f0dfcd75"
+        },
+        {
+          "cueId": "rua-va-tho.scene.cuoc-hen.segment.line-1",
+          "speaker": "Người kể",
+          "text": "Trong khu rừng tưởng tượng, Thỏ trêu rằng Rùa đi chậm. Rùa đáp: “Tớ muốn thử một cuộc đua với cậu.” Hai bạn cùng đồng ý, không ai bị ép tham gia.",
+          "voice": "Thanh Bình",
+          "tempo": 1,
+          "pauseMs": 500,
+          "startSeconds": 1.7538541666666667,
+          "durationSeconds": 7.277104166666667,
+          "cacheSha256": "1485a78de7b814e6f76a7649fb0be30690ef4a0a099b6f8185fb227e205432af"
+        },
+        {
+          "cueId": "rua-va-tho.scene.cuoc-hen.segment.line-2",
+          "speaker": "Người kể",
+          "text": "Sẻ đọc rõ đường đua và điểm kết thúc cho mọi người. Khi cuộc đua bắt đầu, Thỏ chạy một đoạn xa rồi nghĩ Rùa còn lâu mới tới. Thỏ nằm nghỉ dưới gốc cây và ngủ quên.",
+          "voice": "Thanh Bình",
+          "tempo": 1,
+          "pauseMs": 500,
+          "startSeconds": 9.530958333333333,
+          "durationSeconds": 8.634791666666667,
+          "cacheSha256": "08be7cf8ef333a179f1b96fb2e244f3aa97c9963e72769cd2de146b7db1f00e1"
+        },
+        {
+          "cueId": "rua-va-tho.scene.cuoc-hen.segment.line-3",
+          "speaker": "Người kể",
+          "text": "Rùa tiếp tục theo nhịp của mình. Khi Sẻ nói Thỏ đang ngủ, Rùa không dừng để trêu lại. Rùa tới đích trước. Thỏ thức dậy, chạy đến nơi thì nghe Sẻ thông báo kết quả.",
+          "voice": "Thanh Bình",
+          "tempo": 1,
+          "pauseMs": 500,
+          "startSeconds": 18.66575,
+          "durationSeconds": 8.792604166666667,
+          "cacheSha256": "70b2e1cf6874f9f9334fc1da6c4330be341e40593c02e2b3842aaad623fa3475"
+        },
+        {
+          "cueId": "rua-va-tho.scene.xin-loi.title",
+          "speaker": "Người kể",
+          "text": "Một lời sau cuộc đua",
+          "voice": "Thanh Bình",
+          "tempo": 1,
+          "pauseMs": 800,
+          "startSeconds": 27.958354166666666,
+          "durationSeconds": 1.1932083333333334,
+          "cacheSha256": "545cb702f331d6b59b03f43b0863fddd9b7410b4a9a4a3978bced5d4ae03bf90"
+        },
+        {
+          "cueId": "rua-va-tho.scene.xin-loi.segment.line-1",
+          "speaker": "Thỏ",
+          "text": "Thỏ nói: Tớ xin lỗi vì đã trêu cậu. Tớ cũng chủ quan trong cuộc đua này.",
+          "voice": "Xuân Vĩnh",
+          "tempo": 1,
+          "pauseMs": 400,
+          "startSeconds": 29.9515625,
+          "durationSeconds": 4.1568958333333335,
+          "cacheSha256": "e1042c47327a7a03796078e848917940beb73c5504863a1a4aeb6a05921ee48a"
+        },
+        {
+          "cueId": "rua-va-tho.scene.xin-loi.segment.line-2",
+          "speaker": "Rùa",
+          "text": "Rùa nói: Cảm ơn cậu đã nói vậy. Tớ muốn được chơi mà không bị chê về cách đi của mình.",
+          "voice": "Thanh Bình",
+          "tempo": 0.98,
+          "pauseMs": 550,
+          "startSeconds": 34.50845833333333,
+          "durationSeconds": 4.966666666666667,
+          "cacheSha256": "319373df1145f9e2d3351bce5da4599dc9009d39cb9e0f3a66a020b9d0e655e0"
+        },
+        {
+          "cueId": "rua-va-tho.scene.xin-loi.segment.line-3",
+          "speaker": "Người kể",
+          "text": "Thỏ lắng nghe đến hết câu. Bạn không xin đua lại ngay để cố xóa kết quả vừa rồi.",
+          "voice": "Thanh Bình",
+          "tempo": 1,
+          "pauseMs": 500,
+          "startSeconds": 40.025125,
+          "durationSeconds": 4.0739375,
+          "cacheSha256": "c08aee43f7bbb4fb11e3035ef90080fc335094090465a81b47c128e4d8e74b16"
+        }
+      ]
+    },
+    {
+      "id": "nam-anh-khoi",
+      "narrator": "Anh Khôi",
+      "file": "nam-anh-khoi.mp3",
+      "bytes": 732716,
+      "audioSha256": "788a4d769b27f90c9904ff1e6b903b4589d6baafbc8b5fd1d30d9b44bac6475e",
+      "durationSeconds": 45.72360416666667,
+      "rms": 0.09578748047351837,
+      "peak": 0.6757457256317139,
+      "turns": [
+        {
+          "cueId": "rua-va-tho.scene.cuoc-hen.title",
+          "speaker": "Người kể",
+          "text": "Cuộc đua đã thống nhất",
+          "voice": "Anh Khôi",
+          "tempo": 1,
+          "pauseMs": 800,
+          "startSeconds": 0.0,
+          "durationSeconds": 1.2743541666666667,
+          "cacheSha256": "80b49394cfd559201e7c5dae58bac488927a18bcd2b2888c7b0a487000cc4b04"
+        },
+        {
+          "cueId": "rua-va-tho.scene.cuoc-hen.segment.line-1",
+          "speaker": "Người kể",
+          "text": "Trong khu rừng tưởng tượng, Thỏ trêu rằng Rùa đi chậm. Rùa đáp: “Tớ muốn thử một cuộc đua với cậu.” Hai bạn cùng đồng ý, không ai bị ép tham gia.",
+          "voice": "Anh Khôi",
+          "tempo": 1,
+          "pauseMs": 500,
+          "startSeconds": 2.0743541666666667,
+          "durationSeconds": 7.513354166666667,
+          "cacheSha256": "b746b30d17f18d5e5acc83ffc6c4e948747313e765860b6a031b343d633b85fb"
+        },
+        {
+          "cueId": "rua-va-tho.scene.cuoc-hen.segment.line-2",
+          "speaker": "Người kể",
+          "text": "Sẻ đọc rõ đường đua và điểm kết thúc cho mọi người. Khi cuộc đua bắt đầu, Thỏ chạy một đoạn xa rồi nghĩ Rùa còn lâu mới tới. Thỏ nằm nghỉ dưới gốc cây và ngủ quên.",
+          "voice": "Anh Khôi",
+          "tempo": 1,
+          "pauseMs": 500,
+          "startSeconds": 10.087708333333333,
+          "durationSeconds": 8.950333333333333,
+          "cacheSha256": "a47f488c7a27fcdb26432d9f7fa42cc9543f4547ead9cc5a24eda7ac5bf54e03"
+        },
+        {
+          "cueId": "rua-va-tho.scene.cuoc-hen.segment.line-3",
+          "speaker": "Người kể",
+          "text": "Rùa tiếp tục theo nhịp của mình. Khi Sẻ nói Thỏ đang ngủ, Rùa không dừng để trêu lại. Rùa tới đích trước. Thỏ thức dậy, chạy đến nơi thì nghe Sẻ thông báo kết quả.",
+          "voice": "Anh Khôi",
+          "tempo": 1,
+          "pauseMs": 500,
+          "startSeconds": 19.53804166666667,
+          "durationSeconds": 8.553958333333334,
+          "cacheSha256": "1d6415c579d0d90d0ba45154c8f8c8b447262f79d1d533ce4e3976ca4dfbf138"
+        },
+        {
+          "cueId": "rua-va-tho.scene.xin-loi.title",
+          "speaker": "Người kể",
+          "text": "Một lời sau cuộc đua",
+          "voice": "Anh Khôi",
+          "tempo": 1,
+          "pauseMs": 800,
+          "startSeconds": 28.592,
+          "durationSeconds": 1.2733125,
+          "cacheSha256": "5b78c7aa7f405a860712973cc676ba3feb3063d02798ec6a593cb6d001d75c52"
+        },
+        {
+          "cueId": "rua-va-tho.scene.xin-loi.segment.line-1",
+          "speaker": "Thỏ",
+          "text": "Thỏ nói: Tớ xin lỗi vì đã trêu cậu. Tớ cũng chủ quan trong cuộc đua này.",
+          "voice": "Xuân Vĩnh",
+          "tempo": 1,
+          "pauseMs": 400,
+          "startSeconds": 30.6653125,
+          "durationSeconds": 4.1568958333333335,
+          "cacheSha256": "e1042c47327a7a03796078e848917940beb73c5504863a1a4aeb6a05921ee48a"
+        },
+        {
+          "cueId": "rua-va-tho.scene.xin-loi.segment.line-2",
+          "speaker": "Rùa",
+          "text": "Rùa nói: Cảm ơn cậu đã nói vậy. Tớ muốn được chơi mà không bị chê về cách đi của mình.",
+          "voice": "Anh Khôi",
+          "tempo": 0.98,
+          "pauseMs": 550,
+          "startSeconds": 35.222208333333334,
+          "durationSeconds": 5.2195625,
+          "cacheSha256": "910c06816263f93a11e5489b4a359d55146432abcde52eeaf7a5a6078b243b2b"
+        },
+        {
+          "cueId": "rua-va-tho.scene.xin-loi.segment.line-3",
+          "speaker": "Người kể",
+          "text": "Thỏ lắng nghe đến hết câu. Bạn không xin đua lại ngay để cố xóa kết quả vừa rồi.",
+          "voice": "Anh Khôi",
+          "tempo": 1,
+          "pauseMs": 500,
+          "startSeconds": 40.991770833333334,
+          "durationSeconds": 4.231833333333333,
+          "cacheSha256": "1e79e14c433ea0a2dd20a63019a9fbdaf9501c73610d0624e593ae00f5e4c27d"
+        }
+      ]
+    }
+  ]
+}

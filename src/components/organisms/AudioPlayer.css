@@ -8,6 +8,7 @@
   overflow-wrap: anywhere;
 }
 .audio-player h2,
+.audio-player h3,
 .audio-player p {
   margin: 0;
 }

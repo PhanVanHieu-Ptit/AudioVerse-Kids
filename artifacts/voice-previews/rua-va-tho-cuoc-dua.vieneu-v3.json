@@ -1,0 +1,153 @@
+{
+  "id": "rua-va-tho-cuoc-dua",
+  "provider": "VieNeu-TTS (local ONNX CPU)",
+  "sdkVersion": "3.8.5",
+  "model": "pnnbao-ump/VieNeu-TTS-v3-Turbo",
+  "codec": "OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano-ONNX",
+  "modelRevisions": {
+    "pnnbao-ump/VieNeu-TTS-v3-Turbo": "61b85e3d937fbbacb387714180e8182823512523",
+    "OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano-ONNX": "ceff0d0749bfb3fa2d61149794ec6feef0d1e1ae"
+  },
+  "license": "Apache-2.0; see scripts/local-tts/NOTICE.md",
+  "inference": {
+    "backend": "onnx",
+    "precision": "fp32",
+    "temperature": 0.8
+  },
+  "runtimeCloudCalls": false,
+  "networkConnectionsBlocked": true,
+  "status": "generated-awaiting-listening-review",
+  "styleInstructionsSupported": false,
+  "cast": {
+    "narrator": {
+      "voice": "Quỳnh Anh",
+      "tempo": 0.98,
+      "pauseAfterMs": 400
+    },
+    "hare": {
+      "voice": "Xuân Vĩnh",
+      "tempo": 1.06,
+      "pauseAfterMs": 300
+    },
+    "tortoise": {
+      "voice": "Thanh Bình",
+      "tempo": 0.94,
+      "pauseAfterMs": 550
+    }
+  },
+  "turns": [
+    {
+      "speaker": "narrator",
+      "text": "Sáng sớm, khu rừng vừa thức giấc. Thỏ phóng qua con đường nhỏ, vèo một cái, rồi quay lại bên Rùa.",
+      "voice": "Quỳnh Anh",
+      "tempo": 0.98,
+      "pauseAfterMs": 400,
+      "cacheKey": "d29a47c570957994ae0122e1e6e3fb0adb06dbe99a4713d78be372a9066f30c5",
+      "cached": true,
+      "source": {
+        "durationSeconds": 5.76,
+        "rms": 0.10525489654153763,
+        "bytes": 553004,
+        "audioSha256": "c89de403d23ba29c5ae056f7a790effea4f90804d454d60fca5cea5a6725b361"
+      }
+    },
+    {
+      "speaker": "hare",
+      "text": "Rùa ơi! Cậu đi chậm thế... đến tối mình mới gặp nhau ở gốc cây mất!",
+      "voice": "Xuân Vĩnh",
+      "tempo": 1.06,
+      "pauseAfterMs": 300,
+      "cacheKey": "521ecfe68cf1817b67a811f2c2214e84be8eb54939d182a1f1074d325798b6ba",
+      "cached": true,
+      "source": {
+        "durationSeconds": 4.08,
+        "rms": 0.09882609532355394,
+        "bytes": 391724,
+        "audioSha256": "bc3cc38a6a4e1d6ff947e4451b0e3ae9ac84ef87870dad6731d40bf7c22dd13b"
+      }
+    },
+    {
+      "speaker": "narrator",
+      "text": "Thỏ cười khúc khích. Rùa ngẩng lên, vẫn bình thản.",
+      "voice": "Quỳnh Anh",
+      "tempo": 0.98,
+      "pauseAfterMs": 400,
+      "cacheKey": "a04513c33c29eee73c98b43046cdae871dfee7a1eb2cafb08d22bc611948df1c",
+      "cached": true,
+      "source": {
+        "durationSeconds": 2.8,
+        "rms": 0.10279500865523379,
+        "bytes": 268844,
+        "audioSha256": "b3d4bb1776558ed72f27b1011212255ab6857741ec6ae1a82e2e15f4fdb52315"
+      }
+    },
+    {
+      "speaker": "tortoise",
+      "text": "Thỏ này, hay là chúng mình thi chạy đến gốc cây kia?",
+      "voice": "Thanh Bình",
+      "tempo": 0.94,
+      "pauseAfterMs": 550,
+      "cacheKey": "2b1195c8ffea56d781875b39c278b757d5c133a3907520b6745e6f70f749d81b",
+      "cached": true,
+      "source": {
+        "durationSeconds": 2.4,
+        "rms": 0.10652904150379419,
+        "bytes": 230444,
+        "audioSha256": "e63a399f94238c170bda3128daf554b0e52037b3676689892667bcc1281a5097"
+      }
+    },
+    {
+      "speaker": "hare",
+      "text": "Thi chạy á? Với tớ sao? Được thôi!",
+      "voice": "Xuân Vĩnh",
+      "tempo": 1.06,
+      "pauseAfterMs": 300,
+      "cacheKey": "f8ad9001ad41227374d011f90e90bb81a860049183402b57d0af8dfa9388349f",
+      "cached": true,
+      "source": {
+        "durationSeconds": 2.16,
+        "rms": 0.10533794649030455,
+        "bytes": 207404,
+        "audioSha256": "43a990adca021218b9e93b51c1cc42da372d5ebcc12002590f72d9418f7d321a"
+      }
+    },
+    {
+      "speaker": "narrator",
+      "text": "Tin ấy lan khắp khu rừng. Các bạn kéo tới, rì rầm bàn tán. Riêng Rùa chỉ mỉm cười, đặt chân lên vạch xuất phát.",
+      "voice": "Quỳnh Anh",
+      "tempo": 0.98,
+      "pauseAfterMs": 400,
+      "cacheKey": "251d406391f256c583c7c6f38b444bb2d9e4ce524984490c89ea4177209ac859",
+      "cached": true,
+      "source": {
+        "durationSeconds": 6.72,
+        "rms": 0.09846076109077528,
+        "bytes": 645164,
+        "audioSha256": "7133c801332e11cd437a290eae60e57c0f7e287829fd120e0a6fb5dc5a5438e4"
+      }
+    },
+    {
+      "speaker": "narrator",
+      "text": "Em đoán chuyện gì sẽ xảy ra? Mình nghe các bạn cổ vũ... hay theo từng bước của Rùa nhỉ?",
+      "voice": "Quỳnh Anh",
+      "tempo": 0.98,
+      "pauseAfterMs": 650,
+      "cacheKey": "a2666e51dbc84a08dbfd9a03e7a33fab7bb2e4bed86d289a3b60c9b633025160",
+      "cached": true,
+      "source": {
+        "durationSeconds": 5.36,
+        "rms": 0.09925165925744267,
+        "bytes": 514604,
+        "audioSha256": "2910b8d5f29f6ce8bb2b9d65f389bf3e8641f71f77e7abaa7b74b13d02248c8e"
+      }
+    }
+  ],
+  "file": "rua-va-tho-cuoc-dua.vieneu-v3.mp3",
+  "transcript": "Sáng sớm, khu rừng vừa thức giấc. Thỏ phóng qua con đường nhỏ, vèo một cái, rồi quay lại bên Rùa. Rùa ơi! Cậu đi chậm thế... đến tối mình mới gặp nhau ở gốc cây mất! Thỏ cười khúc khích. Rùa ngẩng lên, vẫn bình thản. Thỏ này, hay là chúng mình thi chạy đến gốc cây kia? Thi chạy á? Với tớ sao? Được thôi! Tin ấy lan khắp khu rừng. Các bạn kéo tới, rì rầm bàn tán. Riêng Rùa chỉ mỉm cười, đặt chân lên vạch xuất phát. Em đoán chuyện gì sẽ xảy ra? Mình nghe các bạn cổ vũ... hay theo từng bước của Rùa nhỉ?",
+  "transcriptSha256": "fa9278ee20640759a083b64aeae9dff0ff55fc71bb7682b6d6e7588a9671d5b7",
+  "normalization": "per-turn FFmpeg loudnorm I=-20:TP=-3:LRA=7; final peak limiter -3dB",
+  "durationSeconds": 32.457625,
+  "rms": 0.09328399687804695,
+  "bytes": 520364,
+  "audioSha256": "a36d838065448d8ac947d80bc8032e98a772f1f8f8ff834aa1edb42a4cb1daa0"
+}

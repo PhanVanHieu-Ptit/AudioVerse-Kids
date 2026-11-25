@@ -18,7 +18,7 @@ export const sections = {
     title: 'Thư viện truyện',
     description: 'Mở một câu chuyện, chạm đến một thế giới.',
     emptyMessage:
-      'Chưa có truyện để nghe. Những câu chuyện sẽ xuất hiện ở đây khi có nội dung phù hợp.',
+      'Chưa có truyện trong thư viện. Nội dung sẽ xuất hiện khi được bổ sung.',
     icon: 'stories',
     color: 'purple',
   },

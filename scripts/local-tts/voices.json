@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "storyId": "rua-va-tho",
+  "sceneIds": ["cuoc-hen", "xin-loi"],
+  "candidates": [
+    { "id": "nam-thanh-binh", "narrator": "Thanh Bình" },
+    { "id": "nam-anh-khoi", "narrator": "Anh Khôi" }
+  ],
+  "characters": {
+    "tho": { "voice": "Xuân Vĩnh", "tempo": 1, "pauseMs": 400 },
+    "rua": { "voice": null, "tempo": 0.98, "pauseMs": 550 }
+  },
+  "narration": { "tempo": 1, "pauseMs": 500 },
+  "scenePauseMs": 800
+}
