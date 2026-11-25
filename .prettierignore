@@ -7,4 +7,9 @@ test-results-audio
 playwright-audio-report
 package-lock.json
 .cache
+<<<<<<< Updated upstream
 artifacts/voice-previews
+=======
+playwright-audio-report
+test-results-audio
+>>>>>>> Stashed changes
