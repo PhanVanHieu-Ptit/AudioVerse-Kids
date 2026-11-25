@@ -84,6 +84,836 @@
       "bytes": 126893,
       "durationSeconds": 15.777778,
       "rms": 0.09717941104839124
+    },
+    {
+      "id": "activity:doan-tieng-dong-vat:instructions",
+      "file": "doan-tieng-dong-vat.v1.mp3",
+      "transcript": "Đoán tiếng động vật. Bấm Nghe âm thanh, rồi chọn con vật phù hợp. Đây là âm tổng hợp mô phỏng, không phải bản thu động vật thật. Có thể mở mô tả bằng chữ và nghe lại tùy ý. Ba cấp độ có hai, ba rồi bốn lựa chọn. Dùng Tab để di chuyển, Enter hoặc Space để chọn. Bắt đầu với âm lượng nhỏ. Tiến độ tự lưu trên thiết bị.",
+      "transcriptSha256": "90b126f931035eed4f30fb9d5cf7c55bb07616e73bc41edd59f8af4b6a9f0833",
+      "audioSha256": "3396f93f964c468ee6d07a51dd4004f157204e53b4e294f7eefe58d82fac7dde",
+      "bytes": 205887,
+      "durationSeconds": 25.648526,
+      "rms": 0.09861891648223219
+    },
+    {
+      "id": "activity:doan-nhac-cu:instructions",
+      "file": "doan-nhac-cu.v1.mp3",
+      "transcript": "Đoán nhạc cụ. Nghe âm sắc mô phỏng rồi chọn nhạc cụ phù hợp. Âm thanh được tổng hợp trên thiết bị, không phải bản thu nhạc cụ thật. Có mô tả bằng chữ. Cấp độ cao hơn có nhiều lựa chọn và âm thanh ngắn hơn. Dùng Tab để di chuyển, Enter hoặc Space để chọn. Bắt đầu với âm lượng nhỏ. Tiến độ tự lưu trên thiết bị.",
+      "transcriptSha256": "aeb65afb97624307068d34912b20ff46717088229c8d0f89e7a53d882d186299",
+      "audioSha256": "edb58c61f4ee58d8510daf6cf5af5e0d0c2adf7477f030456d18216f3a8f7a65",
+      "bytes": 196065,
+      "durationSeconds": 24.406259,
+      "rms": 0.0990669234350861
+    },
+    {
+      "id": "activity:nho-chuoi-am-thanh:instructions",
+      "file": "nho-chuoi-am-thanh.v1.mp3",
+      "transcript": "Nhớ chuỗi âm thanh. Bấm Nghe chuỗi âm thanh. Sau đó chọn các nốt theo đúng thứ tự và bấm Kiểm tra chuỗi. Có thể xóa nốt cuối hoặc nhập lại. Các cấp độ tăng từ hai đến sáu nốt. Mở mô tả chữ nếu cần. Dùng Tab để di chuyển, Enter hoặc Space để chọn. Bắt đầu với âm lượng nhỏ. Tiến độ tự lưu trên thiết bị.",
+      "transcriptSha256": "fc17e67c8507d6138eec8bffbf78d8dd700676f29fb6fbff8cd359e84f8c7c5e",
+      "audioSha256": "71555c9f6e8f9132f56b39039ac55b51e84bad74f00355a5bfed89d9360eec50",
+      "bytes": 195020,
+      "durationSeconds": 24.280045,
+      "rms": 0.09894852159949022
+    },
+    {
+      "id": "activity:tim-cap-am-thanh:instructions",
+      "file": "tim-cap-am-thanh.v1.mp3",
+      "transcript": "Tìm cặp âm thanh. Chọn hai thẻ để nghe và tìm âm giống nhau. Nếu chưa khớp, bấm Úp hai thẻ để thử tiếp. Các cặp đã tìm được sẽ giữ mở. Ba cấp độ có hai, ba rồi bốn cặp. Có thể bật mô tả chữ cho thẻ đang mở. Không cần ghi nhớ vị trí bằng mắt. Dùng Tab để di chuyển, Enter hoặc Space để chọn. Bắt đầu với âm lượng nhỏ. Tiến độ tự lưu trên thiết bị.",
+      "transcriptSha256": "466eebf6e040ee05effcfef03ddd33427443e960a5b76ddb1011b378e4d740dd",
+      "audioSha256": "be88dd0a790a5f9e1b31d1a7861b19cade64d84134a667a011ef00ddbf964f36",
+      "bytes": 230756,
+      "durationSeconds": 28.756871,
+      "rms": 0.09828138530059106
+    },
+    {
+      "id": "activity:do-vui-kien-thuc:instructions",
+      "file": "do-vui-kien-thuc.v1.mp3",
+      "transcript": "Đố vui kiến thức. Bấm Nghe câu hỏi hoặc đọc câu hỏi, rồi chọn câu trả lời. Nếu chưa đúng, hãy thử lại. Mỗi đáp án đúng có lời giải thích. Ba cấp độ đi từ kiến thức quen thuộc đến khoa học và suy luận. Dùng Tab để di chuyển, Enter hoặc Space để chọn. Bắt đầu với âm lượng nhỏ. Tiến độ tự lưu trên thiết bị.",
+      "transcriptSha256": "8faffa56c7b432272500ed0d39b0c770ef33128dc66178cf359ea9ceca978848",
+      "audioSha256": "827c67fce1a820c5784bb1d9f1c8046ab19a19dc983516cadf01fd508895a5e6",
+      "bytes": 197528,
+      "durationSeconds": 24.59415,
+      "rms": 0.09803357865850128
+    },
+    {
+      "id": "activity:toan-hoc-am-thanh:instructions",
+      "file": "toan-hoc-am-thanh.v1.mp3",
+      "transcript": "Toán học bằng âm thanh. Bấm Nghe câu hỏi để nghe bài toán, rồi chọn kết quả. Em có thể nghe lại tùy ý hoặc đọc bằng chữ. Cấp một tập đếm, cộng và trừ; cấp hai có nhân và chia; cấp ba có bài toán nhiều bước. Không giới hạn thời gian. Dùng Tab để di chuyển, Enter hoặc Space để chọn. Bắt đầu với âm lượng nhỏ. Tiến độ tự lưu trên thiết bị.",
+      "transcriptSha256": "270f945210b79259b6015a01fccdbd3e3ce577e55ca5e26649e3344bf734347f",
+      "audioSha256": "032bd0307402ddf6cde9511b084cd02137641c0f6c167b492997a229bf67f026",
+      "bytes": 221143,
+      "durationSeconds": 27.549433,
+      "rms": 0.09617611191756757
+    },
+    {
+      "id": "activity:phieu-luu-giai-do:instructions",
+      "file": "phieu-luu-giai-do.v1.mp3",
+      "transcript": "Phiêu lưu giải đố. Mỗi cấp độ là một chuyến phiêu lưu gồm tám chặng liên tiếp. Nghe hoặc đọc tình huống rồi chọn cách giải câu đố. Trả lời đúng để mở chặng tiếp và xem điều gì xảy ra. Nếu chưa đúng, em có thể thử lại. Dùng Tab để di chuyển, Enter hoặc Space để chọn. Bắt đầu với âm lượng nhỏ. Tiến độ tự lưu trên thiết bị.",
+      "transcriptSha256": "b7111fc8280a045297f6cc6b1d1bf83e177ab6e019f78898c025f034b23b1396",
+      "audioSha256": "98fd24f2271bd5afc5315fdb9bb551e7e9ec8958a2f6b3124fe191ca1118d309",
+      "bytes": 205887,
+      "durationSeconds": 25.646621,
+      "rms": 0.0969959238517781
+    },
+    {
+      "id": "activity:ghi-nho-nhip-dieu:instructions",
+      "file": "ghi-nho-nhip-dieu.v1.mp3",
+      "transcript": "Ghi nhớ nhịp điệu. Nghe mẫu nhịp rồi bấm nút Gõ nhịp, hoặc dùng Enter hay Space khi nút đó được chọn. Gõ đủ số tiếng rồi bấm Kiểm tra nhịp. Có thể gõ chậm hơn mẫu, chỉ cần giữ tỷ lệ khoảng cách. Chế độ Chọn khoảng nghỉ cho phép chọn Ngắn, Dài hoặc Rất dài thay cho gõ theo thời gian. Ba cấp độ tăng số nhịp và độ chính xác. Dùng Tab để di chuyển, Enter hoặc Space để chọn. Bắt đầu với âm lượng nhỏ. Tiến độ tự lưu trên thiết bị.",
+      "transcriptSha256": "29eba024adafffb8da5dc11a6a4dcd2ece8d2ddf24c5ae35e3888f7070929327",
+      "audioSha256": "4cd6264b2153584f97efd03c316ae848186b555e83a9e1c30cc86f01db6c5c86",
+      "bytes": 271716,
+      "durationSeconds": 33.870204,
+      "rms": 0.09680033133871027
+    },
+    {
+      "id": "game-correct",
+      "file": "game-correct.v1.mp3",
+      "transcript": "Đúng rồi! Em đã làm rất tốt. Hãy đọc lời giải thích và tiếp tục khám phá nhé.",
+      "transcriptSha256": "3f26e444f4c424ee9c0c8b7fd228a122990b6d97ee6c47e7cab47fb499bed721",
+      "audioSha256": "7bec2c0f3d507e2cadf8e68b3b55199630e4d9c02d41b4eec318090f1a4fee86",
+      "bytes": 51243,
+      "durationSeconds": 6.306304,
+      "rms": 0.097899128660882
+    },
+    {
+      "id": "game-incorrect",
+      "file": "game-incorrect.v1.mp3",
+      "transcript": "Chưa đúng rồi. Em có thể nghe lại, đọc mô tả và thử tiếp nhé. Với trò ghép cặp, hãy úp hai thẻ trước khi chọn lại.",
+      "transcriptSha256": "70a97b52e5d84e281e3759ae3e609cf9de931a412bf6447372738d06ccde988f",
+      "audioSha256": "c876870edcb6043bab95523c823d22b12ce7954000aa49ff79f90dce872ca709",
+      "bytes": 77783,
+      "durationSeconds": 9.630612,
+      "rms": 0.09325611042939311
+    },
+    {
+      "id": "game-completed",
+      "file": "game-completed.v1.mp3",
+      "transcript": "Em đã hoàn thành cấp độ này! Hãy xem kết quả bên dưới. Em có thể chơi lại hoặc chọn cấp độ khác.",
+      "transcriptSha256": "5cba7a7d855b76beec43dbb53f57d46b7776e857e794522a54f4217c47d4e704",
+      "audioSha256": "6e4f9a427020780d4b44f636d7867c77e5df36de8435193b47a850a79ad9a0a8",
+      "bytes": 63154,
+      "durationSeconds": 7.809615,
+      "rms": 0.09583144327162342
+    },
+    {
+      "id": "do-vui-kien-thuc-1",
+      "file": "do-vui-kien-thuc-1.v1.mp3",
+      "transcript": "Bộ phận nào giúp em nghe âm thanh?",
+      "transcriptSha256": "14b10d7d5fcf88ad2b0a4548929c147b373ef3e1013698b416afff315d9e93e5",
+      "audioSha256": "32d3b6bc342e701c1eb92ee199f33660c3d5a50b02b8fe385f9cc104c564b0b6",
+      "bytes": 20940,
+      "durationSeconds": 2.523628,
+      "rms": 0.09740910562491364
+    },
+    {
+      "id": "do-vui-kien-thuc-2",
+      "file": "do-vui-kien-thuc-2.v1.mp3",
+      "transcript": "Cây cần gì để lớn lên?",
+      "transcriptSha256": "7f23c118692c68dd6a81dfa33af4447ce2e48013d3d1394fbd97e63dc3387b71",
+      "audioSha256": "092ccd798f58e0fe6ef780d2aaf1e3049ad3e8088466edceb05a54f17cc62297",
+      "bytes": 15716,
+      "durationSeconds": 1.861678,
+      "rms": 0.09920733751009249
+    },
+    {
+      "id": "do-vui-kien-thuc-3",
+      "file": "do-vui-kien-thuc-3.v1.mp3",
+      "transcript": "Con nào sống dưới nước?",
+      "transcriptSha256": "1297d926fb8b170c4bc2d09d62c6b951eb059755851122551588c60a3336261f",
+      "audioSha256": "2e376fcd85d91d263e680163002b22e4742c2dd3d1cdb4c3551b9ab77b3995e4",
+      "bytes": 14044,
+      "durationSeconds": 1.664308,
+      "rms": 0.09787701917395708
+    },
+    {
+      "id": "do-vui-kien-thuc-4",
+      "file": "do-vui-kien-thuc-4.v1.mp3",
+      "transcript": "Khi đèn giao thông màu đỏ, em cần làm gì?",
+      "transcriptSha256": "f39a55a630ca163d4283f357e6d295892320123bf1b7a6e5e737f570a10b0668",
+      "audioSha256": "b116067f7eca22b46bcafbd737626d34332c6d8c7add64207b9aa6937ea8a722",
+      "bytes": 27628,
+      "durationSeconds": 3.362132,
+      "rms": 0.09783036896316649
+    },
+    {
+      "id": "do-vui-kien-thuc-5",
+      "file": "do-vui-kien-thuc-5.v1.mp3",
+      "transcript": "Vật nào dùng để che mưa?",
+      "transcriptSha256": "dbf23363cb3c033dd4c1ee163896efef09193a0a6013baa6954bf5a920a71525",
+      "audioSha256": "4fdf61143d23f54389d68e2af002d360782b1b3e4f48db43593e2ed843ef359a",
+      "bytes": 16970,
+      "durationSeconds": 2.01356,
+      "rms": 0.09664697459931024
+    },
+    {
+      "id": "do-vui-kien-thuc-6",
+      "file": "do-vui-kien-thuc-6.v1.mp3",
+      "transcript": "Một bàn tay thường có bao nhiêu ngón?",
+      "transcriptSha256": "fb31fb144c11d667b02e155858bfceeee2fc8189ccdc00148585080d94303604",
+      "audioSha256": "df7b4a9b6c2f86d10b7d814203490c9c78b9a0c62a1b5edb4737ae3c5183db42",
+      "bytes": 21985,
+      "durationSeconds": 2.662313,
+      "rms": 0.09694794207796147
+    },
+    {
+      "id": "do-vui-kien-thuc-7",
+      "file": "do-vui-kien-thuc-7.v1.mp3",
+      "transcript": "Mặt Trời thường xuất hiện vào lúc nào?",
+      "transcriptSha256": "4f28f9481cb9dc73830c0d43ecc83ad0236383ab96383c4f610891140d924f60",
+      "audioSha256": "9dd49dd15519b5a668761ac3e77b88b33ae5321253457ec8280b6d73bfccd91e",
+      "bytes": 23657,
+      "durationSeconds": 2.859184,
+      "rms": 0.09701448951350385
+    },
+    {
+      "id": "do-vui-kien-thuc-8",
+      "file": "do-vui-kien-thuc-8.v1.mp3",
+      "transcript": "Trước khi ăn, em nên làm gì?",
+      "transcriptSha256": "f39cd5e5c92d0045794959473c32a86748e49cbfd131d3fe788a264845d6be0c",
+      "audioSha256": "33e5c74a86af2a46dd83ed3089b2b08a0df76a3e52bda553f39197dc19e499d8",
+      "bytes": 20105,
+      "durationSeconds": 2.41551,
+      "rms": 0.09568616264069259
+    },
+    {
+      "id": "do-vui-kien-thuc-9",
+      "file": "do-vui-kien-thuc-9.v1.mp3",
+      "transcript": "Loài nào là côn trùng?",
+      "transcriptSha256": "af83959e7d61947221caad587cda9d2ae2bfba56b6e1f47e8ab4ebf6244c5c72",
+      "audioSha256": "f11eb531c63d218b4b486a52ac4eacfeb85a96dbd9f221e466c1123f5c84b4b7",
+      "bytes": 15089,
+      "durationSeconds": 1.79746,
+      "rms": 0.09754020026917085
+    },
+    {
+      "id": "do-vui-kien-thuc-10",
+      "file": "do-vui-kien-thuc-10.v1.mp3",
+      "transcript": "Nước đóng băng trở thành gì?",
+      "transcriptSha256": "002741f9ac49a76a7aa62a3e0f22b9c01972670306e53bdbe937551c34913fea",
+      "audioSha256": "dc53841b079e7912f1978bf139203dbea67012f74fc08f2bdf766a0e53cd8400",
+      "bytes": 16970,
+      "durationSeconds": 2.03161,
+      "rms": 0.099836690145405
+    },
+    {
+      "id": "do-vui-kien-thuc-11",
+      "file": "do-vui-kien-thuc-11.v1.mp3",
+      "transcript": "Trái Đất chuyển động quanh thiên thể nào?",
+      "transcriptSha256": "6fa773dc5dd0f7c3285979cb08a594a4483c91c19fc44ad65ca2b93ead4cf59d",
+      "audioSha256": "21ca10e5041c340cff33368b1c43b953a704aece2b3458a8adf26638c69e3f84",
+      "bytes": 21776,
+      "durationSeconds": 2.62449,
+      "rms": 0.0980605761600582
+    },
+    {
+      "id": "do-vui-kien-thuc-12",
+      "file": "do-vui-kien-thuc-12.v1.mp3",
+      "transcript": "Vật liệu nào thường bị nam châm hút?",
+      "transcriptSha256": "d92f825ad921165d2a8878d26d6ad4a8ee7270b14152b553130e3f2fc317b397",
+      "audioSha256": "55bc616f43fbe77b82f38c54ad33cc79bf8966c08e424abb22ffd94336bbcf24",
+      "bytes": 21149,
+      "durationSeconds": 2.546485,
+      "rms": 0.09834351040105434
+    },
+    {
+      "id": "do-vui-kien-thuc-13",
+      "file": "do-vui-kien-thuc-13.v1.mp3",
+      "transcript": "Đâu là cách tiết kiệm nước?",
+      "transcriptSha256": "2a884451319fb28658dbeef499fb83b5cb32a2984414e80f35ff549781a166a6",
+      "audioSha256": "7230b19daac84432271c660357d5214a90936a999f28513db552decdf8ea4633",
+      "bytes": 15716,
+      "durationSeconds": 1.859637,
+      "rms": 0.10054643071891935
+    },
+    {
+      "id": "do-vui-kien-thuc-14",
+      "file": "do-vui-kien-thuc-14.v1.mp3",
+      "transcript": "Bộ phận nào của cây thường hút nước trong đất?",
+      "transcriptSha256": "c9ce200760c001a936b8ad50e386f8a07e284f3aee54d61bf41165f80f111c67",
+      "audioSha256": "a5d9b3118747fd8d62e95af57eb43b94894b3bd2e1db0821bd0e13d831cf4d87",
+      "bytes": 25120,
+      "durationSeconds": 3.046077,
+      "rms": 0.09950674366439613
+    },
+    {
+      "id": "do-vui-kien-thuc-15",
+      "file": "do-vui-kien-thuc-15.v1.mp3",
+      "transcript": "Âm thanh nào thường báo có xe cấp cứu đang đến?",
+      "transcriptSha256": "68567cf83ee27139e5338ca1225190a6cb06f5735f6806937942edf87b315f93",
+      "audioSha256": "9dc755dc212a7411baf5cc6b371546aa2d8129d870dfbe0d696a24809f676f32",
+      "bytes": 28673,
+      "durationSeconds": 3.482812,
+      "rms": 0.09889653658509713
+    },
+    {
+      "id": "do-vui-kien-thuc-16",
+      "file": "do-vui-kien-thuc-16.v1.mp3",
+      "transcript": "Một tuần có bao nhiêu ngày?",
+      "transcriptSha256": "af7ac425d4515eb0b98ef78faca4cdfee6a07acd7ba7ba85675305dc9715739a",
+      "audioSha256": "f4b4c6342edd861bf875efe57138de723418890f644e7d8dc7fef550842480da",
+      "bytes": 16552,
+      "durationSeconds": 1.965714,
+      "rms": 0.09677572922856145
+    },
+    {
+      "id": "do-vui-kien-thuc-17",
+      "file": "do-vui-kien-thuc-17.v1.mp3",
+      "transcript": "Vì sao ta thấy chớp trước khi nghe sấm?",
+      "transcriptSha256": "108cd79db84bbdf3c37446f1fa1d10a3f49a9718552832dbf855fec345d3951e",
+      "audioSha256": "6a2392c690b34bc6f5ee543f9803cbd4d152059156a0cdd2a4831de31c9e6a47",
+      "bytes": 24702,
+      "durationSeconds": 2.98771,
+      "rms": 0.09626638654308788
+    },
+    {
+      "id": "do-vui-kien-thuc-18",
+      "file": "do-vui-kien-thuc-18.v1.mp3",
+      "transcript": "Trái Đất tự quay gây ra hiện tượng nào?",
+      "transcriptSha256": "3b2b508b3ed3c8ceeb65436c144ebb98776cb6ef0bf0084a45ed2189991ae88b",
+      "audioSha256": "248b45c270ea5516462e6f782a0b69070d3a9bb113ff9ac5cd772745b0c68452",
+      "bytes": 23657,
+      "durationSeconds": 2.856689,
+      "rms": 0.09517858362919432
+    },
+    {
+      "id": "do-vui-kien-thuc-19",
+      "file": "do-vui-kien-thuc-19.v1.mp3",
+      "transcript": "Vật nào cho ánh sáng đi xuyên qua rõ nhất?",
+      "transcriptSha256": "54e399bf5e66f73a05d4cfed0bcf8c25a84563d59eec99f3aa34a5fb995f20b8",
+      "audioSha256": "2c528071f569e0b43e379099920f0ec8403f199df394397d521f9858785db072",
+      "bytes": 23866,
+      "durationSeconds": 2.883175,
+      "rms": 0.09442421238173504
+    },
+    {
+      "id": "do-vui-kien-thuc-20",
+      "file": "do-vui-kien-thuc-20.v1.mp3",
+      "transcript": "Trong chuỗi cỏ, thỏ, cáo, thỏ ăn gì?",
+      "transcriptSha256": "4e8c5fdb73b402993d52f34f990bc675b7e540ba538de5ea7a52fd2bb2f41539",
+      "audioSha256": "8f116f1af12888c29f95a357586b972c1ea9a3ffc465484ba142beffbea3e2ec",
+      "bytes": 30345,
+      "durationSeconds": 3.688526,
+      "rms": 0.09749315830840612
+    },
+    {
+      "id": "do-vui-kien-thuc-21",
+      "file": "do-vui-kien-thuc-21.v1.mp3",
+      "transcript": "Khi hơi nước gặp lạnh và thành giọt nước, đó là gì?",
+      "transcriptSha256": "d8a88073f23e172e28352cb6d6c1b574f4dc16dddc61cdb001f5f77562fc6b07",
+      "audioSha256": "0f551bb101f526abc47fa3e739ea3eb63a73ef7a0475ccd6b398d73bf39ecfa5",
+      "bytes": 33061,
+      "durationSeconds": 4.04712,
+      "rms": 0.10235253714061592
+    },
+    {
+      "id": "do-vui-kien-thuc-22",
+      "file": "do-vui-kien-thuc-22.v1.mp3",
+      "transcript": "Hành động nào giúp giảm rác dùng một lần?",
+      "transcriptSha256": "da410e9bf5841fc4c63c456e234a24cbe6c3741dceffc4a7f2c16730effcbbef",
+      "audioSha256": "b5cde97de73aa2f6a5fdc6c99777cbd84916c7c0676a520290e20c235490923a",
+      "bytes": 24493,
+      "durationSeconds": 2.976417,
+      "rms": 0.0984268143775973
+    },
+    {
+      "id": "do-vui-kien-thuc-23",
+      "file": "do-vui-kien-thuc-23.v1.mp3",
+      "transcript": "Âm thanh có thể truyền qua đâu?",
+      "transcriptSha256": "79e08a504dfbffb88a2a1b1c3931d6d0c0a6bc73c8ec32fff616b9b8c293e4c0",
+      "audioSha256": "993f5740308f9dca1e8f68409a7584829753a67d32db045a3a3ba1106a385bc9",
+      "bytes": 18642,
+      "durationSeconds": 2.240544,
+      "rms": 0.09689701444713474
+    },
+    {
+      "id": "do-vui-kien-thuc-24",
+      "file": "do-vui-kien-thuc-24.v1.mp3",
+      "transcript": "La bàn thông thường dùng để làm gì?",
+      "transcriptSha256": "0a55f891c9a99d7240da8554c358956e583718d5139b2bcc2fd0c80f460ea6be",
+      "audioSha256": "6b832b95d0bea2f4f22ade48fe083bddc87f9391d03ead3dd9fe0e6dc25b53be",
+      "bytes": 21149,
+      "durationSeconds": 2.552018,
+      "rms": 0.09973384456426117
+    },
+    {
+      "id": "toan-hoc-am-thanh-1",
+      "file": "toan-hoc-am-thanh-1.v1.mp3",
+      "transcript": "Có hai tiếng gõ, thêm một tiếng gõ. Tất cả bao nhiêu tiếng?",
+      "transcriptSha256": "81dc4eebec2712e69bd9bce5ec74b5303be187a91b469ca2da8988001dc5434a",
+      "audioSha256": "defc707b48d910df37b16b224670cc7a9d3a16c41256eca5bc9f423c95c2b853",
+      "bytes": 38704,
+      "durationSeconds": 4.738957,
+      "rms": 0.09960524298960984
+    },
+    {
+      "id": "toan-hoc-am-thanh-2",
+      "file": "toan-hoc-am-thanh-2.v1.mp3",
+      "transcript": "Có ba chú chim, một chú bay đi. Còn bao nhiêu chú?",
+      "transcriptSha256": "fab6ba38291dd66e62350622c83971bb7d5dde76b71e7192fdcef401487d68ed",
+      "audioSha256": "8c14a8a9c0507998de6b881f768e4d5d39b0704f694f3fccc6e93d4306f9e56d",
+      "bytes": 36823,
+      "durationSeconds": 4.506757,
+      "rms": 0.10272921314117758
+    },
+    {
+      "id": "toan-hoc-am-thanh-3",
+      "file": "toan-hoc-am-thanh-3.v1.mp3",
+      "transcript": "Một tiếng chuông rồi bốn tiếng chuông. Có tất cả bao nhiêu tiếng?",
+      "transcriptSha256": "5d373ba2257d3c047bc21e86e803baf486acda5775a61e189486908a5a291fa7",
+      "audioSha256": "a942acb1ab2723b744c4516f3e6265a51b2391b9825168479e976b5e91042b44",
+      "bytes": 38495,
+      "durationSeconds": 4.717279,
+      "rms": 0.1027770464258476
+    },
+    {
+      "id": "toan-hoc-am-thanh-4",
+      "file": "toan-hoc-am-thanh-4.v1.mp3",
+      "transcript": "Bốn tiếng vỗ tay, thêm hai tiếng. Có bao nhiêu tiếng?",
+      "transcriptSha256": "4cf18088a7a7a5e4fc337e07efc5c322346ad98a5845060f8bc897d115dfe473",
+      "audioSha256": "a726571cf2289a7d877cc2e0ee50c5178f9f0333bb806a5bf436fdc9cc7d8a44",
+      "bytes": 35987,
+      "durationSeconds": 4.39288,
+      "rms": 0.10524658665412942
+    },
+    {
+      "id": "toan-hoc-am-thanh-5",
+      "file": "toan-hoc-am-thanh-5.v1.mp3",
+      "transcript": "Có năm chiếc kẹo, em tặng hai chiếc. Còn bao nhiêu?",
+      "transcriptSha256": "c3a02bff5133cf1b5a069d379951437172320d680ed0b2654159b665aca733ba",
+      "audioSha256": "d8c7aa5bb7b91ab3af6b0733db2ef19f9856427cdf912d14eccf28737595be48",
+      "bytes": 33897,
+      "durationSeconds": 4.135238,
+      "rms": 0.10200154862249693
+    },
+    {
+      "id": "toan-hoc-am-thanh-6",
+      "file": "toan-hoc-am-thanh-6.v1.mp3",
+      "transcript": "Tiếng trống đếm một, hai, ba. Số tiếp theo là gì?",
+      "transcriptSha256": "0968e2b53dea056b0cf709db1106549bbb39ee1ae074043535d74bcaca536e60",
+      "audioSha256": "b8aad8134b3c132ace1cf8ec665cb87668bd54dfabe6ae6518678c564eedead7",
+      "bytes": 37032,
+      "durationSeconds": 4.538141,
+      "rms": 0.09879008204936915
+    },
+    {
+      "id": "toan-hoc-am-thanh-7",
+      "file": "toan-hoc-am-thanh-7.v1.mp3",
+      "transcript": "Có sáu tiếng gõ, bớt một tiếng. Còn bao nhiêu?",
+      "transcriptSha256": "65d3e49f8fe0cb88ef04610826ff13915b871bb58b2d07234b56667428359582",
+      "audioSha256": "4272c9b0992eeb6f88112727b9450eba25b13e6192e4ce0c147b18b055ee0dd9",
+      "bytes": 32016,
+      "durationSeconds": 3.914649,
+      "rms": 0.1025140808866103
+    },
+    {
+      "id": "toan-hoc-am-thanh-8",
+      "file": "toan-hoc-am-thanh-8.v1.mp3",
+      "transcript": "Hai nhóm, mỗi nhóm hai tiếng chuông. Tổng bao nhiêu?",
+      "transcriptSha256": "422e9bba16709732574c2a0fc67fcd12c2a8d31c7bc190555bedf4ac0645135d",
+      "audioSha256": "97b84e9b163478219bfa9f9a55570fc361bfe78d77df5bc4afa31565da5663dc",
+      "bytes": 34733,
+      "durationSeconds": 4.254694,
+      "rms": 0.09973850716099825
+    },
+    {
+      "id": "toan-hoc-am-thanh-9",
+      "file": "toan-hoc-am-thanh-9.v1.mp3",
+      "transcript": "Bảy tiếng gõ thêm năm tiếng gõ là bao nhiêu?",
+      "transcriptSha256": "e92164344fa9b2857ce0f875683fc139a1b9db1efe91277bfc8e118f486e0e5e",
+      "audioSha256": "47ac65e8065b986b9bdf6a0a8e2c012fbe25157dbe25d6009c43d06f8413eda8",
+      "bytes": 27001,
+      "durationSeconds": 3.267438,
+      "rms": 0.09654066194922645
+    },
+    {
+      "id": "toan-hoc-am-thanh-10",
+      "file": "toan-hoc-am-thanh-10.v1.mp3",
+      "transcript": "Mười hai nốt nhạc, bớt bốn nốt. Còn bao nhiêu?",
+      "transcriptSha256": "bb1f5c5927f0bee80ac82569b2719afc17ed7156d900ca5738c8fd1e20c5daa3",
+      "audioSha256": "38c9034b5fb866ca478dadb53e8a3a9910eeec2d8238f9bf49148a71b5e5fbf8",
+      "bytes": 31180,
+      "durationSeconds": 3.789887,
+      "rms": 0.10282539573149362
+    },
+    {
+      "id": "toan-hoc-am-thanh-11",
+      "file": "toan-hoc-am-thanh-11.v1.mp3",
+      "transcript": "Ba nhóm, mỗi nhóm ba tiếng gõ. Có bao nhiêu tiếng?",
+      "transcriptSha256": "c5fb585a7d36828ef83fc0bf3feffb4491a6d34de72ddfd7ac6d5ba7ce98ffa8",
+      "audioSha256": "2dc296d6b35a38106d1ae8c832d5adc5547fc80bb75f92544f7abfd8a3426c2b",
+      "bytes": 35360,
+      "durationSeconds": 4.312653,
+      "rms": 0.10222484038170501
+    },
+    {
+      "id": "toan-hoc-am-thanh-12",
+      "file": "toan-hoc-am-thanh-12.v1.mp3",
+      "transcript": "Chia đều tám chiếc chuông cho hai bạn. Mỗi bạn có mấy chiếc?",
+      "transcriptSha256": "a6482da4258cd043137406fa062f6425a6283797079b13923cd1dfc8590f2fc2",
+      "audioSha256": "6670a18d29de07d6655c4cfce1d1505545c94dad10ca01623b2eb1289035f144",
+      "bytes": 36405,
+      "durationSeconds": 4.452562,
+      "rms": 0.09715801882154924
+    },
+    {
+      "id": "toan-hoc-am-thanh-13",
+      "file": "toan-hoc-am-thanh-13.v1.mp3",
+      "transcript": "Chín tiếng vỗ tay thêm sáu tiếng là bao nhiêu?",
+      "transcriptSha256": "cc0adea64dfc53ff0fff79d1efd1b7a4bb723173ff24ed0adf959c94775bcc3d",
+      "audioSha256": "35cd7c6a3d7e81848e0549284ddca7d9d142a4a31919426158ccb2f32ab32060",
+      "bytes": 27837,
+      "durationSeconds": 3.390748,
+      "rms": 0.09706088165400228
+    },
+    {
+      "id": "toan-hoc-am-thanh-14",
+      "file": "toan-hoc-am-thanh-14.v1.mp3",
+      "transcript": "Mười lăm nhạc công, năm người tạm nghỉ. Còn mấy người chơi?",
+      "transcriptSha256": "448c5787757567dafc2aeabfb25fcd59a022002acadb58582edce0278475def1",
+      "audioSha256": "bd0df748829e64eb7798fe7ddb1e44b1d01f6223e814a0e362676bdf749e0866",
+      "bytes": 36405,
+      "durationSeconds": 4.450431,
+      "rms": 0.10351981889616092
+    },
+    {
+      "id": "toan-hoc-am-thanh-15",
+      "file": "toan-hoc-am-thanh-15.v1.mp3",
+      "transcript": "Dãy nhịp hai, bốn, sáu. Số tiếp theo là gì?",
+      "transcriptSha256": "9a6a65b8d149a06522c9f3bbb4778077fcf2ae90509c6e8e34ac278abf6d60f6",
+      "audioSha256": "6d8959d6553e579f24719d5bbfd8c19f2e22c79df5e6a76148c186247f7f3bdf",
+      "bytes": 36405,
+      "durationSeconds": 4.452018,
+      "rms": 0.09937318118886322
+    },
+    {
+      "id": "toan-hoc-am-thanh-16",
+      "file": "toan-hoc-am-thanh-16.v1.mp3",
+      "transcript": "Bốn nhóm, mỗi nhóm hai nhịp. Có tổng bao nhiêu nhịp?",
+      "transcriptSha256": "2df7b5e240c23aa73fc952c214e38bccda9a08223029a478632a58b98729cf34",
+      "audioSha256": "7586fbf75b03427001b3a955e67e8dc97e0becb82cb5753f0b7063a0f5ef056d",
+      "bytes": 33270,
+      "durationSeconds": 4.05619,
+      "rms": 0.1026456340693556
+    },
+    {
+      "id": "toan-hoc-am-thanh-17",
+      "file": "toan-hoc-am-thanh-17.v1.mp3",
+      "transcript": "Bốn nhóm, mỗi nhóm sáu tiếng trống. Có bao nhiêu tiếng?",
+      "transcriptSha256": "ec0e4ea2c5da43425dc34ae5003d13346330bc441ef157d18789c290e1a1ddcb",
+      "audioSha256": "7e9cae8ef875f31a78162c3ff6b5d1a08b41a0328af19d66d72e6f819e60a9fc",
+      "bytes": 36405,
+      "durationSeconds": 4.46254,
+      "rms": 0.10489183067802756
+    },
+    {
+      "id": "toan-hoc-am-thanh-18",
+      "file": "toan-hoc-am-thanh-18.v1.mp3",
+      "transcript": "Hai mươi mốt chiếc chuông chia đều cho ba nhóm. Mỗi nhóm mấy chiếc?",
+      "transcriptSha256": "de7f8efb6536cb21dc92a1ce4ea2b6a9a60435299af68371c860e4893aa62114",
+      "audioSha256": "ac4d021ba6ec1704dcb80e1ab6381f0f0d48d137e5f87991f117f29e95c61238",
+      "bytes": 39540,
+      "durationSeconds": 4.835193,
+      "rms": 0.09568578394192122
+    },
+    {
+      "id": "toan-hoc-am-thanh-19",
+      "file": "toan-hoc-am-thanh-19.v1.mp3",
+      "transcript": "Có mười tám nhịp, thêm bảy nhịp rồi bớt năm. Còn bao nhiêu?",
+      "transcriptSha256": "c0cf747b0cc839667a7da32c9d8fd5cf162c67e9aa578c7933240ef32ce5e4ec",
+      "audioSha256": "2003f41f04266c7d4e482078a243623088e32c922b40bfe61522db42a066ce72",
+      "bytes": 38704,
+      "durationSeconds": 4.738957,
+      "rms": 0.09999743095151101
+    },
+    {
+      "id": "toan-hoc-am-thanh-20",
+      "file": "toan-hoc-am-thanh-20.v1.mp3",
+      "transcript": "Mỗi bài hát ba phút. Bốn bài liên tiếp dài bao nhiêu phút?",
+      "transcriptSha256": "f653cbf004a5e10050676f6c1c800560425709070c64e08905d91d456a4a31f5",
+      "audioSha256": "0ff79772d58a56a654ecb69979091131811816e06b868bd82fbca02e30793663",
+      "bytes": 35987,
+      "durationSeconds": 4.403991,
+      "rms": 0.09737482447715302
+    },
+    {
+      "id": "toan-hoc-am-thanh-21",
+      "file": "toan-hoc-am-thanh-21.v1.mp3",
+      "transcript": "Một nửa của mười sáu tiếng gõ là bao nhiêu?",
+      "transcriptSha256": "339569fd08af0693b4e1d2ec1690b5ac62125c46781a32109ea3527dff4ff1bc",
+      "audioSha256": "7b475508c6f1fbbb6d46f6cde4dcd9d22119d28d8a2949f1b2c2d4519a4b726f",
+      "bytes": 27001,
+      "durationSeconds": 3.289252,
+      "rms": 0.09785322934344738
+    },
+    {
+      "id": "toan-hoc-am-thanh-22",
+      "file": "toan-hoc-am-thanh-22.v1.mp3",
+      "transcript": "Dãy nhịp ba, sáu, mười hai. Nếu mỗi lần gấp đôi, số tiếp là gì?",
+      "transcriptSha256": "8ecb8e29e42bff253cfa170aa67f9cab7f6fbc0acafe0de67cca5c41b37161a0",
+      "audioSha256": "dfc78aea9e6d92593e3afe9720bd84958d5f4e9fa5d9ee64996e66e09fd40068",
+      "bytes": 51243,
+      "durationSeconds": 6.309615,
+      "rms": 0.09707905747696557
+    },
+    {
+      "id": "toan-hoc-am-thanh-23",
+      "file": "toan-hoc-am-thanh-23.v1.mp3",
+      "transcript": "Ba mươi tiếng chuông chia thành năm nhóm đều nhau. Mỗi nhóm mấy tiếng?",
+      "transcriptSha256": "45e11dcf7ee62efdee6c3ed3c0ccab878b933c69cb189bbfad461f85bc9f4ab4",
+      "audioSha256": "a778be2f64583cfd863045e7fdc969e06ff3d01e9a0875050c76303f6868d8c1",
+      "bytes": 40585,
+      "durationSeconds": 4.974422,
+      "rms": 0.09865163983067035
+    },
+    {
+      "id": "toan-hoc-am-thanh-24",
+      "file": "toan-hoc-am-thanh-24.v1.mp3",
+      "transcript": "Có năm nhóm bốn tiếng gõ, thêm ba tiếng cuối. Tổng bao nhiêu?",
+      "transcriptSha256": "9e976c13eb5341d2446357aab274556f87c5655ccf3f3c0757fd192ef89c8f5a",
+      "audioSha256": "15d51580e6d470d42cfbc9c65abaa13617dfdef294c99727b8ab724835b66129",
+      "bytes": 39958,
+      "durationSeconds": 4.889887,
+      "rms": 0.09766008908360707
+    },
+    {
+      "id": "phieu-luu-giai-do-1",
+      "file": "phieu-luu-giai-do-1.v1.mp3",
+      "transcript": "Cổng Rừng Ngân Nga khép kín. Biển ghi: chọn tiếng chào thân thiện để mở cổng.",
+      "transcriptSha256": "ee2a664fb5219df651323040fc85690825b044c383eec64e685825efb8239f0a",
+      "audioSha256": "a06eb3b41dda5910c4ccc0d68a43b03097954a0acbd044d08aa4550e4450fdbd",
+      "bytes": 47272,
+      "durationSeconds": 5.80907,
+      "rms": 0.1008125379501875
+    },
+    {
+      "id": "phieu-luu-giai-do-2",
+      "file": "phieu-luu-giai-do-2.v1.mp3",
+      "transcript": "Bạn Sóc nhờ tìm con vật kêu meo meo ở ngã rẽ. Em gọi ai?",
+      "transcriptSha256": "153e2daeb869ea7b7950f1a5a60571cc7689fcec36576a82e7086c82d2d6f3c4",
+      "audioSha256": "aec71ba3f45a436d932102cee3e494fdf30c4fabb82e057d4566a99331401051",
+      "bytes": 39958,
+      "durationSeconds": 4.893152,
+      "rms": 0.09137918155752994
+    },
+    {
+      "id": "phieu-luu-giai-do-3",
+      "file": "phieu-luu-giai-do-3.v1.mp3",
+      "transcript": "Cầu có hai tấm ván, Sóc mang thêm một tấm. Có tất cả mấy tấm?",
+      "transcriptSha256": "8a95a0a9c1a445876a2e1d9ff4e375aaa99be453e7a64f6183d78fc59c0bec78",
+      "audioSha256": "3d3ceedcb9e1d86615c42f42c02deb10d966c646cb227abb48768d792ef948ab",
+      "bytes": 43719,
+      "durationSeconds": 5.367891,
+      "rms": 0.0970687633736011
+    },
+    {
+      "id": "phieu-luu-giai-do-4",
+      "file": "phieu-luu-giai-do-4.v1.mp3",
+      "transcript": "Ở bờ suối, tiếng gì gợi ý có dòng nước?",
+      "transcriptSha256": "4c6b8d7a7ed9a5327b6238228dfc3f4b6fe86b25f6721a1feacdb5a6ea042a8d",
+      "audioSha256": "0f604b38361e94ffea8fe3ae47f1ec5ee6fdc7fe8a0ccba13571478880c1a50c",
+      "bytes": 28255,
+      "durationSeconds": 3.424762,
+      "rms": 0.10145949594668927
+    },
+    {
+      "id": "phieu-luu-giai-do-5",
+      "file": "phieu-luu-giai-do-5.v1.mp3",
+      "transcript": "Đường đi chia hai. Bản đồ ghi: đến cây có lá xanh. Em chọn đâu?",
+      "transcriptSha256": "6f38588edb2353c7f93dd74a78806af74b6cd014a7dace922bb7aabd959c16c5",
+      "audioSha256": "c3fbffd5d0c6241ed7930b2a57f7b98524f50063f9b124148501c81a36cba538",
+      "bytes": 47063,
+      "durationSeconds": 5.783855,
+      "rms": 0.09664173914700787
+    },
+    {
+      "id": "phieu-luu-giai-do-6",
+      "file": "phieu-luu-giai-do-6.v1.mp3",
+      "transcript": "Hộp nhạc cần nốt tiếp theo: Đô, Mi, Đô, Mi… Em chọn nốt nào?",
+      "transcriptSha256": "674e6eeded8e902f4551af359e845afa03a810f49e19d9012e6520a84bf6c2be",
+      "audioSha256": "8cb9792af2c4372f091fc106657f8a4531bfa63cd5babdec008fbde6d28b0b9a",
+      "bytes": 50616,
+      "durationSeconds": 6.239592,
+      "rms": 0.09939097412732972
+    },
+    {
+      "id": "phieu-luu-giai-do-7",
+      "file": "phieu-luu-giai-do-7.v1.mp3",
+      "transcript": "Trời bắt đầu mưa. Em chọn gì để giữ bản đồ khô?",
+      "transcriptSha256": "08ae628af92fe3e1e34152b2c65c5ade8a910c47e90c440b954646f1b84d5e6b",
+      "audioSha256": "ece7df5c93ff466c828858690a2f6cef3904e269c807502074b3ee2abcbab380",
+      "bytes": 33688,
+      "durationSeconds": 4.106485,
+      "rms": 0.10304835528945704
+    },
+    {
+      "id": "phieu-luu-giai-do-8",
+      "file": "phieu-luu-giai-do-8.v1.mp3",
+      "transcript": "Sóc giúp em mang bản đồ suốt chuyến đi. Em nói gì?",
+      "transcriptSha256": "0d202a09cc258947c06c5345010afc9ce00803c656563526b988f632bf016c8e",
+      "audioSha256": "5f154a6e708d09f12fbbe46473abd211661ef0991bd05a9e98b628746b2f71f3",
+      "bytes": 34106,
+      "durationSeconds": 4.170159,
+      "rms": 0.09764352710452215
+    },
+    {
+      "id": "phieu-luu-giai-do-9",
+      "file": "phieu-luu-giai-do-9.v1.mp3",
+      "transcript": "Đảo Chuông bị mất giai điệu. Thuyền cần mật mã: ba cộng bốn.",
+      "transcriptSha256": "1e29af8ba51ce10b54954c286bfe13cc2af0c07952a52a379ee75540170a1deb",
+      "audioSha256": "d8d131a07011cd4d36cba92c3f0bb99e4204e307789ec674a8cc8e5f4587887e",
+      "bytes": 38286,
+      "durationSeconds": 4.680952,
+      "rms": 0.09954278385161007
+    },
+    {
+      "id": "phieu-luu-giai-do-10",
+      "file": "phieu-luu-giai-do-10.v1.mp3",
+      "transcript": "Bến có tiếng chuông cao và trống trầm. Biển chỉ đường ghi: theo tiếng trầm.",
+      "transcriptSha256": "56cb3aa839aed489a4b32c1d84b84a21817792a7eddda9e556da8136039d53bc",
+      "audioSha256": "391c2fdbe8f97657b6e3467ab2ee76b35d88c2d2ef5cf13c03642bc2f4a7c25d",
+      "bytes": 46227,
+      "durationSeconds": 5.671746,
+      "rms": 0.09803116758016724
+    },
+    {
+      "id": "phieu-luu-giai-do-11",
+      "file": "phieu-luu-giai-do-11.v1.mp3",
+      "transcript": "Trong hang, một tiếng gọi vang lại. Hiện tượng đó là gì?",
+      "transcriptSha256": "c0541758a0a4168dc88eb4559bbd96f04c252a8f374cbd323a2d02e8a0d3f9af",
+      "audioSha256": "bfbdb27b7dcebb40633d3d8534885bbc9a162902e1416f2dd93f09dfce3c7de1",
+      "bytes": 36405,
+      "durationSeconds": 4.443175,
+      "rms": 0.0992197035858754
+    },
+    {
+      "id": "phieu-luu-giai-do-12",
+      "file": "phieu-luu-giai-do-12.v1.mp3",
+      "transcript": "Cửa hang có mẫu ngắn, ngắn, dài, ngắn, ngắn… Nhịp tiếp theo là gì?",
+      "transcriptSha256": "e23e8c4c155e8d7db24a70b216eab9e9f03693f1bd5397f76497a65c86ccb6a7",
+      "audioSha256": "1537fb11e987bff357ab2fbb7c92da1196564b6be6dc6aadb2e3cc610a5336af",
+      "bytes": 50407,
+      "durationSeconds": 6.213424,
+      "rms": 0.09660453591845322
+    },
+    {
+      "id": "phieu-luu-giai-do-13",
+      "file": "phieu-luu-giai-do-13.v1.mp3",
+      "transcript": "Vườn có mười chiếc chuông, hai chiếc hỏng. Còn mấy chiếc dùng được?",
+      "transcriptSha256": "8a1962b8b554bb52d64eb08fcf272045ac46c3c17af457e34f48dfe249a4d888",
+      "audioSha256": "78e1f370aa2730212bed3c1afc456f875e2b8b64d343d6b3ea55b6cd6967644e",
+      "bytes": 39122,
+      "durationSeconds": 4.787256,
+      "rms": 0.10114237266726431
+    },
+    {
+      "id": "phieu-luu-giai-do-14",
+      "file": "phieu-luu-giai-do-14.v1.mp3",
+      "transcript": "Cây cầu phát tiếng cọt kẹt và có ván gãy. Em nên làm gì?",
+      "transcriptSha256": "28e86300ef83117f6bbc62b16e90cadf75ff021aefe437ff92803d6bf13ba1d6",
+      "audioSha256": "6a8734a11c4d39f105ea09be30b4602d3602c4be43ea601feba30b2f4906f81e",
+      "bytes": 38704,
+      "durationSeconds": 4.740952,
+      "rms": 0.09592863217208632
+    },
+    {
+      "id": "phieu-luu-giai-do-15",
+      "file": "phieu-luu-giai-do-15.v1.mp3",
+      "transcript": "Hòm nhạc ghi mật mã bằng số ngày trong một tuần.",
+      "transcriptSha256": "727887d70c1a5f3ca1fae40dbb6e88425efc2938e5ffe3156f8a521fdccb3a7e",
+      "audioSha256": "e656d7e6532c001b10c03be747f58309db6156b2adaf8232768849383f861fa4",
+      "bytes": 28882,
+      "durationSeconds": 3.523311,
+      "rms": 0.09723828060339781
+    },
+    {
+      "id": "phieu-luu-giai-do-16",
+      "file": "phieu-luu-giai-do-16.v1.mp3",
+      "transcript": "Dùi chuông đã tìm thấy. Em làm gì để khôi phục giai điệu cho cả đảo?",
+      "transcriptSha256": "4a49b1ec569a4f1ef22a303f8216711b8113080a217fe3209871a4d5428a0336",
+      "audioSha256": "c7db21b27435587abd8a2305568868d4feaca286de949dddfa81ed434a5f43a6",
+      "bytes": 43928,
+      "durationSeconds": 5.39102,
+      "rms": 0.09934948777031137
+    },
+    {
+      "id": "phieu-luu-giai-do-17",
+      "file": "phieu-luu-giai-do-17.v1.mp3",
+      "transcript": "Đài Âm Thanh cần năng lượng. Ba nhóm pin, mỗi nhóm bốn viên. Tổng bao nhiêu?",
+      "transcriptSha256": "3e24dc049821764f25e81d074a67dcccf88531e766b6229e99e0f35e04e4bcbd",
+      "audioSha256": "57ac8f6826602889ba745d614f73280702a8b2335cbb16a3fbb3cea2a039a1bb",
+      "bytes": 49362,
+      "durationSeconds": 6.07415,
+      "rms": 0.10057584572595825
+    },
+    {
+      "id": "phieu-luu-giai-do-18",
+      "file": "phieu-luu-giai-do-18.v1.mp3",
+      "transcript": "Bảng điều khiển hỏi: âm thanh có truyền qua khoảng chân không không?",
+      "transcriptSha256": "003c114191124dcea1e197d9506f117756632de3da6bca4f3e69f9296f770045",
+      "audioSha256": "48841fd8d5eabc8e299773ee48db72166b7acaf054da76ef03669c8a1c4a3886",
+      "bytes": 37241,
+      "durationSeconds": 4.547438,
+      "rms": 0.09568517115547016
+    },
+    {
+      "id": "phieu-luu-giai-do-19",
+      "file": "phieu-luu-giai-do-19.v1.mp3",
+      "transcript": "Phòng thu có tiếng vọng lớn. Vật nào thường giúp hấp thụ âm?",
+      "transcriptSha256": "7c9c07ebfacf77ea568fd73bb6a291da45c3d9907b103f8f1a1b58bab2176d5f",
+      "audioSha256": "1fb5a27b6b07dd2d45c3b0ecace7b54709d5d232d1662086e8ed0acdda570234",
+      "bytes": 37032,
+      "durationSeconds": 4.539683,
+      "rms": 0.09869506120948493
+    },
+    {
+      "id": "phieu-luu-giai-do-20",
+      "file": "phieu-luu-giai-do-20.v1.mp3",
+      "transcript": "Robot gửi chuỗi hai, bốn, tám. Nếu gấp đôi mỗi bước, số tiếp là gì?",
+      "transcriptSha256": "4dc2f44bbac7add28530d7c1123929077d309931904ea0af4edf26ba4e1bbe2d",
+      "audioSha256": "29aa37ff0c376654266bb67956a8ddf6298c641cbe68b63a443a74ab96b6e44c",
+      "bytes": 52914,
+      "durationSeconds": 6.508571,
+      "rms": 0.09679520526202405
+    },
+    {
+      "id": "phieu-luu-giai-do-21",
+      "file": "phieu-luu-giai-do-21.v1.mp3",
+      "transcript": "Robot cần chia đều mười tám mô-đun vào ba ngăn. Mỗi ngăn bao nhiêu?",
+      "transcriptSha256": "0dc682743f8b06a0a1411bfd104a421aa8ded28b7681b3e3dd128ff7300b75fd",
+      "audioSha256": "6ab4ff69b561e5190c47851565a9b45b49f594774e67def29ce89ab7d905cafd",
+      "bytes": 43510,
+      "durationSeconds": 5.335964,
+      "rms": 0.0984372717246755
+    },
+    {
+      "id": "phieu-luu-giai-do-22",
+      "file": "phieu-luu-giai-do-22.v1.mp3",
+      "transcript": "Em thấy chớp ngoài đài rồi mới nghe sấm. Vì sao?",
+      "transcriptSha256": "b766607c0364980223b80329499a0f09a350c06ed3bf063256d55a864273efcd",
+      "audioSha256": "aaa1c16023603ce711c81f3a64aa763a1d8b95c6b8500389f17d73df9671fc83",
+      "bytes": 33479,
+      "durationSeconds": 4.094422,
+      "rms": 0.09529902553134613
+    },
+    {
+      "id": "phieu-luu-giai-do-23",
+      "file": "phieu-luu-giai-do-23.v1.mp3",
+      "transcript": "Mật mã cuối: năm nhân năm rồi trừ bốn.",
+      "transcriptSha256": "84614622e7687c97cf34f52aeeddd533c6c59dbc177aca4067df4319d74f64cc",
+      "audioSha256": "80583382ea27eb6d33bad0fdc3a02f032c9337ee8e7a1aa556f7c5a012b3d9cb",
+      "bytes": 26583,
+      "durationSeconds": 3.231247,
+      "rms": 0.09974139675995733
+    },
+    {
+      "id": "phieu-luu-giai-do-24",
+      "file": "phieu-luu-giai-do-24.v1.mp3",
+      "transcript": "Đài đã sửa xong. Em muốn mọi người cùng nghe thoải mái. Em chọn gì?",
+      "transcriptSha256": "4ac4d0ec29390a9a0e286da830dae852302ba4d5d3bf59dc1bf4cf06ef4afde3",
+      "audioSha256": "39807474b2aac2641b3649aaec53725f9e053eafb92fb6f5733647c1b57c31d6",
+      "bytes": 45182,
+      "durationSeconds": 5.551701,
+      "rms": 0.09498789584545578
     }
   ]
 }

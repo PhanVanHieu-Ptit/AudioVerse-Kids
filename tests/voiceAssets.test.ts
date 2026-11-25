@@ -4,6 +4,8 @@ import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import manifest from '../public/audio/guidance/manifest.json';
 import { games } from '../src/content/games';
+import { activityGames } from '../src/content/activityGames';
+import { gameVoiceMessages } from '../src/content/gameVoiceMessages';
 import {
   activityVoiceMessage,
   voiceMessages,
@@ -12,6 +14,17 @@ import {
 const messages = [
   ...Object.values(voiceMessages),
   ...games.map(activityVoiceMessage),
+  ...activityGames.map(activityVoiceMessage),
+  ...Object.values(gameVoiceMessages),
+  ...activityGames.flatMap((game) =>
+    game.challenges
+      .filter((challenge) => challenge.audioSrc)
+      .map((challenge) => ({
+        id: challenge.id,
+        text: challenge.prompt,
+        audioSrc: challenge.audioSrc,
+      })),
+  ),
 ];
 const sha256 = (value: string | Buffer) =>
   createHash('sha256').update(value).digest('hex');

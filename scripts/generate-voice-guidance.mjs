@@ -17,6 +17,8 @@ import {
   activityVoiceMessage,
 } from '../src/content/voiceMessages.ts';
 import { games } from '../src/content/games.ts';
+import { activityGames } from '../src/content/activityGames.ts';
+import { gameVoiceMessages } from '../src/content/gameVoiceMessages.ts';
 
 const output = fileURLToPath(
   new URL('../public/audio/guidance/', import.meta.url),
@@ -25,9 +27,28 @@ const temporary = mkdtempSync(join(tmpdir(), 'audioverse-voice-'));
 const messages = [
   ...Object.values(voiceMessages),
   ...games.map(activityVoiceMessage),
+  ...activityGames.map(activityVoiceMessage),
+  ...Object.values(gameVoiceMessages),
+  ...activityGames.flatMap((game) =>
+    game.challenges
+      .filter((challenge) => challenge.audioSrc)
+      .map((challenge) => ({
+        id: challenge.id,
+        text: challenge.prompt,
+        audioSrc: challenge.audioSrc,
+      })),
+  ),
 ];
 const sha256 = (data) => createHash('sha256').update(data).digest('hex');
 const assets = [];
+let previous = [];
+try {
+  previous = JSON.parse(
+    readFileSync(join(output, 'manifest.json'), 'utf8'),
+  ).assets;
+} catch {
+  /* First generation. */
+}
 mkdirSync(output, { recursive: true });
 try {
   for (const message of messages) {
@@ -35,6 +56,22 @@ try {
     const file = basename(message.audioSrc);
     const speech = join(temporary, `${file}.aiff`);
     const destination = join(output, file);
+    const cached = previous.find(
+      (asset) =>
+        asset.id === message.id &&
+        asset.file === file &&
+        asset.transcriptSha256 === sha256(message.text),
+    );
+    if (cached) {
+      try {
+        if (sha256(readFileSync(destination)) === cached.audioSha256) {
+          assets.push(cached);
+          continue;
+        }
+      } catch {
+        /* Regenerate missing assets. */
+      }
+    }
     execFileSync('/usr/bin/say', [
       '-v',
       'Linh',

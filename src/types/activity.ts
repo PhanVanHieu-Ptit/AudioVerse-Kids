@@ -1,3 +1,5 @@
+import type { GameProgress } from './game';
+
 export type ActivityKind = 'game' | 'story';
 
 /** Only device-local progress; no names, recordings or personal profiles. */
@@ -7,6 +9,8 @@ export interface ActivityProgress {
   position: number;
   completed: boolean;
   updatedAt: number;
+  /** Optional versioned game snapshot; validated against its question bank on restore. */
+  game?: GameProgress;
 }
 
 export function activityKey(kind: ActivityKind, id: string) {
