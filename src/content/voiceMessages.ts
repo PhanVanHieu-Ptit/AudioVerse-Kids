@@ -21,18 +21,18 @@ export const voiceMessages = {
   },
   incorrect: {
     id: 'result-incorrect',
-    audioSrc: `${voiceAudioBase}result-incorrect.v1.mp3`,
-    text: 'Chưa đúng rồi. Em hãy nghe lại hoặc đọc mô tả và thử tiếp nhé.',
+    audioSrc: `${voiceAudioBase}result-incorrect.v2.mp3`,
+    text: 'Chưa đúng rồi, mình nghe lại nhé! Em cũng có thể mở mô tả bằng chữ để tìm gợi ý.',
   },
   correct: {
     id: 'result-correct',
-    audioSrc: `${voiceAudioBase}result-correct.v1.mp3`,
-    text: 'Đúng rồi! Cùng khám phá nốt tiếp theo.',
+    audioSrc: `${voiceAudioBase}result-correct.v2.mp3`,
+    text: 'Đúng rồi! Em nghe ra rồi đấy. Mình cùng thử nốt tiếp theo nhé.',
   },
   completed: {
     id: 'result-completed',
-    audioSrc: `${voiceAudioBase}result-completed.v1.mp3`,
-    text: 'Em đã nhận biết đủ các nốt nhạc!',
+    audioSrc: `${voiceAudioBase}result-completed.v2.mp3`,
+    text: 'Em đã nhận ra đủ các nốt nhạc rồi, giỏi lắm! Nghỉ một chút hoặc chơi thêm lần nữa nhé.',
   },
   audioError: {
     id: 'audio-error',

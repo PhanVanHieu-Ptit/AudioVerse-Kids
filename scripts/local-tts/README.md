@@ -10,6 +10,12 @@ CLI chỉ cập nhật `public/audio/stories/manifest.json` và `src/content/sto
 
 Sau khi tạo, chạy `npm run check` để kiểm tra nội dung, typecheck, lint, format, Vitest, build và cả hai bộ Playwright. `tests/storyPerformance.test.ts` kiểm tra toàn bộ lời/nhánh/phân vai; `tests/storyRecordings.test.ts` đối chiếu file thật với transcript/profile; `e2e/story-audio.spec.ts` kiểm tra phát và thay bản lưu có URL cũ khi đổi giọng.
 
+## Hướng dẫn trò chơi và Khu vườn âm nhạc
+
+`npm run voice:generate` dùng [guidance-profile.json](guidance-profile.json) và cùng `render-library.py` để tạo lời hướng dẫn bằng giọng Thanh Bình. Script tách lời thành câu, giữ tốc độ tự nhiên và nghỉ 200 ms giữa các câu. Kế hoạch/MP3 tạm ở `.cache/local-tts/guidance-render`; WAV câu dùng cache chung có checksum. Catalog giữ transcript, đường dẫn bản `.v2.mp3`, còn `public/audio/guidance/manifest.json` ghi giọng và cấu hình của từng bản mới. Chỉ cập nhật manifest sau khi đủ tài nguyên hợp lệ, rồi xóa file phiên bản cũ được thay thế.
+
+Các file Linh cũ không đổi nội dung vẫn được giữ và kiểm tra checksum. Bản cần tạo mới dùng VieNeu; không fallback sang `say`. Sau khi tạo, chạy `npm test`, `npm run build` và `npx playwright test e2e/voice-guidance.spec.ts` để xác nhận transcript, file đóng gói và phát offline khi tắt TTS thiết bị. Độ rõ lời và độ tự nhiên vẫn cần nghe đánh giá; manifest ghi `listeningReview: pending`.
+
 ## Bản nghe thử
 
 `npm run stories:voice:preview` tạo hai bản từ nội dung hiện hành của **Rùa và Thỏ**, đi theo nhánh `cuoc-hen → xin-loi`. Chạy tại thư mục gốc. Mở `artifacts/voice-previews/nam-ke-chuyen/index.html` để nghe bằng bộ điều khiển gốc của trình duyệt, tải MP3 hoặc đọc transcript. Không tự phát.

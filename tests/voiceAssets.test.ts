@@ -6,6 +6,7 @@ import manifest from '../public/audio/guidance/manifest.json';
 import { games } from '../src/content/games';
 import { activityGames } from '../src/content/activityGames';
 import { gameVoiceMessages } from '../src/content/gameVoiceMessages';
+import { musicVoiceMessages } from '../src/content/musicVoiceMessages';
 import {
   activityVoiceMessage,
   voiceMessages,
@@ -16,6 +17,7 @@ const messages = [
   ...games.map(activityVoiceMessage),
   ...activityGames.map(activityVoiceMessage),
   ...Object.values(gameVoiceMessages),
+  ...Object.values(musicVoiceMessages),
   ...activityGames.flatMap((game) =>
     game.challenges
       .filter((challenge) => challenge.audioSrc)
@@ -30,6 +32,25 @@ const sha256 = (value: string | Buffer) =>
   createHash('sha256').update(value).digest('hex');
 
 describe('bundled Vietnamese speech integrity', () => {
+  it('uses the neural voice for games and music instructions and feedback', () => {
+    const updated = [
+      ...games.map(activityVoiceMessage),
+      ...activityGames.map(activityVoiceMessage),
+      ...Object.values(gameVoiceMessages),
+      ...Object.values(musicVoiceMessages),
+      voiceMessages.correct,
+      voiceMessages.incorrect,
+      voiceMessages.completed,
+    ];
+    for (const message of updated) {
+      const asset = manifest.assets.find(
+        (candidate) => candidate.id === message.id,
+      );
+      expect(asset).toMatchObject({ voice: 'Thanh Bình' });
+      expect(asset).toHaveProperty('profileHash');
+      expect(message.audioSrc).toMatch(/\.v2\.mp3$/);
+    }
+  });
   it.each(messages)(
     'ships the matching, nonempty speech file for $id',
     (message) => {

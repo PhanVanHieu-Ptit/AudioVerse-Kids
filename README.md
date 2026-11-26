@@ -158,15 +158,25 @@ Mở trang online, chờ thông báo sẵn sàng để giao diện/bản chữ d
 
 Kiểm tra tại local ngày 21/11/2026: typecheck, ESLint, Prettier và build production đạt; 10 unit/integration test và 33 E2E test đạt trên Chromium với viewport desktop, điện thoại và máy tính bảng. Các bài axe-core không phát hiện vi phạm trong phạm vi quét. Coverage cho store và lớp lưu trữ: 95% dòng. `npm audit` báo 0 lỗ hổng tại thời điểm cài đặt. CI đã được cấu hình nhưng chưa chạy trên GitHub trong phiên này.
 
-<<<<<<< Updated upstream
-Đã triển khai nền tảng, routing, UI responsive, cài đặt thực lưu IndexedDB và vỏ PWA. Thư viện có 21 truyện với bản chữ và 301 MP3 giọng tổng hợp, đọc/nghe từng cảnh và chọn nhánh; audio offline cần tải riêng từng truyện. Các trang âm nhạc, học tập và giáo viên còn ở trạng thái trống. Trang trò chơi có hoạt động âm cao–trầm tổng hợp thật; có 8 file hướng dẫn giọng tổng hợp tiếng Việt. Nội dung/giọng truyện chưa được thử với trẻ hoặc nghe duyệt toàn bộ bởi chuyên gia; chưa có thư viện nhạc.
-=======
-Đã triển khai nền tảng, routing, UI responsive, cài đặt thực lưu IndexedDB và vỏ PWA. Các trang truyện, âm nhạc, học tập và giáo viên đang có trạng thái trống rõ ràng. Trang trò chơi có tám game mới (192 thử thách) cùng hoạt động âm cao–trầm, với hướng dẫn, câu hỏi và phản hồi tiếng Việt đóng gói cục bộ. Chưa có thư viện truyện/nhạc thu âm đã biên tập cho trẻ.
->>>>>>> Stashed changes
+Đã triển khai nền tảng, routing, UI responsive, cài đặt thực lưu IndexedDB và vỏ PWA. Thư viện có 21 truyện với bản chữ, đọc/nghe từng cảnh và chọn nhánh; audio offline cần tải riêng từng truyện. Trang trò chơi có tám game (192 thử thách) cùng hoạt động âm cao–trầm, với hướng dẫn, câu hỏi và phản hồi tiếng Việt đóng gói cục bộ. Music Playground có nhạc cụ tổng hợp, sáng tác, lưu bản nhạc cục bộ và hai trò chơi âm nhạc. Các trang học tập và giáo viên còn ở trạng thái trống. Nội dung/giọng truyện chưa được thử với trẻ hoặc nghe duyệt toàn bộ bởi chuyên gia; chưa có thư viện bản thu nhạc đã biên tập cho trẻ.
 
 Audio engine dùng `HTMLAudioElement` cho playback, Web Audio gain graph khi khả dụng và IndexedDB cho tài nguyên tải ngoại tuyến. `AudioManager` dùng chung cho Story/Game/Learning, với ba kênh narration, nhạc nền và hiệu ứng; narration có queue, interruption và ducking nhạc nền. UI truy cập qua `useAudioPlayer` và `AudioPlayer`; player tái sử dụng bộ điều khiển thống nhất `AudioControlBar`, `useAudioControls` và `KeyboardHelpDialog`. Bộ điều khiển có phát/tạm dừng, nghe lại, volume/rate, trước/tiếp theo, hướng dẫn, callback quay lại/thoát, điều khiển tuần tự và phím tắt cục bộ/âm báo tùy chọn. Không khởi tạo media hoặc AudioContext lúc import/render; browser autoplay denial có trạng thái và nút tiếp tục rõ ràng. Xem [API, hợp đồng tích hợp và tài liệu bàn giao Audio Engine](docs/audio-engine.md#ui-và-accessibility). Truyện đã dùng player này với MP3 tổng hợp và download từng truyện; Design System vẫn có trạng thái trống để minh họa fallback.
 
 Tham khảo cấu hình: [Vite](https://vite.dev/guide/), [Vite PWA](https://vite-pwa-org.netlify.app/guide/service-worker-strategies-and-behaviors), [Playwright accessibility testing](https://playwright.dev/docs/accessibility-testing).
+
+## Music Playground
+
+Mở `/music` (hoặc `/am-nhac`). Chọn đàn phím, sáo, chuông hoặc trống để nghe tiếng tổng hợp gợi nhạc cụ. Các nốt là native button: chạm, Tab + Enter/dấu cách; phím A S D F G H J K chỉ có hiệu lực khi bật tùy chọn và tiêu điểm nằm trên một nút nốt nhạc. Escape và nút Dừng âm thanh hủy cả lượt phát đang chờ. Không tự phát âm thanh khi tải trang, lấy tiêu điểm hay đổi nhạc cụ.
+
+Khi bật thêm nốt, mỗi lần chơi thêm một bước vào bản đang soạn. Có thể sửa nốt, nhạc cụ, độ dài, thứ tự, thêm khoảng nghỉ và đổi tốc độ. Lưu tối đa 30 bản, mỗi bản tối đa 64 bước, trong `localStorage` với khóa `audioverse.music.v1`. Lưu thất bại giữ nguyên bản đang soạn; dữ liệu đọc không hợp lệ không bị tự ghi đè. Xóa dữ liệu trình duyệt sẽ xóa nhạc đã lưu.
+
+`MusicEngine` dùng Web Audio, mặc định âm lượng 30%, giới hạn gain đầu ra 0.12 và có envelope tăng/giảm âm. Chuỗi nốt được đặt trên đồng hồ âm thanh; lượt phát mới thay lượt cũ và không chồng tiếng. Âm lượng thực tế còn phụ thuộc thiết bị. Chuyển nền, rời trang hoặc phát hướng dẫn/âm thanh khác sẽ dừng nhạc. Không cần tải sample hay bản nhạc có bản quyền. Sau khi service worker cài xong, trang, nhạc cụ, bản lưu và hai trò chơi chạy offline; giọng đọc hướng dẫn tùy khả năng TTS cục bộ/cài đặt giọng nói. Hướng dẫn chữ và nhãn trình đọc màn hình luôn có sẵn.
+
+Hai trò chơi gồm ghi nhớ ba nốt và nghe/chọn nhịp giống mẫu. Có nghe lại, phản hồi bằng chữ/live region, gợi ý chữ và thao tác tuần tự; không ép trả lời theo thời gian hoặc dựa vào màu sắc/chuyển động. Giao diện dùng các theme và thiết lập reduced motion chung.
+
+- Mã chính: `src/engines/music/`, `src/features/music/`, `src/hooks/useMusicEngine.ts`, `src/lib/music/compositions.ts`.
+- Unit/integration: `npx vitest run src/engines/music src/lib/music src/features/music`.
+- Trình duyệt: `npm run build && npx playwright test e2e/music.spec.ts` (desktop, điện thoại, máy tính bảng; có axe, chữ 200%, reduced motion và offline).
 
 ## Design System
 

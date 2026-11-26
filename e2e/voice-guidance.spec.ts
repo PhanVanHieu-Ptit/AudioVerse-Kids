@@ -85,13 +85,13 @@ test('bundled Vietnamese welcome, activity instructions and results play without
   await page
     .getByRole('button', { name: 'Nghe hướng dẫn', exact: true })
     .click();
-  await expectPlaying(page, 'am-cao-am-tram.v1.mp3');
+  await expectPlaying(page, 'am-cao-am-tram.v2.mp3');
   await page.getByRole('button', { name: 'Bắt đầu trò chơi' }).click();
   await page.getByRole('button', { name: 'Âm trầm', exact: true }).click();
   await expect(activityStatus).toHaveAttribute('aria-live', 'polite');
   await expect(activityStatus).toContainText('Chưa đúng rồi');
   await page.getByRole('button', { name: 'Nghe kết quả' }).click();
-  await expectPlaying(page, 'result-incorrect.v1.mp3');
+  await expectPlaying(page, 'result-incorrect.v2.mp3');
   await expect(activityStatus).toBeEmpty();
   await expect(activityStatus).toHaveAttribute('aria-live', 'off');
   expect(
@@ -129,4 +129,48 @@ test('unvisited Vietnamese help audio is precached and plays offline after reloa
     .getByRole('button', { name: 'Nghe hướng dẫn', exact: true })
     .click();
   await expectPlaying(page, 'app-help.v1.mp3');
+});
+
+test('music garden guides and feedback play offline using bundled neural speech without browser TTS', async ({
+  page,
+  context,
+}) => {
+  await observeRealGuidance(page);
+  await page.goto('/settings');
+  await page.getByRole('switch', { name: 'Bật hướng dẫn giọng nói' }).check();
+  await page.getByRole('radio', { name: 'Chỉ dùng bản thu' }).check();
+  await page.evaluate(async () => {
+    await navigator.serviceWorker.ready;
+    if (!navigator.serviceWorker.controller)
+      await new Promise<void>((resolve) => {
+        navigator.serviceWorker.addEventListener(
+          'controllerchange',
+          () => resolve(),
+          { once: true },
+        );
+      });
+  });
+  await context.setOffline(true);
+  await page.goto('/music');
+  await page.reload();
+  expect(await page.evaluate(() => window.guidanceMediaForTest.length)).toBe(0);
+  await page.getByRole('button', { name: 'Nghe hướng dẫn từng bước' }).click();
+  await expectPlaying(page, 'music-playground-guide.v2.mp3');
+  await page.getByRole('button', { name: 'Nghe hướng dẫn trò chơi' }).click();
+  await expectPlaying(page, 'music-game-melody.v2.mp3');
+  await page.getByRole('button', { name: 'Nghe trạng thái trò chơi' }).click();
+  await expectPlaying(page, 'music-game-ready.v2.mp3');
+  await page
+    .getByRole('button', { name: 'Nhận diện nhịp điệu', exact: true })
+    .click();
+  await page.getByRole('button', { name: 'Nghe hướng dẫn trò chơi' }).click();
+  await expectPlaying(page, 'music-game-rhythm.v2.mp3');
+  await page
+    .getByRole('button', { name: 'Dừng hướng dẫn', exact: true })
+    .click();
+  expect(
+    await page.evaluate(() =>
+      window.guidanceMediaForTest.every((media) => media.paused),
+    ),
+  ).toBe(true);
 });

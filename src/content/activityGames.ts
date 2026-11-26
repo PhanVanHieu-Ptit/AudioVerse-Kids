@@ -159,7 +159,7 @@ const definitions: readonly Omit<ActivityGameDefinition, 'guidanceAudioSrc'>[] =
       title: 'Đoán tiếng động vật',
       description: 'Ghé khu rừng âm thanh và tìm người bạn đang cất tiếng.',
       instructions:
-        'Bấm Nghe âm thanh, rồi chọn con vật phù hợp. Đây là âm tổng hợp mô phỏng, không phải bản thu động vật thật. Có thể mở mô tả bằng chữ và nghe lại tùy ý. Ba cấp độ có hai, ba rồi bốn lựa chọn.',
+        'Cùng đoán xem bạn nào đang cất tiếng nhé! Em bấm Nghe âm thanh, rồi chọn con vật mà em nghĩ đến. Đây là tiếng mô phỏng các con vật. Nếu chưa chắc, em cứ nghe lại hoặc mở mô tả bằng chữ để tìm gợi ý.',
       challenges: listeningChallenges('doan-tieng-dong-vat', animalSounds),
     },
     {
@@ -167,7 +167,7 @@ const definitions: readonly Omit<ActivityGameDefinition, 'guidanceAudioSrc'>[] =
       title: 'Đoán nhạc cụ',
       description: 'Khám phá tám âm sắc từ đàn piano đến tiếng trống.',
       instructions:
-        'Nghe âm sắc mô phỏng rồi chọn nhạc cụ phù hợp. Âm thanh được tổng hợp trên thiết bị, không phải bản thu nhạc cụ thật. Có mô tả bằng chữ. Cấp độ cao hơn có nhiều lựa chọn và âm thanh ngắn hơn.',
+        'Em có nhận ra tiếng nhạc cụ nào không? Bấm Nghe âm thanh, nghe một chút rồi chọn câu trả lời nhé. Đây là tiếng mô phỏng nhạc cụ. Em có thể nghe lại hoặc mở mô tả bằng chữ nếu cần gợi ý.',
       challenges: listeningChallenges('doan-nhac-cu', instrumentSounds),
     },
     {
@@ -175,7 +175,7 @@ const definitions: readonly Omit<ActivityGameDefinition, 'guidanceAudioSrc'>[] =
       title: 'Nhớ chuỗi âm thanh',
       description: 'Lắng nghe, ghi nhớ rồi chơi lại từng nốt theo đúng thứ tự.',
       instructions:
-        'Bấm Nghe chuỗi âm thanh. Sau đó chọn các nốt theo đúng thứ tự và bấm Kiểm tra chuỗi. Có thể xóa nốt cuối hoặc nhập lại. Các cấp độ tăng từ hai đến sáu nốt. Mở mô tả chữ nếu cần.',
+        'Mình cùng chơi trò nhớ nốt nhạc nhé! Em bấm Nghe chuỗi âm thanh, rồi chọn lại từng nốt theo thứ tự vừa nghe. Chọn xong thì bấm Kiểm tra chuỗi. Lỡ chọn nhầm cũng không sao, em có thể xóa nốt cuối hoặc nhập lại. Mô tả bằng chữ cũng có sẵn để em xem gợi ý.',
       challenges: sequences.map((sequence, i): GameChallenge => ({
         id: `sequence-${i + 1}`,
         level: levelAt(i),
@@ -192,7 +192,7 @@ const definitions: readonly Omit<ActivityGameDefinition, 'guidanceAudioSrc'>[] =
       title: 'Tìm cặp âm thanh',
       description: 'Lật thẻ, nghe và tìm những âm thanh giống nhau.',
       instructions:
-        'Chọn hai thẻ để nghe và tìm âm giống nhau. Nếu chưa khớp, bấm Úp hai thẻ để thử tiếp. Các cặp đã tìm được sẽ giữ mở. Ba cấp độ có hai, ba rồi bốn cặp. Có thể bật mô tả chữ cho thẻ đang mở. Không cần ghi nhớ vị trí bằng mắt.',
+        'Có những âm thanh đang trốn sau các thẻ đấy! Em mở hai thẻ, nghe thử xem tiếng của chúng có giống nhau không. Nếu khác nhau, bấm Úp hai thẻ rồi tìm tiếp nhé. Cặp nào tìm đúng sẽ được giữ mở. Em cũng có thể bật mô tả bằng chữ cho thẻ đang mở để tìm cặp.',
       challenges: Array.from({ length: 24 }, (_, i): GameChallenge => {
         const count = levelAt(i) + 1;
         const sounds = rotate(
@@ -226,7 +226,7 @@ const definitions: readonly Omit<ActivityGameDefinition, 'guidanceAudioSrc'>[] =
       title: 'Đố vui kiến thức',
       description: '24 câu hỏi về thiên nhiên, khoa học và cuộc sống quanh em.',
       instructions:
-        'Bấm Nghe câu hỏi hoặc đọc câu hỏi, rồi chọn câu trả lời. Nếu chưa đúng, hãy thử lại. Mỗi đáp án đúng có lời giải thích. Ba cấp độ đi từ kiến thức quen thuộc đến khoa học và suy luận.',
+        'Cùng khám phá những điều thú vị quanh mình nhé! Em bấm Nghe câu hỏi, hoặc đọc câu hỏi rồi chọn câu trả lời. Chưa đúng thì mình thử lại. Khi tìm ra đáp án, em sẽ biết thêm vì sao câu trả lời đó đúng.',
       challenges: questions('do-vui-kien-thuc', knowledgeQuestions),
     },
     {
@@ -234,7 +234,7 @@ const definitions: readonly Omit<ActivityGameDefinition, 'guidanceAudioSrc'>[] =
       title: 'Toán học bằng âm thanh',
       description: 'Nghe bài toán, đếm nhịp và khám phá các phép tính.',
       instructions:
-        'Bấm Nghe câu hỏi để nghe bài toán, rồi chọn kết quả. Em có thể nghe lại tùy ý hoặc đọc bằng chữ. Cấp một tập đếm, cộng và trừ; cấp hai có nhân và chia; cấp ba có bài toán nhiều bước. Không giới hạn thời gian.',
+        'Mình cùng giải một bài toán nhé! Em bấm Nghe câu hỏi, nghe kỹ rồi chọn kết quả. Cần nghĩ thêm thì cứ từ từ, em có thể nghe lại hoặc đọc bài toán bằng chữ. Mình bắt đầu với đếm, cộng và trừ ở cấp một, rồi thử nhân, chia và bài toán nhiều bước ở các cấp sau.',
       challenges: questions('toan-hoc-am-thanh', mathQuestions),
     },
     {
@@ -242,7 +242,7 @@ const definitions: readonly Omit<ActivityGameDefinition, 'guidanceAudioSrc'>[] =
       title: 'Phiêu lưu giải đố',
       description: 'Ba chuyến đi: Rừng Ngân Nga, Đảo Chuông và Đài Âm Thanh.',
       instructions:
-        'Mỗi cấp độ là một chuyến phiêu lưu gồm tám chặng liên tiếp. Nghe hoặc đọc tình huống rồi chọn cách giải câu đố. Trả lời đúng để mở chặng tiếp và xem điều gì xảy ra. Nếu chưa đúng, em có thể thử lại.',
+        'Sẵn sàng lên đường chưa? Mỗi chuyến phiêu lưu có tám chặng đang chờ em khám phá. Em nghe hoặc đọc câu chuyện, rồi chọn cách giải câu đố. Giải được một câu, mình sẽ đi tiếp và xem chuyện gì xảy ra. Nếu chưa đúng, em cứ thử cách khác nhé.',
       challenges: questions('phieu-luu-giai-do', adventureQuestions),
     },
     {
@@ -250,7 +250,7 @@ const definitions: readonly Omit<ActivityGameDefinition, 'guidanceAudioSrc'>[] =
       title: 'Ghi nhớ nhịp điệu',
       description: 'Nghe tiếng trống và tái hiện những khoảng nghỉ ngắn, dài.',
       instructions:
-        'Nghe mẫu nhịp rồi bấm nút Gõ nhịp, hoặc dùng Enter hay Space khi nút đó được chọn. Gõ đủ số tiếng rồi bấm Kiểm tra nhịp. Có thể gõ chậm hơn mẫu, chỉ cần giữ tỷ lệ khoảng cách. Chế độ Chọn khoảng nghỉ cho phép chọn Ngắn, Dài hoặc Rất dài thay cho gõ theo thời gian. Ba cấp độ tăng số nhịp và độ chính xác.',
+        'Em nghe mẫu nhịp trước nhé, rồi bấm Gõ nhịp để gõ lại. Gõ xong thì bấm Kiểm tra nhịp. Em có thể gõ chậm hơn mẫu, miễn là các khoảng nghỉ ngắn và dài vẫn cân đối như lúc nghe. Nếu thích, em chuyển sang Chọn khoảng nghỉ rồi chọn Ngắn, Dài hoặc Rất dài thay cho gõ trực tiếp.',
       challenges: rhythms.map((intervals, i): GameChallenge => ({
         id: `rhythm-${i + 1}`,
         level: levelAt(i),
@@ -267,7 +267,7 @@ const definitions: readonly Omit<ActivityGameDefinition, 'guidanceAudioSrc'>[] =
 export const activityGames: readonly ActivityGameDefinition[] = definitions.map(
   (game) => ({
     ...game,
-    instructions: `${game.instructions} Dùng Tab để di chuyển, Enter hoặc Space để chọn. Bắt đầu với âm lượng nhỏ. Tiến độ tự lưu trên thiết bị.`,
-    guidanceAudioSrc: `${audioBase}${game.id}.v1.mp3`,
+    instructions: `${game.instructions} Em cứ chơi thong thả, không cần vội. Nếu dùng bàn phím, em bấm Tab để di chuyển, rồi Enter hoặc phím cách để chọn. Nhớ để âm lượng nhỏ, vừa nghe nhé. Trò chơi sẽ lưu lại để lần sau em chơi tiếp.`,
+    guidanceAudioSrc: `${audioBase}${game.id}.v2.mp3`,
   }),
 );

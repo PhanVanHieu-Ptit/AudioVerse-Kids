@@ -17,11 +17,6 @@ export default tseslint.config(
       'playwright-audio-report/**',
       'node_modules/**',
       '.cache/**',
-<<<<<<< Updated upstream
-=======
-      'playwright-audio-report/**',
-      'test-results-audio/**',
->>>>>>> Stashed changes
     ],
   },
   js.configs.recommended,
