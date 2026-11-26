@@ -70,12 +70,12 @@ function GamePlayer({
   const feedback =
     session.feedback === 'incorrect'
       ? challenge?.mode === 'pairs'
-        ? 'Hai âm thanh chưa khớp. Hãy úp hai thẻ và thử lại nhé.'
-        : 'Chưa đúng rồi. Em có thể nghe lại, đọc mô tả và thử tiếp nhé.'
+        ? gameVoiceMessages.pairIncorrect.text
+        : gameVoiceMessages.incorrect.text
       : session.feedback === 'correct'
         ? session.phase === 'feedback'
           ? `Đúng rồi! ${challenge?.explanation ?? ''}`
-          : 'Đúng rồi! Em đã tìm thấy một cặp.'
+          : gameVoiceMessages.pairCorrect.text
         : '';
 
   useEffect(() => clearAnnouncement, []);
@@ -108,12 +108,16 @@ function GamePlayer({
     if (before === after) return;
     commit({ ...current, levels: { ...current.levels, [selected]: after } });
     if (after.feedback === 'incorrect')
-      announce('Chưa đúng. Hãy nghe lại hoặc đọc mô tả và thử tiếp.');
+      announce(
+        challenge?.mode === 'pairs'
+          ? gameVoiceMessages.pairIncorrect.text
+          : gameVoiceMessages.incorrect.text,
+      );
     if (after.feedback === 'correct')
       announce(
         after.phase === 'feedback'
           ? `Đúng rồi! ${levelChallenges(game, selected)[after.round]?.explanation ?? ''}`
-          : 'Đã tìm thấy một cặp.',
+          : gameVoiceMessages.pairCorrect.text,
       );
     if (after.phase === 'completed') {
       audio.stop();
@@ -273,9 +277,15 @@ function GamePlayer({
               <VoiceGuidanceButton
                 label="Nghe phản hồi"
                 message={
-                  gameVoiceMessages[
-                    session.feedback === 'correct' ? 'correct' : 'incorrect'
-                  ]
+                  challenge.mode === 'pairs' && session.feedback === 'incorrect'
+                    ? gameVoiceMessages.pairIncorrect
+                    : challenge.mode === 'pairs' && session.phase !== 'feedback'
+                      ? gameVoiceMessages.pairCorrect
+                      : gameVoiceMessages[
+                          session.feedback === 'correct'
+                            ? 'correct'
+                            : 'incorrect'
+                        ]
                 }
               />
             </div>

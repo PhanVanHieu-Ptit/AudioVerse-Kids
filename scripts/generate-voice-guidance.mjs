@@ -1,17 +1,17 @@
-// Run on macOS with the installed Vietnamese Linh voice and FFmpeg.
-// Generated assets are committed; application builds never need these tools.
+// Offline neural speech production; application builds use the committed MP3s.
 import { execFileSync } from 'node:child_process';
+import { log } from 'node:console';
 import { createHash } from 'node:crypto';
 import {
   mkdirSync,
-  mkdtempSync,
   readFileSync,
-  rmSync,
   writeFileSync,
+  renameSync,
+  rmSync,
 } from 'node:fs';
-import { tmpdir } from 'node:os';
 import { basename, join } from 'node:path';
 import { fileURLToPath, URL } from 'node:url';
+import { format } from 'prettier';
 import {
   voiceMessages,
   activityVoiceMessage,
@@ -19,16 +19,20 @@ import {
 import { games } from '../src/content/games.ts';
 import { activityGames } from '../src/content/activityGames.ts';
 import { gameVoiceMessages } from '../src/content/gameVoiceMessages.ts';
+import { musicVoiceMessages } from '../src/content/musicVoiceMessages.ts';
 
-const output = fileURLToPath(
-  new URL('../public/audio/guidance/', import.meta.url),
+const root = fileURLToPath(new URL('../', import.meta.url));
+const output = join(root, 'public/audio/guidance');
+const staging = join(root, '.cache/local-tts/guidance-render');
+const profile = JSON.parse(
+  readFileSync(join(root, 'scripts/local-tts/guidance-profile.json'), 'utf8'),
 );
-const temporary = mkdtempSync(join(tmpdir(), 'audioverse-voice-'));
 const messages = [
   ...Object.values(voiceMessages),
   ...games.map(activityVoiceMessage),
   ...activityGames.map(activityVoiceMessage),
   ...Object.values(gameVoiceMessages),
+  ...Object.values(musicVoiceMessages),
   ...activityGames.flatMap((game) =>
     game.challenges
       .filter((challenge) => challenge.audioSrc)
@@ -40,137 +44,116 @@ const messages = [
   ),
 ];
 const sha256 = (data) => createHash('sha256').update(data).digest('hex');
-const assets = [];
 let previous = [];
 try {
   previous = JSON.parse(
     readFileSync(join(output, 'manifest.json'), 'utf8'),
   ).assets;
-} catch {
-  /* First generation. */
+} catch (error) {
+  if (error.code !== 'ENOENT') throw error;
 }
 mkdirSync(output, { recursive: true });
-try {
-  for (const message of messages) {
-    if (!message.audioSrc) throw new Error(`Missing audioSrc: ${message.id}`);
-    const file = basename(message.audioSrc);
-    const speech = join(temporary, `${file}.aiff`);
-    const destination = join(output, file);
-    const cached = previous.find(
-      (asset) =>
-        asset.id === message.id &&
-        asset.file === file &&
-        asset.transcriptSha256 === sha256(message.text),
-    );
-    if (cached) {
-      try {
-        if (sha256(readFileSync(destination)) === cached.audioSha256) {
-          assets.push(cached);
-          continue;
-        }
-      } catch {
-        /* Regenerate missing assets. */
+mkdirSync(staging, { recursive: true });
+const assets = [];
+const recordings = [];
+for (const message of messages) {
+  if (!message.audioSrc) throw new Error(`Missing audioSrc: ${message.id}`);
+  const file = basename(message.audioSrc);
+  // Read conversational sentences separately, with a short breath between them.
+  const sentences = message.text.match(/[^.!?]+[.!?]+|[^.!?]+$/gu) ?? [];
+  const turns = sentences.map((sentence, index) => ({
+    cueId: `${message.id}:${index}`,
+    text: sentence.trim(),
+    voice: profile.voice,
+    tempo: 1,
+    pauseMs: index === sentences.length - 1 ? 120 : profile.sentencePauseMs,
+  }));
+  if (!turns.length) throw new Error(`Empty transcript: ${message.id}`);
+  const profileHash = sha256(JSON.stringify({ profile, turns }));
+  const cached = previous.find(
+    (asset) =>
+      asset.id === message.id &&
+      asset.file === file &&
+      asset.transcriptSha256 === sha256(message.text) &&
+      (asset.profileHash
+        ? asset.profileHash === profileHash
+        : file.endsWith('.v1.mp3')),
+  );
+  if (cached) {
+    try {
+      if (sha256(readFileSync(join(output, file))) === cached.audioSha256) {
+        assets.push({ ...cached, voice: cached.voice ?? 'macOS Linh' });
+        continue;
       }
+    } catch (error) {
+      if (error.code !== 'ENOENT') throw error;
     }
-    execFileSync('/usr/bin/say', [
-      '-v',
-      'Linh',
-      '-r',
-      '155',
-      '-o',
-      speech,
-      message.text,
-    ]);
-    execFileSync('ffmpeg', [
-      '-hide_banner',
-      '-loglevel',
-      'error',
-      '-y',
-      '-i',
-      speech,
-      '-af',
-      'loudnorm=I=-20:TP=-3:LRA=7',
-      '-ar',
-      '22050',
-      '-ac',
-      '1',
-      '-codec:a',
-      'libmp3lame',
-      '-b:a',
-      '64k',
-      '-map_metadata',
-      '-1',
-      destination,
-    ]);
-    const durationSeconds = Number(
-      execFileSync(
-        'ffprobe',
-        [
-          '-v',
-          'error',
-          '-show_entries',
-          'format=duration',
-          '-of',
-          'default=noprint_wrappers=1:nokey=1',
-          destination,
-        ],
-        { encoding: 'utf8' },
-      ).trim(),
+  }
+  recordings.push({ id: message.id, file, profileHash, turns });
+}
+if (recordings.length) {
+  const plan = join(staging, 'plan.json');
+  writeFileSync(plan, JSON.stringify({ profile, recordings }, null, 2) + '\n');
+  execFileSync(
+    join(root, '.cache/local-tts/venv/bin/python'),
+    [join(root, 'scripts/local-tts/render-library.py'), plan],
+    { cwd: root, stdio: 'inherit' },
+  );
+  const report = JSON.parse(readFileSync(join(staging, 'report.json'), 'utf8'));
+  for (const item of recordings) {
+    const result = report.find(
+      (candidate) =>
+        candidate.id === item.id && candidate.profileHash === item.profileHash,
     );
-    const pcm = execFileSync(
-      'ffmpeg',
-      [
-        '-v',
-        'error',
-        '-i',
-        destination,
-        '-f',
-        's16le',
-        '-ac',
-        '1',
-        '-ar',
-        '16000',
-        '-',
-      ],
-      { maxBuffer: 8 * 1024 * 1024 },
-    );
-    let energy = 0;
-    for (let offset = 0; offset < pcm.length; offset += 2)
-      energy += (pcm.readInt16LE(offset) / 32768) ** 2;
-    const rms = Math.sqrt(energy / (pcm.length / 2));
+    if (!result) throw new Error(`Missing generated recording: ${item.id}`);
+    const audio = readFileSync(join(staging, 'files', item.file));
     if (
-      !Number.isFinite(durationSeconds) ||
-      durationSeconds < 0.5 ||
-      rms < 0.001
+      audio.length !== result.bytes ||
+      sha256(audio) !== result.audioSha256 ||
+      audio.length > 2 * 1024 * 1024 ||
+      result.durationSeconds < 0.5 ||
+      result.rms < 0.001
     )
-      throw new Error(`Empty or silent output: ${message.id}`);
-    const audio = readFileSync(destination);
+      throw new Error(`Invalid generated recording: ${item.id}`);
+    const message = messages.find((candidate) => candidate.id === item.id);
+    const pending = join(output, item.file + '.pending');
+    writeFileSync(pending, audio);
+    renameSync(pending, join(output, item.file));
     assets.push({
-      id: message.id,
-      file,
+      ...result,
+      file: item.file,
+      voice: profile.voice,
       transcript: message.text,
       transcriptSha256: sha256(message.text),
-      audioSha256: sha256(audio),
-      bytes: audio.length,
-      durationSeconds,
-      rms,
+      listeningReview: 'pending',
     });
   }
-  writeFileSync(
-    join(output, 'manifest.json'),
-    JSON.stringify(
-      {
-        language: 'vi-VN',
-        kind: 'pre-generated-synthetic-speech',
-        voice: 'macOS Linh',
-        wordsPerMinute: 155,
-        normalization: 'FFmpeg loudnorm I=-20:TP=-3:LRA=7',
-        assets,
-      },
-      null,
-      2,
-    ) + '\n',
-  );
-} finally {
-  rmSync(temporary, { recursive: true, force: true });
 }
+// Publish only when every requested recording has passed integrity checks.
+const pendingManifest = join(output, 'manifest.json.pending');
+writeFileSync(
+  pendingManifest,
+  await format(
+    JSON.stringify({
+      language: 'vi-VN',
+      kind: 'pre-generated-synthetic-speech',
+      voices: [...new Set(assets.map((asset) => asset.voice))],
+      profile,
+      normalization: `FFmpeg ${profile.normalization}`,
+      assets: messages.map((message) =>
+        assets.find((asset) => asset.id === message.id),
+      ),
+    }),
+    { parser: 'json' },
+  ),
+);
+renameSync(pendingManifest, join(output, 'manifest.json'));
+// Replaced versioned files must not remain in the PWA's precache bundle.
+const currentFiles = new Set(assets.map((asset) => asset.file));
+for (const asset of previous) {
+  if (!currentFiles.has(asset.file) && basename(asset.file) === asset.file)
+    rmSync(join(output, asset.file), { force: true });
+}
+log(
+  `Đã kiểm tra ${assets.length} bản đọc; tạo mới ${recordings.length} bản bằng ${profile.voice}.`,
+);

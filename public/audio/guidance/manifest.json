@@ -1,9 +1,29 @@
 {
   "language": "vi-VN",
   "kind": "pre-generated-synthetic-speech",
-  "voice": "macOS Linh",
-  "wordsPerMinute": 155,
-  "normalization": "FFmpeg loudnorm I=-20:TP=-3:LRA=7",
+  "voices": ["macOS Linh", "Thanh Bình"],
+  "profile": {
+    "provider": "VieNeu-TTS local",
+    "voice": "Thanh Bình",
+    "sdkVersion": "3.8.5",
+    "modelRevisions": {
+      "pnnbao-ump/VieNeu-TTS-v3-Turbo": "61b85e3d937fbbacb387714180e8182823512523",
+      "OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano-ONNX": "ceff0d0749bfb3fa2d61149794ec6feef0d1e1ae"
+    },
+    "backend": "onnx",
+    "precision": "fp32",
+    "temperature": 0.8,
+    "seed": 20261123,
+    "sourceSampleRate": 48000,
+    "sampleRate": 24000,
+    "bitRate": "96k",
+    "normalization": "loudnorm=I=-20:TP=-3:LRA=7",
+    "applyWatermark": true,
+    "styleInstructionsSupported": false,
+    "revision": 1,
+    "sentencePauseMs": 200
+  },
+  "normalization": "FFmpeg loudnorm=I=-20:TP=-3:LRA=7",
   "assets": [
     {
       "id": "welcome",
@@ -13,7 +33,8 @@
       "audioSha256": "bdbab4d49539af779494599dab8a67634de4f1a68e26d3842a305e86b7a22990",
       "bytes": 112892,
       "durationSeconds": 14.013878,
-      "rms": 0.09491869737673124
+      "rms": 0.09491869737673124,
+      "voice": "macOS Linh"
     },
     {
       "id": "app-help",
@@ -23,7 +44,8 @@
       "audioSha256": "571f3ab10c236af31d486487042078ad63dd19149ce2f2797ddb1b22c4db440b",
       "bytes": 208813,
       "durationSeconds": 25.99873,
-      "rms": 0.09824042891706303
+      "rms": 0.09824042891706303,
+      "voice": "macOS Linh"
     },
     {
       "id": "settings",
@@ -33,37 +55,105 @@
       "audioSha256": "5c4c59fe9bcfe6855bb2a33f684bc2ee8e470e8db67493145e0d554112f0fd55",
       "bytes": 150926,
       "durationSeconds": 18.75805,
-      "rms": 0.0984462801811423
+      "rms": 0.0984462801811423,
+      "voice": "macOS Linh"
     },
     {
       "id": "result-incorrect",
-      "file": "result-incorrect.v1.mp3",
-      "transcript": "Chưa đúng rồi. Em hãy nghe lại hoặc đọc mô tả và thử tiếp nhé.",
-      "transcriptSha256": "c0d9b39e6642487260aad66b67806340fc3307208f694f73e23d249674fd7a94",
-      "audioSha256": "3b65a00ba5851ee5b17d4bbf2f3bd85184b638067f3832d89135499df210c3a3",
-      "bytes": 41212,
-      "durationSeconds": 5.044671,
-      "rms": 0.09768212756553707
+      "profileHash": "5ddbd6b615b7b62209626e33e499d10e3da1e7dcd4618b7a976c1ad33294eb6b",
+      "audioSha256": "612419248e09259efd85f110b345c66d3dd6fda6fbdcc841d5e704b09ad5e2e8",
+      "bytes": 59372,
+      "durationSeconds": 4.870333,
+      "rms": 0.09125898778438568,
+      "peak": 0.5967876315116882,
+      "timeline": [
+        {
+          "cueId": "result-incorrect:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 1.9151875,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "result-incorrect:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 2.1151875,
+          "durationSeconds": 2.635125,
+          "pauseMs": 120
+        }
+      ],
+      "file": "result-incorrect.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Chưa đúng rồi, mình nghe lại nhé! Em cũng có thể mở mô tả bằng chữ để tìm gợi ý.",
+      "transcriptSha256": "a09f207867df0ce239d68633bcb98b08884c465c9b089e0254b715c055c55c04",
+      "listeningReview": "pending"
     },
     {
       "id": "result-correct",
-      "file": "result-correct.v1.mp3",
-      "transcript": "Đúng rồi! Cùng khám phá nốt tiếp theo.",
-      "transcriptSha256": "47778d9a5d23d407280cac81f809b6164b6e61df1ed3850a15c0ab15078c1cb1",
-      "audioSha256": "9ed5d5ae30a62ca1041b836379239ae5f6eb067a91ee4d17db2c035a5c873e9e",
-      "bytes": 25956,
-      "durationSeconds": 3.136825,
-      "rms": 0.09746282943728941
+      "profileHash": "7031174ad6e2b1fa8dee3cdb48bc6445190ba79d07d81b3f92cbc34d4bbbd0ef",
+      "audioSha256": "e9f3516258be24d38e111d4a3d9dcc38b6ba9df1a985f36cda5834aaa2b307d8",
+      "bytes": 49292,
+      "durationSeconds": 4.027583,
+      "rms": 0.09735999256372452,
+      "peak": 0.6247724294662476,
+      "timeline": [
+        {
+          "cueId": "result-correct:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 0.6399791666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "result-correct:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 0.8399791666666667,
+          "durationSeconds": 1.3527083333333334,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "result-correct:2",
+          "voice": "Thanh Bình",
+          "startSeconds": 2.3926875,
+          "durationSeconds": 1.514875,
+          "pauseMs": 120
+        }
+      ],
+      "file": "result-correct.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Đúng rồi! Em nghe ra rồi đấy. Mình cùng thử nốt tiếp theo nhé.",
+      "transcriptSha256": "3a9041e9edfbe19a2d692c0ddca1612f9cd73877277c64e7190ce28e0b3c2de0",
+      "listeningReview": "pending"
     },
     {
       "id": "result-completed",
-      "file": "result-completed.v1.mp3",
-      "transcript": "Em đã nhận biết đủ các nốt nhạc!",
-      "transcriptSha256": "126d18057a2a204d416b91e7f56021eacb903bde142d78620ea189343ad819dc",
-      "audioSha256": "85e2d197d5e88eb21f0ccaca172b0b2ad5ffdf8295ec172c9ad39e498100d43e",
-      "bytes": 19687,
-      "durationSeconds": 2.353152,
-      "rms": 0.0973731313457667
+      "profileHash": "10c32c4caf67032bd3698817325b49e44002936d172c130a0b1ea09b3a32fd7d",
+      "audioSha256": "54f9742d442c97e851790aa138b7c1f7f4d84d141618853f1a4e27847f5ec4f3",
+      "bytes": 57644,
+      "durationSeconds": 4.71625,
+      "rms": 0.09302124381065369,
+      "peak": 0.6572351455688477,
+      "timeline": [
+        {
+          "cueId": "result-completed:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 2.716479166666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "result-completed:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 2.9164791666666665,
+          "durationSeconds": 1.67975,
+          "pauseMs": 120
+        }
+      ],
+      "file": "result-completed.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Em đã nhận ra đủ các nốt nhạc rồi, giỏi lắm! Nghỉ một chút hoặc chơi thêm lần nữa nhé.",
+      "transcriptSha256": "d80be71d5d99fcda53d3da896616b2f4add6c3db4125729850455abba165ad4c",
+      "listeningReview": "pending"
     },
     {
       "id": "audio-error",
@@ -73,127 +163,1373 @@
       "audioSha256": "460e8161d8a4fb34f5aa992a560143047f21b63ec77f3797f8523f4464d1ecf3",
       "bytes": 50825,
       "durationSeconds": 6.263719,
-      "rms": 0.10387606754432938
+      "rms": 0.10387606754432938,
+      "voice": "macOS Linh"
     },
     {
       "id": "activity:am-cao-am-tram:instructions",
-      "file": "am-cao-am-tram.v1.mp3",
-      "transcript": "Âm cao hay âm trầm?. Bấm Nghe nốt nhạc, rồi chọn âm cao hoặc âm trầm. Em có thể nghe lại hoặc mở mô tả bằng chữ. Không giới hạn thời gian và không cần micrô. Hãy bắt đầu với âm lượng thiết bị nhỏ.",
-      "transcriptSha256": "6ca3e59b385f5b4dea58e31c7bac87ab6348a1d9f21323f3a5dba7de3e126ec1",
-      "audioSha256": "fc8da0d21ee375159965a45c30737e23274c1000883409173b60b52c991440de",
-      "bytes": 126893,
-      "durationSeconds": 15.777778,
-      "rms": 0.09717941104839124
+      "profileHash": "c3907c7d2ab41b848a30dafb8c95310037cd9524d083c58213856b33c7afaa38",
+      "audioSha256": "bee93358b7534f9edbc3e7641fbd38354e802aaf5a881137cc61100ac6dd63ad",
+      "bytes": 200492,
+      "durationSeconds": 16.612208,
+      "rms": 0.09090758860111237,
+      "peak": 0.6597093343734741,
+      "timeline": [
+        {
+          "cueId": "activity:am-cao-am-tram:instructions:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 1.035125,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:am-cao-am-tram:instructions:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 1.235125,
+          "durationSeconds": 1.9983541666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:am-cao-am-tram:instructions:2",
+          "voice": "Thanh Bình",
+          "startSeconds": 3.433479166666667,
+          "durationSeconds": 2.5562708333333335,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:am-cao-am-tram:instructions:3",
+          "voice": "Thanh Bình",
+          "startSeconds": 6.18975,
+          "durationSeconds": 2.7140208333333335,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:am-cao-am-tram:instructions:4",
+          "voice": "Thanh Bình",
+          "startSeconds": 9.103770833333334,
+          "durationSeconds": 3.752479166666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:am-cao-am-tram:instructions:5",
+          "voice": "Thanh Bình",
+          "startSeconds": 13.05625,
+          "durationSeconds": 3.4359375,
+          "pauseMs": 120
+        }
+      ],
+      "file": "am-cao-am-tram.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Âm cao hay âm trầm?. Mình cùng nghe xem nốt nhạc này cao hay trầm nhé! Trước tiên, em để âm lượng nhỏ, vừa nghe thôi. Rồi bấm Nghe nốt nhạc và chọn Âm cao hoặc Âm trầm. Nếu chưa chắc, em cứ nghe lại hoặc mở mô tả bằng chữ để tìm gợi ý. Cứ thong thả nhé, trò chơi không tính giờ và em không cần dùng micrô.",
+      "transcriptSha256": "23adfd4cb19917412e017ed884dc4a9fdd56ab2bde20648bebd2443375d59d47",
+      "listeningReview": "pending"
     },
     {
       "id": "activity:doan-tieng-dong-vat:instructions",
-      "file": "doan-tieng-dong-vat.v1.mp3",
-      "transcript": "Đoán tiếng động vật. Bấm Nghe âm thanh, rồi chọn con vật phù hợp. Đây là âm tổng hợp mô phỏng, không phải bản thu động vật thật. Có thể mở mô tả bằng chữ và nghe lại tùy ý. Ba cấp độ có hai, ba rồi bốn lựa chọn. Dùng Tab để di chuyển, Enter hoặc Space để chọn. Bắt đầu với âm lượng nhỏ. Tiến độ tự lưu trên thiết bị.",
-      "transcriptSha256": "90b126f931035eed4f30fb9d5cf7c55bb07616e73bc41edd59f8af4b6a9f0833",
-      "audioSha256": "3396f93f964c468ee6d07a51dd4004f157204e53b4e294f7eefe58d82fac7dde",
-      "bytes": 205887,
-      "durationSeconds": 25.648526,
-      "rms": 0.09861891648223219
+      "profileHash": "a270363e2a7f8b52e1ea66669c365858fb181503903a1da48a8bb19ca6d134c2",
+      "audioSha256": "e1ad077303f77260d5db33e6e9361830babc1c4adcc8e10d598c2db4d60753df",
+      "bytes": 275372,
+      "durationSeconds": 22.871208,
+      "rms": 0.09108737111091614,
+      "peak": 0.6267110705375671,
+      "timeline": [
+        {
+          "cueId": "activity:doan-tieng-dong-vat:instructions:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 0.8694583333333333,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:doan-tieng-dong-vat:instructions:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 1.0694583333333334,
+          "durationSeconds": 1.7561666666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:doan-tieng-dong-vat:instructions:2",
+          "voice": "Thanh Bình",
+          "startSeconds": 3.025625,
+          "durationSeconds": 2.7975,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:doan-tieng-dong-vat:instructions:3",
+          "voice": "Thanh Bình",
+          "startSeconds": 6.023125,
+          "durationSeconds": 1.5143958333333334,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:doan-tieng-dong-vat:instructions:4",
+          "voice": "Thanh Bình",
+          "startSeconds": 7.737520833333333,
+          "durationSeconds": 3.752479166666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:doan-tieng-dong-vat:instructions:5",
+          "voice": "Thanh Bình",
+          "startSeconds": 11.69,
+          "durationSeconds": 1.8337916666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:doan-tieng-dong-vat:instructions:6",
+          "voice": "Thanh Bình",
+          "startSeconds": 13.723791666666667,
+          "durationSeconds": 4.1529375,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:doan-tieng-dong-vat:instructions:7",
+          "voice": "Thanh Bình",
+          "startSeconds": 18.076729166666667,
+          "durationSeconds": 1.9998958333333334,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:doan-tieng-dong-vat:instructions:8",
+          "voice": "Thanh Bình",
+          "startSeconds": 20.276625,
+          "durationSeconds": 2.4745833333333334,
+          "pauseMs": 120
+        }
+      ],
+      "file": "doan-tieng-dong-vat.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Đoán tiếng động vật. Cùng đoán xem bạn nào đang cất tiếng nhé! Em bấm Nghe âm thanh, rồi chọn con vật mà em nghĩ đến. Đây là tiếng mô phỏng các con vật. Nếu chưa chắc, em cứ nghe lại hoặc mở mô tả bằng chữ để tìm gợi ý. Em cứ chơi thong thả, không cần vội. Nếu dùng bàn phím, em bấm Tab để di chuyển, rồi Enter hoặc phím cách để chọn. Nhớ để âm lượng nhỏ, vừa nghe nhé. Trò chơi sẽ lưu lại để lần sau em chơi tiếp.",
+      "transcriptSha256": "0dacbc4d4bc2f6f5d0d0ab5c3b7003933a52cdb28c11b4b144803300983aa0aa",
+      "listeningReview": "pending"
     },
     {
       "id": "activity:doan-nhac-cu:instructions",
-      "file": "doan-nhac-cu.v1.mp3",
-      "transcript": "Đoán nhạc cụ. Nghe âm sắc mô phỏng rồi chọn nhạc cụ phù hợp. Âm thanh được tổng hợp trên thiết bị, không phải bản thu nhạc cụ thật. Có mô tả bằng chữ. Cấp độ cao hơn có nhiều lựa chọn và âm thanh ngắn hơn. Dùng Tab để di chuyển, Enter hoặc Space để chọn. Bắt đầu với âm lượng nhỏ. Tiến độ tự lưu trên thiết bị.",
-      "transcriptSha256": "aeb65afb97624307068d34912b20ff46717088229c8d0f89e7a53d882d186299",
-      "audioSha256": "edb58c61f4ee58d8510daf6cf5af5e0d0c2adf7477f030456d18216f3a8f7a65",
-      "bytes": 196065,
-      "durationSeconds": 24.406259,
-      "rms": 0.0990669234350861
+      "profileHash": "d70fac87b3472e701afe182ae1b8e39ee3aa025af3a49ed00312236fd4f0daf8",
+      "audioSha256": "676fd54ba617bcec75f56287ca13e3a4a6e290ebf19ab3ca4406f546482f02fa",
+      "bytes": 279404,
+      "durationSeconds": 23.189083,
+      "rms": 0.09489230811595917,
+      "peak": 0.6723262667655945,
+      "timeline": [
+        {
+          "cueId": "activity:doan-nhac-cu:instructions:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 0.8730625,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:doan-nhac-cu:instructions:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 1.0730625,
+          "durationSeconds": 2.476916666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:doan-nhac-cu:instructions:2",
+          "voice": "Thanh Bình",
+          "startSeconds": 3.749979166666667,
+          "durationSeconds": 2.795145833333333,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:doan-nhac-cu:instructions:3",
+          "voice": "Thanh Bình",
+          "startSeconds": 6.745125,
+          "durationSeconds": 1.673375,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:doan-nhac-cu:instructions:4",
+          "voice": "Thanh Bình",
+          "startSeconds": 8.6185,
+          "durationSeconds": 3.189375,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:doan-nhac-cu:instructions:5",
+          "voice": "Thanh Bình",
+          "startSeconds": 12.007875,
+          "durationSeconds": 1.8337916666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:doan-nhac-cu:instructions:6",
+          "voice": "Thanh Bình",
+          "startSeconds": 14.041666666666666,
+          "durationSeconds": 4.1529375,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:doan-nhac-cu:instructions:7",
+          "voice": "Thanh Bình",
+          "startSeconds": 18.394604166666667,
+          "durationSeconds": 1.9998958333333334,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:doan-nhac-cu:instructions:8",
+          "voice": "Thanh Bình",
+          "startSeconds": 20.5945,
+          "durationSeconds": 2.4745833333333334,
+          "pauseMs": 120
+        }
+      ],
+      "file": "doan-nhac-cu.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Đoán nhạc cụ. Em có nhận ra tiếng nhạc cụ nào không? Bấm Nghe âm thanh, nghe một chút rồi chọn câu trả lời nhé. Đây là tiếng mô phỏng nhạc cụ. Em có thể nghe lại hoặc mở mô tả bằng chữ nếu cần gợi ý. Em cứ chơi thong thả, không cần vội. Nếu dùng bàn phím, em bấm Tab để di chuyển, rồi Enter hoặc phím cách để chọn. Nhớ để âm lượng nhỏ, vừa nghe nhé. Trò chơi sẽ lưu lại để lần sau em chơi tiếp.",
+      "transcriptSha256": "ac21060b58b3b7f2df9feb79af71678ba07fceda72b002c7fc5991dd70878ca3",
+      "listeningReview": "pending"
     },
     {
       "id": "activity:nho-chuoi-am-thanh:instructions",
-      "file": "nho-chuoi-am-thanh.v1.mp3",
-      "transcript": "Nhớ chuỗi âm thanh. Bấm Nghe chuỗi âm thanh. Sau đó chọn các nốt theo đúng thứ tự và bấm Kiểm tra chuỗi. Có thể xóa nốt cuối hoặc nhập lại. Các cấp độ tăng từ hai đến sáu nốt. Mở mô tả chữ nếu cần. Dùng Tab để di chuyển, Enter hoặc Space để chọn. Bắt đầu với âm lượng nhỏ. Tiến độ tự lưu trên thiết bị.",
-      "transcriptSha256": "fc17e67c8507d6138eec8bffbf78d8dd700676f29fb6fbff8cd359e84f8c7c5e",
-      "audioSha256": "71555c9f6e8f9132f56b39039ac55b51e84bad74f00355a5bfed89d9360eec50",
-      "bytes": 195020,
-      "durationSeconds": 24.280045,
-      "rms": 0.09894852159949022
+      "profileHash": "3699c8fc538223cbf9a37724ec473031fa9c8b4e4f6cbcbd6182e9674c25683e",
+      "audioSha256": "936d8b2c30378247e5cd9809f1739b99200057d4291fdb0beb9b5300a68a8de4",
+      "bytes": 330668,
+      "durationSeconds": 27.46625,
+      "rms": 0.09141373634338379,
+      "peak": 0.6698612570762634,
+      "timeline": [
+        {
+          "cueId": "activity:nho-chuoi-am-thanh:instructions:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 1.1941458333333332,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:nho-chuoi-am-thanh:instructions:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 1.3941458333333334,
+          "durationSeconds": 2.8742083333333333,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:nho-chuoi-am-thanh:instructions:2",
+          "voice": "Thanh Bình",
+          "startSeconds": 4.468354166666667,
+          "durationSeconds": 3.511229166666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:nho-chuoi-am-thanh:instructions:3",
+          "voice": "Thanh Bình",
+          "startSeconds": 8.179583333333333,
+          "durationSeconds": 1.7557708333333333,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:nho-chuoi-am-thanh:instructions:4",
+          "voice": "Thanh Bình",
+          "startSeconds": 10.135354166666668,
+          "durationSeconds": 3.51475,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:nho-chuoi-am-thanh:instructions:5",
+          "voice": "Thanh Bình",
+          "startSeconds": 13.850104166666666,
+          "durationSeconds": 2.2349375,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:nho-chuoi-am-thanh:instructions:6",
+          "voice": "Thanh Bình",
+          "startSeconds": 16.285041666666668,
+          "durationSeconds": 1.8337916666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:nho-chuoi-am-thanh:instructions:7",
+          "voice": "Thanh Bình",
+          "startSeconds": 18.318833333333334,
+          "durationSeconds": 4.1529375,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:nho-chuoi-am-thanh:instructions:8",
+          "voice": "Thanh Bình",
+          "startSeconds": 22.671770833333333,
+          "durationSeconds": 1.9998958333333334,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:nho-chuoi-am-thanh:instructions:9",
+          "voice": "Thanh Bình",
+          "startSeconds": 24.871666666666666,
+          "durationSeconds": 2.4745833333333334,
+          "pauseMs": 120
+        }
+      ],
+      "file": "nho-chuoi-am-thanh.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Nhớ chuỗi âm thanh. Mình cùng chơi trò nhớ nốt nhạc nhé! Em bấm Nghe chuỗi âm thanh, rồi chọn lại từng nốt theo thứ tự vừa nghe. Chọn xong thì bấm Kiểm tra chuỗi. Lỡ chọn nhầm cũng không sao, em có thể xóa nốt cuối hoặc nhập lại. Mô tả bằng chữ cũng có sẵn để em xem gợi ý. Em cứ chơi thong thả, không cần vội. Nếu dùng bàn phím, em bấm Tab để di chuyển, rồi Enter hoặc phím cách để chọn. Nhớ để âm lượng nhỏ, vừa nghe nhé. Trò chơi sẽ lưu lại để lần sau em chơi tiếp.",
+      "transcriptSha256": "12e280e9f4348b0e0061c4d9cf8af044e706d7e0e8e82a6553dcd14f26b24857",
+      "listeningReview": "pending"
     },
     {
       "id": "activity:tim-cap-am-thanh:instructions",
-      "file": "tim-cap-am-thanh.v1.mp3",
-      "transcript": "Tìm cặp âm thanh. Chọn hai thẻ để nghe và tìm âm giống nhau. Nếu chưa khớp, bấm Úp hai thẻ để thử tiếp. Các cặp đã tìm được sẽ giữ mở. Ba cấp độ có hai, ba rồi bốn cặp. Có thể bật mô tả chữ cho thẻ đang mở. Không cần ghi nhớ vị trí bằng mắt. Dùng Tab để di chuyển, Enter hoặc Space để chọn. Bắt đầu với âm lượng nhỏ. Tiến độ tự lưu trên thiết bị.",
-      "transcriptSha256": "466eebf6e040ee05effcfef03ddd33427443e960a5b76ddb1011b378e4d740dd",
-      "audioSha256": "be88dd0a790a5f9e1b31d1a7861b19cade64d84134a667a011ef00ddbf964f36",
-      "bytes": 230756,
-      "durationSeconds": 28.756871,
-      "rms": 0.09828138530059106
+      "profileHash": "2eacccb07c9af97bc947b4a8cb7309ef3245f504045294465502bbe90069bdc7",
+      "audioSha256": "8b33983505802d6115cc1d25f081f0ef073448754232a1acc72c0ffabde6e0a1",
+      "bytes": 319148,
+      "durationSeconds": 26.509333,
+      "rms": 0.09599939733743668,
+      "peak": 0.6830615997314453,
+      "timeline": [
+        {
+          "cueId": "activity:tim-cap-am-thanh:instructions:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 0.948375,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:tim-cap-am-thanh:instructions:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 1.148375,
+          "durationSeconds": 1.9932916666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:tim-cap-am-thanh:instructions:2",
+          "voice": "Thanh Bình",
+          "startSeconds": 3.341666666666667,
+          "durationSeconds": 3.4359166666666665,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:tim-cap-am-thanh:instructions:3",
+          "voice": "Thanh Bình",
+          "startSeconds": 6.9775833333333335,
+          "durationSeconds": 2.557375,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:tim-cap-am-thanh:instructions:4",
+          "voice": "Thanh Bình",
+          "startSeconds": 9.734958333333333,
+          "durationSeconds": 1.6780625,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:tim-cap-am-thanh:instructions:5",
+          "voice": "Thanh Bình",
+          "startSeconds": 11.613020833333334,
+          "durationSeconds": 3.515083333333333,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:tim-cap-am-thanh:instructions:6",
+          "voice": "Thanh Bình",
+          "startSeconds": 15.328104166666666,
+          "durationSeconds": 1.8337916666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:tim-cap-am-thanh:instructions:7",
+          "voice": "Thanh Bình",
+          "startSeconds": 17.36189583333333,
+          "durationSeconds": 4.1529375,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:tim-cap-am-thanh:instructions:8",
+          "voice": "Thanh Bình",
+          "startSeconds": 21.714833333333335,
+          "durationSeconds": 1.9998958333333334,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:tim-cap-am-thanh:instructions:9",
+          "voice": "Thanh Bình",
+          "startSeconds": 23.914729166666667,
+          "durationSeconds": 2.4745833333333334,
+          "pauseMs": 120
+        }
+      ],
+      "file": "tim-cap-am-thanh.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Tìm cặp âm thanh. Có những âm thanh đang trốn sau các thẻ đấy! Em mở hai thẻ, nghe thử xem tiếng của chúng có giống nhau không. Nếu khác nhau, bấm Úp hai thẻ rồi tìm tiếp nhé. Cặp nào tìm đúng sẽ được giữ mở. Em cũng có thể bật mô tả bằng chữ cho thẻ đang mở để tìm cặp. Em cứ chơi thong thả, không cần vội. Nếu dùng bàn phím, em bấm Tab để di chuyển, rồi Enter hoặc phím cách để chọn. Nhớ để âm lượng nhỏ, vừa nghe nhé. Trò chơi sẽ lưu lại để lần sau em chơi tiếp.",
+      "transcriptSha256": "b6d29730bd699ba608460385681769eb5e1e1e05d86bc2fdd799d06c1442367a",
+      "listeningReview": "pending"
     },
     {
       "id": "activity:do-vui-kien-thuc:instructions",
-      "file": "do-vui-kien-thuc.v1.mp3",
-      "transcript": "Đố vui kiến thức. Bấm Nghe câu hỏi hoặc đọc câu hỏi, rồi chọn câu trả lời. Nếu chưa đúng, hãy thử lại. Mỗi đáp án đúng có lời giải thích. Ba cấp độ đi từ kiến thức quen thuộc đến khoa học và suy luận. Dùng Tab để di chuyển, Enter hoặc Space để chọn. Bắt đầu với âm lượng nhỏ. Tiến độ tự lưu trên thiết bị.",
-      "transcriptSha256": "8faffa56c7b432272500ed0d39b0c770ef33128dc66178cf359ea9ceca978848",
-      "audioSha256": "827c67fce1a820c5784bb1d9f1c8046ab19a19dc983516cadf01fd508895a5e6",
-      "bytes": 197528,
-      "durationSeconds": 24.59415,
-      "rms": 0.09803357865850128
+      "profileHash": "0946dcb7fd23078329860d48dff90ee7e960b7aea45c12e400eabaaa05841ceb",
+      "audioSha256": "86ec706e899b6639b494560ffd4ccc2f9166cc96a05acb107054d1746d4d0891",
+      "bytes": 279404,
+      "durationSeconds": 23.192917,
+      "rms": 0.09218147397041321,
+      "peak": 0.6371492743492126,
+      "timeline": [
+        {
+          "cueId": "activity:do-vui-kien-thuc:instructions:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 0.8770833333333333,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:do-vui-kien-thuc:instructions:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 1.0770833333333334,
+          "durationSeconds": 2.472958333333333,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:do-vui-kien-thuc:instructions:2",
+          "voice": "Thanh Bình",
+          "startSeconds": 3.7500416666666667,
+          "durationSeconds": 3.1164375,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:do-vui-kien-thuc:instructions:3",
+          "voice": "Thanh Bình",
+          "startSeconds": 7.066479166666666,
+          "durationSeconds": 1.3554791666666666,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:do-vui-kien-thuc:instructions:4",
+          "voice": "Thanh Bình",
+          "startSeconds": 8.621958333333334,
+          "durationSeconds": 3.18975,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:do-vui-kien-thuc:instructions:5",
+          "voice": "Thanh Bình",
+          "startSeconds": 12.011708333333333,
+          "durationSeconds": 1.8337916666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:do-vui-kien-thuc:instructions:6",
+          "voice": "Thanh Bình",
+          "startSeconds": 14.0455,
+          "durationSeconds": 4.1529375,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:do-vui-kien-thuc:instructions:7",
+          "voice": "Thanh Bình",
+          "startSeconds": 18.3984375,
+          "durationSeconds": 1.9998958333333334,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:do-vui-kien-thuc:instructions:8",
+          "voice": "Thanh Bình",
+          "startSeconds": 20.598333333333333,
+          "durationSeconds": 2.4745833333333334,
+          "pauseMs": 120
+        }
+      ],
+      "file": "do-vui-kien-thuc.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Đố vui kiến thức. Cùng khám phá những điều thú vị quanh mình nhé! Em bấm Nghe câu hỏi, hoặc đọc câu hỏi rồi chọn câu trả lời. Chưa đúng thì mình thử lại. Khi tìm ra đáp án, em sẽ biết thêm vì sao câu trả lời đó đúng. Em cứ chơi thong thả, không cần vội. Nếu dùng bàn phím, em bấm Tab để di chuyển, rồi Enter hoặc phím cách để chọn. Nhớ để âm lượng nhỏ, vừa nghe nhé. Trò chơi sẽ lưu lại để lần sau em chơi tiếp.",
+      "transcriptSha256": "21f919b7407ba79c77ad1d7f53f06fb747090dbd398ffab62d7df740fd8d89ae",
+      "listeningReview": "pending"
     },
     {
       "id": "activity:toan-hoc-am-thanh:instructions",
-      "file": "toan-hoc-am-thanh.v1.mp3",
-      "transcript": "Toán học bằng âm thanh. Bấm Nghe câu hỏi để nghe bài toán, rồi chọn kết quả. Em có thể nghe lại tùy ý hoặc đọc bằng chữ. Cấp một tập đếm, cộng và trừ; cấp hai có nhân và chia; cấp ba có bài toán nhiều bước. Không giới hạn thời gian. Dùng Tab để di chuyển, Enter hoặc Space để chọn. Bắt đầu với âm lượng nhỏ. Tiến độ tự lưu trên thiết bị.",
-      "transcriptSha256": "270f945210b79259b6015a01fccdbd3e3ce577e55ca5e26649e3344bf734347f",
-      "audioSha256": "032bd0307402ddf6cde9511b084cd02137641c0f6c167b492997a229bf67f026",
-      "bytes": 221143,
-      "durationSeconds": 27.549433,
-      "rms": 0.09617611191756757
+      "profileHash": "f67554100eaa01b4d28e7a230291a623bb8ff2f0f014afba4a74e377baf6ca27",
+      "audioSha256": "8a2e94fa25c67a53c6716411a8acb3f293806749995e576450b7ad41345230dc",
+      "bytes": 331244,
+      "durationSeconds": 27.520458,
+      "rms": 0.09447603672742844,
+      "peak": 0.6748550534248352,
+      "timeline": [
+        {
+          "cueId": "activity:toan-hoc-am-thanh:instructions:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 1.36,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:toan-hoc-am-thanh:instructions:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 1.56,
+          "durationSeconds": 1.997625,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:toan-hoc-am-thanh:instructions:2",
+          "voice": "Thanh Bình",
+          "startSeconds": 3.757625,
+          "durationSeconds": 2.7128958333333335,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:toan-hoc-am-thanh:instructions:3",
+          "voice": "Thanh Bình",
+          "startSeconds": 6.670520833333334,
+          "durationSeconds": 4.153395833333334,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:toan-hoc-am-thanh:instructions:4",
+          "voice": "Thanh Bình",
+          "startSeconds": 11.023916666666667,
+          "durationSeconds": 5.1153125,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:toan-hoc-am-thanh:instructions:5",
+          "voice": "Thanh Bình",
+          "startSeconds": 16.339229166666666,
+          "durationSeconds": 1.8337916666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:toan-hoc-am-thanh:instructions:6",
+          "voice": "Thanh Bình",
+          "startSeconds": 18.37302083333333,
+          "durationSeconds": 4.1529375,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:toan-hoc-am-thanh:instructions:7",
+          "voice": "Thanh Bình",
+          "startSeconds": 22.725958333333335,
+          "durationSeconds": 1.9998958333333334,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:toan-hoc-am-thanh:instructions:8",
+          "voice": "Thanh Bình",
+          "startSeconds": 24.925854166666667,
+          "durationSeconds": 2.4745833333333334,
+          "pauseMs": 120
+        }
+      ],
+      "file": "toan-hoc-am-thanh.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Toán học bằng âm thanh. Mình cùng giải một bài toán nhé! Em bấm Nghe câu hỏi, nghe kỹ rồi chọn kết quả. Cần nghĩ thêm thì cứ từ từ, em có thể nghe lại hoặc đọc bài toán bằng chữ. Mình bắt đầu với đếm, cộng và trừ ở cấp một, rồi thử nhân, chia và bài toán nhiều bước ở các cấp sau. Em cứ chơi thong thả, không cần vội. Nếu dùng bàn phím, em bấm Tab để di chuyển, rồi Enter hoặc phím cách để chọn. Nhớ để âm lượng nhỏ, vừa nghe nhé. Trò chơi sẽ lưu lại để lần sau em chơi tiếp.",
+      "transcriptSha256": "e39c8a59509f8c9683146f9a8b2ed8bef19d616e726f90d7b51cdc1a7822f095",
+      "listeningReview": "pending"
     },
     {
       "id": "activity:phieu-luu-giai-do:instructions",
-      "file": "phieu-luu-giai-do.v1.mp3",
-      "transcript": "Phiêu lưu giải đố. Mỗi cấp độ là một chuyến phiêu lưu gồm tám chặng liên tiếp. Nghe hoặc đọc tình huống rồi chọn cách giải câu đố. Trả lời đúng để mở chặng tiếp và xem điều gì xảy ra. Nếu chưa đúng, em có thể thử lại. Dùng Tab để di chuyển, Enter hoặc Space để chọn. Bắt đầu với âm lượng nhỏ. Tiến độ tự lưu trên thiết bị.",
-      "transcriptSha256": "b7111fc8280a045297f6cc6b1d1bf83e177ab6e019f78898c025f034b23b1396",
-      "audioSha256": "98fd24f2271bd5afc5315fdb9bb551e7e9ec8958a2f6b3124fe191ca1118d309",
-      "bytes": 205887,
-      "durationSeconds": 25.646621,
-      "rms": 0.0969959238517781
+      "profileHash": "25a92aba044b345f1a9f487c002d56116362f2d02d1eb457b2b4b413a2b89390",
+      "audioSha256": "893368390217abaf2eef4ff6b04a79cf6b44526981c1d1645c80cad9b02634e8",
+      "bytes": 301004,
+      "durationSeconds": 24.992917,
+      "rms": 0.08957827091217041,
+      "peak": 0.6338827013969421,
+      "timeline": [
+        {
+          "cueId": "activity:phieu-luu-giai-do:instructions:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 0.9554166666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:phieu-luu-giai-do:instructions:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 1.1554166666666668,
+          "durationSeconds": 1.3558333333333332,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:phieu-luu-giai-do:instructions:2",
+          "voice": "Thanh Bình",
+          "startSeconds": 2.71125,
+          "durationSeconds": 2.4730416666666666,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:phieu-luu-giai-do:instructions:3",
+          "voice": "Thanh Bình",
+          "startSeconds": 5.384291666666667,
+          "durationSeconds": 2.9549375,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:phieu-luu-giai-do:instructions:4",
+          "voice": "Thanh Bình",
+          "startSeconds": 8.539229166666667,
+          "durationSeconds": 2.8761875,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:phieu-luu-giai-do:instructions:5",
+          "voice": "Thanh Bình",
+          "startSeconds": 11.615416666666667,
+          "durationSeconds": 1.9962708333333334,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:phieu-luu-giai-do:instructions:6",
+          "voice": "Thanh Bình",
+          "startSeconds": 13.8116875,
+          "durationSeconds": 1.8337916666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:phieu-luu-giai-do:instructions:7",
+          "voice": "Thanh Bình",
+          "startSeconds": 15.845479166666667,
+          "durationSeconds": 4.1529375,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:phieu-luu-giai-do:instructions:8",
+          "voice": "Thanh Bình",
+          "startSeconds": 20.198416666666667,
+          "durationSeconds": 1.9998958333333334,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:phieu-luu-giai-do:instructions:9",
+          "voice": "Thanh Bình",
+          "startSeconds": 22.3983125,
+          "durationSeconds": 2.4745833333333334,
+          "pauseMs": 120
+        }
+      ],
+      "file": "phieu-luu-giai-do.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Phiêu lưu giải đố. Sẵn sàng lên đường chưa? Mỗi chuyến phiêu lưu có tám chặng đang chờ em khám phá. Em nghe hoặc đọc câu chuyện, rồi chọn cách giải câu đố. Giải được một câu, mình sẽ đi tiếp và xem chuyện gì xảy ra. Nếu chưa đúng, em cứ thử cách khác nhé. Em cứ chơi thong thả, không cần vội. Nếu dùng bàn phím, em bấm Tab để di chuyển, rồi Enter hoặc phím cách để chọn. Nhớ để âm lượng nhỏ, vừa nghe nhé. Trò chơi sẽ lưu lại để lần sau em chơi tiếp.",
+      "transcriptSha256": "c55b26770389009fbcaf111612917adbd1219ba3f524b011c60e3691a7875bcb",
+      "listeningReview": "pending"
     },
     {
       "id": "activity:ghi-nho-nhip-dieu:instructions",
-      "file": "ghi-nho-nhip-dieu.v1.mp3",
-      "transcript": "Ghi nhớ nhịp điệu. Nghe mẫu nhịp rồi bấm nút Gõ nhịp, hoặc dùng Enter hay Space khi nút đó được chọn. Gõ đủ số tiếng rồi bấm Kiểm tra nhịp. Có thể gõ chậm hơn mẫu, chỉ cần giữ tỷ lệ khoảng cách. Chế độ Chọn khoảng nghỉ cho phép chọn Ngắn, Dài hoặc Rất dài thay cho gõ theo thời gian. Ba cấp độ tăng số nhịp và độ chính xác. Dùng Tab để di chuyển, Enter hoặc Space để chọn. Bắt đầu với âm lượng nhỏ. Tiến độ tự lưu trên thiết bị.",
-      "transcriptSha256": "29eba024adafffb8da5dc11a6a4dcd2ece8d2ddf24c5ae35e3888f7070929327",
-      "audioSha256": "4cd6264b2153584f97efd03c316ae848186b555e83a9e1c30cc86f01db6c5c86",
-      "bytes": 271716,
-      "durationSeconds": 33.870204,
-      "rms": 0.09680033133871027
+      "profileHash": "f36f74d2002b18cd54f4480dbf47e5b3034901b06a7e8159477a501f0b7d45d3",
+      "audioSha256": "cde473c5afa59af9cf7fad220b27628d91d940725650ccc17a7a1842707c6278",
+      "bytes": 327212,
+      "durationSeconds": 27.188917,
+      "rms": 0.09228307008743286,
+      "peak": 0.6760750412940979,
+      "timeline": [
+        {
+          "cueId": "activity:ghi-nho-nhip-dieu:instructions:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 0.7908958333333334,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:ghi-nho-nhip-dieu:instructions:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 0.9908958333333333,
+          "durationSeconds": 2.8731666666666666,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:ghi-nho-nhip-dieu:instructions:2",
+          "voice": "Thanh Bình",
+          "startSeconds": 4.0640625,
+          "durationSeconds": 2.4738125,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:ghi-nho-nhip-dieu:instructions:3",
+          "voice": "Thanh Bình",
+          "startSeconds": 6.737875,
+          "durationSeconds": 4.396583333333333,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:ghi-nho-nhip-dieu:instructions:4",
+          "voice": "Thanh Bình",
+          "startSeconds": 11.334458333333334,
+          "durationSeconds": 4.47325,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:ghi-nho-nhip-dieu:instructions:5",
+          "voice": "Thanh Bình",
+          "startSeconds": 16.007708333333333,
+          "durationSeconds": 1.8337916666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:ghi-nho-nhip-dieu:instructions:6",
+          "voice": "Thanh Bình",
+          "startSeconds": 18.0415,
+          "durationSeconds": 4.1529375,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:ghi-nho-nhip-dieu:instructions:7",
+          "voice": "Thanh Bình",
+          "startSeconds": 22.3944375,
+          "durationSeconds": 1.9998958333333334,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "activity:ghi-nho-nhip-dieu:instructions:8",
+          "voice": "Thanh Bình",
+          "startSeconds": 24.594333333333335,
+          "durationSeconds": 2.4745833333333334,
+          "pauseMs": 120
+        }
+      ],
+      "file": "ghi-nho-nhip-dieu.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Ghi nhớ nhịp điệu. Em nghe mẫu nhịp trước nhé, rồi bấm Gõ nhịp để gõ lại. Gõ xong thì bấm Kiểm tra nhịp. Em có thể gõ chậm hơn mẫu, miễn là các khoảng nghỉ ngắn và dài vẫn cân đối như lúc nghe. Nếu thích, em chuyển sang Chọn khoảng nghỉ rồi chọn Ngắn, Dài hoặc Rất dài thay cho gõ trực tiếp. Em cứ chơi thong thả, không cần vội. Nếu dùng bàn phím, em bấm Tab để di chuyển, rồi Enter hoặc phím cách để chọn. Nhớ để âm lượng nhỏ, vừa nghe nhé. Trò chơi sẽ lưu lại để lần sau em chơi tiếp.",
+      "transcriptSha256": "5c5b28c7218f01ea44061b476907035a8609256eafb2651e4940108768a92a32",
+      "listeningReview": "pending"
     },
     {
       "id": "game-correct",
-      "file": "game-correct.v1.mp3",
-      "transcript": "Đúng rồi! Em đã làm rất tốt. Hãy đọc lời giải thích và tiếp tục khám phá nhé.",
-      "transcriptSha256": "3f26e444f4c424ee9c0c8b7fd228a122990b6d97ee6c47e7cab47fb499bed721",
-      "audioSha256": "7bec2c0f3d507e2cadf8e68b3b55199630e4d9c02d41b4eec318090f1a4fee86",
-      "bytes": 51243,
-      "durationSeconds": 6.306304,
-      "rms": 0.097899128660882
+      "profileHash": "1f942ef047399a0191b3fffde876c16ee2512264ca931a18a5d1cc98a00ec0bd",
+      "audioSha256": "49184a38246afae5413997362e45852556b592a8fccf056aeab877c9de7c2e7e",
+      "bytes": 55628,
+      "durationSeconds": 4.550292,
+      "rms": 0.08721181750297546,
+      "peak": 0.5962737202644348,
+      "timeline": [
+        {
+          "cueId": "game-correct:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 1.7543125,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "game-correct:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 1.9543125,
+          "durationSeconds": 2.475979166666667,
+          "pauseMs": 120
+        }
+      ],
+      "file": "game-correct.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Đúng rồi, em tìm ra rồi đấy! Mình cùng khám phá thử thách tiếp theo nhé.",
+      "transcriptSha256": "a470ee31d817b6306b32d9315497111d0656ecd16b270983f599eee741a5b6e9",
+      "listeningReview": "pending"
     },
     {
       "id": "game-incorrect",
-      "file": "game-incorrect.v1.mp3",
-      "transcript": "Chưa đúng rồi. Em có thể nghe lại, đọc mô tả và thử tiếp nhé. Với trò ghép cặp, hãy úp hai thẻ trước khi chọn lại.",
-      "transcriptSha256": "70a97b52e5d84e281e3759ae3e609cf9de931a412bf6447372738d06ccde988f",
-      "audioSha256": "c876870edcb6043bab95523c823d22b12ce7954000aa49ff79f90dce872ca709",
-      "bytes": 77783,
-      "durationSeconds": 9.630612,
-      "rms": 0.09325611042939311
+      "profileHash": "7da8d513e0faa37517fbf7ab23daabcaed8a00cf43685d0cbc487d9fe0bcbbc3",
+      "audioSha256": "524a41364e27a39a4e5d330c7630694bfe49b3a5b1742237bf7db6850eda70c0",
+      "bytes": 65132,
+      "durationSeconds": 5.347708,
+      "rms": 0.08966841548681259,
+      "peak": 0.5754700303077698,
+      "timeline": [
+        {
+          "cueId": "game-incorrect:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 1.6764166666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "game-incorrect:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 1.8764166666666666,
+          "durationSeconds": 3.3512708333333334,
+          "pauseMs": 120
+        }
+      ],
+      "file": "game-incorrect.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Chưa đúng rồi, mình thử lại nhé! Em cứ nghe thêm lần nữa, hoặc mở mô tả bằng chữ để tìm gợi ý.",
+      "transcriptSha256": "3d9a2e62b63495314dacf88c6ae53a21d59c532cc86cead1db3193a85d56eb93",
+      "listeningReview": "pending"
+    },
+    {
+      "id": "game-pair-incorrect",
+      "profileHash": "cd58a28458841746625cd4278eee6a4d0564ddac87bf99bacb40da95bc014b1a",
+      "audioSha256": "cd7aad620bdddfb278eb42e9ba60d57af6ec30a53f74ae8a300f307e7cf1c839",
+      "bytes": 55628,
+      "durationSeconds": 4.551375,
+      "rms": 0.10120587795972824,
+      "peak": 0.6708402037620544,
+      "timeline": [
+        {
+          "cueId": "game-pair-incorrect:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 1.514125,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "game-pair-incorrect:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 1.714125,
+          "durationSeconds": 2.71725,
+          "pauseMs": 120
+        }
+      ],
+      "file": "game-pair-incorrect.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Hai tiếng này khác nhau rồi. Em bấm Úp hai thẻ, rồi mình tìm cặp khác nhé!",
+      "transcriptSha256": "d30a155b7265fa5d39f16ab59cc5681d8255955b2276c5c0d1561ac8135b5f28",
+      "listeningReview": "pending"
+    },
+    {
+      "id": "game-pair-correct",
+      "profileHash": "20c1d133a1be22f87c52286d425230f4cbfee8674f81575828c8b3c6fef43d0f",
+      "audioSha256": "e1430baed7aa3db8cfe7d6649c0f906edf6c6691e55b617b53f09c8f355fbcd4",
+      "bytes": 42668,
+      "durationSeconds": 3.469458,
+      "rms": 0.09788122773170471,
+      "peak": 0.6055622100830078,
+      "timeline": [
+        {
+          "cueId": "game-pair-correct:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 0.6399791666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "game-pair-correct:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 0.8399791666666667,
+          "durationSeconds": 1.4331875,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "game-pair-correct:2",
+          "voice": "Thanh Bình",
+          "startSeconds": 2.4731666666666667,
+          "durationSeconds": 0.8762708333333333,
+          "pauseMs": 120
+        }
+      ],
+      "file": "game-pair-correct.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Đúng rồi! Em tìm được một cặp rồi đấy. Mình tìm tiếp nhé!",
+      "transcriptSha256": "72962353084f76b6a363e33dd7b6dd708dc2933d2f7187e8c62c12c2c61bc61a",
+      "listeningReview": "pending"
     },
     {
       "id": "game-completed",
-      "file": "game-completed.v1.mp3",
-      "transcript": "Em đã hoàn thành cấp độ này! Hãy xem kết quả bên dưới. Em có thể chơi lại hoặc chọn cấp độ khác.",
-      "transcriptSha256": "5cba7a7d855b76beec43dbb53f57d46b7776e857e794522a54f4217c47d4e704",
-      "audioSha256": "6e4f9a427020780d4b44f636d7867c77e5df36de8435193b47a850a79ad9a0a8",
-      "bytes": 63154,
-      "durationSeconds": 7.809615,
-      "rms": 0.09583144327162342
+      "profileHash": "123e321ba2d7fdb200dc89fe003b433df1a108a35ccfefca8fbfe22409419baf",
+      "audioSha256": "c91c040c760b88e948d0ec08219fffaefb34afebd85c5984f4411c273e165fd0",
+      "bytes": 74060,
+      "durationSeconds": 6.073958,
+      "rms": 0.0855584442615509,
+      "peak": 0.6547486186027527,
+      "timeline": [
+        {
+          "cueId": "game-completed:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 2.3152291666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "game-completed:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 2.515229166666667,
+          "durationSeconds": 3.43775,
+          "pauseMs": 120
+        }
+      ],
+      "file": "game-completed.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Em đã hoàn thành cấp độ này rồi, giỏi lắm! Em có thể nghỉ một chút, chơi lại, hoặc khám phá cấp độ khác nhé.",
+      "transcriptSha256": "bcccabb0a51954dacc7a47a77417c464a3a82b86d4f340a1469be43bb66dbcba",
+      "listeningReview": "pending"
+    },
+    {
+      "id": "music-playground-guide",
+      "profileHash": "7977e70fdec6da4f1db14f407caab6cdbb210ae6df7f9bdcf1491057ea26f72a",
+      "audioSha256": "1040df077f3cd160ef6b79167193c6a5a326f78c425cd070f9a320f531d84f65",
+      "bytes": 320588,
+      "durationSeconds": 26.638375,
+      "rms": 0.09338302165269852,
+      "peak": 0.6637031435966492,
+      "timeline": [
+        {
+          "cueId": "music-playground-guide:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 2.554104166666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-playground-guide:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 2.7541041666666666,
+          "durationSeconds": 2.3946666666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-playground-guide:2",
+          "voice": "Thanh Bình",
+          "startSeconds": 5.348770833333333,
+          "durationSeconds": 3.1982291666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-playground-guide:3",
+          "voice": "Thanh Bình",
+          "startSeconds": 8.747,
+          "durationSeconds": 4.313770833333334,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-playground-guide:4",
+          "voice": "Thanh Bình",
+          "startSeconds": 13.260770833333334,
+          "durationSeconds": 3.672416666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-playground-guide:5",
+          "voice": "Thanh Bình",
+          "startSeconds": 17.1331875,
+          "durationSeconds": 2.9559166666666665,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-playground-guide:6",
+          "voice": "Thanh Bình",
+          "startSeconds": 20.289104166666668,
+          "durationSeconds": 1.4336041666666666,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-playground-guide:7",
+          "voice": "Thanh Bình",
+          "startSeconds": 21.922708333333333,
+          "durationSeconds": 2.559229166666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-playground-guide:8",
+          "voice": "Thanh Bình",
+          "startSeconds": 24.6819375,
+          "durationSeconds": 1.8364375,
+          "pauseMs": 120
+        }
+      ],
+      "file": "music-playground-guide.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Chào em, cùng dạo một vòng khu vườn âm nhạc nhé! Em chọn một nhạc cụ rồi bấm nghe mẫu để nghe thử. Sau đó, chạm vào các nốt và chơi một giai điệu của riêng em. Nếu dùng bàn phím, em bấm Tab để đến nốt muốn chơi, rồi bấm Enter hoặc phím cách. Khi bật Thêm nốt đã chơi vào bản nhạc, các nốt em chơi sẽ được giữ lại. Em có thể sửa, phát lại, đặt tên rồi lưu bản nhạc. Cứ thử những gì em thích nhé! Muốn nghỉ, em bấm Dừng âm thanh bất cứ lúc nào. Nhớ để âm lượng nhỏ, vừa nghe thôi.",
+      "transcriptSha256": "37ecc8e4910ba5f026dd1cf035403a42cb9194924d1d730b938f82c64705cbdb",
+      "listeningReview": "pending"
+    },
+    {
+      "id": "music-game-melody",
+      "profileHash": "04b78aecc19d3e14db1c48e2c1fcf06aa56282cab890b9d2beedf9728519f4f5",
+      "audioSha256": "71c683638ab3d5567f2ebbf97ceeea955410452a1a85fb2f974c65633fd58ad9",
+      "bytes": 159596,
+      "durationSeconds": 13.220208,
+      "rms": 0.09067936986684799,
+      "peak": 0.607451319694519,
+      "timeline": [
+        {
+          "cueId": "music-game-melody:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 1.4361458333333332,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-game-melody:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 1.6361458333333334,
+          "durationSeconds": 4.154270833333333,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-game-melody:2",
+          "voice": "Thanh Bình",
+          "startSeconds": 5.9904166666666665,
+          "durationSeconds": 2.155625,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-game-melody:3",
+          "voice": "Thanh Bình",
+          "startSeconds": 8.346041666666666,
+          "durationSeconds": 3.03625,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-game-melody:4",
+          "voice": "Thanh Bình",
+          "startSeconds": 11.582291666666666,
+          "durationSeconds": 1.5178958333333334,
+          "pauseMs": 120
+        }
+      ],
+      "file": "music-game-melody.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Mình cùng thử nhớ một giai điệu nhé! Em bấm Nghe đề bài để nghe ba nốt nhạc, rồi chọn lại ba nốt theo đúng thứ tự vừa nghe. Chưa nhớ hết cũng không sao, em cứ nghe lại. Lỡ chọn nhầm thì bấm Sửa nốt cuối để chọn lại nhé. Mình không cần trả lời nhanh đâu.",
+      "transcriptSha256": "5caa2396e39e88a375c8bf7f077e0135ae680b9ab7142d1969b31d4bc912730a",
+      "listeningReview": "pending"
+    },
+    {
+      "id": "music-game-rhythm",
+      "profileHash": "6bbe9fa43e1438b17ad9c8ce85bab45e9b975a999e6cce81de43fbefa300c19a",
+      "audioSha256": "f270e3bef991b0b6757addcd81c8311e84e9331c8e13736ea2f8ba9c255f133c",
+      "bytes": 147500,
+      "durationSeconds": 12.215583,
+      "rms": 0.08691194653511047,
+      "peak": 0.6604326963424683,
+      "timeline": [
+        {
+          "cueId": "music-game-rhythm:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 2.15175,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-game-rhythm:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 2.35175,
+          "durationSeconds": 2.7916041666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-game-rhythm:2",
+          "voice": "Thanh Bình",
+          "startSeconds": 5.343354166666667,
+          "durationSeconds": 2.636979166666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-game-rhythm:3",
+          "voice": "Thanh Bình",
+          "startSeconds": 8.180333333333333,
+          "durationSeconds": 3.91525,
+          "pauseMs": 120
+        }
+      ],
+      "file": "music-game-rhythm.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Có một nhịp điệu bí mật đang chờ em tìm ra đấy! Em bấm Nghe đề bài trước, rồi nghe thử từng nhịp bên dưới. Nhịp nào giống với nhịp bí mật thì em chọn nhịp đó nhé. Em cứ nghe lại bao nhiêu lần cũng được, không cần gõ theo hay trả lời nhanh đâu.",
+      "transcriptSha256": "873cf2cfdb3c3cb0c5fb3efa52be3a3cbcb51c6ea2089f4c601ac754fea2afa0",
+      "listeningReview": "pending"
+    },
+    {
+      "id": "music-game-ready",
+      "profileHash": "03c58746c37528d9adcd19f22848987cae898b1ade08313dadb9fe04c12b0f9c",
+      "audioSha256": "698cf84abdfdec8b220158649bb2c04ea117709470112ab90546c987ec8c7bb3",
+      "bytes": 32300,
+      "durationSeconds": 2.598167,
+      "rms": 0.08864928781986237,
+      "peak": 0.559123158454895,
+      "timeline": [
+        {
+          "cueId": "music-game-ready:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 2.4781458333333335,
+          "pauseMs": 120
+        }
+      ],
+      "file": "music-game-ready.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Chọn Nghe đề bài để bắt đầu nhé!",
+      "transcriptSha256": "f86acf58d06c8e7093460ed2632e1c8bf2da74f0020ccf60a7efd5de560e7457",
+      "listeningReview": "pending"
+    },
+    {
+      "id": "music-game-listening",
+      "profileHash": "233c5436bad7e1351a0d9581238cc3319ee3dc14cf7ade3272fa7784a4569ab6",
+      "audioSha256": "57cfdc7a3827fc3f3c1b8850424be1a77b14df7475670c830655ecad0c00f534",
+      "bytes": 49004,
+      "durationSeconds": 3.990458,
+      "rms": 0.0929342731833458,
+      "peak": 0.6692043542861938,
+      "timeline": [
+        {
+          "cueId": "music-game-listening:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 1.5974166666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-game-listening:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 1.7974166666666667,
+          "durationSeconds": 2.0730416666666667,
+          "pauseMs": 120
+        }
+      ],
+      "file": "music-game-listening.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Mình cùng lắng nghe nhé. Nghe xong rồi em hãy chọn câu trả lời.",
+      "transcriptSha256": "f50d7344b1a5e06deae2aa7b8a5337aca0247cb56bcb7be5c5f3a6b26351f7a1",
+      "listeningReview": "pending"
+    },
+    {
+      "id": "music-melody-ready",
+      "profileHash": "60941bf97fc357d3e334fd84c4720a8188252563e43680ce35fe36f4a5ba50b7",
+      "audioSha256": "39b7f01f7bc5fcafc25331f8ff627aa9427954a2c28c26fa81a6d7a1561bdb91",
+      "bytes": 44108,
+      "durationSeconds": 3.593792,
+      "rms": 0.09192736446857452,
+      "peak": 0.6151126623153687,
+      "timeline": [
+        {
+          "cueId": "music-melody-ready:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 0.9599791666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-melody-ready:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 1.1599791666666666,
+          "durationSeconds": 2.3137916666666665,
+          "pauseMs": 120
+        }
+      ],
+      "file": "music-melody-ready.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Đã nghe xong rồi! Giờ em chọn lại ba nốt theo thứ tự vừa nghe nhé.",
+      "transcriptSha256": "c50c439b7ceda6e0edbd7d976a5814d64a77efec0c077b90bb1af1632decb5aa",
+      "listeningReview": "pending"
+    },
+    {
+      "id": "music-rhythm-ready",
+      "profileHash": "44c61b7798f0b685586fce6bb28403ce7d2e4b5c42beead7a4f0b8e6a970a8f2",
+      "audioSha256": "946e8577a8da11fcf5aa041e8f2127992f2b603b257b41c52a7a13228267dee5",
+      "bytes": 49004,
+      "durationSeconds": 3.993125,
+      "rms": 0.0887601301074028,
+      "peak": 0.6671392321586609,
+      "timeline": [
+        {
+          "cueId": "music-rhythm-ready:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 0.9599791666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-rhythm-ready:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 1.1599791666666666,
+          "durationSeconds": 2.7131458333333334,
+          "pauseMs": 120
+        }
+      ],
+      "file": "music-rhythm-ready.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Đã nghe xong rồi! Em nghe thử các nhịp bên dưới và tìm nhịp giống như thế nhé.",
+      "transcriptSha256": "d248406ecfcbbb100d84a878afa561e9b2b9c978fc7c8d5b043db3a6e6508cf6",
+      "listeningReview": "pending"
+    },
+    {
+      "id": "music-melody-correct",
+      "profileHash": "1a10e7c9cb85c71625a916ffe423ccd38b480d6f315d75621cdecc5260863567",
+      "audioSha256": "0e4ee01582b73e8b8dd5e5e102d7acf9cf42d635e70b817d1dfcf0d899937dc9",
+      "bytes": 61964,
+      "durationSeconds": 5.068375,
+      "rms": 0.093430295586586,
+      "peak": 0.645786464214325,
+      "timeline": [
+        {
+          "cueId": "music-melody-correct:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 0.6399791666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-melody-correct:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 0.8399791666666667,
+          "durationSeconds": 1.8323125,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-melody-correct:2",
+          "voice": "Thanh Bình",
+          "startSeconds": 2.8722916666666665,
+          "durationSeconds": 2.0760625,
+          "pauseMs": 120
+        }
+      ],
+      "file": "music-melody-correct.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Đúng rồi! Em đã nhớ đủ ba nốt rồi đấy. Muốn chơi tiếp, em bấm Câu mới nhé!",
+      "transcriptSha256": "d48c186ab0c649d0a36e7188b99912faa7a750e24a3f8a82bd954e22e45988f5",
+      "listeningReview": "pending"
+    },
+    {
+      "id": "music-melody-incorrect",
+      "profileHash": "2537f9bc30558737e0b87b0c995e0ea835b980cefe70bb1708ad9705731bc94a",
+      "audioSha256": "79165cf7a9ded97215631b90fc008c91d9dd59b77cda080ed5e7a4701e519eea",
+      "bytes": 70892,
+      "durationSeconds": 5.828958,
+      "rms": 0.09161809831857681,
+      "peak": 0.6673725843429565,
+      "timeline": [
+        {
+          "cueId": "music-melody-incorrect:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 2.3169166666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-melody-incorrect:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 2.5169166666666665,
+          "durationSeconds": 3.192041666666667,
+          "pauseMs": 120
+        }
+      ],
+      "file": "music-melody-incorrect.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Chưa trùng giai điệu rồi, mình thử lại nhé! Em có thể bấm Sửa nốt cuối, hoặc nghe lại để nhớ rõ hơn.",
+      "transcriptSha256": "8af7d9f01223d3ce10dfb4aa4dcee36c87a9532d2c889c992625103a9512d5c7",
+      "listeningReview": "pending"
+    },
+    {
+      "id": "music-rhythm-correct",
+      "profileHash": "5d17c70b95432db0298bcb739ca384dfe6fb2668f903549f9dcb9a27dcc19ec2",
+      "audioSha256": "d1084321f4c4e30642be40d7374ba6d286f2e711faf5da07bcb7a84410af5e2c",
+      "bytes": 61100,
+      "durationSeconds": 4.993958,
+      "rms": 0.08765411376953125,
+      "peak": 0.6674734950065613,
+      "timeline": [
+        {
+          "cueId": "music-rhythm-correct:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 0.6399791666666667,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-rhythm-correct:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 0.8399791666666667,
+          "durationSeconds": 1.7555208333333334,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-rhythm-correct:2",
+          "voice": "Thanh Bình",
+          "startSeconds": 2.7955,
+          "durationSeconds": 2.076875,
+          "pauseMs": 120
+        }
+      ],
+      "file": "music-rhythm-correct.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Đúng rồi! Em tìm ra nhịp bí mật rồi đấy. Bấm Câu mới để chơi tiếp nhé!",
+      "transcriptSha256": "0439053d8d987ff24203322025c64a1cfae70dfc5100108a1f38ff8bf33a7eec",
+      "listeningReview": "pending"
+    },
+    {
+      "id": "music-rhythm-incorrect",
+      "profileHash": "c2da33bc200b348e275c5a1bc9dd8e262f4d0321c412778ecd18100102dfaf2d",
+      "audioSha256": "e59c495b350d79cbb0bcd4e3661797f234b82f260611749c431be26c35b26c7d",
+      "bytes": 55628,
+      "durationSeconds": 4.551208,
+      "rms": 0.08891193568706512,
+      "peak": 0.5977176427841187,
+      "timeline": [
+        {
+          "cueId": "music-rhythm-incorrect:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 1.8366458333333333,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-rhythm-incorrect:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 2.0366458333333335,
+          "durationSeconds": 2.3945625,
+          "pauseMs": 120
+        }
+      ],
+      "file": "music-rhythm-incorrect.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Chưa trùng nhịp rồi, mình nghe lại nhé! Em nghe thử các nhịp khác rồi chọn lại cũng được.",
+      "transcriptSha256": "308ac132d4460409431b03a285213b22f9567f8c70049a9e5e3ecc75e682b240",
+      "listeningReview": "pending"
+    },
+    {
+      "id": "music-note-cleared",
+      "profileHash": "924ae8504bb54d6f9c9eaa2504e459aa26a5e4420f17cf679e77bee905e94a14",
+      "audioSha256": "b1a255774928f14e1afd559b3cdb23a2365e5be7e03d3441a92d0e043ffd4712",
+      "bytes": 42092,
+      "durationSeconds": 3.430083,
+      "rms": 0.09511495381593704,
+      "peak": 0.666641116142273,
+      "timeline": [
+        {
+          "cueId": "music-note-cleared:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 1.274625,
+          "pauseMs": 200
+        },
+        {
+          "cueId": "music-note-cleared:1",
+          "voice": "Thanh Bình",
+          "startSeconds": 1.474625,
+          "durationSeconds": 1.8354375,
+          "pauseMs": 120
+        }
+      ],
+      "file": "music-note-cleared.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Đã xóa nốt cuối rồi. Em chọn lại nốt mình muốn nhé.",
+      "transcriptSha256": "2a5cded8511af7f7475f6c26013d66056a8c5384b95694a5723bd9e4504d617a",
+      "listeningReview": "pending"
+    },
+    {
+      "id": "music-note-one",
+      "profileHash": "f12bd2ee789394ffa338ff987946adf5f301eb88d71737ab94909653145f64dc",
+      "audioSha256": "89ef072d2ac189aa1363ce8370fe01ee5e218ce09995d73743284e27d5668a89",
+      "bytes": 30284,
+      "durationSeconds": 2.434792,
+      "rms": 0.09268907457590103,
+      "peak": 0.6469551920890808,
+      "timeline": [
+        {
+          "cueId": "music-note-one:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 2.314770833333333,
+          "pauseMs": 120
+        }
+      ],
+      "file": "music-note-one.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Em đã chọn một nốt, còn hai nốt nữa nhé.",
+      "transcriptSha256": "ed44a9a3a51ca84843f1feda67be541f25a7df28532355ef8450e82030c01894",
+      "listeningReview": "pending"
+    },
+    {
+      "id": "music-note-two",
+      "profileHash": "a2bb2f490b752ca7517ce9431a1d46d785d624df74bd7d1af4f9168823067ebc",
+      "audioSha256": "fa212921a5501d2cb819cffabb2f7c524119314bf3ef69c30fd6e86c5329567a",
+      "bytes": 32300,
+      "durationSeconds": 2.596625,
+      "rms": 0.0939599871635437,
+      "peak": 0.6669514775276184,
+      "timeline": [
+        {
+          "cueId": "music-note-two:0",
+          "voice": "Thanh Bình",
+          "startSeconds": 0,
+          "durationSeconds": 2.476625,
+          "pauseMs": 120
+        }
+      ],
+      "file": "music-note-two.v2.mp3",
+      "voice": "Thanh Bình",
+      "transcript": "Em đã chọn hai nốt, còn một nốt nữa thôi.",
+      "transcriptSha256": "204d0ddf9a600c5307e83d8dc1213ea5d3e93094abcac8551a063755ae086a92",
+      "listeningReview": "pending"
     },
     {
       "id": "do-vui-kien-thuc-1",
@@ -203,7 +1539,8 @@
       "audioSha256": "32d3b6bc342e701c1eb92ee199f33660c3d5a50b02b8fe385f9cc104c564b0b6",
       "bytes": 20940,
       "durationSeconds": 2.523628,
-      "rms": 0.09740910562491364
+      "rms": 0.09740910562491364,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-2",
@@ -213,7 +1550,8 @@
       "audioSha256": "092ccd798f58e0fe6ef780d2aaf1e3049ad3e8088466edceb05a54f17cc62297",
       "bytes": 15716,
       "durationSeconds": 1.861678,
-      "rms": 0.09920733751009249
+      "rms": 0.09920733751009249,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-3",
@@ -223,7 +1561,8 @@
       "audioSha256": "2e376fcd85d91d263e680163002b22e4742c2dd3d1cdb4c3551b9ab77b3995e4",
       "bytes": 14044,
       "durationSeconds": 1.664308,
-      "rms": 0.09787701917395708
+      "rms": 0.09787701917395708,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-4",
@@ -233,7 +1572,8 @@
       "audioSha256": "b116067f7eca22b46bcafbd737626d34332c6d8c7add64207b9aa6937ea8a722",
       "bytes": 27628,
       "durationSeconds": 3.362132,
-      "rms": 0.09783036896316649
+      "rms": 0.09783036896316649,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-5",
@@ -243,7 +1583,8 @@
       "audioSha256": "4fdf61143d23f54389d68e2af002d360782b1b3e4f48db43593e2ed843ef359a",
       "bytes": 16970,
       "durationSeconds": 2.01356,
-      "rms": 0.09664697459931024
+      "rms": 0.09664697459931024,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-6",
@@ -253,7 +1594,8 @@
       "audioSha256": "df7b4a9b6c2f86d10b7d814203490c9c78b9a0c62a1b5edb4737ae3c5183db42",
       "bytes": 21985,
       "durationSeconds": 2.662313,
-      "rms": 0.09694794207796147
+      "rms": 0.09694794207796147,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-7",
@@ -263,7 +1605,8 @@
       "audioSha256": "9dd49dd15519b5a668761ac3e77b88b33ae5321253457ec8280b6d73bfccd91e",
       "bytes": 23657,
       "durationSeconds": 2.859184,
-      "rms": 0.09701448951350385
+      "rms": 0.09701448951350385,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-8",
@@ -273,7 +1616,8 @@
       "audioSha256": "33e5c74a86af2a46dd83ed3089b2b08a0df76a3e52bda553f39197dc19e499d8",
       "bytes": 20105,
       "durationSeconds": 2.41551,
-      "rms": 0.09568616264069259
+      "rms": 0.09568616264069259,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-9",
@@ -283,7 +1627,8 @@
       "audioSha256": "f11eb531c63d218b4b486a52ac4eacfeb85a96dbd9f221e466c1123f5c84b4b7",
       "bytes": 15089,
       "durationSeconds": 1.79746,
-      "rms": 0.09754020026917085
+      "rms": 0.09754020026917085,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-10",
@@ -293,7 +1638,8 @@
       "audioSha256": "dc53841b079e7912f1978bf139203dbea67012f74fc08f2bdf766a0e53cd8400",
       "bytes": 16970,
       "durationSeconds": 2.03161,
-      "rms": 0.099836690145405
+      "rms": 0.099836690145405,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-11",
@@ -303,7 +1649,8 @@
       "audioSha256": "21ca10e5041c340cff33368b1c43b953a704aece2b3458a8adf26638c69e3f84",
       "bytes": 21776,
       "durationSeconds": 2.62449,
-      "rms": 0.0980605761600582
+      "rms": 0.0980605761600582,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-12",
@@ -313,7 +1660,8 @@
       "audioSha256": "55bc616f43fbe77b82f38c54ad33cc79bf8966c08e424abb22ffd94336bbcf24",
       "bytes": 21149,
       "durationSeconds": 2.546485,
-      "rms": 0.09834351040105434
+      "rms": 0.09834351040105434,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-13",
@@ -323,7 +1671,8 @@
       "audioSha256": "7230b19daac84432271c660357d5214a90936a999f28513db552decdf8ea4633",
       "bytes": 15716,
       "durationSeconds": 1.859637,
-      "rms": 0.10054643071891935
+      "rms": 0.10054643071891935,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-14",
@@ -333,7 +1682,8 @@
       "audioSha256": "a5d9b3118747fd8d62e95af57eb43b94894b3bd2e1db0821bd0e13d831cf4d87",
       "bytes": 25120,
       "durationSeconds": 3.046077,
-      "rms": 0.09950674366439613
+      "rms": 0.09950674366439613,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-15",
@@ -343,7 +1693,8 @@
       "audioSha256": "9dc755dc212a7411baf5cc6b371546aa2d8129d870dfbe0d696a24809f676f32",
       "bytes": 28673,
       "durationSeconds": 3.482812,
-      "rms": 0.09889653658509713
+      "rms": 0.09889653658509713,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-16",
@@ -353,7 +1704,8 @@
       "audioSha256": "f4b4c6342edd861bf875efe57138de723418890f644e7d8dc7fef550842480da",
       "bytes": 16552,
       "durationSeconds": 1.965714,
-      "rms": 0.09677572922856145
+      "rms": 0.09677572922856145,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-17",
@@ -363,7 +1715,8 @@
       "audioSha256": "6a2392c690b34bc6f5ee543f9803cbd4d152059156a0cdd2a4831de31c9e6a47",
       "bytes": 24702,
       "durationSeconds": 2.98771,
-      "rms": 0.09626638654308788
+      "rms": 0.09626638654308788,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-18",
@@ -373,7 +1726,8 @@
       "audioSha256": "248b45c270ea5516462e6f782a0b69070d3a9bb113ff9ac5cd772745b0c68452",
       "bytes": 23657,
       "durationSeconds": 2.856689,
-      "rms": 0.09517858362919432
+      "rms": 0.09517858362919432,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-19",
@@ -383,7 +1737,8 @@
       "audioSha256": "2c528071f569e0b43e379099920f0ec8403f199df394397d521f9858785db072",
       "bytes": 23866,
       "durationSeconds": 2.883175,
-      "rms": 0.09442421238173504
+      "rms": 0.09442421238173504,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-20",
@@ -393,7 +1748,8 @@
       "audioSha256": "8f116f1af12888c29f95a357586b972c1ea9a3ffc465484ba142beffbea3e2ec",
       "bytes": 30345,
       "durationSeconds": 3.688526,
-      "rms": 0.09749315830840612
+      "rms": 0.09749315830840612,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-21",
@@ -403,7 +1759,8 @@
       "audioSha256": "0f551bb101f526abc47fa3e739ea3eb63a73ef7a0475ccd6b398d73bf39ecfa5",
       "bytes": 33061,
       "durationSeconds": 4.04712,
-      "rms": 0.10235253714061592
+      "rms": 0.10235253714061592,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-22",
@@ -413,7 +1770,8 @@
       "audioSha256": "b5cde97de73aa2f6a5fdc6c99777cbd84916c7c0676a520290e20c235490923a",
       "bytes": 24493,
       "durationSeconds": 2.976417,
-      "rms": 0.0984268143775973
+      "rms": 0.0984268143775973,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-23",
@@ -423,7 +1781,8 @@
       "audioSha256": "993f5740308f9dca1e8f68409a7584829753a67d32db045a3a3ba1106a385bc9",
       "bytes": 18642,
       "durationSeconds": 2.240544,
-      "rms": 0.09689701444713474
+      "rms": 0.09689701444713474,
+      "voice": "macOS Linh"
     },
     {
       "id": "do-vui-kien-thuc-24",
@@ -433,7 +1792,8 @@
       "audioSha256": "6b832b95d0bea2f4f22ade48fe083bddc87f9391d03ead3dd9fe0e6dc25b53be",
       "bytes": 21149,
       "durationSeconds": 2.552018,
-      "rms": 0.09973384456426117
+      "rms": 0.09973384456426117,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-1",
@@ -443,7 +1803,8 @@
       "audioSha256": "defc707b48d910df37b16b224670cc7a9d3a16c41256eca5bc9f423c95c2b853",
       "bytes": 38704,
       "durationSeconds": 4.738957,
-      "rms": 0.09960524298960984
+      "rms": 0.09960524298960984,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-2",
@@ -453,7 +1814,8 @@
       "audioSha256": "8c14a8a9c0507998de6b881f768e4d5d39b0704f694f3fccc6e93d4306f9e56d",
       "bytes": 36823,
       "durationSeconds": 4.506757,
-      "rms": 0.10272921314117758
+      "rms": 0.10272921314117758,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-3",
@@ -463,7 +1825,8 @@
       "audioSha256": "a942acb1ab2723b744c4516f3e6265a51b2391b9825168479e976b5e91042b44",
       "bytes": 38495,
       "durationSeconds": 4.717279,
-      "rms": 0.1027770464258476
+      "rms": 0.1027770464258476,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-4",
@@ -473,7 +1836,8 @@
       "audioSha256": "a726571cf2289a7d877cc2e0ee50c5178f9f0333bb806a5bf436fdc9cc7d8a44",
       "bytes": 35987,
       "durationSeconds": 4.39288,
-      "rms": 0.10524658665412942
+      "rms": 0.10524658665412942,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-5",
@@ -483,7 +1847,8 @@
       "audioSha256": "d8c7aa5bb7b91ab3af6b0733db2ef19f9856427cdf912d14eccf28737595be48",
       "bytes": 33897,
       "durationSeconds": 4.135238,
-      "rms": 0.10200154862249693
+      "rms": 0.10200154862249693,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-6",
@@ -493,7 +1858,8 @@
       "audioSha256": "b8aad8134b3c132ace1cf8ec665cb87668bd54dfabe6ae6518678c564eedead7",
       "bytes": 37032,
       "durationSeconds": 4.538141,
-      "rms": 0.09879008204936915
+      "rms": 0.09879008204936915,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-7",
@@ -503,7 +1869,8 @@
       "audioSha256": "4272c9b0992eeb6f88112727b9450eba25b13e6192e4ce0c147b18b055ee0dd9",
       "bytes": 32016,
       "durationSeconds": 3.914649,
-      "rms": 0.1025140808866103
+      "rms": 0.1025140808866103,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-8",
@@ -513,7 +1880,8 @@
       "audioSha256": "97b84e9b163478219bfa9f9a55570fc361bfe78d77df5bc4afa31565da5663dc",
       "bytes": 34733,
       "durationSeconds": 4.254694,
-      "rms": 0.09973850716099825
+      "rms": 0.09973850716099825,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-9",
@@ -523,7 +1891,8 @@
       "audioSha256": "47ac65e8065b986b9bdf6a0a8e2c012fbe25157dbe25d6009c43d06f8413eda8",
       "bytes": 27001,
       "durationSeconds": 3.267438,
-      "rms": 0.09654066194922645
+      "rms": 0.09654066194922645,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-10",
@@ -533,7 +1902,8 @@
       "audioSha256": "38c9034b5fb866ca478dadb53e8a3a9910eeec2d8238f9bf49148a71b5e5fbf8",
       "bytes": 31180,
       "durationSeconds": 3.789887,
-      "rms": 0.10282539573149362
+      "rms": 0.10282539573149362,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-11",
@@ -543,7 +1913,8 @@
       "audioSha256": "2dc296d6b35a38106d1ae8c832d5adc5547fc80bb75f92544f7abfd8a3426c2b",
       "bytes": 35360,
       "durationSeconds": 4.312653,
-      "rms": 0.10222484038170501
+      "rms": 0.10222484038170501,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-12",
@@ -553,7 +1924,8 @@
       "audioSha256": "6670a18d29de07d6655c4cfce1d1505545c94dad10ca01623b2eb1289035f144",
       "bytes": 36405,
       "durationSeconds": 4.452562,
-      "rms": 0.09715801882154924
+      "rms": 0.09715801882154924,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-13",
@@ -563,7 +1935,8 @@
       "audioSha256": "35cd7c6a3d7e81848e0549284ddca7d9d142a4a31919426158ccb2f32ab32060",
       "bytes": 27837,
       "durationSeconds": 3.390748,
-      "rms": 0.09706088165400228
+      "rms": 0.09706088165400228,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-14",
@@ -573,7 +1946,8 @@
       "audioSha256": "bd0df748829e64eb7798fe7ddb1e44b1d01f6223e814a0e362676bdf749e0866",
       "bytes": 36405,
       "durationSeconds": 4.450431,
-      "rms": 0.10351981889616092
+      "rms": 0.10351981889616092,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-15",
@@ -583,7 +1957,8 @@
       "audioSha256": "6d8959d6553e579f24719d5bbfd8c19f2e22c79df5e6a76148c186247f7f3bdf",
       "bytes": 36405,
       "durationSeconds": 4.452018,
-      "rms": 0.09937318118886322
+      "rms": 0.09937318118886322,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-16",
@@ -593,7 +1968,8 @@
       "audioSha256": "7586fbf75b03427001b3a955e67e8dc97e0becb82cb5753f0b7063a0f5ef056d",
       "bytes": 33270,
       "durationSeconds": 4.05619,
-      "rms": 0.1026456340693556
+      "rms": 0.1026456340693556,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-17",
@@ -603,7 +1979,8 @@
       "audioSha256": "7e9cae8ef875f31a78162c3ff6b5d1a08b41a0328af19d66d72e6f819e60a9fc",
       "bytes": 36405,
       "durationSeconds": 4.46254,
-      "rms": 0.10489183067802756
+      "rms": 0.10489183067802756,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-18",
@@ -613,7 +1990,8 @@
       "audioSha256": "ac4d021ba6ec1704dcb80e1ab6381f0f0d48d137e5f87991f117f29e95c61238",
       "bytes": 39540,
       "durationSeconds": 4.835193,
-      "rms": 0.09568578394192122
+      "rms": 0.09568578394192122,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-19",
@@ -623,7 +2001,8 @@
       "audioSha256": "2003f41f04266c7d4e482078a243623088e32c922b40bfe61522db42a066ce72",
       "bytes": 38704,
       "durationSeconds": 4.738957,
-      "rms": 0.09999743095151101
+      "rms": 0.09999743095151101,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-20",
@@ -633,7 +2012,8 @@
       "audioSha256": "0ff79772d58a56a654ecb69979091131811816e06b868bd82fbca02e30793663",
       "bytes": 35987,
       "durationSeconds": 4.403991,
-      "rms": 0.09737482447715302
+      "rms": 0.09737482447715302,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-21",
@@ -643,7 +2023,8 @@
       "audioSha256": "7b475508c6f1fbbb6d46f6cde4dcd9d22119d28d8a2949f1b2c2d4519a4b726f",
       "bytes": 27001,
       "durationSeconds": 3.289252,
-      "rms": 0.09785322934344738
+      "rms": 0.09785322934344738,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-22",
@@ -653,7 +2034,8 @@
       "audioSha256": "dfc78aea9e6d92593e3afe9720bd84958d5f4e9fa5d9ee64996e66e09fd40068",
       "bytes": 51243,
       "durationSeconds": 6.309615,
-      "rms": 0.09707905747696557
+      "rms": 0.09707905747696557,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-23",
@@ -663,7 +2045,8 @@
       "audioSha256": "a778be2f64583cfd863045e7fdc969e06ff3d01e9a0875050c76303f6868d8c1",
       "bytes": 40585,
       "durationSeconds": 4.974422,
-      "rms": 0.09865163983067035
+      "rms": 0.09865163983067035,
+      "voice": "macOS Linh"
     },
     {
       "id": "toan-hoc-am-thanh-24",
@@ -673,7 +2056,8 @@
       "audioSha256": "15d51580e6d470d42cfbc9c65abaa13617dfdef294c99727b8ab724835b66129",
       "bytes": 39958,
       "durationSeconds": 4.889887,
-      "rms": 0.09766008908360707
+      "rms": 0.09766008908360707,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-1",
@@ -683,7 +2067,8 @@
       "audioSha256": "a06eb3b41dda5910c4ccc0d68a43b03097954a0acbd044d08aa4550e4450fdbd",
       "bytes": 47272,
       "durationSeconds": 5.80907,
-      "rms": 0.1008125379501875
+      "rms": 0.1008125379501875,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-2",
@@ -693,7 +2078,8 @@
       "audioSha256": "aec71ba3f45a436d932102cee3e494fdf30c4fabb82e057d4566a99331401051",
       "bytes": 39958,
       "durationSeconds": 4.893152,
-      "rms": 0.09137918155752994
+      "rms": 0.09137918155752994,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-3",
@@ -703,7 +2089,8 @@
       "audioSha256": "3d3ceedcb9e1d86615c42f42c02deb10d966c646cb227abb48768d792ef948ab",
       "bytes": 43719,
       "durationSeconds": 5.367891,
-      "rms": 0.0970687633736011
+      "rms": 0.0970687633736011,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-4",
@@ -713,7 +2100,8 @@
       "audioSha256": "0f604b38361e94ffea8fe3ae47f1ec5ee6fdc7fe8a0ccba13571478880c1a50c",
       "bytes": 28255,
       "durationSeconds": 3.424762,
-      "rms": 0.10145949594668927
+      "rms": 0.10145949594668927,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-5",
@@ -723,7 +2111,8 @@
       "audioSha256": "c3fbffd5d0c6241ed7930b2a57f7b98524f50063f9b124148501c81a36cba538",
       "bytes": 47063,
       "durationSeconds": 5.783855,
-      "rms": 0.09664173914700787
+      "rms": 0.09664173914700787,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-6",
@@ -733,7 +2122,8 @@
       "audioSha256": "8cb9792af2c4372f091fc106657f8a4531bfa63cd5babdec008fbde6d28b0b9a",
       "bytes": 50616,
       "durationSeconds": 6.239592,
-      "rms": 0.09939097412732972
+      "rms": 0.09939097412732972,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-7",
@@ -743,7 +2133,8 @@
       "audioSha256": "ece7df5c93ff466c828858690a2f6cef3904e269c807502074b3ee2abcbab380",
       "bytes": 33688,
       "durationSeconds": 4.106485,
-      "rms": 0.10304835528945704
+      "rms": 0.10304835528945704,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-8",
@@ -753,7 +2144,8 @@
       "audioSha256": "5f154a6e708d09f12fbbe46473abd211661ef0991bd05a9e98b628746b2f71f3",
       "bytes": 34106,
       "durationSeconds": 4.170159,
-      "rms": 0.09764352710452215
+      "rms": 0.09764352710452215,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-9",
@@ -763,7 +2155,8 @@
       "audioSha256": "d8d131a07011cd4d36cba92c3f0bb99e4204e307789ec674a8cc8e5f4587887e",
       "bytes": 38286,
       "durationSeconds": 4.680952,
-      "rms": 0.09954278385161007
+      "rms": 0.09954278385161007,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-10",
@@ -773,7 +2166,8 @@
       "audioSha256": "391c2fdbe8f97657b6e3467ab2ee76b35d88c2d2ef5cf13c03642bc2f4a7c25d",
       "bytes": 46227,
       "durationSeconds": 5.671746,
-      "rms": 0.09803116758016724
+      "rms": 0.09803116758016724,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-11",
@@ -783,7 +2177,8 @@
       "audioSha256": "bfbdb27b7dcebb40633d3d8534885bbc9a162902e1416f2dd93f09dfce3c7de1",
       "bytes": 36405,
       "durationSeconds": 4.443175,
-      "rms": 0.0992197035858754
+      "rms": 0.0992197035858754,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-12",
@@ -793,7 +2188,8 @@
       "audioSha256": "1537fb11e987bff357ab2fbb7c92da1196564b6be6dc6aadb2e3cc610a5336af",
       "bytes": 50407,
       "durationSeconds": 6.213424,
-      "rms": 0.09660453591845322
+      "rms": 0.09660453591845322,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-13",
@@ -803,7 +2199,8 @@
       "audioSha256": "78e1f370aa2730212bed3c1afc456f875e2b8b64d343d6b3ea55b6cd6967644e",
       "bytes": 39122,
       "durationSeconds": 4.787256,
-      "rms": 0.10114237266726431
+      "rms": 0.10114237266726431,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-14",
@@ -813,7 +2210,8 @@
       "audioSha256": "6a8734a11c4d39f105ea09be30b4602d3602c4be43ea601feba30b2f4906f81e",
       "bytes": 38704,
       "durationSeconds": 4.740952,
-      "rms": 0.09592863217208632
+      "rms": 0.09592863217208632,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-15",
@@ -823,7 +2221,8 @@
       "audioSha256": "e656d7e6532c001b10c03be747f58309db6156b2adaf8232768849383f861fa4",
       "bytes": 28882,
       "durationSeconds": 3.523311,
-      "rms": 0.09723828060339781
+      "rms": 0.09723828060339781,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-16",
@@ -833,7 +2232,8 @@
       "audioSha256": "c7db21b27435587abd8a2305568868d4feaca286de949dddfa81ed434a5f43a6",
       "bytes": 43928,
       "durationSeconds": 5.39102,
-      "rms": 0.09934948777031137
+      "rms": 0.09934948777031137,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-17",
@@ -843,7 +2243,8 @@
       "audioSha256": "57ac8f6826602889ba745d614f73280702a8b2335cbb16a3fbb3cea2a039a1bb",
       "bytes": 49362,
       "durationSeconds": 6.07415,
-      "rms": 0.10057584572595825
+      "rms": 0.10057584572595825,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-18",
@@ -853,7 +2254,8 @@
       "audioSha256": "48841fd8d5eabc8e299773ee48db72166b7acaf054da76ef03669c8a1c4a3886",
       "bytes": 37241,
       "durationSeconds": 4.547438,
-      "rms": 0.09568517115547016
+      "rms": 0.09568517115547016,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-19",
@@ -863,7 +2265,8 @@
       "audioSha256": "1fb5a27b6b07dd2d45c3b0ecace7b54709d5d232d1662086e8ed0acdda570234",
       "bytes": 37032,
       "durationSeconds": 4.539683,
-      "rms": 0.09869506120948493
+      "rms": 0.09869506120948493,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-20",
@@ -873,7 +2276,8 @@
       "audioSha256": "29aa37ff0c376654266bb67956a8ddf6298c641cbe68b63a443a74ab96b6e44c",
       "bytes": 52914,
       "durationSeconds": 6.508571,
-      "rms": 0.09679520526202405
+      "rms": 0.09679520526202405,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-21",
@@ -883,7 +2287,8 @@
       "audioSha256": "6ab4ff69b561e5190c47851565a9b45b49f594774e67def29ce89ab7d905cafd",
       "bytes": 43510,
       "durationSeconds": 5.335964,
-      "rms": 0.0984372717246755
+      "rms": 0.0984372717246755,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-22",
@@ -893,7 +2298,8 @@
       "audioSha256": "aaa1c16023603ce711c81f3a64aa763a1d8b95c6b8500389f17d73df9671fc83",
       "bytes": 33479,
       "durationSeconds": 4.094422,
-      "rms": 0.09529902553134613
+      "rms": 0.09529902553134613,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-23",
@@ -903,7 +2309,8 @@
       "audioSha256": "80583382ea27eb6d33bad0fdc3a02f032c9337ee8e7a1aa556f7c5a012b3d9cb",
       "bytes": 26583,
       "durationSeconds": 3.231247,
-      "rms": 0.09974139675995733
+      "rms": 0.09974139675995733,
+      "voice": "macOS Linh"
     },
     {
       "id": "phieu-luu-giai-do-24",
@@ -913,7 +2320,8 @@
       "audioSha256": "39807474b2aac2641b3649aaec53725f9e053eafb92fb6f5733647c1b57c31d6",
       "bytes": 45182,
       "durationSeconds": 5.551701,
-      "rms": 0.09498789584545578
+      "rms": 0.09498789584545578,
+      "voice": "macOS Linh"
     }
   ]
 }

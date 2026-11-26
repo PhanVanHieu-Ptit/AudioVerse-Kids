@@ -21,12 +21,12 @@ export interface ToneGameDefinition {
 export const games: readonly ToneGameDefinition[] = [
   {
     id: 'am-cao-am-tram',
-    guidanceAudioSrc: `${import.meta.env?.BASE_URL ?? '/'}audio/guidance/am-cao-am-tram.v1.mp3`,
+    guidanceAudioSrc: `${import.meta.env?.BASE_URL ?? '/'}audio/guidance/am-cao-am-tram.v2.mp3`,
     title: 'Âm cao hay âm trầm?',
     description:
       'Lắng nghe và nhận biết ba nốt nhạc bằng âm thanh hoặc mô tả bằng chữ.',
     instructions:
-      'Bấm Nghe nốt nhạc, rồi chọn âm cao hoặc âm trầm. Em có thể nghe lại hoặc mở mô tả bằng chữ. Không giới hạn thời gian và không cần micrô. Hãy bắt đầu với âm lượng thiết bị nhỏ.',
+      'Mình cùng nghe xem nốt nhạc này cao hay trầm nhé! Trước tiên, em để âm lượng nhỏ, vừa nghe thôi. Rồi bấm Nghe nốt nhạc và chọn Âm cao hoặc Âm trầm. Nếu chưa chắc, em cứ nghe lại hoặc mở mô tả bằng chữ để tìm gợi ý. Cứ thong thả nhé, trò chơi không tính giờ và em không cần dùng micrô.',
     durationSeconds: 0.8,
     gain: 0.08,
     rounds: [

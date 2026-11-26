@@ -39,17 +39,21 @@ Lời chào, hướng dẫn, kết quả và lỗi có văn bản trong nội du
 
 ## Bộ file giọng Việt và cách tái tạo
 
-Ứng dụng đóng gói 8 file MP3 tiếng Việt trong `public/audio/guidance/`: lời chào, trợ giúp, cài đặt, hướng dẫn trò chơi âm cao–trầm, kết quả sai/đúng/hoàn thành và lỗi audio. Đây là giọng tổng hợp **Linh** được xuất trước bằng công cụ `say` cục bộ trên macOS, không phải bản thu người thật. Ứng dụng phát file trực tiếp, không gọi TTS hay dịch vụ mạng để tạo giọng lúc sử dụng.
+Các hướng dẫn cho chín trò chơi, Khu vườn âm nhạc và phản hồi đúng/sai/hoàn thành dùng giọng tổng hợp **Thanh Bình** từ VieNeu-TTS v3 Turbo, tạo sẵn trên máy. Lời được viết như đang cùng bé chơi: câu ngắn, nói rõ hành động tiếp theo, khuyến khích nghe lại và thử lại. Từng câu có khoảng nghỉ 200 ms; không dùng thay đổi cao độ hoặc tham số cảm xúc mà mô hình không hỗ trợ. Trò ghép cặp có phản hồi riêng khi hai tiếng khác nhau và khi tìm được một cặp.
 
-Các file được chuẩn hóa bằng FFmpeg (loudness -20 LUFS, true peak -3 dB), MP3 mono 22.05 kHz, 64 kbps. Tổng dung lượng khoảng 720 KiB. `manifest.json` lưu transcript, checksum transcript/audio, thời lượng và RMS tín hiệu; `tests/voiceAssets.test.ts` đối chiếu catalog và file để phát hiện file thiếu, đổi nội dung mà chưa tái tạo hoặc file không đúng checksum. Script sinh file giải mã kiểm tra tín hiệu không im lặng, nhưng độ rõ/phát âm và sự phù hợp với trẻ vẫn cần người nghe đánh giá.
+`src/content/musicVoiceMessages.ts` giữ cả transcript lẫn đường dẫn MP3 cho hướng dẫn khu vườn, hai trò chơi âm nhạc và từng trạng thái cố định. Các nút nghe hướng dẫn và trạng thái này phát bản đóng gói, kể cả khi tắt TTS thiết bị. Thông báo sáng tác có tên bản nhạc hoặc nội dung do người dùng nhập vẫn dùng TTS cục bộ khi được cho phép.
 
-Tái tạo trên macOS có giọng Linh và FFmpeg:
+Các bản mới dùng tên `.v2.mp3` để tránh lấy bản Linh cũ từ IndexedDB; script xóa bản cũ đã được thay thế khỏi thư mục tài nguyên. Các câu hỏi đố vui/toán/phiêu lưu, lời chào, trợ giúp, cài đặt và lỗi âm thanh hiện giữ bản Linh đã có. Manifest ghi giọng theo từng file, transcript, checksum, thời lượng, RMS; bản neural còn có hash cấu hình và timeline câu. Kiểm tra máy không xác nhận phát âm hay độ tự nhiên; các bản mới ghi `listeningReview: pending` để nghe đánh giá.
+
+Tạo lại bằng môi trường VieNeu cục bộ đã chuẩn bị theo [hướng dẫn TTS](../scripts/local-tts/README.md):
 
 ```sh
 npm run voice:generate
 ```
 
-Lệnh đọc trực tiếp text từ catalog và content game. Không cần macOS, `say` hoặc FFmpeg để build/chạy ứng dụng vì các file đầu ra đã có trong repository. Khi thay đổi transcript, tăng phiên bản tên file trong content rồi tái tạo để cache IndexedDB không giữ bản cũ.
+Lệnh đọc text trực tiếp từ catalog và nội dung trò chơi. `scripts/local-tts/guidance-profile.json` chốt phiên bản mô hình, giọng và nhịp nghỉ; `render-library.py` dùng chung quy trình offline với kho truyện, không gửi văn bản lên mạng. Các file không đổi được kiểm tra checksum rồi dùng lại; bản cần tạo mới dùng VieNeu, không tự chuyển về Linh. Tài nguyên được kiểm tra đủ trước khi cập nhật manifest. Đầu ra neural là MP3 mono 24 kHz, 96 kbps, loudness -20 LUFS, true peak -3 dB. Build và ứng dụng chỉ dùng MP3 đã có, không cần Python hay mô hình.
+
+Khi thay đổi transcript hoặc giọng, tăng phiên bản tên file trong content rồi tái tạo để cache IndexedDB không giữ bản cũ. `tests/voiceAssets.test.ts` đối chiếu toàn bộ catalog với transcript và checksum MP3, đồng thời kiểm tra hướng dẫn trò chơi/âm nhạc đang trỏ tới bản neural. Playwright kiểm tra phát thật trong trình duyệt khi không có SpeechSynthesis, cả offline sau reload.
 
 Có thể thay thế bằng bản thu người thật hoặc giọng tổng hợp khác:
 

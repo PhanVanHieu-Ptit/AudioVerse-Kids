@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { activityGames, gameLevels } from '@/content/activityGames';
+import { gameVoiceMessages } from '@/content/gameVoiceMessages';
 import { activityStore } from '@/stores/activityStore';
 import {
   defaultPreferences,
@@ -212,6 +213,10 @@ describe('eight games through the UI', () => {
     const game = activityGames[3]!;
     const c = game.challenges[0]!;
     if (c.mode !== 'pairs') throw new Error('Expected pairs');
+    preferencesStore.setState({
+      preferences: { ...defaultPreferences, voiceGuidance: true },
+    });
+    const speak = vi.spyOn(voiceGuidance, 'speak').mockResolvedValue(undefined);
     mount(game);
     await user.click(screen.getByRole('button', { name: 'Bắt đầu trò chơi' }));
     await user.click(
@@ -231,7 +236,11 @@ describe('eight games through the UI', () => {
         name: new RegExp(`^Thẻ ${c.cards.indexOf(b) + 1} `),
       }),
     );
-    expect(screen.getByText(/Hai âm thanh chưa khớp/)).toBeVisible();
+    expect(
+      screen.getByText(gameVoiceMessages.pairIncorrect.text),
+    ).toBeVisible();
+    await user.click(screen.getByRole('button', { name: 'Nghe phản hồi' }));
+    expect(speak).toHaveBeenLastCalledWith(gameVoiceMessages.pairIncorrect);
     await user.click(screen.getByRole('button', { name: 'Úp hai thẻ' }));
     expect(
       screen.queryByText(`${a.sound.label}: ${a.sound.description}`),
