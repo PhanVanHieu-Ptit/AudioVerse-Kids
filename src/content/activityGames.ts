@@ -31,18 +31,20 @@ function listeningChallenges(
 ): ChoiceChallenge[] {
   return Array.from({ length: 24 }, (_, i) => {
     const level = levelAt(i);
-    // Each tier uses all eight timbres; later tiers transpose and shorten the cue.
+    // Each tier uses all eight sounds. Recordings retain their natural pitch and duration.
     const source = sounds[(i * 3 + Math.floor(i / 8)) % sounds.length]!;
-    const sound = {
-      ...source,
-      notes: source.notes.map((n) => ({
-        ...n,
-        frequency: n.frequency * (1 + (level - 1) * 0.06),
-        endFrequency:
-          (n.endFrequency ?? n.frequency) * (1 + (level - 1) * 0.06),
-        duration: n.duration * (1 - (level - 1) * 0.12),
-      })),
-    };
+    const sound = source.audioSrc
+      ? source
+      : {
+          ...source,
+          notes: source.notes.map((n) => ({
+            ...n,
+            frequency: n.frequency * (1 + (level - 1) * 0.06),
+            endFrequency:
+              (n.endFrequency ?? n.frequency) * (1 + (level - 1) * 0.06),
+            duration: n.duration * (1 - (level - 1) * 0.12),
+          })),
+        };
     const alternatives = sounds.filter((s) => s.id !== source.id);
     const options = rotate(
       [
@@ -57,7 +59,7 @@ function listeningChallenges(
       mode: 'choice',
       prompt:
         id === 'doan-tieng-dong-vat'
-          ? 'Âm thanh mô phỏng này gợi tiếng con vật nào?'
+          ? 'Em nghe thấy tiếng con vật nào?'
           : 'Âm sắc mô phỏng này gợi nhạc cụ nào?',
       description: sound.description,
       explanation: `Đó là ${source.label.toLocaleLowerCase('vi')}. ${sound.description}`,
@@ -159,7 +161,7 @@ const definitions: readonly Omit<ActivityGameDefinition, 'guidanceAudioSrc'>[] =
       title: 'Đoán tiếng động vật',
       description: 'Ghé khu rừng âm thanh và tìm người bạn đang cất tiếng.',
       instructions:
-        'Cùng đoán xem bạn nào đang cất tiếng nhé! Em bấm Nghe âm thanh, rồi chọn con vật mà em nghĩ đến. Đây là tiếng mô phỏng các con vật. Nếu chưa chắc, em cứ nghe lại hoặc mở mô tả bằng chữ để tìm gợi ý.',
+        'Cùng đoán xem bạn nào đang cất tiếng nhé! Em bấm Nghe âm thanh, rồi chọn con vật mà em nghĩ đến. Em sẽ nghe tiếng kêu thật của các con vật. Nếu chưa chắc, em cứ nghe lại hoặc mở mô tả bằng chữ để tìm gợi ý.',
       challenges: listeningChallenges('doan-tieng-dong-vat', animalSounds),
     },
     {

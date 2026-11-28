@@ -8,78 +8,51 @@ const note = (
   endFrequency = frequency,
 ): SoundNote => ({ frequency, start, duration, wave, endFrequency });
 
-/** Deliberately stylized Web Audio imitations, never presented as field recordings. */
+const animalAudioBase = `${import.meta.env?.BASE_URL ?? '/'}audio/animals/`;
+
+/** Real recordings; source credits and processing live alongside the bundled MP3s. */
 export const animalSounds: readonly GameSound[] = [
   {
     id: 'cat',
     label: 'Mèo',
-    description: 'Meo… meo… Hai tiếng luyến cao rồi hạ xuống.',
-    notes: [
-      note(700, 0, 0.6, 'triangle', 350),
-      note(760, 0.8, 0.6, 'triangle', 380),
-    ],
+    description: 'Meo… meo… Tiếng kêu luyến cao rồi hạ xuống.',
   },
   {
     id: 'dog',
     label: 'Chó',
-    description: 'Gâu! Gâu! Hai tiếng ngắn, đục và mạnh.',
-    notes: [
-      note(240, 0, 0.17, 'sawtooth', 100),
-      note(240, 0.4, 0.17, 'sawtooth', 100),
-    ],
+    description: 'Gâu! Gâu! Tiếng sủa ngắn, đục và mạnh.',
   },
-  {
-    id: 'cow',
-    label: 'Bò',
-    description: 'Ò… Một tiếng trầm ngân dài.',
-    notes: [note(120, 0, 1.3, 'sawtooth', 90)],
-  },
+  { id: 'cow', label: 'Bò', description: 'Ò… Tiếng kêu trầm ngân dài.' },
   {
     id: 'duck',
     label: 'Vịt',
-    description: 'Cạp, cạp, cạp. Ba tiếng khàn ngắn.',
-    notes: [
-      note(420, 0, 0.18, 'square', 260),
-      note(420, 0.3, 0.18, 'square', 260),
-      note(420, 0.6, 0.18, 'square', 260),
-    ],
+    description: 'Cạp, cạp… Những tiếng kêu khàn nối tiếp nhau.',
   },
   {
     id: 'rooster',
     label: 'Gà trống',
-    description: 'Ò ó o… Tiếng gáy đi từ thấp lên cao rồi kéo dài.',
-    notes: [
-      note(350, 0, 0.2, 'triangle'),
-      note(500, 0.25, 0.2, 'triangle'),
-      note(750, 0.5, 0.8, 'triangle', 600),
-    ],
+    description: 'Ò ó o… Tiếng gáy vang, lên cao rồi kéo dài.',
   },
   {
     id: 'bird',
     label: 'Chim',
-    description: 'Chíp chíp! Bốn tiếng rất cao, thanh và nhanh.',
-    notes: Array.from({ length: 4 }, (_, i) =>
-      note(1800, i * 0.2, 0.12, 'sine', 2400),
-    ),
+    description: 'Chíp chíp! Tiếng hót cao, trong và líu lo.',
   },
   {
     id: 'frog',
     label: 'Ếch',
-    description: 'Ộp… ộp… Ba tiếng trầm bật lên.',
-    notes: Array.from({ length: 3 }, (_, i) =>
-      note(100, i * 0.45, 0.25, 'square', 220),
-    ),
+    description: 'Ộp… ộp… Những tiếng kêu trầm, ngắt quãng.',
   },
   {
     id: 'bee',
     label: 'Ong',
-    description: 'Vù… Tiếng vo ve đều và liên tục.',
-    notes: [
-      note(180, 0, 1.4, 'sawtooth', 200),
-      { ...note(183, 0, 1.4, 'sawtooth', 203), gain: 0.02 },
-    ],
+    description: 'Vù… Tiếng cánh vo ve, rền liên tục.',
   },
-];
+].map((sound) => ({
+  ...sound,
+  audioSrc: `${animalAudioBase}${sound.id}.v1.mp3`,
+  notes: [],
+}));
 
 export const instrumentSounds: readonly GameSound[] = [
   {

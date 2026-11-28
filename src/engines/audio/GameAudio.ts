@@ -33,6 +33,9 @@ export function rhythmSound(intervals: readonly number[]): GameSound {
 export class GameAudio {
   private context: AudioContext | undefined;
   private nodes: { oscillator: OscillatorNode; envelope: GainNode }[] = [];
+  private recording: AudioBufferSourceNode | undefined;
+  private request: AbortController | undefined;
+  private buffers = new Map<string, AudioBuffer>();
   private revision = 0;
 
   constructor(private readonly ended: () => void) {}
@@ -40,7 +43,7 @@ export class GameAudio {
   async play(sound: GameSound) {
     this.stop();
     if (
-      !sound.notes.length ||
+      (!sound.audioSrc && !sound.notes.length) ||
       sound.notes.some(
         (n) =>
           !Number.isFinite(n.frequency) ||
@@ -65,6 +68,41 @@ export class GameAudio {
     const context = this.context;
     await context.resume();
     if (revision !== this.revision) return;
+    if (sound.audioSrc) {
+      try {
+        let buffer = this.buffers.get(sound.audioSrc);
+        if (!buffer) {
+          const request = new AbortController();
+          this.request = request;
+          const response = await fetch(sound.audioSrc, {
+            signal: request.signal,
+          });
+          if (!response.ok) throw new Error('Recording unavailable');
+          buffer = await context.decodeAudioData(await response.arrayBuffer());
+          if (revision !== this.revision) return;
+          this.request = undefined;
+          this.buffers.set(sound.audioSrc, buffer);
+        }
+        if (revision !== this.revision) return;
+        const source = context.createBufferSource();
+        this.recording = source;
+        source.buffer = buffer;
+        // Files are loudness-normalized offline; do not attenuate or transpose.
+        source.connect(context.destination);
+        source.onended = () => {
+          source.disconnect();
+          if (revision === this.revision) {
+            this.recording = undefined;
+            this.ended();
+          }
+        };
+        source.start();
+      } catch (error) {
+        if (revision === this.revision) this.stop();
+        throw error;
+      }
+      return;
+    }
     const origin = context.currentTime + 0.03;
     let remaining = sound.notes.length;
     try {
@@ -105,6 +143,18 @@ export class GameAudio {
 
   stop() {
     this.revision++;
+    this.request?.abort();
+    this.request = undefined;
+    if (this.recording) {
+      this.recording.onended = null;
+      try {
+        this.recording.stop();
+      } catch {
+        /* A context may already be closed. */
+      }
+      this.recording.disconnect();
+      this.recording = undefined;
+    }
     for (const { oscillator, envelope } of this.nodes) {
       oscillator.onended = null;
       try {
@@ -122,6 +172,7 @@ export class GameAudio {
     this.stop();
     const context = this.context;
     this.context = undefined;
+    this.buffers.clear();
     if (context && context.state !== 'closed') await context.close();
   }
 }
