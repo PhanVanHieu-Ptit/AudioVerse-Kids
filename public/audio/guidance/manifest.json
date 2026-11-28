@@ -226,12 +226,12 @@
     },
     {
       "id": "activity:doan-tieng-dong-vat:instructions",
-      "profileHash": "a270363e2a7f8b52e1ea66669c365858fb181503903a1da48a8bb19ca6d134c2",
-      "audioSha256": "e1ad077303f77260d5db33e6e9361830babc1c4adcc8e10d598c2db4d60753df",
-      "bytes": 275372,
-      "durationSeconds": 22.871208,
-      "rms": 0.09108737111091614,
-      "peak": 0.6267110705375671,
+      "profileHash": "7332d7ba9e06941b7a6a1a959b25329c3e23eb64e06d35282e1770bbe0a6b254",
+      "audioSha256": "7c48826cebc6c65b65a58e94d19ffc8c3a9535c8286f2c9abfafcc650dc4a174",
+      "bytes": 285164,
+      "durationSeconds": 23.668417,
+      "rms": 0.09138466417789459,
+      "peak": 0.6344584822654724,
       "timeline": [
         {
           "cueId": "activity:doan-tieng-dong-vat:instructions:0",
@@ -258,49 +258,49 @@
           "cueId": "activity:doan-tieng-dong-vat:instructions:3",
           "voice": "Thanh Bình",
           "startSeconds": 6.023125,
-          "durationSeconds": 1.5143958333333334,
+          "durationSeconds": 2.3115833333333335,
           "pauseMs": 200
         },
         {
           "cueId": "activity:doan-tieng-dong-vat:instructions:4",
           "voice": "Thanh Bình",
-          "startSeconds": 7.737520833333333,
+          "startSeconds": 8.534708333333333,
           "durationSeconds": 3.752479166666667,
           "pauseMs": 200
         },
         {
           "cueId": "activity:doan-tieng-dong-vat:instructions:5",
           "voice": "Thanh Bình",
-          "startSeconds": 11.69,
+          "startSeconds": 12.4871875,
           "durationSeconds": 1.8337916666666667,
           "pauseMs": 200
         },
         {
           "cueId": "activity:doan-tieng-dong-vat:instructions:6",
           "voice": "Thanh Bình",
-          "startSeconds": 13.723791666666667,
+          "startSeconds": 14.520979166666667,
           "durationSeconds": 4.1529375,
           "pauseMs": 200
         },
         {
           "cueId": "activity:doan-tieng-dong-vat:instructions:7",
           "voice": "Thanh Bình",
-          "startSeconds": 18.076729166666667,
+          "startSeconds": 18.873916666666666,
           "durationSeconds": 1.9998958333333334,
           "pauseMs": 200
         },
         {
           "cueId": "activity:doan-tieng-dong-vat:instructions:8",
           "voice": "Thanh Bình",
-          "startSeconds": 20.276625,
+          "startSeconds": 21.0738125,
           "durationSeconds": 2.4745833333333334,
           "pauseMs": 120
         }
       ],
       "file": "doan-tieng-dong-vat.v2.mp3",
       "voice": "Thanh Bình",
-      "transcript": "Đoán tiếng động vật. Cùng đoán xem bạn nào đang cất tiếng nhé! Em bấm Nghe âm thanh, rồi chọn con vật mà em nghĩ đến. Đây là tiếng mô phỏng các con vật. Nếu chưa chắc, em cứ nghe lại hoặc mở mô tả bằng chữ để tìm gợi ý. Em cứ chơi thong thả, không cần vội. Nếu dùng bàn phím, em bấm Tab để di chuyển, rồi Enter hoặc phím cách để chọn. Nhớ để âm lượng nhỏ, vừa nghe nhé. Trò chơi sẽ lưu lại để lần sau em chơi tiếp.",
-      "transcriptSha256": "0dacbc4d4bc2f6f5d0d0ab5c3b7003933a52cdb28c11b4b144803300983aa0aa",
+      "transcript": "Đoán tiếng động vật. Cùng đoán xem bạn nào đang cất tiếng nhé! Em bấm Nghe âm thanh, rồi chọn con vật mà em nghĩ đến. Em sẽ nghe tiếng kêu thật của các con vật. Nếu chưa chắc, em cứ nghe lại hoặc mở mô tả bằng chữ để tìm gợi ý. Em cứ chơi thong thả, không cần vội. Nếu dùng bàn phím, em bấm Tab để di chuyển, rồi Enter hoặc phím cách để chọn. Nhớ để âm lượng nhỏ, vừa nghe nhé. Trò chơi sẽ lưu lại để lần sau em chơi tiếp.",
+      "transcriptSha256": "9261dc5a99a5e9bce9695df25747a13dead76f25ce90a790852aff67e27103fb",
       "listeningReview": "pending"
     },
     {

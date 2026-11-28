@@ -14,6 +14,8 @@ export interface GameSound {
   id: string;
   label: string;
   description: string;
+  /** Bundled, normalized recording, played at its natural pitch. */
+  audioSrc?: string;
   notes: readonly SoundNote[];
 }
 
